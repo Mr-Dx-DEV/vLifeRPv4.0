@@ -3850,17 +3850,7 @@ return {
 			image = "radioscanner.png",
 		}
 	},
-	--[[ ["WEAPON_DIGISCANNER"] = {
-		label = "signal booster",
-		weight = 1000,
-		stack = true,
-		close = true,
-		description = "",
-		client = {
-			image = "weapon_digiscanner.png",
-		}
-	},
-  ]]
+	
 	["weed_ak47"] = {
 		label = "AK47 2g",
 		weight = 200,

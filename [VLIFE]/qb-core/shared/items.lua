@@ -131,7 +131,7 @@ QBShared.Items = {
 
 
 	 -- Skeepy Chop Shop
-	 weapon_digiscanner           = { name = 'weapon_digiscanner', label = 'Key Frequency Radar', weight = 1000, type = 'weapon', ammotype = nil, image = 'weapon_digiscanner.png', unique = true, useable = false, description = '' },
+	
 	 car_wheel                    = { name = 'car_wheel',    label = 'Car Wheel',        weight = 10000,     type = 'item',  image = 'car_wheel.png',     unique = false,     useable = false,    shouldClose = true, combinable = nil, description = '' },
 	 car_door                     = { name = 'car_door',     label = 'Car Door',         weight = 10000,     type = 'item',  image = 'car_door.png',      unique = false,     useable = false,    shouldClose = true, combinable = nil, description = '' },
 	 radiator                     = { name = 'radiator',     label = 'Car Radiator',     weight = 10000,     type = 'item',  image = 'car_radiator.png',  unique = true,      useable = true,     shouldClose = true, combinable = nil, description = '' },

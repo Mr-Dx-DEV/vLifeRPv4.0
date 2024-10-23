@@ -32,8 +32,7 @@ QBShared.Weapons = {
 	[`weapon_bread`]                 = { name = 'weapon_bread', label = 'Baquette', weapontype = 'Melee', ammotype = nil, damagereason = 'Melee killed / Whacked / Executed / Beat down / Murdered / Battered' },
 	[`weapon_stone_hatchet`]         = { name = 'weapon_stone_hatchet', label = 'Stone Hatchet', weapontype = 'Melee', ammotype = nil, damagereason = 'Knifed / Stabbed / Eviscerated' },
 	[`weapon_candycane`]             = { name = 'weapon_candycane', label = 'Candy Cane', weapontype = 'Melee', ammotype = nil, damagereason = 'Melee Killed / Whacked / Executed / Beat down / Musrdered / Battered / Candy Caned' },
-	[`weapon_digiscanner`]           = { name = 'weapon_digiscanner', label = 'signal booster', weapontype = 'Melee', ammotype = nil, damagereason = 'Melee Killed / Whacked / Executed / Beat down / Musrdered / Battered / Candy Caned' },
-
+	
 	-- Handguns
 	[`weapon_pistol`]                = { name = 'weapon_pistol', label = 'Pistol', weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
 	[`weapon_pistol_mk2`]            = { name = 'weapon_pistol_mk2', label = 'Pistol Mk2', weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },

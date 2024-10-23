@@ -17,8 +17,9 @@ return {
         },
 
 		['WEAPON_DIGISCANNER'] = {
-			label = 'Signal booster',
-			weight = 1200,
+			label = 'Digital Scanner',
+			weight = 125,
+			durability = 0.1,
 		},
 
 		['WEAPON_GLOCK21'] = {
