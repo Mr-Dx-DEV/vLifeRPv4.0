@@ -24,56 +24,56 @@
 		"BlurValue": 0,
 		"Images": [
 			{
-				"Src": "./loadingscreen/images/1.jpg",
+				"Src": "./loadingscreen/images/1.png",
 				"Zone": 5,
 				"Duration": 5000
 			},
 			{
-				"Src": "./loadingscreen/images/2.jpg",
+				"Src": "./loadingscreen/images/2.png",
 				"Zone": 5,
 				"Duration": 5000
 			},
 			{
-				"Src": "./loadingscreen/images/3.jpg",
+				"Src": "./loadingscreen/images/3.png",
 				"Zone": 10,
 				"Duration": 5000
 			},
 			{
-				"Src": "./loadingscreen/images/4.jpg",
+				"Src": "./loadingscreen/images/4.png",
 				"Zone": 10,
 				"Duration": 5000
 			},
 			{
-				"Src": "./loadingscreen/images/5.jpg",
+				"Src": "./loadingscreen/images/5.png",
 				"Zone": 10,
 				"Duration": 5000
 			},
 			{
-				"Src": "./loadingscreen/images/6.jpg",
+				"Src": "./loadingscreen/images/6.png",
 				"Zone": 5,
 				"Duration": 5000
 			},
 			{
-				"Src": "./loadingscreen/images/7.jpg",
+				"Src": "./loadingscreen/images/7.png",
 				"Zone": 5,
 				"Duration": 5000
 			},
 			{
-				"Src": "./loadingscreen/images/8.jpg",
+				"Src": "./loadingscreen/images/8.png",
 				"Zone": 10,
 				"Duration": 5000
 			},{
-				"Src": "./loadingscreen/images/9.jpg",
+				"Src": "./loadingscreen/images/9.png",
 				"Zone": 5,
 				"Duration": 5000
 			},
 			{
-				"Src": "./loadingscreen/images/10.jpg",
+				"Src": "./loadingscreen/images/10.png",
 				"Zone": 10,
 				"Duration": 5000
 			},
 			{
-				"Src": "./loadingscreen/images/11.jpg",
+				"Src": "./loadingscreen/images/11.png",
 				"Zone": 10,
 				"Duration": 5000
 			}
