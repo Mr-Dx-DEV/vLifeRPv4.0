@@ -1,0 +1,439 @@
+        <html> <head> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"> <style>body{background: #1f2133; font-family: "Poppins", sans-serif;}.wrapper{color: white; display: flex; padding: 10px; padding-right: 300px;}.chat{padding: 20px; padding-top: 10px; width: 600px; min-height: 600px; max-height: 600px; overflow-y: auto; background: rgba(0, 0, 0, 0.31);display:none;}.chat.active{display:block;}*::-webkit-scrollbar{width: 5px;}*::-webkit-scrollbar-track{background: #414256; border-radius: 2px;}*::-webkit-scrollbar-thumb{background: #7c7c7c; border-radius: 2px;}.message{width: 340px; padding: 10px; margin-top: 10px; background: rgba(0, 0, 0, 0.31);}.title{font-size: 14px;}.text{font-size: 12px; margin-top: 10px;}.time{font-size: 10px; display: flex; justify-content: flex-end;}.panel{padding: 20px; width: 300px; text-align: center; display: flex; position: relative; flex-direction: column; margin-left: 20px; background: rgba(0, 0, 0, 0.31);}.panel-label{font-size: 12px; color: white; font-weight: 200;}.panel-value{word-break: break-all; font-size: 12px; color: white; max-height: 120px; overflow-y: auto; font-weight: 600;}.panel-field{margin-top: 15px;}.panel-field-small{margin-top: 10px;}.panel-field-created-at{margin-top: auto;}.panel-title{font-size: 20px; font-weight: 600; color: white;}.panel-value-player{cursor: pointer;}.player-in-area-overlay{padding: 20px; position: absolute; top: 0; display: none; left: calc(100% + 20px); width: 280px; box-sizing: border-box; overflow-y: auto; color: white; height: 100%; background: rgba(0, 0, 0, 0.31);}.panel-value-player.active{color: lime;}.panel-value-player.active .player-in-area-overlay{display: block;}</style> <style>.timeline{position: relative; padding: 0; width: 100%; height: 100%; overflow-y: auto;}.timeline-wrapper{height: 100%;position: relative;}/* width */ .timeline::-webkit-scrollbar{width: 2px;}/* Track */ .timeline::-webkit-scrollbar-track{background: #414256; border-radius: 2px;}/* Handle */ .timeline::-webkit-scrollbar-thumb{background: #7c7c7c; border-radius: 2px;}.timeline-wrapper::before{content: ""; position: absolute; height: 100%; width: 3px; left: calc((100% - 1.5px) / 2); background: rgba(255, 255, 255, 0.1);}.timeline .timeline-item{margin-bottom: 0; display: flex; flex-direction: row; align-items: center;}.point{min-width: 20px; height: 20px; background: #ABA356; box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.25); border-radius: 100%; z-index: 2; position: relative; left: 1px;}.timeline .timeline-item .content{width: 50%; padding: 0 20px; display: flex; align-items: flex-start; flex-direction: column;}.timeline .timeline-item:nth-child(odd) .content{padding-left: 0; align-items: flex-end;}.timeline .timeline-item:nth-child(odd) .date{padding-right: 0;}.timeline .timeline-item:nth-child(even) .content{padding-right: 0;}.timeline .timeline-item:nth-child(even) .date{padding-left: 0;}.timeline .timeline-item .date{width: 50%; padding: 0 20px; font-weight: normal;}.timeline .timeline-item .date h4{width: max-content; text-align: center; padding: 5px 10px; font-size: 10px; font-weight: 500; min-width: 120px; color: #FFF; background: rgba(0, 0, 0, 0.68); border-radius: 2px;}.timeline .timeline-item .content h3{padding: 3px 20px; margin-bottom: 0; text-align: center; border-top-left-radius: 2px; border-top-right-radius: 2px; color: #FFF; font-size: 10px; font-weight: 500; background: rgba(225, 225, 225, 0.36); width: max-content; min-width: 320px;}.timeline .timeline-item .content p{padding: 20px 20px; margin-top: 0; text-align: center; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; color: #FFF; font-size: 10px; font-weight: 500; background: rgba(0, 0, 0, 0.68); width: max-content; min-width: 320px;}.timeline .timeline-item:nth-child(even){flex-direction: row-reverse;}.timeline .timeline-item:nth-child(even) .date h4{float: right}.timeline--small .timeline-item .content h3, .timeline--small .timeline-item .content p{min-width: 200px; max-width: 200px;}</style>  <style>.buttons{display: flex;}.button{display: flex; justify-content: center; align-items: center; width: 84px; height: 23px; background: #151723; font-size: 14px; font-weight: 300; color: white; cursor: pointer; margin-left: 10px;}</style>
+            <script>
+            function onClick(index) {
+                const elements = document.querySelectorAll('.panel-value-player')
+                elements.forEach((element) => {
+                    element.classList.remove('active')
+                })
+                document.querySelector(`.panel-value-player[index="${index}"]`).classList.add('active')
+            }
+        </script>
+        <script>
+            function toggleChat(chat) {
+                const elements = document.querySelectorAll('.chat')
+                elements.forEach((element) => {
+                    element.classList.remove('active')
+                })
+                document.querySelector(`.${chat}`).classList.add('active')
+            }
+        </script>
+        </head> <body>
+            <div class="buttons">
+            <button class="button" onclick="toggleChat('messagesChat')">CHAT</button>
+            <button class="button" onclick="toggleChat('timelineChat')">TIMELINE</button>
+        </div>
+    <div class="wrapper">        <div class="chat timelineChat">
+            <div class='timeline timeline--small'>
+                <div class='timeline-wrapper'>
+                                <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Create Report</h3>
+                    <p>Ichigo_Kurosaki69 created report with ID 9598</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-16 20:55:47</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Add message</h3>
+                    <p>Ichigo_Kurosaki69 added message with ID 1</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-16 20:55:50</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Add message</h3>
+                    <p>Ichigo_Kurosaki69 added message with ID 2</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-16 20:56:28</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Add message</h3>
+                    <p>Ichigo_Kurosaki69 added message with ID 3</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-16 21:15:18</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Admin enters report</h3>
+                    <p>RakaBoy enters report with ID 9598</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-17 23:05:11</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Set in resolve</h3>
+                    <p>RakaBoy set in resolve report with ID 9598</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-17 23:05:11</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Add message</h3>
+                    <p>RakaBoy added message with ID 4</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-17 23:05:14</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Admin enters report</h3>
+                    <p>RakaBoy enters report with ID 9598</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-27 23:04:50</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Closed report</h3>
+                    <p>RakaBoy closed report with ID 9598</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-27 23:04:51</h4>
+                </div>
+            </div>
+                        </div>
+            </div>
+        </div>
+    <div class="chat messagesChat active">        <div class="message">
+            <div class="title">Ichigo_Kurosaki69</div>
+            <div class="text">
+                P11: RX gamingz (ID: 31)
+P5: Russels_viper (ID: 96)
+P14: YAKUZA MINGA (ID: 97)
+P1: BILLY BUTCHER (ID: 68)
+P12: limonds928 (ID: 134)
+P20: THE ADMIRAL (ID: 104)
+P21: Mohammed SaiFuL Islam (ID: 12)
+P17: Russel viper (ID: 137)
+P10: NemesisZFaster (ID: 127)
+P9: CHOCOLATE ROLL (ID: 111)
+P13: Tahmid (ID: 92)
+P8: Faiyaz Barkat (ID: 20)
+P19: Kharadhon Chakraborty (ID: 128)
+P2: DAYSON (ID: 18)
+P7: Offset (ID: 116)
+P16: Admanzz (ID: 86)
+P23: Ichigo_Kurosaki69 (ID: 118)
+P15: abbu (ID: 88)
+P6: Kagenou (ID: 120)
+P22: ifadcraft17 (ID: 121)
+P3: gouravmahmud2006 (ID: 91)
+P4: _YAKUZA | Dedsec (ID: 123)
+P18: RAMO XD (ID: 51)
+                <div>(click to zoom)</div>
+                <a href="https://cdn.discordapp.com/attachments/1205711382582927367/1274033871758950410/screenshot.jpg?ex=66c0c801&is=66bf7681&hm=38ffd84b91068921aa61551f45f5f8b2dbbefa1a1cc73a5e50fa9c18e52e8a29&" target="_blank">
+                    <img src="https://cdn.discordapp.com/attachments/1205711382582927367/1274033871758950410/screenshot.jpg?ex=66c0c801&is=66bf7681&hm=38ffd84b91068921aa61551f45f5f8b2dbbefa1a1cc73a5e50fa9c18e52e8a29&" width="340" />
+                </a>
+            </div>
+            <div class="time">
+                2024-08-16 20:55:50 
+            </div>
+        </div>
+            <div class="message">
+            <div class="title">Ichigo_Kurosaki69 </div>
+            <div class="text">
+                main garage a kisob language dey dekhen na?? Publically ldrug location jigay egula kmn rp vai ?? 
+            </div>
+            <div class="time">
+                2024-08-16 20:56:28 
+            </div>
+        </div>
+            <div class="message">
+            <div class="title">Ichigo_Kurosaki69 </div>
+            <div class="text">
+                mAIN GARAGE A WITHOUT REASON MARE DEKHEN NA NAKI ????? 
+            </div>
+            <div class="time">
+                2024-08-16 21:15:18 
+            </div>
+        </div>
+            <div class="message">
+            <div class="title">RakaBoy </div>
+            <div class="text">
+                report in ticket with pov 
+            </div>
+            <div class="time">
+                2024-08-17 23:05:14 
+            </div>
+        </div>
+            <div class="message">
+            <div class="title">RakaBoy </div>
+            <div class="text">
+                Closed the report 
+            </div>
+            <div class="time">
+                2024-08-27 23:04:51 
+            </div>
+        </div>
+    </div>        <div class="panel">
+            <div class="panel-title">Rules breaker</div>
+            <div class="panel-title">#9598</div>
+
+            
+            <div class="panel-field">
+                <div class="panel-label">AUTHOR</div>
+                <div class="panel-value">Ichigo_Kurosaki69</div>
+            </div>
+            <div class="panel-field">
+                <div class="panel-label">PLAYERS</div>
+                <div class="panel-value">
+                                    </div>
+            </div>
+            <div class="panel-field active">
+                <div class="panel-label">PLAYERS IN AREA</div>
+                <div class="panel-value">
+                                <div class="panel-value-player active" index="1" onclick="onClick(1)">
+                Russels_viper
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">Russels_viper</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">96</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">99</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">1075852585610772610</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">110000169fa934d</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">a0ca973ad38b08f46202c006bd7c017ce0f6e4dc</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 224.23</div>
+                            <div>Y: -804.94</div>
+                            <div>Z: 30.61</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                    </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="2" onclick="onClick(2)">
+                Kagenou
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">Kagenou</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">120</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">100</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">1163416218540191764</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">110000161184604</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">edfd39e30389ae1369a9e5dc97ef1b44349a1ce5</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 214.02</div>
+                            <div>Y: -809.95</div>
+                            <div>Z: 33.91</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            31000x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Sandwich</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bottle of Water</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lockpick</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Rental Papers</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Sandwich</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="3" onclick="onClick(3)">
+                NemesisZFaster
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">NemesisZFaster</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">127</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">94</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">1273576626566856767</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">110000145d9fe7b</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">3ae896340e81f1b87c99a4e3f73f9cf0cad784b6</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 210.82</div>
+                            <div>Y: -848.7</div>
+                            <div>Z: 29.77</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            31000x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bottle of Water</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lockpick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Sandwich</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Sandwich</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="4" onclick="onClick(4)">
+                Ichigo_Kurosaki69
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">Ichigo_Kurosaki69</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">118</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">96</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">1112782505075036291</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">1100001540acf62</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">ff650dd06d6823c45e6f7bc9933fe1ce5b714021</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 211.56</div>
+                            <div>Y: -816.84</div>
+                            <div>Z: 30.09</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            31000x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bottle of Water</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lockpick</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Sandwich</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Sandwich</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                        </div>
+            </div>
+
+            <div class="panel-field-created-at">
+                <div class="panel-label">Created at</div>
+                <div class="panel-value">2024-08-16 20:55:46</div>
+            </div>
+        </div>
+           
+        </div><script>function onClick(index){document.querySelectorAll('.panel-value-player').forEach((element)=>{element.classList.remove('active')}); document.querySelector(`.panel-value-player[index="${index}"]`).classList.add('active')}</script> <script>function toggleChat(chat){document.querySelectorAll('.chat').forEach((element)=>{element.classList.remove('active')}); document.querySelector(`.${chat}`).classList.add('active')}</script> </body></html>
+    

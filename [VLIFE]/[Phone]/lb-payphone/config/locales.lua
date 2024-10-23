@@ -1,0 +1,22 @@
+Locales = {
+    ["payphone"] = "Payphone",
+    ["in_call"] = "You are already in a call",
+    ["no_money"] = "You don't have enough money to make a call",
+    ["payphone_use_tip"] = "Press ~INPUT_CONTEXT~ to use the payphone",
+    ["payphone_use_target"] = "Use payphone",
+    ["call_ended"] = "Your call that lasted {duration}s has ended. It cost you: ${cost}",
+    ["in_call_tip"] = "Press ~INPUT_FRONTEND_RRIGHT~ to hang up\nDuration: {duration}s\nCost: ${cost}",
+    ["invalid_number"] = "Invalid phone number ({number})",
+    ["phone_number"] = "Phone number",
+    ["phone_number_tip"] = "The phone number to call. {company_tip}",
+    ["company_tip"] = "Can also be a company, e.g: police",
+    ["number_placeholder"] = "(123) 456-7890",
+    ["user_busy"] = "Phone number busy",
+    ["phone_number_title"] = "Payphone", -- this shows up to the people receiving the call
+    ["call_number"] = "Call number",
+    ["company"] = "Company",
+    ["call_company"] = "Call {company}",
+    ["call"] = "Call",
+    ["cancel"] = "Cancel",
+    ["too_far"] = "You're too far away from the payphone",
+}

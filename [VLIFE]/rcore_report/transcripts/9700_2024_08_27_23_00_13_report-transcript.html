@@ -1,0 +1,1748 @@
+        <html> <head> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"> <style>body{background: #1f2133; font-family: "Poppins", sans-serif;}.wrapper{color: white; display: flex; padding: 10px; padding-right: 300px;}.chat{padding: 20px; padding-top: 10px; width: 600px; min-height: 600px; max-height: 600px; overflow-y: auto; background: rgba(0, 0, 0, 0.31);display:none;}.chat.active{display:block;}*::-webkit-scrollbar{width: 5px;}*::-webkit-scrollbar-track{background: #414256; border-radius: 2px;}*::-webkit-scrollbar-thumb{background: #7c7c7c; border-radius: 2px;}.message{width: 340px; padding: 10px; margin-top: 10px; background: rgba(0, 0, 0, 0.31);}.title{font-size: 14px;}.text{font-size: 12px; margin-top: 10px;}.time{font-size: 10px; display: flex; justify-content: flex-end;}.panel{padding: 20px; width: 300px; text-align: center; display: flex; position: relative; flex-direction: column; margin-left: 20px; background: rgba(0, 0, 0, 0.31);}.panel-label{font-size: 12px; color: white; font-weight: 200;}.panel-value{word-break: break-all; font-size: 12px; color: white; max-height: 120px; overflow-y: auto; font-weight: 600;}.panel-field{margin-top: 15px;}.panel-field-small{margin-top: 10px;}.panel-field-created-at{margin-top: auto;}.panel-title{font-size: 20px; font-weight: 600; color: white;}.panel-value-player{cursor: pointer;}.player-in-area-overlay{padding: 20px; position: absolute; top: 0; display: none; left: calc(100% + 20px); width: 280px; box-sizing: border-box; overflow-y: auto; color: white; height: 100%; background: rgba(0, 0, 0, 0.31);}.panel-value-player.active{color: lime;}.panel-value-player.active .player-in-area-overlay{display: block;}</style> <style>.timeline{position: relative; padding: 0; width: 100%; height: 100%; overflow-y: auto;}.timeline-wrapper{height: 100%;position: relative;}/* width */ .timeline::-webkit-scrollbar{width: 2px;}/* Track */ .timeline::-webkit-scrollbar-track{background: #414256; border-radius: 2px;}/* Handle */ .timeline::-webkit-scrollbar-thumb{background: #7c7c7c; border-radius: 2px;}.timeline-wrapper::before{content: ""; position: absolute; height: 100%; width: 3px; left: calc((100% - 1.5px) / 2); background: rgba(255, 255, 255, 0.1);}.timeline .timeline-item{margin-bottom: 0; display: flex; flex-direction: row; align-items: center;}.point{min-width: 20px; height: 20px; background: #ABA356; box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.25); border-radius: 100%; z-index: 2; position: relative; left: 1px;}.timeline .timeline-item .content{width: 50%; padding: 0 20px; display: flex; align-items: flex-start; flex-direction: column;}.timeline .timeline-item:nth-child(odd) .content{padding-left: 0; align-items: flex-end;}.timeline .timeline-item:nth-child(odd) .date{padding-right: 0;}.timeline .timeline-item:nth-child(even) .content{padding-right: 0;}.timeline .timeline-item:nth-child(even) .date{padding-left: 0;}.timeline .timeline-item .date{width: 50%; padding: 0 20px; font-weight: normal;}.timeline .timeline-item .date h4{width: max-content; text-align: center; padding: 5px 10px; font-size: 10px; font-weight: 500; min-width: 120px; color: #FFF; background: rgba(0, 0, 0, 0.68); border-radius: 2px;}.timeline .timeline-item .content h3{padding: 3px 20px; margin-bottom: 0; text-align: center; border-top-left-radius: 2px; border-top-right-radius: 2px; color: #FFF; font-size: 10px; font-weight: 500; background: rgba(225, 225, 225, 0.36); width: max-content; min-width: 320px;}.timeline .timeline-item .content p{padding: 20px 20px; margin-top: 0; text-align: center; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; color: #FFF; font-size: 10px; font-weight: 500; background: rgba(0, 0, 0, 0.68); width: max-content; min-width: 320px;}.timeline .timeline-item:nth-child(even){flex-direction: row-reverse;}.timeline .timeline-item:nth-child(even) .date h4{float: right}.timeline--small .timeline-item .content h3, .timeline--small .timeline-item .content p{min-width: 200px; max-width: 200px;}</style>  <style>.buttons{display: flex;}.button{display: flex; justify-content: center; align-items: center; width: 84px; height: 23px; background: #151723; font-size: 14px; font-weight: 300; color: white; cursor: pointer; margin-left: 10px;}</style>
+            <script>
+            function onClick(index) {
+                const elements = document.querySelectorAll('.panel-value-player')
+                elements.forEach((element) => {
+                    element.classList.remove('active')
+                })
+                document.querySelector(`.panel-value-player[index="${index}"]`).classList.add('active')
+            }
+        </script>
+        <script>
+            function toggleChat(chat) {
+                const elements = document.querySelectorAll('.chat')
+                elements.forEach((element) => {
+                    element.classList.remove('active')
+                })
+                document.querySelector(`.${chat}`).classList.add('active')
+            }
+        </script>
+        </head> <body>
+            <div class="buttons">
+            <button class="button" onclick="toggleChat('messagesChat')">CHAT</button>
+            <button class="button" onclick="toggleChat('timelineChat')">TIMELINE</button>
+        </div>
+    <div class="wrapper">        <div class="chat timelineChat">
+            <div class='timeline timeline--small'>
+                <div class='timeline-wrapper'>
+                                <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Create Report</h3>
+                    <p>NEON_11991 created report with ID 9700</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-25 00:01:21</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Add message</h3>
+                    <p>NEON_11991 added message with ID 1</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-25 00:01:24</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Admin enters report</h3>
+                    <p>RakaBoy enters report with ID 9700</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-27 23:00:11</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Set in resolve</h3>
+                    <p>RakaBoy set in resolve report with ID 9700</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-27 23:00:11</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Closed report</h3>
+                    <p>RakaBoy closed report with ID 9700</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-27 23:00:13</h4>
+                </div>
+            </div>
+                        </div>
+            </div>
+        </div>
+    <div class="chat messagesChat active">        <div class="message">
+            <div class="title">NEON_11991</div>
+            <div class="text">
+                P32: Mohammed SaiFuL Islam (ID: 1)
+P12: VAMPIRE (ID: 253)
+P18: RBN (ID: 254)
+P3: ALiF (ID: 256)
+P24: Rifat_2751 (ID: 194)
+P1: Md_Ahsanul_GG (ID: 8)
+P16: ekhlasurrahman972 (ID: 135)
+P9: curry (ID: 266)
+P30: ・VAGOS Havoc | 灾害 (ID: 204)
+P6: mohiuddinkhansabbir (ID: 268)
+P20: Vhaat khaisen?? (ID: 209)
+P34: ・VAGOS G PAIN (ID: 212)
+P4: Vlife Is Back (ID: 213)
+P27: hamimshaad (ID: 216)
+P15: 𝓬𝓸𝓶𝓾 (ID: 217)
+P8: _raven2x (ID: 281)
+P21: FarhanOP (ID: 282)
+P26: fuck you (ID: 284)
+P31: TOXIC TANVIR (ID: 285)
+P33: NEON_11991 (ID: 287)
+P10: INTERSTELLAR (ID: 288)
+P11: Saint (ID: 227)
+P14: hack koira maris nah vai amio hacker (ID: 234)
+P29: SessioN BrO (ID: 235)
+P5: aariyankhan138 (ID: 239)
+P23: _3_ (ID: 54)
+P22: LC adormurtuza (ID: 244)
+P28: HANMA (ID: 198)
+P19: Sink (ID: 121)
+P7: AIKOOOK (ID: 150)
+P17: Ahammad_Abdullah (ID: 184)
+P13: OXY_NuB (ID: 33)
+P2: nuhashmahmud007 (ID: 46)
+P25: raiyanrahman750 (ID: 261)
+                <div>(click to zoom)</div>
+                <a href="https://cdn.discordapp.com/attachments/1275202767656325284/1276964602978242581/screenshot.jpg?ex=66cb7176&is=66ca1ff6&hm=921a2eb046844a92050d3837c9d07175f658d9e6de216fc727fb14d77b96affc&" target="_blank">
+                    <img src="https://cdn.discordapp.com/attachments/1275202767656325284/1276964602978242581/screenshot.jpg?ex=66cb7176&is=66ca1ff6&hm=921a2eb046844a92050d3837c9d07175f658d9e6de216fc727fb14d77b96affc&" width="340" />
+                </a>
+            </div>
+            <div class="time">
+                2024-08-25 00:01:24 
+            </div>
+        </div>
+            <div class="message">
+            <div class="title">RakaBoy </div>
+            <div class="text">
+                Closed the report 
+            </div>
+            <div class="time">
+                2024-08-27 23:00:13 
+            </div>
+        </div>
+    </div>        <div class="panel">
+            <div class="panel-title">any admin</div>
+            <div class="panel-title">#9700</div>
+
+            
+            <div class="panel-field">
+                <div class="panel-label">AUTHOR</div>
+                <div class="panel-value">NEON_11991</div>
+            </div>
+            <div class="panel-field">
+                <div class="panel-label">PLAYERS</div>
+                <div class="panel-value">
+                                    </div>
+            </div>
+            <div class="panel-field active">
+                <div class="panel-label">PLAYERS IN AREA</div>
+                <div class="panel-value">
+                                <div class="panel-value-player active" index="1" onclick="onClick(1)">
+                Vlife Is Back
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">Vlife Is Back</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">213</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">93</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">501920280822939659</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">11000013e14409a</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">d0307a0a87188329f62f77e43f4251dae3da7795</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 216.75</div>
+                            <div>Y: -788.41</div>
+                            <div>Z: 30.81</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Burger</div>
+                        <div class="panel-value">
+                            3x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Armor</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            58x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Red Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            50x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Drivers License</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">ID Card</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Painkillers</div>
+                        <div class="panel-value">
+                            10x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="2" onclick="onClick(2)">
+                aariyankhan138
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">aariyankhan138</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">239</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">100</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">902977208241504396</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">11000015c8b5f77</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">772b468be97bc424aa8aa8749e9f25d70ecf4245</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 218.25</div>
+                            <div>Y: -800.98</div>
+                            <div>Z: 30.75</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Redwood Cigarette</div>
+                        <div class="panel-value">
+                            108x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            16x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            577x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Handcuffs</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Advanced Lockpick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bat</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Redwood Pack</div>
+                        <div class="panel-value">
+                            7x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Advanced Lockpick</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Gun Powder</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Armor</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lockpick</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Gold Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Drivers License</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">ID Card</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Armor</div>
+                        <div class="panel-value">
+                            6x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Motel Key</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Advanced Lockpick</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="3" onclick="onClick(3)">
+                mohiuddinkhansabbir
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">mohiuddinkhansabbir</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">268</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">100</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">853515105567244299</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">1100001496c862d</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">a11ba63c6d7212be59c973a2b816d9ac87151467</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 209.82</div>
+                            <div>Y: -791.13</div>
+                            <div>Z: 30.91</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            29500x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Burger</div>
+                        <div class="panel-value">
+                            3x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bottle of Water</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Drivers License</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">ID Card</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="4" onclick="onClick(4)">
+                AIKOOOK
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">AIKOOOK</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">150</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">100</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">100</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">396343570187026432</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">11000014406eec7</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">b7ceea186d87d76602ba8ba0b4dde210a906e9a2</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 215.43</div>
+                            <div>Y: -788.6</div>
+                            <div>Z: 30.12</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">PD Glock 17</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Heavy Armor</div>
+                        <div class="panel-value">
+                            9x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Tazer</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            14x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">PD SCAR-H</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Rifle Ammo</div>
+                        <div class="panel-value">
+                            1358x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            801x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Megaphone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">PD Spike Kit</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">HeartStopper</div>
+                        <div class="panel-value">
+                            3x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Police Handcuffs</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">BurgerShot Coffee</div>
+                        <div class="panel-value">
+                            3x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Medikit</div>
+                        <div class="panel-value">
+                            3x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            175000x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Drivers License</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">ID Card</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Desert Eagle</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">.45 ACP</div>
+                        <div class="panel-value">
+                            353x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">PD Baton</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Heavy Pistol</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            8x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Police Badge</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bat</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Heavy Armor</div>
+                        <div class="panel-value">
+                            10x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Medikit</div>
+                        <div class="panel-value">
+                            10x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            92x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="5" onclick="onClick(5)">
+                _raven2x
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">_raven2x</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">281</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">100</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">504782251469439006</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">11000013568376d</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">fde67f98e7af38d7a4b265edfdf3c467afb82eab</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 214.27</div>
+                            <div>Y: -788.6</div>
+                            <div>Z: 30.85</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            19x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Armor</div>
+                        <div class="panel-value">
+                            6x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            239x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="6" onclick="onClick(6)">
+                VAMPIRE
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">VAMPIRE</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">253</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">100</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">10</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">545160689816305674</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">11000015bc1ae9c</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">f3a9d50426545b79d6aa6b7934a70476bc90a138</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 217.73</div>
+                            <div>Y: -789.92</div>
+                            <div>Z: 30.8</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Armor</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Burger</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bottle of Water</div>
+                        <div class="panel-value">
+                            3x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            575x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            2100x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="7" onclick="onClick(7)">
+                𝓬𝓸𝓶𝓾
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">𝓬𝓸𝓶𝓾</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">217</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">100</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">755854545719918632</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">11000016857ee04</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">3c478a494ef3fcd93d2312a8bb3ef2d081ec0af2</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 218.56</div>
+                            <div>Y: -789.81</div>
+                            <div>Z: 30.78</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            236x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Armor</div>
+                        <div class="panel-value">
+                            3x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            12x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Advanced Lockpick</div>
+                        <div class="panel-value">
+                            3x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Gold Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Handcuffs</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Small Scales</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            23000x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Toolbox</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Cleaning Kit</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bag of Coke</div>
+                        <div class="panel-value">
+                            17x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Snikkel</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Cola</div>
+                        <div class="panel-value">
+                            4x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Redwood Cigarette</div>
+                        <div class="panel-value">
+                            7x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="8" onclick="onClick(8)">
+                Ahammad_Abdullah
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">Ahammad_Abdullah</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">184</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">98</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">100</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">601596393727066113</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">11000013f34f557</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">fd29dff85189226e59a2ef54c58abd233aee6c10</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 215.43</div>
+                            <div>Y: -788.6</div>
+                            <div>Z: 30.12</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">PD Glock 17</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Tazer</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">PD Baton</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Heavy Armor</div>
+                        <div class="panel-value">
+                            17x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">ID Card</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            100000x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">PD Glock 17</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Police Badge</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Police Handcuffs</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">UWU Mystery Box</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            10x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Binoculars</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Medikit</div>
+                        <div class="panel-value">
+                            7x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            9x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            200x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Rifle Ammo</div>
+                        <div class="panel-value">
+                            267x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="9" onclick="onClick(9)">
+                RBN
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">RBN</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">254</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">100</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">464336271494610946</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">110000134b1636e</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">03d13b08acce4ff9cdb8b6a4dc3ecc72eadc4d0d</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 210.55</div>
+                            <div>Y: -774.24</div>
+                            <div>Z: 34.37</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bento Box</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Cat Coffee</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Handcuffs</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Fake Laywer Pass</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Empty Bag</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">UWU Mystery Box</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Rental Papers</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Heavy Armor</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Nori</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            5000x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bag of Coke</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="10" onclick="onClick(10)">
+                FarhanOP
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">FarhanOP</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">282</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">97</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">697508207496790076</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">110000148aa41e3</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">0310e083d94939440c2edb8f516b50758bef32b3</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 217.4</div>
+                            <div>Y: -788.81</div>
+                            <div>Z: 30.8</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Morphine 30MG</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            20x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            377x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Armor</div>
+                        <div class="panel-value">
+                            14x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glass</div>
+                        <div class="panel-value">
+                            100x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Gold Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Morphine 30MG</div>
+                        <div class="panel-value">
+                            4x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Cola</div>
+                        <div class="panel-value">
+                            10x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Handcuffs</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Burger</div>
+                        <div class="panel-value">
+                            10x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            2000x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lockpick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Rental Papers</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="11" onclick="onClick(11)">
+                _3_
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">_3_</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">54</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">94</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">74</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">880195530850979851</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">11000015e45bebc</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">64c103a5584b57827d50780a2bd0e4444812587f</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 221.62</div>
+                            <div>Y: -791.06</div>
+                            <div>Z: 30.73</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            6x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Handcuffs</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Armor</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            6x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Motel Key</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Redwood Cigarette</div>
+                        <div class="panel-value">
+                            23x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Percocet 10MG</div>
+                        <div class="panel-value">
+                            6x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Vicodin 10MG</div>
+                        <div class="panel-value">
+                            7x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            159x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Drill</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">ID Card</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Gold Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Laptop</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">BurgerShot Coffee</div>
+                        <div class="panel-value">
+                            7x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">HeartStopper</div>
+                        <div class="panel-value">
+                            7x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Motel Key</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="12" onclick="onClick(12)">
+                hamimshaad
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">hamimshaad</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">216</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">100</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">583534531089399818</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">110000142f8d509</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">9fea4d27fcb69642ec77d8ea6a666becd1ce2182</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 216.45</div>
+                            <div>Y: -790.02</div>
+                            <div>Z: 31.76</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Perico Pistol</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Military Rifle</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Machine Gun</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">RPG</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Handcuffs</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lighter</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Megaphone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            3x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            5243x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Red Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Cleaning Kit</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Heavy Sniper MK2</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Sawn Off Shotgun</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="13" onclick="onClick(13)">
+                NEON_11991
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">NEON_11991</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">287</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">100</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">1260889807849263208</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">11000016595c111</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">e6684cae1202cd574c7d6b07a8ce4cdcc38f767b</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 218.69</div>
+                            <div>Y: -812.7</div>
+                            <div>Z: 30.63</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Armor</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            58x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Vicodin 10MG</div>
+                        <div class="panel-value">
+                            8x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Handcuffs</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            245x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bottle</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lighter</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Cigarette</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Advanced Lockpick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            12368x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Motel Key</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Motel Key</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">HeartStopper</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Armor</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Milkshake</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                        </div>
+            </div>
+
+            <div class="panel-field-created-at">
+                <div class="panel-label">Created at</div>
+                <div class="panel-value">2024-08-25 00:01:20</div>
+            </div>
+        </div>
+           
+        </div><script>function onClick(index){document.querySelectorAll('.panel-value-player').forEach((element)=>{element.classList.remove('active')}); document.querySelector(`.panel-value-player[index="${index}"]`).classList.add('active')}</script> <script>function toggleChat(chat){document.querySelectorAll('.chat').forEach((element)=>{element.classList.remove('active')}); document.querySelector(`.${chat}`).classList.add('active')}</script> </body></html>
+    

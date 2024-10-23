@@ -1,0 +1,1308 @@
+        <html> <head> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"> <style>body{background: #1f2133; font-family: "Poppins", sans-serif;}.wrapper{color: white; display: flex; padding: 10px; padding-right: 300px;}.chat{padding: 20px; padding-top: 10px; width: 600px; min-height: 600px; max-height: 600px; overflow-y: auto; background: rgba(0, 0, 0, 0.31);display:none;}.chat.active{display:block;}*::-webkit-scrollbar{width: 5px;}*::-webkit-scrollbar-track{background: #414256; border-radius: 2px;}*::-webkit-scrollbar-thumb{background: #7c7c7c; border-radius: 2px;}.message{width: 340px; padding: 10px; margin-top: 10px; background: rgba(0, 0, 0, 0.31);}.title{font-size: 14px;}.text{font-size: 12px; margin-top: 10px;}.time{font-size: 10px; display: flex; justify-content: flex-end;}.panel{padding: 20px; width: 300px; text-align: center; display: flex; position: relative; flex-direction: column; margin-left: 20px; background: rgba(0, 0, 0, 0.31);}.panel-label{font-size: 12px; color: white; font-weight: 200;}.panel-value{word-break: break-all; font-size: 12px; color: white; max-height: 120px; overflow-y: auto; font-weight: 600;}.panel-field{margin-top: 15px;}.panel-field-small{margin-top: 10px;}.panel-field-created-at{margin-top: auto;}.panel-title{font-size: 20px; font-weight: 600; color: white;}.panel-value-player{cursor: pointer;}.player-in-area-overlay{padding: 20px; position: absolute; top: 0; display: none; left: calc(100% + 20px); width: 280px; box-sizing: border-box; overflow-y: auto; color: white; height: 100%; background: rgba(0, 0, 0, 0.31);}.panel-value-player.active{color: lime;}.panel-value-player.active .player-in-area-overlay{display: block;}</style> <style>.timeline{position: relative; padding: 0; width: 100%; height: 100%; overflow-y: auto;}.timeline-wrapper{height: 100%;position: relative;}/* width */ .timeline::-webkit-scrollbar{width: 2px;}/* Track */ .timeline::-webkit-scrollbar-track{background: #414256; border-radius: 2px;}/* Handle */ .timeline::-webkit-scrollbar-thumb{background: #7c7c7c; border-radius: 2px;}.timeline-wrapper::before{content: ""; position: absolute; height: 100%; width: 3px; left: calc((100% - 1.5px) / 2); background: rgba(255, 255, 255, 0.1);}.timeline .timeline-item{margin-bottom: 0; display: flex; flex-direction: row; align-items: center;}.point{min-width: 20px; height: 20px; background: #ABA356; box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.25); border-radius: 100%; z-index: 2; position: relative; left: 1px;}.timeline .timeline-item .content{width: 50%; padding: 0 20px; display: flex; align-items: flex-start; flex-direction: column;}.timeline .timeline-item:nth-child(odd) .content{padding-left: 0; align-items: flex-end;}.timeline .timeline-item:nth-child(odd) .date{padding-right: 0;}.timeline .timeline-item:nth-child(even) .content{padding-right: 0;}.timeline .timeline-item:nth-child(even) .date{padding-left: 0;}.timeline .timeline-item .date{width: 50%; padding: 0 20px; font-weight: normal;}.timeline .timeline-item .date h4{width: max-content; text-align: center; padding: 5px 10px; font-size: 10px; font-weight: 500; min-width: 120px; color: #FFF; background: rgba(0, 0, 0, 0.68); border-radius: 2px;}.timeline .timeline-item .content h3{padding: 3px 20px; margin-bottom: 0; text-align: center; border-top-left-radius: 2px; border-top-right-radius: 2px; color: #FFF; font-size: 10px; font-weight: 500; background: rgba(225, 225, 225, 0.36); width: max-content; min-width: 320px;}.timeline .timeline-item .content p{padding: 20px 20px; margin-top: 0; text-align: center; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; color: #FFF; font-size: 10px; font-weight: 500; background: rgba(0, 0, 0, 0.68); width: max-content; min-width: 320px;}.timeline .timeline-item:nth-child(even){flex-direction: row-reverse;}.timeline .timeline-item:nth-child(even) .date h4{float: right}.timeline--small .timeline-item .content h3, .timeline--small .timeline-item .content p{min-width: 200px; max-width: 200px;}</style>  <style>.buttons{display: flex;}.button{display: flex; justify-content: center; align-items: center; width: 84px; height: 23px; background: #151723; font-size: 14px; font-weight: 300; color: white; cursor: pointer; margin-left: 10px;}</style>
+            <script>
+            function onClick(index) {
+                const elements = document.querySelectorAll('.panel-value-player')
+                elements.forEach((element) => {
+                    element.classList.remove('active')
+                })
+                document.querySelector(`.panel-value-player[index="${index}"]`).classList.add('active')
+            }
+        </script>
+        <script>
+            function toggleChat(chat) {
+                const elements = document.querySelectorAll('.chat')
+                elements.forEach((element) => {
+                    element.classList.remove('active')
+                })
+                document.querySelector(`.${chat}`).classList.add('active')
+            }
+        </script>
+        </head> <body>
+            <div class="buttons">
+            <button class="button" onclick="toggleChat('messagesChat')">CHAT</button>
+            <button class="button" onclick="toggleChat('timelineChat')">TIMELINE</button>
+        </div>
+    <div class="wrapper">        <div class="chat timelineChat">
+            <div class='timeline timeline--small'>
+                <div class='timeline-wrapper'>
+                                <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Create Report</h3>
+                    <p>Shadow Gaming created report with ID 9624</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-18 00:09:07</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Add message</h3>
+                    <p>Shadow Gaming added message with ID 1</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-18 00:09:12</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Add message</h3>
+                    <p>Shadow Gaming added message with ID 2</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-18 00:09:15</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Admin enters report</h3>
+                    <p>FiveM enters report with ID 9624</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-18 00:09:24</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Set in resolve</h3>
+                    <p>FiveM set in resolve report with ID 9624</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-18 00:09:24</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Admin enters report</h3>
+                    <p>FiveM enters report with ID 9624</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-18 00:12:51</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Add message</h3>
+                    <p>Shadow Gaming added message with ID 3</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-18 01:04:09</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Add message</h3>
+                    <p>Shadow Gaming added message with ID 4</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-18 01:04:15</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Add message</h3>
+                    <p>Shadow Gaming added message with ID 5</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-18 01:04:15</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Add message</h3>
+                    <p>Shadow Gaming added message with ID 6</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-18 01:04:17</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Add message</h3>
+                    <p>Shadow Gaming added message with ID 7</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-18 01:05:21</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Add message</h3>
+                    <p>Shadow Gaming added message with ID 8</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-18 01:05:43</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Admin enters report</h3>
+                    <p>RakaBoy enters report with ID 9624</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-27 23:03:18</h4>
+                </div>
+            </div>
+                    <div class='timeline-item'>
+                <div class='content'>
+                    <h3>Closed report</h3>
+                    <p>RakaBoy closed report with ID 9624</p>
+                </div>
+                <div class='point'></div>
+                <div class='date'>
+                    <h4>2024-08-27 23:03:20</h4>
+                </div>
+            </div>
+                        </div>
+            </div>
+        </div>
+    <div class="chat messagesChat active">        <div class="message">
+            <div class="title">Shadow Gaming </div>
+            <div class="text">
+                need help 
+            </div>
+            <div class="time">
+                2024-08-18 00:09:12 
+            </div>
+        </div>
+            <div class="message">
+            <div class="title">Shadow Gaming</div>
+            <div class="text">
+                P12: arnab25op (ID: 225)
+P15: Shadow Gaming (ID: 331)
+P10: ãƒ»VAGOS G PAIN (ID: 363)
+P2: _3_ (ID: 364)
+P1: REAPERSxMEHEDI (ID: 365)
+P5: .VAGOS FORHAD (ID: 314)
+P4: Blade (ID: 14)
+P6: NEON_11991 (ID: 303)
+P13: fuck you (ID: 309)
+P8: Ashoudi (ID: 102)
+P3: HextonFroster (ID: 104)
+P7: !    choco here (ID: 327)
+P11: ãƒ»VAGOS MEHRAB (ID: 253)
+P9: Md_Ahsanul_GG (ID: 29)
+P14: MagnetBrain (ID: 315)
+                <div>(click to zoom)</div>
+                <a href="https://cdn.discordapp.com/attachments/1205711382582927367/1274429846252027935/screenshot.jpg?ex=66c238c9&is=66c0e749&hm=ea513474df5e27dcb29c459d430b47bb13e4504cd3a86eb06ec5e2e53eaf8dcc&" target="_blank">
+                    <img src="https://cdn.discordapp.com/attachments/1205711382582927367/1274429846252027935/screenshot.jpg?ex=66c238c9&is=66c0e749&hm=ea513474df5e27dcb29c459d430b47bb13e4504cd3a86eb06ec5e2e53eaf8dcc&" width="340" />
+                </a>
+            </div>
+            <div class="time">
+                2024-08-18 00:09:15 
+            </div>
+        </div>
+            <div class="message">
+            <div class="title">Shadow Gaming </div>
+            <div class="text">
+                admin 
+            </div>
+            <div class="time">
+                2024-08-18 01:04:09 
+            </div>
+        </div>
+            <div class="message">
+            <div class="title">Shadow Gaming </div>
+            <div class="text">
+                hep 
+            </div>
+            <div class="time">
+                2024-08-18 01:04:15 
+            </div>
+        </div>
+            <div class="message">
+            <div class="title">Shadow Gaming</div>
+            <div class="text">
+                P26: BN ` MR LYNCH (ID: 94)
+P25: CORPSE HUSBAND (ID: 343)
+P27: Shadow Gaming (ID: 406)
+P11: PremiumPUSSY (ID: 408)
+P4: DemonZ | Soron (ID: 6)
+P14: DemonZ | Eham Shelby (ID: 100)
+P15: REAPERS x KSI (ID: 413)
+P3: C4 Bhai (ID: 414)
+P13: Kharadhon Chakraborty (ID: 421)
+P1: DemonZ | Kalu (ID: 427)
+P17: GODFATHER (ID: 356)
+P19: RakaBoy (ID: 122)
+P21: BABATUNDE (ID: 141)
+P10: ãƒ»VAGOS G PAIN (ID: 390)
+P8: SAYEEM (ID: 344)
+P23: WhoCares (ID: 175)
+P9: !    choco here (ID: 327)
+P5: Pumpkin (ID: 332)
+P16: _3_ (ID: 364)
+P7: NEON_11991 (ID: 303)
+P18: ãƒ»VAGOS MEHRAB (ID: 253)
+P2: Ratul (ID: 208)
+P12: lubayethaquezim1 (ID: 337)
+P24: mafioso (ID: 249)
+P20: Md_Ahsanul_GG (ID: 29)
+P6: abraham.cho2240 (ID: 220)
+P22: Ahammad_Abdullah (ID: 127)
+                <div>(click to zoom)</div>
+                <a href="https://cdn.discordapp.com/attachments/1205711382582927367/1274443689690796032/screenshot.jpg?ex=66c245ad&is=66c0f42d&hm=a6c596529abbfc34da52be0c074e34f4e7aeb26cd832d92e7120f1cadd58a48b&" target="_blank">
+                    <img src="https://cdn.discordapp.com/attachments/1205711382582927367/1274443689690796032/screenshot.jpg?ex=66c245ad&is=66c0f42d&hm=a6c596529abbfc34da52be0c074e34f4e7aeb26cd832d92e7120f1cadd58a48b&" width="340" />
+                </a>
+            </div>
+            <div class="time">
+                2024-08-18 01:04:15 
+            </div>
+        </div>
+            <div class="message">
+            <div class="title">Shadow Gaming </div>
+            <div class="text">
+                help 
+            </div>
+            <div class="time">
+                2024-08-18 01:04:17 
+            </div>
+        </div>
+            <div class="message">
+            <div class="title">Shadow Gaming</div>
+            <div class="text">
+                P27: BN ` MR LYNCH (ID: 94)
+P26: CORPSE HUSBAND (ID: 343)
+P28: Shadow Gaming (ID: 406)
+P12: PremiumPUSSY (ID: 408)
+P5: DemonZ | Soron (ID: 6)
+P15: DemonZ | Eham Shelby (ID: 100)
+P16: REAPERS x KSI (ID: 413)
+P14: Kharadhon Chakraborty (ID: 421)
+P4: RAMO XD (ID: 334)
+P20: RakaBoy (ID: 122)
+P3: Ratul (ID: 208)
+P1: TOXIC TANVIR (ID: 294)
+P7: abraham.cho2240 (ID: 220)
+P22: BABATUNDE (ID: 141)
+P11: ãƒ»VAGOS G PAIN (ID: 390)
+P9: SAYEEM (ID: 344)
+P24: WhoCares (ID: 175)
+P18: GODFATHER (ID: 356)
+P6: Pumpkin (ID: 332)
+P17: _3_ (ID: 364)
+P2: DemonZ | Kalu (ID: 427)
+P8: NEON_11991 (ID: 303)
+P19: ãƒ»VAGOS MEHRAB (ID: 253)
+P13: lubayethaquezim1 (ID: 337)
+P10: !    choco here (ID: 327)
+P21: Md_Ahsanul_GG (ID: 29)
+P25: mafioso (ID: 249)
+P23: Ahammad_Abdullah (ID: 127)
+                <div>(click to zoom)</div>
+                <a href="https://cdn.discordapp.com/attachments/1205711382582927367/1274443968515407893/screenshot.jpg?ex=66c245f0&is=66c0f470&hm=e9c96b07d96bbf99554463fa95152e6013d58d7707930913bf961811c1a1eb47&" target="_blank">
+                    <img src="https://cdn.discordapp.com/attachments/1205711382582927367/1274443968515407893/screenshot.jpg?ex=66c245f0&is=66c0f470&hm=e9c96b07d96bbf99554463fa95152e6013d58d7707930913bf961811c1a1eb47&" width="340" />
+                </a>
+            </div>
+            <div class="time">
+                2024-08-18 01:05:21 
+            </div>
+        </div>
+            <div class="message">
+            <div class="title">Shadow Gaming</div>
+            <div class="text">
+                P26: BN ` MR LYNCH (ID: 94)
+P25: CORPSE HUSBAND (ID: 343)
+P27: Shadow Gaming (ID: 406)
+P11: PremiumPUSSY (ID: 408)
+P4: DemonZ | Soron (ID: 6)
+P14: DemonZ | Eham Shelby (ID: 100)
+P15: REAPERS x KSI (ID: 413)
+P13: Kharadhon Chakraborty (ID: 421)
+P3: RAMO XD (ID: 334)
+P19: RakaBoy (ID: 122)
+P17: GODFATHER (ID: 356)
+P2: Ratul (ID: 208)
+P21: BABATUNDE (ID: 141)
+P10: ãƒ»VAGOS G PAIN (ID: 390)
+P6: abraham.cho2240 (ID: 220)
+P23: WhoCares (ID: 175)
+P8: SAYEEM (ID: 344)
+P5: Pumpkin (ID: 332)
+P16: _3_ (ID: 364)
+P1: DemonZ | Kalu (ID: 427)
+P18: ãƒ»VAGOS MEHRAB (ID: 253)
+P7: NEON_11991 (ID: 303)
+P12: lubayethaquezim1 (ID: 337)
+P9: !    choco here (ID: 327)
+P20: Md_Ahsanul_GG (ID: 29)
+P24: mafioso (ID: 249)
+P22: Ahammad_Abdullah (ID: 127)
+                <div>(click to zoom)</div>
+                <a href="https://cdn.discordapp.com/attachments/1205711382582927367/1274444056914694185/screenshot.jpg?ex=66c24605&is=66c0f485&hm=f47a30f18760d85758abf33a58a2a25c5036fe56555bb8f8cd92fe3694c1ec33&" target="_blank">
+                    <img src="https://cdn.discordapp.com/attachments/1205711382582927367/1274444056914694185/screenshot.jpg?ex=66c24605&is=66c0f485&hm=f47a30f18760d85758abf33a58a2a25c5036fe56555bb8f8cd92fe3694c1ec33&" width="340" />
+                </a>
+            </div>
+            <div class="time">
+                2024-08-18 01:05:43 
+            </div>
+        </div>
+            <div class="message">
+            <div class="title">RakaBoy </div>
+            <div class="text">
+                Closed the report 
+            </div>
+            <div class="time">
+                2024-08-27 23:03:20 
+            </div>
+        </div>
+    </div>        <div class="panel">
+            <div class="panel-title">admin</div>
+            <div class="panel-title">#9624</div>
+
+            
+            <div class="panel-field">
+                <div class="panel-label">AUTHOR</div>
+                <div class="panel-value">Shadow Gaming</div>
+            </div>
+            <div class="panel-field">
+                <div class="panel-label">PLAYERS</div>
+                <div class="panel-value">
+                                    </div>
+            </div>
+            <div class="panel-field active">
+                <div class="panel-label">PLAYERS IN AREA</div>
+                <div class="panel-value">
+                                <div class="panel-value-player active" index="1" onclick="onClick(1)">
+                _3_
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">_3_</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">364</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">100</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">880195530850979851</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">11000015e45bebc</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">64c103a5584b57827d50780a2bd0e4444812587f</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 1773.44</div>
+                            <div>Y: 3720.87</div>
+                            <div>Z: 34.33</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Repairkit</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Advanced Lockpick</div>
+                        <div class="panel-value">
+                            6x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Redwood Pack</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            4620x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Motel Key</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Redwood Cigarette</div>
+                        <div class="panel-value">
+                            10x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Handcuffs</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lighter</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Armor</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            28x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">HeartStopper</div>
+                        <div class="panel-value">
+                            14x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Milkshake</div>
+                        <div class="panel-value">
+                            13x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lockpick</div>
+                        <div class="panel-value">
+                            4x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coke Brick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Empty Baggies</div>
+                        <div class="panel-value">
+                            10x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Gold Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="2" onclick="onClick(2)">
+                .VAGOS FORHAD
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">.VAGOS FORHAD</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">314</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">88</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">1194697761011011646</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">11000015b5a42cc</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">1f4b165b2eb7cd5fef81755aaed8268174bbff2d</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 1777.09</div>
+                            <div>Y: 3724.93</div>
+                            <div>Z: 35.36</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            28x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Advanced Lockpick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            28540x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Jerry Can</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Burger</div>
+                        <div class="panel-value">
+                            21x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Cola</div>
+                        <div class="panel-value">
+                            43x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lighter</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Marlboro Cigarette</div>
+                        <div class="panel-value">
+                            40x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Gold Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Motel Key</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Handcuffs</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Drivers License</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">ID Card</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="3" onclick="onClick(3)">
+                NEON_11991
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">NEON_11991</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">303</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">87</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">1260889807849263208</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">11000016595c111</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">e6684cae1202cd574c7d6b07a8ce4cdcc38f767b</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 1777.62</div>
+                            <div>Y: 3724.8</div>
+                            <div>Z: 35.36</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            18x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">HeartStopper</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Milkshake</div>
+                        <div class="panel-value">
+                            3x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Advanced Lockpick</div>
+                        <div class="panel-value">
+                            6x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lighter</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            10x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Armor</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Armor</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lockpick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bag of Coke</div>
+                        <div class="panel-value">
+                            10x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Advanced Lockpick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bottle of Water</div>
+                        <div class="panel-value">
+                            19x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Snikkel</div>
+                        <div class="panel-value">
+                            18x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Motel Key</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            50000x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Handcuffs</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coke Brick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coke Brick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coke Brick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coke Brick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coke Brick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coke Brick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coke Brick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coke Brick</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="4" onclick="onClick(4)">
+                !    choco here
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">!    choco here</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">327</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">98</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">75</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">850131778798354472</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">11000014457eb60</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">27b398d14696ac0cb0892786f065443cf39edbcc</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 1777.5</div>
+                            <div>Y: 3725.31</div>
+                            <div>Z: 35.36</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            14x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Armor</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Burger</div>
+                        <div class="panel-value">
+                            11x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            35x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bottle of Water</div>
+                        <div class="panel-value">
+                            15x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Marlboro Pack</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Redwood Pack</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lighter</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">ID Card</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Drivers License</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Marlboro Cigarette</div>
+                        <div class="panel-value">
+                            23x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Red Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lockpick</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="5" onclick="onClick(5)">
+                ãƒ»VAGOS MEHRAB
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">ãƒ»VAGOS MEHRAB</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">253</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">97</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">973228156796411974</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">11000016538a3b6</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">e6549b96b99e60bb47cd07446f152fcff14f6a00</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 1777.28</div>
+                            <div>Y: 3724.42</div>
+                            <div>Z: 35.36</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            10000x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Milkshake</div>
+                        <div class="panel-value">
+                            7x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bandage</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Motel Key</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Radio</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Gold Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">HeartStopper</div>
+                        <div class="panel-value">
+                            6x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lighter</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            20x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="6" onclick="onClick(6)">
+                fuck you
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">fuck you</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">309</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">99</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">1216447615923912765</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">110000166f5ea81</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">d04e64f7fff94035348e671b9f154544b5835ef5</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 1777.98</div>
+                            <div>Y: 3724.31</div>
+                            <div>Z: 35.36</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glock 22</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Pistol Ammo</div>
+                        <div class="panel-value">
+                            69x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Red Phone</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Milkshake</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">HeartStopper</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Marlboro Cigarette</div>
+                        <div class="panel-value">
+                            16x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            25012x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Rubber</div>
+                        <div class="panel-value">
+                            100x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Plastic</div>
+                        <div class="panel-value">
+                            100x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lighter</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Motel Key</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="7" onclick="onClick(7)">
+                MagnetBrain
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">MagnetBrain</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">315</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">89</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">712756938332438631</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">1100001365f3f56</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">73e3c5e23d4cb29ae13663ccf8a29e1d4e6a6026</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 1775.1</div>
+                            <div>Y: 3721.79</div>
+                            <div>Z: 34.32</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            24980x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Redwood Cigarette</div>
+                        <div class="panel-value">
+                            17x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lighter</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lockpick</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Redwood Pack</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Burger</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bottle of Water</div>
+                        <div class="panel-value">
+                            9x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Marlboro Pack</div>
+                        <div class="panel-value">
+                            1x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Glass</div>
+                        <div class="panel-value">
+                            100x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Marlboro Cigarette</div>
+                        <div class="panel-value">
+                            20x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                    <div class="panel-value-player " index="8" onclick="onClick(8)">
+                Shadow Gaming
+                <div class="player-in-area-overlay">
+                    <div class="panel-title">Shadow Gaming</div>
+                    
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">ID</div> <div class="panel-value" style="margin-left: 3px;">331</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Health</div> <div class="panel-value" style="margin-left: 3px;">98</div> </div>
+                    <div class="panel-field panel-field-small" style="display:flex;justify-content:center;"><div class="panel-label">Armor</div> <div class="panel-value" style="margin-left: 3px;">0</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Discord ID</div> <div class="panel-value">563687285019639808</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">Steam ID</div> <div class="panel-value">11000013ddb551d</div> </div>
+                    <div class="panel-field panel-field-small"><div class="panel-label">License</div> <div class="panel-value">6f1d080b87ce75c3a5a576187aab75dd283ce8ac</div> </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Coords</div>
+                        <div class="panel-value">
+                            <div>X: 1775.35</div>
+                            <div>Y: 3722.9</div>
+                            <div>Z: 34.3</div>
+                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Inventory</div>
+                        <div class="panel-value" style="background: rgba(0, 0, 0, 0.31);">
+                                                <div class="panel-field panel-field-small">
+                        <div class="panel-label">Money</div>
+                        <div class="panel-value">
+                            10000x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Sandwich</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Lockpick</div>
+                        <div class="panel-value">
+                            2x
+                        </div>
+                    </div>
+                                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Bottle of Water</div>
+                        <div class="panel-value">
+                            5x
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+                    <div class="panel-field panel-field-small">
+                        <div class="panel-label">Custom Data</div>
+                        <div class="panel-value">
+                            -                        </div>
+                    </div>
+                </div>
+            </div> 
+                        </div>
+            </div>
+
+            <div class="panel-field-created-at">
+                <div class="panel-label">Created at</div>
+                <div class="panel-value">2024-08-18 00:09:07</div>
+            </div>
+        </div>
+           
+        </div><script>function onClick(index){document.querySelectorAll('.panel-value-player').forEach((element)=>{element.classList.remove('active')}); document.querySelector(`.panel-value-player[index="${index}"]`).classList.add('active')}</script> <script>function toggleChat(chat){document.querySelectorAll('.chat').forEach((element)=>{element.classList.remove('active')}); document.querySelector(`.${chat}`).classList.add('active')}</script> </body></html>
+    

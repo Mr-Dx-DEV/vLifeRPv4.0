@@ -1,0 +1,123 @@
+ ["pinkcage"] = {
+        label = "Pinkcage",
+        rent = {
+            coords = vector4(325.12, -229.79, 54.22, 167.07)
+        },
+        price = 1300
+        motel = {
+            ["pinkcage:1"] = {
+                enter = vector4(312.86, -218.62, 54.22, 163.72)
+                label = "PINK CAGE 1",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:2"] = {
+                enter = vector4(311.0, -217.77, 54.22, 155.84)
+                label = "PINK CAGE 2",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:3"] = {
+                enter = vector4(307.47, -216.51, 54.22, 345.6)
+                label = "PINK CAGE 3",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:4"] = {
+                enter = vector4(307.41, -213.44, 54.22, 248.7)
+                label = "PINK CAGE 4",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:5"] = {
+                enter = vector4(309.59, -208.21, 54.22, 250.6)
+                label = "PINK CAGE 5",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:5:2"] = {
+                enter = vector4(311.31, -203.4, 54.22, 250.97)
+                label = "PINK CAGE 5 (2)",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:6"] = {
+                enter = vector4(313.32, -198.15, 54.22, 246.84)
+                label = "PINK CAGE 6",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:7"] = {
+                enter = vector4(315.53, -194.77, 54.23, 155.05)
+                label = "PINK CAGE 7",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:8"] = {
+                enter = vector4(319.29, -196.16, 54.23, 156.02)
+                label = "PINK CAGE 8",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:11"] = {
+                enter = vector4(313.06, -218.98, 58.02, 335.63)
+                label = "PINK CAGE 11",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:12"] = {
+                enter = vector4(310.93, -218.12, 58.02, 338.92)
+                label = "PINK CAGE 12",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:13"] = {
+                enter = vector4(307.28, -216.7, 58.02, 346.89)
+                label = "PINK CAGE 13",
+                owned = false,
+                locked = true,
+            },
+            ["pinckage:14"] = {
+                enter = vector4(307.43, -213.41, 58.02, 251.53)
+                label = "PINK CAGE 14",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:15"] = {
+                enter = vector4(309.66, -208.17, 58.02, 251.73)
+                label = "PINK CAGE 15",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:16"] = {
+                enter = vector4(311.28, -203.44, 58.02, 256.47)
+                label = "PINK CAGE 16",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:17"] = {
+                enter = vector4(313.29, -198.14, 58.02, 246.62)
+                label = "PINK CAGE 17",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:18"] = {
+                enter = vector4(315.72, -194.73, 58.02, 155.34)
+                label = "PINK CAGE 18",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:19"] = {
+                enter = vector4(319.39, -196.2, 58.02, 163.26)
+                label = "PINK CAGE 19",
+                owned = false,
+                locked = true,
+            },
+            ["pinkcage:20"] = {
+                enter = vector4(321.3, -196.87, 58.02, 154.15)
+                label = "PINK CAGE 20",
+                owned = false,
+                locked = true,
+            }
+        },
+    },
