@@ -39,7 +39,7 @@ local Drawables = {
 	},
 	["Shoes"] = {
 		Drawable = 6,
-		Table = { Standalone = true, Male = 99, Female = 51 },
+		Table = { Standalone = true, Male = 60, Female = 51 },
 		Emote = { Dict = "random@domestic", Anim = "pickup_low", Move = 0, Dur = 1200 }
 	},
 	["Neck"] = {

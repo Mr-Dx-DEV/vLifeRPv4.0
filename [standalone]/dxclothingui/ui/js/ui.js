@@ -29,20 +29,20 @@ $(document).ready(function () {
 document.onkeyup = function (event) {
     const charCode = event.key;
     if (charCode == "Escape") {
-        $.post('https://dpclothingui/close');
+        $.post('https://dxclothingui/close');
     }
 };
 
 
 $('#desccircle').click(function (e) {
     setTimeout(function () {
-        $.post('https://dpclothingui/close');
+        $.post('https://dxclothingui/close');
     }, 1)
 });
 
 $('.resetbutton').click(function (e) {
     $('#refreshcc > i').css('animation', 'refreshhud 1s 1 forwards');
-    $.post('https://dpclothingui/reset');
+    $.post('https://dxclothingui/reset');
 });
 
 $('.onecbutton').click(function (e) {
