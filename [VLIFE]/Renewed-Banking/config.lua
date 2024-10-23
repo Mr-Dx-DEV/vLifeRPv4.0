@@ -14,7 +14,7 @@ Config = {
     peds = {
         [1] = { -- Pacific Standard
             model = 'u_m_m_bankman',
-            coords = vector4(241.44, 227.19, 106.29, 170.43),
+            coords = vector4(254.56, 217.02, 106.28, 336.52),
             createAccounts = true
         },
         [2] = {
@@ -43,7 +43,7 @@ Config = {
         },
         [8] = { -- paleto
             model = 'u_m_m_bankman',
-            coords = vector4(-112.22, 6471.01, 31.63, 134.18),
+            coords = vector4(-110.57, 6470.11, 31.63, 220.25),
             createAccounts = true
         }
     }
