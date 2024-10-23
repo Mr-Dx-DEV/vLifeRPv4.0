@@ -1,0 +1,150 @@
+--- Example 
+--- [[[ Tested ✅ Left Context]]]
+-- RegisterCommand('left' , function()
+--     TriggerEvent('onx-interaction:client:leftcontext:show' , 'garage' ,  'E' , 'OPEN GARAGE' )
+--     TriggerEvent('onx-interaction:client:leftcontext:show' , 'garages' ,  'E' , 'OPEN GARAGE' )
+-- end)
+-- RegisterCommand('lefthide' , function()
+--     TriggerEvent('onx-interaction:client:leftcontext:hide' , 'garage' )
+-- end)
+-- RegisterCommand('ch' , function()
+--     TriggerEvent('onx-interaction:client:leftcontext:clickHide' , 'garage' )
+-- end)
+-- [[[ Tested ✅ Mid Context]]]
+-- RegisterCommand('setmid1' , function()
+--     TriggerEvent('onx-interaction:client:midContext:show' ,   'G' , 'OPEN GAasdadsRAGEs' )
+-- end)
+-- RegisterCommand('hmid1' , function()
+--     TriggerEvent('onx-interaction:client:midContext:hide' )
+-- end)
+-- [[[ Tested ✅ Mid Indication ]]]
+-- RegisterCommand('setmidindc' , function()
+--     TriggerEvent('onx-interaction:client:indicate:show' , 'OPEN GAasdadsRAGEs' )
+-- end)
+-- RegisterCommand('hmidindc' , function()
+--     TriggerEvent('onx-interaction:client:indicate:hide' )
+-- end)
+-- [[[ Tested ✅ Sticky Msg]]]
+-- RegisterCommand('setsticky' , function()
+--     TriggerEvent('onx-interaction:client:setStickyMsg' , 'DO NOT BREAK ANY RULES. AVOID TOXICITY OTHER YOU WILL FACE BAN'  )
+-- end)
+-- RegisterCommand('hsticky' , function()
+--     TriggerEvent('onx-interaction:client:hideStickyMsg')
+-- end)
+-- [[[ Tested ✅ Notify ]]]
+-- RegisterCommand('notifs' , function()
+-- local colors = {"red", "yellow", "blue" , 'pink'}
+-- -- Generate a random index and select the color
+-- local randomIndex = math.random(#colors)
+-- local selectedColor = colors[randomIndex]
+--     TriggerEvent('onx-interaction:client:notify' , 'https://cdn.discordapp.com/attachments/1058802443296718918/1173535059857395712/Onex.png?ex=65644eb1&is=6551d9b1&hm=86883c3b7f58aaa24c6982e2f4c7bd6730a2c42964daf62f0e6c86afef8f3cc6&' ,  false ,  1, 'You have got your paycheck $600.' , selectedColor  , math.random(4000 , 9000))
+-- end)
+--- [[ Left Context Demonstration ]]
+-- local pedSpawned = false
+-- local show = false
+-- Citizen.CreateThread(function()
+--     while true do
+--         Citizen.Wait(0)
+--         local playerCoords = GetEntityCoords(PlayerPedId())
+--         local spawnCoords = vector3(310.99, -586.13, 43.27)
+--         local distance = #(playerCoords - spawnCoords)
+--         -- Spawn the ped if it hasn't been spawned yet
+--         if not pedSpawned then
+--             local pedModel = GetHashKey("s_m_m_doctor_01") -- Model for hospital worker
+--             -- Request the model
+--             RequestModel(pedModel)
+--             while not HasModelLoaded(pedModel) do
+--                 Wait(1)
+--             end
+--             -- Create the ped
+--             local ped = CreatePed(4, pedModel, spawnCoords.x, spawnCoords.y, spawnCoords.z, 163.99, false, true)
+--             SetPedCanBeTargetted(ped, false)
+--             SetPedAsEnemy(ped, false)
+--             SetBlockingOfNonTemporaryEvents(ped, true)
+--             pedSpawned = true
+--         end
+--         -- Check the distance and display the message
+--         if distance < 2 then
+--             if not show then
+--                 show = true
+--                 TriggerEvent('onx-interaction:client:leftcontext:show', 'garage', 'E', 'LAY IN BED')
+--                 -- TriggerEvent('onx-interaction:client:leftcontext:show', 'garages1', 'H', 'CALL THE DOCTOR')
+--             end
+--             if IsControlPressed(0, 38) then
+--                 TriggerEvent('onx-interaction:client:leftcontext:clickHide', 'garage')
+--             end
+--         else
+--             if show then
+--                 show = false
+--                 TriggerEvent('onx-interaction:client:leftcontext:hide', 'garage')
+--                 TriggerEvent('onx-interaction:client:leftcontext:hide', 'garages1')
+--             end
+--         end
+--     end
+-- end)
+--- [[ Indication Demonstration ]]
+-- On Garage
+-- local show1 = false
+-- local positions = {
+--     vector4(292.56, -585.62, 42.51, 136.5),
+--     -- vector4(316.29, -206.15, 54.09, 58.12)
+-- }
+-- Citizen.CreateThread(function()
+--     while true do
+--         Citizen.Wait(100) -- Check every 1 second
+--         local playerPed = PlayerPedId()
+--         local playerCoords = GetEntityCoords(playerPed)
+--         for _, pos in pairs(positions) do
+--             local distance = #(playerCoords - vec3(pos.x, pos.y, pos.z))
+--             if distance < 10 then
+--                 if not show1 then
+--                     show1 = true
+--                     TriggerEvent('onx-interaction:client:indicate:show' , 'HOSPITAL SAFE ZONE')
+--                 end
+--             else
+--                 if show1 then
+--                     show1 = false
+--                     TriggerEvent('onx-interaction:client:indicate:hide')
+--                 end
+--             end
+--         end
+--     end
+-- end)
+--[[ Mid Context]] -- local pedSpawned = false
+-- local show = false
+-- Citizen.CreateThread(function()
+--     while true do
+--         Citizen.Wait(0)
+--         local playerCoords = GetEntityCoords(PlayerPedId())
+--         local spawnCoords = vector3(310.99, -586.13, 43.27)
+--         local distance = #(playerCoords - spawnCoords)
+--         -- Spawn the ped if it hasn't been spawned yet
+--         if not pedSpawned then
+--             local pedModel = GetHashKey("s_m_m_doctor_01") -- Model for hospital worker
+--             -- Request the model
+--             RequestModel(pedModel)
+--             while not HasModelLoaded(pedModel) do
+--                 Wait(1)
+--             end
+--             -- Create the ped
+--             local ped = CreatePed(4, pedModel, spawnCoords.x, spawnCoords.y, spawnCoords.z, 163.99, false, true)
+--             SetPedCanBeTargetted(ped, false)
+--             SetPedAsEnemy(ped, false)
+--             SetBlockingOfNonTemporaryEvents(ped, true)
+--             pedSpawned = true
+--         end
+--         -- Check the distance and display the message
+--         if distance < 2 then
+--             if not show then
+--                 show = true
+--                 TriggerEvent('onx-interaction:client:midContext:show', 'E', 'CALL THE DOCTOR')
+--                 -- TriggerEvent('onx-interaction:client:leftcontext:show', 'garages1', 'H', 'CALL THE DOCTOR')
+--             end
+--         else
+--             if show then
+--                 show = false
+--                 TriggerEvent('onx-interaction:client:midContext:hide')
+--             end
+--         end
+--     end
+-- end)
