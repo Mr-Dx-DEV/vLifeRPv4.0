@@ -20,6 +20,7 @@ Config.contracts = {}
 
 Config.tabletItem = 'contracts_tablet'
 Config.itemCheck = true -- Perform an item check on the client side event
+Config.disableTabletAnim = false
 
 -- The contract will disappear and the objective UI will hide instantly regardless of this setting
 -- This setting is the actual hard stop when all of the heist entities are deleted, etc.
