@@ -23351,7 +23351,46 @@ return {
 	},
 	
 	
-
+	["outcast_flag"] = {
+        label = "The Out Cast Flag",
+        weight = 500,
+        stack = true,
+        close = true,
+        description = "The Out Cast Flag",
+        client = {
+            image = "outcast_flag.png",
+        }
+    },
+    ["outcast_first_flag"] = {
+        label = "The Out Cast First Flag",
+        weight = 500,
+        stack = true,
+        close = true,
+        description = "The first flag for The Out Cast",
+        client = {
+            image = "outcast_flag.png",
+        }
+    },
+	["thefamily_flag"] = {
+        label = "The Family",
+        weight = 500,
+        stack = true,
+        close = true,
+        description = "The Family",
+        client = {
+            image = "thefamily_flag.png",
+        }
+    },
+    ["thefamily_first_flag"] = {
+        label = "The Family",
+        weight = 500,
+        stack = true,
+        close = true,
+        description = "The first flag for The Family",
+        client = {
+            image = "thefamily_flag.png",
+        }
+    },
 	
 
 	
@@ -23375,66 +23414,8 @@ return {
             image = "rbit_flag.png",
         }
     },
-	["madrazocartel_flag"] = {
-        label = "Madrazo Cartel Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "The Madrazo Cartel Flag",
-        client = {
-            image = "madrazocartel_flag.png",
-        }
-    },
-    ["madrazocartel_first_flag"] = {
-        label = "Madrazo Cartel First Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "The first flag for the Madrazo Cartel",
-        client = {
-            image = "madrazocartel_flag.png",
-        }
-    },
-    ["theghost_flag"] = {
-        label = "The Ghost Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "The Ghost Flag",
-        client = {
-            image = "theghost_flag.png",
-        }
-    },
-    ["theghost_first_flag"] = {
-        label = "The Ghost First Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "The first flag for The Ghost",
-        client = {
-            image = "theghost_flag.png",
-        }
-    },
-    ["thedemonz_flag"] = {
-        label = "The Demonz Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "The Demonz Flag",
-        client = {
-            image = "thedemonz_flag.png",
-        }
-    },
-    ["thedemonz_first_flag"] = {
-        label = "The Demonz First Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "The first flag for The Demonz",
-        client = {
-            image = "thedemonz_flag.png",
-        }
-    },
+	
+   
     ["tokyomanji_flag"] = {
         label = "Tokyo Manji Flag",
         weight = 500,
@@ -23475,148 +23456,9 @@ return {
             image = "thehightable_flag.png",
         }
     },
-    ["losvagos_flag"] = {
-        label = "Los Vagos Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "Los Vagos Flag",
-        client = {
-            image = "losvagos_flag.png",
-        }
-    },
-    ["losvagos_first_flag"] = {
-        label = "Los Vagos First Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "The first flag for Los Vagos",
-        client = {
-            image = "losvagos_flag.png",
-        }
-    },
-    ["mechanix_flag"] = {
-        label = "Mechanix Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "Mechanix Flag",
-        client = {
-            image = "mechanix_flag.png",
-        }
-    },
-    ["mechanix_first_flag"] = {
-        label = "Mechanix First Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "The first flag for Mechanix",
-        client = {
-            image = "mechanix_flag.png",
-        }
-    },
-    ["yakuza_flag"] = {
-        label = "Yakuza Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "Yakuza Flag",
-        client = {
-            image = "yakuza_flag.png",
-        }
-    },
-    ["yakuza_first_flag"] = {
-        label = "Yakuza First Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "The first flag for Yakuza",
-        client = {
-            image = "yakuza_flag.png",
-        }
-    },
-    ["thegoldenwolves_flag"] = {
-        label = "The Golden Wolves Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "The Golden Wolves Flag",
-        client = {
-            image = "thegoldenwolves_flag.png",
-        }
-    },
-    ["thegoldenwolves_first_flag"] = {
-        label = "The Golden Wolves First Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "The first flag for The Golden Wolves",
-        client = {
-            image = "thegoldenwolves_flag.png",
-        }
-    },
-    ["redmafia_flag"] = {
-        label = "Red Mafia Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "Red Mafia Flag",
-        client = {
-            image = "redmafia_flag.png",
-        }
-    },
-    ["redmafia_first_flag"] = {
-        label = "Red Mafia First Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "The first flag for Red Mafia",
-        client = {
-            image = "redmafia_flag.png",
-        }
-    },
-    ["thelostmc_flag"] = {
-        label = "The Lost MC Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "The Lost MC Flag",
-        client = {
-            image = "thelostmc_flag.png",
-        }
-    },
-    ["thelostmc_first_flag"] = {
-        label = "The Lost MC First Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "The first flag for The Lost MC",
-        client = {
-            image = "thelostmc_flag.png",
-        }
-    },
-    ["nightbladez_flag"] = {
-        label = "Nightbladez Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "Nightbladez Flag",
-        client = {
-            image = "nightbladez_flag.png",
-        }
-    },
-    ["nightbladez_first_flag"] = {
-        label = "Nightbladez First Flag",
-        weight = 500,
-        stack = true,
-        close = true,
-        description = "The first flag for Nightbladez",
-        client = {
-            image = "nightbladez_flag.png",
-        }
-    },
-
-
+    
+  
+ 
 
 
 
