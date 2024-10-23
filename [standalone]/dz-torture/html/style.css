@@ -1,0 +1,327 @@
+
+body {
+	font-family: 'Roboto', sans-serif !important;
+	overflow: hidden;
+	
+	margin: 0;
+	padding: 0;
+	
+    -webkit-touch-callout: none;
+	   -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+::-webkit-scrollbar-thumb {
+	background: rgba(180, 0, 0, 0.50); 
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(140, 0, 0, 0.50);
+}
+
+.tdbuttons {
+	display: none;
+	position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.tdbuttons .button {
+	margin-bottom: 16px;
+}
+
+.tdbuttons .button .control {
+	position: absolute;
+    background: rgb(180, 0, 0);
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 1.45;
+    font-size: 22px;
+    transform: rotate(45deg);
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.4);
+	border-radius: 3px;
+}
+
+.tdbuttons .button .control .inside {
+	transform: rotate(-45deg);
+	color: white;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.tdbuttons .button .control .outer {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 36px;
+    height: 36px;
+    border: 2px solid rgb(180, 0, 0);
+    border-radius: 3px;
+    opacity: 0.3;
+}
+
+.tdbuttons .button .text {
+	font-size: 18px;
+    line-height: 1.5;
+    margin-left: 15px;
+    padding: 2px 45px 2px 35px;
+    background: linear-gradient(90deg, rgba(180, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0) 100%);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(180, 0, 0, 0.8);
+}
+
+
+
+
+.slistbuttons {
+	display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-height: 514px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.slistbuttons .title {
+    font-size: 22px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(180, 0, 0, 0.8);
+    margin-bottom: 15px;
+}
+
+.slistbuttons .list {
+	position: relative;
+    max-height: 468px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.slistbuttons .list .button {
+	margin: 6px auto;
+    padding: 6px 100px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(180, 0, 0, 0.65) 33%, rgba(180, 0, 0, 0.65) 66%, rgba(0, 0, 0, 0) 100%);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(180, 0, 0, 0.8);
+    cursor: pointer;
+    transition: transform .25s;
+    width: 300px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 18px;
+}
+
+.slistbuttons .list .button:hover {
+	transform: scale(1.1);
+}
+
+.slistbuttons .list .button span {
+    font-size: 18px;
+    font-family: monospace;
+	position: relative;
+    top: -1px;
+}
+
+.storturelist {
+	display: none;
+}
+
+.storturelist .select {
+	position: absolute;
+    top: 500px;
+    left: 500px;
+    width: 15px;
+    height: 15px;
+}
+
+.storturelist .select .point {
+	position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 255, 255, 1);
+    transform: rotate(45deg);
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+	cursor: pointer;
+    transition: background .2s;
+}
+
+.storturelist .select .point .outer {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 3px;
+    opacity: 0.4;
+    transition: width .2s, height .2s;
+}
+
+.storturelist .select .button {
+	position: absolute;
+	transform: translateY(-50%) scale(0.1);
+    top: 7.5px;
+    left: -70px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(0, 0, 0, 0) 100%);
+    color: rgb(180, 0, 0);
+    padding: 4px 40px 4px 40px;
+    font-size: 18px;
+	opacity: 0;
+    transition: opacity .3s, transform .3s, top .3s, left .3s;
+	cursor: pointer;
+	text-align: center;
+	width: max-content;
+}
+
+.storturelist .select .point:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.storturelist .select .point:hover > .outer {
+    width: 30px;
+    height: 30px;
+    opacity: 0.6;
+}
+
+.storturelist .select:hover > .button {
+	transform: translateY(-50%) scale(1);
+    top: 7.5px;
+    left: 30px;
+    opacity: 1;
+}
+
+.storturelist .select .button:hover {
+	transform: translateY(-50%) scale(1.1);
+}
+
+.storturescenes {
+	display: none;
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-radial-gradient(50% 0%, circle, transparent 0%, transparent 50%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.storturescenes .scene-btns {
+	position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%, 0px);
+	text-align: center;
+	width: 90%;
+}
+
+.storturescenes .scene-btns .scene-btn {
+	display: inline-block;
+	position: relative;
+	top: 200px;
+    width: 200px;
+    padding: 10px 0px;
+    margin: 10px 25px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(255, 255, 255) 20%, rgb(255, 255, 255) 80%, rgba(0, 0, 0, 0) 100%);
+	color: rgba(180, 0, 0);
+	cursor: pointer;
+	transition: opacity .4s, transform .4s, top .4s;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+	transform: scale(0);
+	opacity: 0.8;
+	text-align: center;
+}
+
+.storturescenes .scene-btns .scene-btn.active {
+	top: 0px;
+	transform: scale(1);
+}
+
+.storturescenes .scene-btns .scene-btn .outers {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	width: 105%;
+    height: 125%;
+    background: linear-gradient(to right, rgb(180, 0, 0) 2px, transparent 2px) 0 0, linear-gradient(to right, rgb(180, 0, 0) 2px, transparent 2px) 0 100%, linear-gradient(to left, rgb(180, 0, 0) 2px, transparent 2px) 100% 0, linear-gradient(to left, rgb(180, 0, 0) 2px, transparent 2px) 100% 100%, linear-gradient(to bottom, rgb(180, 0, 0) 2px, transparent 2px) 0 0, linear-gradient(to bottom, rgb(180, 0, 0) 2px, transparent 2px) 100% 0, linear-gradient(to top, rgb(180, 0, 0) 2px, transparent 2px) 0 100%, linear-gradient(to top, rgb(180, 0, 0) 2px, transparent 2px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+	transition: width .25s, height .25s, opacity .25s;
+	opacity: 0.6;
+}
+
+.storturescenes .scene-btns .scene-btn:hover {
+    opacity: 1;
+	transform: scale(1.1);
+}
+
+.storturescenes .scene-btns .scene-btn:hover > .outers {
+	opacity: 0.8;
+	width: 110%;
+    height: 150%;
+}
+
+.storturescenes .endscene-btn {
+	display: inline-block;
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 200px;
+    padding: 10px 0px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(255, 255, 255) 20%, rgb(255, 255, 255) 80%, rgba(0, 0, 0, 0) 100%);
+    color: rgba(180, 0, 0);
+    cursor: pointer;
+    transition: opacity .4s, transform .4s, bottom .4s;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+    text-align: center;
+}
+
+.storturescenes .endscene-btn.active {
+    bottom: 35px;
+    transform: translateX(-50%) scale(0.9);
+}
+
+.storturescenes .endscene-btn .outers {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	width: 105%;
+    height: 125%;
+    background: linear-gradient(to right, rgb(180, 0, 0) 2px, transparent 2px) 0 0, linear-gradient(to right, rgb(180, 0, 0) 2px, transparent 2px) 0 100%, linear-gradient(to left, rgb(180, 0, 0) 2px, transparent 2px) 100% 0, linear-gradient(to left, rgb(180, 0, 0) 2px, transparent 2px) 100% 100%, linear-gradient(to bottom, rgb(180, 0, 0) 2px, transparent 2px) 0 0, linear-gradient(to bottom, rgb(180, 0, 0) 2px, transparent 2px) 100% 0, linear-gradient(to top, rgb(180, 0, 0) 2px, transparent 2px) 0 100%, linear-gradient(to top, rgb(180, 0, 0) 2px, transparent 2px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+	transition: width .25s, height .25s, opacity .25s;
+	opacity: 0.6;
+}
+
+.storturescenes .endscene-btn i {
+	margin-right: 5px;
+}
+
+.storturescenes .endscene-btn:hover {
+    opacity: 1;
+	transform: translateX(-50%) scale(1);
+}
+
+.storturescenes .endscene-btn:hover > .outers {
+	opacity: 0.8;
+	width: 110%;
+    height: 150%;
+}
