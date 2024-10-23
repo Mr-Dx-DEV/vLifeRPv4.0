@@ -9,3 +9,9 @@ function showHelpNotification(msg, thisFrame, beep, duration)
         EndTextCommandDisplayHelp(0, false, beep, 2000)
     end
 end
+
+function showFeedPostNotification(message)	
+    BeginTextCommandThefeedPost("STRING")
+    AddTextComponentSubstringPlayerName(message)
+    EndTextCommandThefeedPostTicker(true, true)
+end

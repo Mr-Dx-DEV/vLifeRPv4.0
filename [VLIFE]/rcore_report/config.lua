@@ -1,6 +1,8 @@
 Config = {}
 Config.Locale = 'en'
 
+Config.BPS = 512000
+
 -- If you see anything wrong and you would like to know more, for example to show in support ticket
 -- you can set Config.Debug = true to see more debug info in client (F8) console ingame, or server console.
 Config.Debug = false
@@ -12,6 +14,9 @@ Config.DebugLevel = {
     'DEBUG',
 }
 
+-- Enable rcore_stats? (https://store.rcore.cz/package/6273968)
+Config.RCORE_STATS = GetResourceState('rcore_stats') ~= 'missing'
+
 -- if you use ESX/QBCore as your framework and you renamed the folder with the script change the name here
 -- if you have naming `es_extended` / `qb-core` you could leave this set to `nil`
 Config.ESXFolderName = nil
@@ -20,12 +25,12 @@ Config.QBCoreFolderName = nil
 -- SCRIPT = 'resource_folder_name'
 -- edit resource_folder_name to match your naming if it's different
 Config.InventoryScripts = {
-    ESX_INVENTORY = 'es_extended',
-    MF_INVENTORY = 'mf-inventory',
+   -- ESX_INVENTORY = 'es_extended',
+  --  MF_INVENTORY = 'mf-inventory',
     OX_INVENTORY = 'ox_inventory',
-    QB_INVENTORY = 'qb-inventory',
-    QS_INVENTORY = 'qs-inventory',
-    CHEEZA_INVENTORY = 'inventory',
+  --  QB_INVENTORY = 'qb-inventory',
+ --   QS_INVENTORY = 'qs-inventory',
+ --   CHEEZA_INVENTORY = 'inventory',
 }
 
 -- if you want to skip automatical data gathering from inventories listed in InventoryScripts
@@ -37,12 +42,14 @@ Config.OwnInventorySolution = false
 Config.UseAcePermissions = false
 -- All groups specified here have admin permissions. It allows admins to toggle on/off duty and solve reports.
 Config.AllowedGroups = {
-    'mod',
-    'admin', 
+    'superadmin', --ESX
+    'admin', --ESX
     'god', --QBCore
 }
 -- All groups specified here have super admin permissions. This grants access to admin statistics with simple overview of their activity.
 Config.SuperAdminGroups = {
+    'superadmin',
+    'admin',
     'god',
 }
 
@@ -57,7 +64,7 @@ Config.SaveAdminChatToDatabaseInterval = MINUTE * 15
 
 -- Leave `nil` if you don't want to delete anything automatically
 -- set to `number` of days after which report/admin message should be deleted from database
--- !WARNING: always have higher values then HistoryAndStatisticsThrshold and AdminMessagesThreshold
+-- !WARNING: always have higher values then HistoryAndStatisticsThreshold and AdminMessagesThreshold
 Config.AutoDeleteReportAfterDays = nil
 Config.AutoDeleteAdminChatMessageAfterDays = nil
 
@@ -111,6 +118,7 @@ Config.AllowGlobalNotificationAboutOnlineAdmins = false
 Config.SendNotificationToJoinedPlayerAboutPendingReports = true
 
 -- if set to `true` discord log about created report will be sent after first message appears in chat
+-- if set to `false` discord log is sent immediatelly after report is created
 Config.SendDiscordLogForReportCreateAfterFirstMessage = true
 
 -- if set to `true` data about playersInArea will not be gathered at all
@@ -128,3 +136,9 @@ Config.SendNotificationsToOffDutyAdmins = false
 -- if set to `true` screenshot will be automatically sent to report after creation
 Config.SendScreenshotWhenNewReportCreated = true
 
+-- if set to `true` statistics from report history won't be calculated
+Config.DisableStatistics = false
+
+-- if set to `true` html transcript file created in transcripts/file.html when report is closed will be automaticaly deleted
+-- after it's sent to discord
+Config.DeleteTranscriptFileAfterSendingToDiscord = false

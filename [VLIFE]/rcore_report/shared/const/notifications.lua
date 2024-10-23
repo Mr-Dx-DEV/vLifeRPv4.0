@@ -17,6 +17,7 @@ NotificationType = {
     PLAYER_KICKED_FROM_REPORT = 'playerKickedFromReport',
     PENDING_REPORTS = 'pending_reports',
     NEW_MESSAGE_IN_REPORT = 'new_message_in_report',
+    NEW_SCREENSHOT_IN_REPORT = 'new_screenshot_in_report',
     REPORT_CREATED = 'report_created',
     PLAYER_ADDED_TO_REPORT = 'player_added_to_report',
     REPORT_IN_RESOLVE = 'report_in_resolve',

@@ -1,19 +1,23 @@
-function sendCustomDiscordMessage(webhook,name,message,color,footer)
-    footer = footer or "rcore_reports | rcore.cz"
-    color = color or SConfig.DiscordColors.Grey
-    local embeds = {
-        {
-            ["title"] = name,
-            ["description"] = message,
-            ["type"] = "rich",
-            ["color"] = color,
-            ["footer"] = {
-                ["text"] = footer,
-            },
-        }
+function sendCustomDiscordMessage(webhook,name,message,imageUrl)
+    local footer = "rcore_reports | rcore.cz"
+    local color = SConfig.DiscordColors.Grey
+    local embed = {
+        ["title"] = name,
+        ["description"] = message,
+        ["type"] = "rich",
+        ["color"] = color,
+        ["footer"] = {
+            ["text"] = footer,
+        },
     }
 
-    PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({ username = name, embeds = embeds }), { ['Content-Type'] = 'application/json' })
+    if imageUrl then
+        embed["image"] = {
+            ["url"] = imageUrl
+        }
+    end
+
+    PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({ username = name, embeds = {embed} }), { ['Content-Type'] = 'application/json' })
 end
 
 local function findDiscordIdentifier(source)
@@ -39,6 +43,37 @@ function getQuickReportWebhook(title)
     return SConfig.QuickReportsCustomWebhooks[title]
 end
 
+function sendDiscordLogWithImageUrl(webhook, text, report)
+    Citizen.CreateThread(function()
+        local i = 0
+        while i < 100 do
+            local index, message = report.chatRoom.getFirstImageMessage()
+            if message then
+                sendCustomDiscordMessage(
+                    webhook, 'RCORE_REPORT', text, message.imageUrl
+                )
+                break
+            else
+                Citizen.Wait(1000)
+            end
+        end
+    end)
+end
+
+function parsePlayersInArea(players)
+    local message = '**Players in area**\n'
+    if not players or #players == 0 then
+        return message .. 'No players in area\n'
+    end
+
+    for i, player in ipairs(players) do
+        message = message .. string.format('%s <@%s> (%s)\n', player.name, player.discordId, player.identifier)
+    end
+
+    return message
+end
+
+-- DISCORD LOGS IMPLEMENTATION
 function sendDiscordReportLog(report, playerId, isQuickReport)
     local quickReportWebhook = nil
 
@@ -55,12 +90,18 @@ function sendDiscordReportLog(report, playerId, isQuickReport)
         webhook = quickReportWebhook
     end
 
-    local message = string.format("Title: %s\n", report.title)
-    message = message .. string.format("Author: %s", getNiceName(playerId) or report.author.name)
+    local message = string.format("**ID**: %s\n", report.id)
+    message = message .. string.format("**Title**: %s\n", report.title)
+    message = message .. string.format("**Author**: %s\n", getNiceName(playerId) or report.author.name)
+    message = message .. parsePlayersInArea(report.players_in_area)
 
-    sendCustomDiscordMessage(
-        webhook, 'RCORE_REPORT', message
-    )
+    if Config.SendScreenshotWhenNewReportCreated then
+        sendDiscordLogWithImageUrl(webhook, message, report)
+    else
+        sendCustomDiscordMessage(
+            webhook, 'RCORE_REPORT', message
+        )
+    end
 end
 
 function sendDiscordReportLogWithFirstMessage(report, playerId, text, isQuickReport)
@@ -79,13 +120,19 @@ function sendDiscordReportLogWithFirstMessage(report, playerId, text, isQuickRep
         webhook = quickReportWebhook
     end
 
-    local message = string.format("**Title**\n%s\n\n", report.title)
+    local message = string.format("**ID**: %s\n", report.id)
+    message = message .. string.format("**Title**: %s\n", report.title)
     message = message .. string.format("**Author**\n%s\n\n", getNiceName(playerId) or report.author.name)
-    message = message .. string.format("**Message**\n%s", text)
+    message = message .. string.format("**Message**\n%s\n", text)
+    message = message .. parsePlayersInArea(report.players_in_area)
 
-    sendCustomDiscordMessage(
-        webhook, 'RCORE_REPORT', message
-    )
+    if Config.SendScreenshotWhenNewReportCreated then
+        sendDiscordLogWithImageUrl(webhook, message, report)
+    else
+        sendCustomDiscordMessage(
+            webhook, 'RCORE_REPORT', message
+        )
+    end
 end
 
 function generateReportTranscript(report)
@@ -95,5 +142,11 @@ function generateReportTranscript(report)
         path,
         getTranscriptHtml(report)
     )
-    TriggerEvent('rcore_report:sendDiscordFile', '/'..path, string.format('**REPORT_TRANSCRIPT**\n%s (ID %s)', report.title, report.id), SConfig.DiscordReportsTranscriptWebhook)
+    
+    sendDiscordFile('/'..path, string.format('**REPORT_TRANSCRIPT**\n%s (ID %s)', report.title, report.id), SConfig.DiscordReportsTranscriptWebhook)
+
+    if Config.DeleteTranscriptFileAfterSendingToDiscord then
+        Wait(1000)
+        os.remove(GetResourcePath(GetCurrentResourceName()) .. '/' .. path)
+    end
 end

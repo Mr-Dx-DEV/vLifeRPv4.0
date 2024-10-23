@@ -10,6 +10,7 @@ Locales['en'] = {
     ['report_closed'] = 'Report ID %s successfully closed', -- reportId
     ['transcript_report_closed'] = 'Closed the report',
     ['new_message_in_report'] = 'New message in report ID %s', -- reportId
+    ['new_screenshot_in_report'] = 'New screenshot in report ID %s', -- reportId
     
     ['kickPlayerFromReport'] = 'Player %s successfully removed from report ID %s', -- playerName, reportId
     ['playerKickedFromReport'] = 'You have been removed from report ID %s', -- reportId
@@ -25,7 +26,7 @@ Locales['en'] = {
     ['revive_player'] = 'You revived player successfully',
     ['pending_reports'] = 'You have %s unresolved reports',
 
-    ['showPartiallyHiddenNotification'] = 'Press J to reveal report system',
+    ['showPartiallyHiddenNotification'] = 'Press ~%s~ to reveal report system',
 
     ['first_admin_online'] = '%s is ready to take care of your reports',
     ['no_admins_online'] = 'There is no admin online at the moment, consider using discord for your reports',

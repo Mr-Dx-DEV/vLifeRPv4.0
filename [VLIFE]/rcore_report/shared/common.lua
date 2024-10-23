@@ -235,6 +235,18 @@ end
 
 exports('escapeHtml', escapeHtml)
 
+function unescapeHtml(str)
+    str = string.gsub( str, '&amp;', '&')
+    str = string.gsub( str, '&lt;', '<')
+    str = string.gsub( str, '&gt;', '>')
+    str = string.gsub( str, '&quot;', '"')
+    str = string.gsub( str, '&apos;', "'")
+    str = string.gsub( str, '&#47;', "/")
+    return str
+end
+
+exports('unescapeHtml', unescapeHtml)
+
 function tableShallowCopy(table)
     local table2 = {}
     for k,v in pairs(table) do

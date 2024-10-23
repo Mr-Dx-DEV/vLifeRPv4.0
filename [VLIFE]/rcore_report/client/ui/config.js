@@ -1,8 +1,8 @@
 const CONFIG = {
 	QUICK_REPORT_BUTTONS: [
-        {buttonLabel: 'Found a bug', reportTitle: 'Found a bug'},
-        {buttonLabel: 'Rules breaker', reportTitle: 'Rules breaker'},
-    ],
+		{buttonLabel: 'Found a bug', reportTitle: 'Found a bug'},
+		{buttonLabel: 'Rules breaker', reportTitle: 'Rules breaker'},
+	],
 
     REPORT_DATE_FORMAT: 'DD.MM.YYYY HH:mm',
     CHAT_MESSAGE_FORMAT: 'HH:mm',
@@ -30,8 +30,20 @@ const CONFIG = {
 	// defines font-size for chat messages in report chat in px
 	REPORT_CHAT_MESSAGE_FONT_SIZE: 12,
 
-	// if set to false all admins will be shown as 'ADMIN' for players
+	// defines font-size for timeline elements in px
+	TIMELINE_TITLE_FONT_SIZE: 12,
+	TIMELINE_DATE_FONT_SIZE: 12,
+	TIMELINE_MESSAGE_FONT_SIZE: 12,
+
+	// IF set to `true` add column into reports table with information about how old report is
+	SHOW_HOW_OLD_REPORT_IS_IN_REPORTS_OVERVIEW: false,
+
+	// If set to false all admins will be shown as 'ADMIN' for players
 	SHOW_ADMIN_NAMES: true,
+
+	// If set to `true` image preview will be shown in fullscreen
+	// If set to `false` image preview will have same size as report UI
+	REPORT_CHAT_IMAGE_PREVIEW_FULLSCREEN: true,
 
 	// timeout before updating admin in report
 	ADMIN_IN_REPORT_TIMEOUT_BEFORE_CHANGE: 2000, // miliseconds
@@ -48,7 +60,22 @@ const CONFIG = {
 	// if set to `true` admin will see only reports which are untouched
 	// and no admin is currently in the report
 	// this affects only admins
-	SHOW_ONLY_REPORTS_WITHOUT_ADMINS: false
+	SHOW_ONLY_REPORTS_WITHOUT_ADMINS: false,
+
+	// defines minimal text length for report title
+	REPORT_TITLE_MINIMAL_LENGTH: 1,
+
+	// defines words that are not allowed to be used in report title
+	TITLE_BLACKLISTED_WORDS: [],
+
+	AUTOMATED_FIRST_REPORT_MESSAGE: {
+		enabled: false,
+		name: 'System',
+		messageText: 'Automated first message',
+	},
+
+	// defines if screenshots will be visible only to admins
+	HIDE_SCREENSHOTS_FOR_PLAYERS: false,
 }
 
 // to create new translation copy all entries from `ENGLISH` and paste them under new language
@@ -91,10 +118,12 @@ const TRANSLATIONS = {
 			author: 'Author',
 			tag: 'Tag',
 			state: 'State',
+			createdDate: 'Created Date',
 			noReportsFound: 'NO REPORTS FOUND',
 			quickReportsTooltipInfo: 'Create quick report with predefined title',
 			reachedReportsLimit: 'Reached {{maxLimit}} reports limit',
-			waitSomeTimeBeforeNextReport: 'You have to wait some time before you can create a new report'
+			waitSomeTimeBeforeNextReport: 'You have to wait some time before you can create a new report',
+			blacklistedWord: 'This message contains forbidden word and will not be sent',
 		},
 		HISTORY_PAGE: {
 			title: 'Reports History',
@@ -165,6 +194,7 @@ const TRANSLATIONS = {
 			noLogs: 'No Logs',
 			noMessages: 'No Messages',
 			noAdminsOnline: 'No Admins Online. Consider using discord instead.',
+			screenshotHiddenForPlayers: 'Screenshots are hidden for players',
 		},
 		PLAYER_OVERLAY: {
 			actions: 'PLAYER ACTIONS',
@@ -187,7 +217,7 @@ const TRANSLATIONS = {
 			armor: 'Armor',
 			discordId: 'Discord ID',
 			steamId: 'Steam ID',
-			fivemLicense: 'Fivem License',
+			rockstarLicense: 'Rockstar License',
 			coords: 'Coords',
 			inventory: 'Inventory',
 			empty: 'Empty',
