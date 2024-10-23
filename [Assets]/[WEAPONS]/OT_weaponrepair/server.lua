@@ -23,7 +23,7 @@ local function fixWeapon(payload)
     TriggerClientEvent('OT_weaponrepair:repairitem', payload.source, payload.toSlot.name)
 end
 
-RegisterNetEvent('OT_weaponrepair:startweaponrepair', function(data)
+--[[ RegisterNetEvent('OT_weaponrepair:startweaponrepair', function(data)
     local source = source
     local slot = ox_inventory:GetSlot(source, data.slot)
     if slot and slot.name == data.name then
@@ -45,6 +45,60 @@ RegisterNetEvent('OT_weaponrepair:startweaponrepair', function(data)
             end
         else
             if #(pCoords - Config.locations[data.bench].coords) > 10.0 then print('Player ID:', source, 'Attempting to fixweapon for free away from bench, probably cheating') return end
+            repairs[source] = {}
+            repairs[source].slot = data.slot
+            repairs[source].name = data.name
+            TriggerClientEvent('OT_weaponrepair:repairitem', source, data.name)
+        end
+    elseif slot and slot.name ~= data.name then
+        print('Player ID:', source, 'Attempting to fixweapon with incorrect data, probably cheating')
+    end
+end) ]]
+RegisterNetEvent('OT_weaponrepair:startweaponrepair', function(data)
+    local source = source
+    local slot = ox_inventory:GetSlot(source, data.slot)
+    if slot and slot.name == data.name then
+        local pCoords = GetEntityCoords(GetPlayerPed(source))
+        if not Config.locations[data.bench].free then
+            local requiredItem = Config.require[data.name] and Config.require[data.name].requireditem or Config.requireditem
+            local requiredAmount = Config.require[data.name] and Config.require[data.name].requireditemamount or Config.requireditemamount
+            local repairItem = Config.repairItem -- The item needed for the repair (e.g., 'weaponrepairkit')
+            
+            -- Check for the required money and repair item
+            local moneyCount = ox_inventory:Search(source, 'count', requiredItem)
+            local repairItemCount = ox_inventory:Search(source, 'count', repairItem)
+
+            -- If the player is too far from the bench, log potential cheating
+            if #(pCoords - Config.locations[data.bench].coords) > 10.0 then 
+                print('Player ID:', source, 'Attempting to fixweapon away from bench, probably cheating') 
+                return 
+            end
+
+            -- Check if the player has the required amount of money
+            if not moneyCount or moneyCount < requiredAmount then
+                return TriggerClientEvent('ox_lib:notify', source, {type = 'error', title = 'Workbench', description = string.format('You don\'t have enough %s', requiredItem)})
+            end
+
+            -- Check if the player has the required repair item
+            if not repairItemCount or repairItemCount < 1 then
+                return TriggerClientEvent('ox_lib:notify', source, {type = 'error', title = 'Workbench', description = 'You don\'t have a weapon repair kit!'})
+            end
+
+            -- If the player has both money and repair item, remove them and proceed with the repair
+            if ox_inventory:RemoveItem(source, requiredItem, requiredAmount) and ox_inventory:RemoveItem(source, repairItem, 1) then
+                repairs[source] = {}
+                repairs[source].slot = data.slot
+                repairs[source].name = data.name
+                TriggerClientEvent('OT_weaponrepair:repairitem', source, data.name)
+            else
+                TriggerClientEvent('ox_lib:notify', source, {type = 'error', title = 'Workbench', description = 'Failed to remove required items!'})
+            end
+        else
+            -- If the repair is free, only check proximity and start repair
+            if #(pCoords - Config.locations[data.bench].coords) > 10.0 then 
+                print('Player ID:', source, 'Attempting to fixweapon for free away from bench, probably cheating') 
+                return 
+            end
             repairs[source] = {}
             repairs[source].slot = data.slot
             repairs[source].name = data.name
