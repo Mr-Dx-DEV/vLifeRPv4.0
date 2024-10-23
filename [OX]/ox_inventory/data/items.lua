@@ -24691,6 +24691,7 @@ return {
 	['gold_bar'] = {
 		label = 'Gold Bar',
 		weight = 500,
+		stack = true,
 		degrade = 4320, -- 3 days
 		decay = true
 	},
