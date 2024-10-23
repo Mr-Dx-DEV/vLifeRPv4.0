@@ -9,9 +9,9 @@ bedoflex.AirdropDeleteCommand = "airdropdelete" -- Command to delete the airdrop
 
 bedoflex.CommandPermission = "admin" -- Permission level required to use the commands
 
-bedoflex.AirdropTime = 20 -- Time in minutes after which the airdrop can be received
+bedoflex.AirdropTime = 30 -- Time in minutes after which the airdrop can be received
 
-bedoflex.CanJoinTime = 15 -- If the remaining time is less than this, players cannot rejoin and the airdrop will be deleted on them when they leave
+bedoflex.CanJoinTime = 20 -- If the remaining time is less than this, players cannot rejoin and the airdrop will be deleted on them when they leave
 
 bedoflex.MarkerSize = 240.0 -- Airdrop zone size
 
@@ -22,8 +22,6 @@ bedoflex.EnableDropTimes = true -- Enables or disables scheduled drop times
 bedoflex.EnableAnnouncementManualStarts = true -- Should a countdown notification be sent for manual airdrop starts?
 
 bedoflex.EnableAutomatedAnnoucements = true -- This setting enables announcements for automated airdrops.
-
-bedoflex.AnnounceTimer = 5 -- The time when the countdown will start
 
 bedoflex.AnnounceTimes = { -- You need to sort this place from the highest to the lowest.
     5, -- Will announce 30 minutes before it starts.
