@@ -1,0 +1,2 @@
+steamApiKey = "5D4336AC61F96F533F5E1E83E760D7A8"
+Discord_Webhook = "https://discord.com/api/webhooks/1056712321600331779/_IFQaWFIa_UbceDdxmpa8OyjTp7Ugi0B2mRuKtW9FDeeOzGLLj9qB_4VBdUDatAPcSJj"
