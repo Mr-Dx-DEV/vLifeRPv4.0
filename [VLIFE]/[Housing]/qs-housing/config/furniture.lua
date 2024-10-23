@@ -516,7 +516,8 @@ Config.FurnitureList = {
 				['label'] = 'Pool Table',
 				['group_items'] = {
 					{ ['object'] = 'prop_pooltable_02', ['price'] = 120, ['label'] = 'Pool Table 02' },
-					{ ['object'] = 'prop_pooltable_3b', ['price'] = 120, ['label'] = 'Pool Table 3b' }
+					{ ['object'] = 'prop_pooltable_3b', ['price'] = 120, ['label'] = 'Pool Table 3b' },
+					{ ['object'] = 'prop_pool_rack_01', ['price'] = 120, ['label'] = 'Pool Rack' }
 				}
 			},
 			{
