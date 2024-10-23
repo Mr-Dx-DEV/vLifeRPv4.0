@@ -152,7 +152,7 @@ end
 
 -- NUI Calls
 
-function QBCore.Functions.Notify(text, texttype, length, icon)
+--[[ function QBCore.Functions.Notify(text, texttype, length, icon)
     local message = {
         action = 'notify',
         type = texttype or 'primary',
@@ -172,6 +172,45 @@ function QBCore.Functions.Notify(text, texttype, length, icon)
 
     SendNUIMessage(message)
 end
+ ]]
+
+ function QBCore.Functions.Notify(text, texttype, length, icon)
+    local message = {
+        action = 'notify',
+        type = texttype or 'primary',
+        length = length or 5000,
+    }
+
+    if type(text) == 'table' then
+        message.text = text.text or 'Placeholder'
+        message.caption = text.caption or 'Placeholder'
+    else
+        message.text = text
+    end
+
+    if icon then
+        message.icon = icon
+    end
+
+    -- Send the original notification message
+    SendNUIMessage(message)
+
+    -- Determine the position and type for xs:notify based on QBCore's type
+    local xsType = 3 -- default to Information
+    local xsPosition = 3 -- default to Right
+
+    if texttype == 'error' then
+        xsType = 0
+    elseif texttype == 'success' then
+        xsType = 1
+    elseif texttype == 'warning' then
+        xsType = 2
+    end
+
+    -- Trigger the xs:notify event
+    TriggerEvent("xs:notify", "Notification", message.text, length, xsType, xsPosition, 'server')
+end
+
 
 function QBCore.Functions.Progressbar(name, label, duration, useWhileDead, canCancel, disableControls, animation, prop, propTwo, onFinish, onCancel)
     if GetResourceState('progressbar') ~= 'started' then error('progressbar needs to be started in order for QBCore.Functions.Progressbar to work') end
