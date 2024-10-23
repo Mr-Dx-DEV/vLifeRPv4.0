@@ -375,22 +375,7 @@ Config.GangGarageUniqueBlips = false
 Config.GangGarageUniqueLocations = true
 Config.GangGarageEnableInteriors = true
 Config.GangGarageLocations = { -- IMPORTANT - Every garage name must be unique
-  ["The Lost MC"] = {
-    coords = vector3(-2802.839, 1414.774, 100.887),
-    spawn = vector4(-2794.376, 1419.481, 100.879, 86.086),
-    distance = 15,
-    gang = {"thelostmc"},
-    type = "car",
-    hideBlip = false,
-    blip = {
-      id = 357,
-      color = 0,
-      scale = 0.7
-    },
-    hideMarkers = true,
-    markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
-    vehiclesType = "personal", -- Use personal vehicles
-  },
+
   ["R Bit"] = {
     coords = vector3(-711.487, -896.428, 24.499),
     spawn = vector4(-703.615, -897.303, 24.499, 80.669),
@@ -407,22 +392,7 @@ Config.GangGarageLocations = { -- IMPORTANT - Every garage name must be unique
     markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
     vehiclesType = "personal", -- Use personal vehicles
   },
-  ["Los Vagos"] = {
-    coords = vector3(325.635, -2025.401, 21.007),
-    spawn = vector4(325.538, -2037.479, 20.757, 315.634),
-    distance = 15,
-    gang = {"losvagos"},
-    type = "car",
-    hideBlip = false,
-    blip = {
-      id = 357,
-      color = 0,
-      scale = 0.7
-    },
-    hideMarkers = true,
-    markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
-    vehiclesType = "personal", -- Use personal vehicles
-  },
+  
   ["Tokyo Manji"] = {
     coords = vector3(-3276.46, 523.07, 12.26),
     spawn = vector4(-3276.46, 523.07, 12.26, 39.72),
@@ -438,23 +408,8 @@ Config.GangGarageLocations = { -- IMPORTANT - Every garage name must be unique
     hideMarkers = true,
     markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
     vehiclesType = "personal", -- Use personal vehicles
-  },
-  ["Madrazo Cartel"] = {
-    coords = vector3(-1566.011, -293.557, 48.276),
-    spawn = vector4(-1570.927, -287.676, 48.276, 136.441),
-    distance = 15,
-    gang = {"madrazocartel"},
-    type = "car",
-    hideBlip = false,
-    blip = {
-      id = 357,
-      color = 0,
-      scale = 0.7
-    },
-    hideMarkers = true,
-    markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
-    vehiclesType = "personal", -- Use personal vehicles
   }
+  
 }
 
 -- Impound
