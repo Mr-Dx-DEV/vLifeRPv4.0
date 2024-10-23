@@ -68,7 +68,12 @@
 				"Duration": 5000
 			},
 			{
-				"Src": "./loadingscreen/images/0.jpg",
+				"Src": "./loadingscreen/images/10.jpg",
+				"Zone": 10,
+				"Duration": 5000
+			},
+			{
+				"Src": "./loadingscreen/images/11.jpg",
 				"Zone": 10,
 				"Duration": 5000
 			}
