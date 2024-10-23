@@ -1,7 +1,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 -------- Bunnyhop
-CreateThread(function()
+--[[ CreateThread(function()
     while true do
         Wait(100)
         local ped = PlayerPedId()
@@ -19,7 +19,7 @@ CreateThread(function()
         end
     end
 end)
-
+ ]]
 ------- Livery Command
 RegisterCommand("livery", function(source, args, rawCommand)
     local livery = tonumber(args[1])
