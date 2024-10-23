@@ -51,10 +51,13 @@ end
 bedoflex.Notify = function(message, type) -- types -> error | info | success
     if bedoflex.Framework == "qb" or bedoflex.Framework == "oldqb" then
         TriggerEvent("QBCore:Notify", message, type)
+        TriggerEvent('InteractSound_CL:PlayOnOne', 'cod', 0.3)
     elseif bedoflex.Framework == "esx" or bedoflex.Framework == "newesx" then
         TriggerEvent('esx:showNotification', message, type, 5000)
+        TriggerEvent('InteractSound_CL:PlayOnOne', 'cod', 0.3)
     end
 end
+
 bedoflex.CheckJobName = function(jobName)
     local state = false
     for k, allowedJobName in pairs(bedoflex.IgnoredJobNames) do

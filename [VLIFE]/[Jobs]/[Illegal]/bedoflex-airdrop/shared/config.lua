@@ -1,6 +1,6 @@
 bedoflex = {}
 
-bedoflex.Debug = false
+bedoflex.Debug = true
 
 bedoflex.Framework = "qb" -- Sets the framework to use: qb, esx, newesx, oldqb
 
@@ -23,7 +23,7 @@ bedoflex.EnableAnnouncementManualStarts = true -- Should a countdown notificatio
 
 bedoflex.EnableAutomatedAnnoucements = true -- This setting enables announcements for automated airdrops.
 
-bedoflex.AnnounceTimes = { -- You need to write the highest number here to the AnnounceTimer section.
+bedoflex.AnnounceTimes = { -- You need to sort this place from the highest to the lowest.
     30, -- Will announce 30 minutes before it starts.
     20, -- Will announce 20 minutes before it starts.
     10, -- Will announce 10 minutes before it starts.
@@ -38,7 +38,7 @@ bedoflex.DropTimes = {
     [5] = { hour = 04, minute = 00 }, -- Schedule for an airdrop at 4:00 AM
 }
 
-bedoflex.AirdropHeight = 30 -- The height at which the airdrop crate is dropped
+bedoflex.AirdropHeight = 180 -- The height at which the airdrop crate is dropped
 
 bedoflex.ToggleMenuKey = "F6" -- Statistics menu toggle key
 
@@ -72,20 +72,20 @@ bedoflex.Crate = "jrbPUBG_Crate" -- The model of the airdrop crate
 
 bedoflex.OpenCrateKey = 38 -- Key used to open the crate (38 = E)
 
-bedoflex.AirdropTakeTime = 60000 -- Time in milliseconds to take the airdrop
+bedoflex.AirdropTakeTime = 60000  -- Time in milliseconds to take the airdrop
 
 bedoflex.RandomItems = true -- If you set true checks CrateItems random values
 
 bedoflex.CrateItems = { -- Items included in the airdrop crate
-    {ItemName = "WEAPON_BLUEGLOCKS", ItemCount = 1, random = {a = 50, b = 100}},   -- comom
-    {ItemName = "WEAPON_GLOCKBEAMS", ItemCount = 1, random = {a = 50, b = 100}},
-    {ItemName = "WEAPON_BLACKARP", ItemCount = 1, random = {a = 50, b = 100} },
+{ItemName = "WEAPON_BLUEGLOCKS", ItemCount = 1, random = {a = 50, b = 100}},   -- comom
+{ItemName = "WEAPON_GLOCKBEAMS", ItemCount = 1, random = {a = 50, b = 100}},
+{ItemName = "WEAPON_BLACKARP", ItemCount = 1, random = {a = 50, b = 100} },
 
-    {ItemName = "WEAPON_DMK18", ItemCount = 1, random = {a = 80, b = 100}},      --  rare
-    {ItemName = "WEAPON_REDARP", ItemCount = 1, random = {a = 80, b = 100}},    -- rare
+{ItemName = "WEAPON_DMK18", ItemCount = 1, random = {a = 80, b = 100}},      --  rare
+{ItemName = "WEAPON_REDARP", ItemCount = 1, random = {a = 80, b = 100}},    -- rare
 }
 
-bedoflex.CoordSystem = "Random Coords" -- or Random Coords
+bedoflex.CoordSystem = "Live Coords" -- or Random Coords
 
 bedoflex.AirdropCoords = { -- Possible coordinates for the airdrop to land
     vector3(-882.5654, -115.3191, 37.9638),

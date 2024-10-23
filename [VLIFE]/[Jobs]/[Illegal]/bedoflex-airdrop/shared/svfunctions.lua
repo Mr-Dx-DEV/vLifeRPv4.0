@@ -205,11 +205,14 @@ bedoflex.Notify = function(message, type, source)
     if source then
         if bedoflex.Framework == "qb" or bedoflex.Framework == "oldqb" then
             TriggerClientEvent("QBCore:Notify", source, message, type)
+            TriggerClientEvent('InteractSound_CL:PlayOnOne', source, 'cod', 0.3)
         elseif bedoflex.Framework == "esx" or bedoflex.Framework == "newesx" then
             TriggerClientEvent('esx:showNotification', source, message, type, 5000)
+            TriggerClientEvent('InteractSound_CL:PlayOnOne', source, 'cod', 0.3)
         end
     end
 end
+
 bedoflex.AddItem = function(source, item, count)
     if bedoflex.Framework == "qb" or bedoflex.Framework == "oldqb" then
         local Player = Core.Functions.GetPlayer(source)
