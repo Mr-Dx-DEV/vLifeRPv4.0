@@ -1,5 +1,5 @@
 Config = {}
-Config.Target = true -- Whether to use target or text UI.
+Config.Target = false -- Whether to use target or text UI.
 
 -- You can ignore this if you use target.
 -- This cannot be changed on clients that already cached this.
@@ -9,20 +9,10 @@ Config.Keybinds = {
 
 Config.Dispatch = {
     Enable = true, -- Enable dispatch
-    Type = 'normal', --['normal'/'cd_dispatch'/'qs-dispatch'/'ps-dispatch']
+    Type = 'ps-dispatch', --['normal'/'cd_dispatch'/'qs-dispatch'/'ps-dispatch']
 	Jobs = {
 		'police',
-		'sheriff',
-		'fbi',
-		'lspd',
-		'bcso',
-		'sahp',
-		'lsso',
-		'safw',
-		'sadoc',
-		'usms',
-		'dhs',
-		'ss'
+		'sheriff'
 	}
 }
 
@@ -32,7 +22,7 @@ Config.SpawnDistance = 100.0
 -- The built-in 3D prompts
 Config.Prompts = {
 	Enabled = true,
-	RenderDistance = 4.0, -- Don't put this to more than 5.0 to avoid issues
+	RenderDistance = 3.0, -- Don't put this to more than 5.0 to avoid issues
 	SpriteSize = 0.0170,
 	SpriteColor = { r = 170, g = 170, b = 255, a = 255 },
 	---@type 'prompt' | 'prompt_old'
@@ -48,5 +38,5 @@ Config.BlackMoney = {
 	-- marked_bills use metadata in some moneywashing scripts, this is up to you
 	-- Beware that you can only use the dirty money item as a reward when this is set to true
 	-- I don't recommend using this if you're not 100% sure
-	UsesMetadata = true
+	UsesMetadata = false
 }
