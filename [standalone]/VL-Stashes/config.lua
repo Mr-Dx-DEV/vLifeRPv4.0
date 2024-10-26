@@ -16,7 +16,7 @@ Config.Stashes = {
         stashSize = 2000000,
         stashSlots = 100, 
     },
-    ["outcast_gnagblock"] = 
+    --[[ ["outcast_gnagblock"] = 
     {   stashName = "outcast_gnagblock",
         coords = vector3(-657.478, -884.59, 32.33), 
         requirecid = false,
@@ -41,7 +41,7 @@ Config.Stashes = {
         cid = '',  
         stashSize = 2000000,
         stashSlots = 100, 
-    },
+    }, ]]
     
     
     ["tokyomanji_gnagblock"] =

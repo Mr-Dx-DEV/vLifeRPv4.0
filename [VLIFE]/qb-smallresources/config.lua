@@ -218,7 +218,7 @@ Config.BlacklistedVehs = {
     [`cargoplane2`] = true,
     [`voltic2`] = true,
     [`THRUSTER`] = true,
-    [`polmav`] = true,
+    
     [`swift`] = true,
     [`frogger`] = true,
     [`policeb`] = true,
