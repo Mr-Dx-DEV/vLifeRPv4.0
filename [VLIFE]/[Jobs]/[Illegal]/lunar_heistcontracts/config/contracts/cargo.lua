@@ -124,7 +124,7 @@ Config.contracts.cargo = {
         progressDuration = 7500, -- progress bar duration
         types = {
             {
-                itemCount = 1, -- 2 of the items below get randomly selected
+                itemCount = 3, -- 2 of the items below get randomly selected
                 unique = true, -- Player cant loot the same the weapons from one loot spot
                 ---@type { name: string, count: integer | { min: integer, max: integer }, metadata: any? }[]
                 items = {
