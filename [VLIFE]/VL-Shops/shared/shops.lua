@@ -1,5 +1,22 @@
 Locations = {
-
+	["vipmembership"] = {
+        ["label"] = "VOP Shop",
+		["type"] = "items",
+		["model"] = {
+			`ig_trafficwarden`,
+		},
+		["killable"] = false,
+		["logo"] = "https://i.imgur.com/bPcM0TM.png",
+        ["coords"] = {
+			vector4(-1147.038, -1613.143, 4.393, 112.712),
+			
+		},
+		["scenario"] = "WORLD_HUMAN_COP_IDLES",
+        ["products"] = Products["vipmembership"],
+        ["blipsprite"] = 458,
+		["blipcolour"] = 5,
+		["hideblip"] = true,
+    },
 	["policeshop"] = {
         ["label"] = "Police Shop",
 		["type"] = "items",

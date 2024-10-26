@@ -1,4 +1,9 @@
 Products = {
+    ["vipmembership"] = {
+        { name = "vape", price = 1250, amount = 50 },
+        { name = "liquid", price = 500, amount = 50 },
+        { name = "boombox", price = 500, amount = 50 },
+    },
     ["youtool"] = {
         { name = "boltcutters2", price = 1250, amount = 50 },
         { name = "screwdriverset", price = 500, amount = 50 },
