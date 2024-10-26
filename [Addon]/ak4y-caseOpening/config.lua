@@ -12,7 +12,7 @@ AK4Y = {}
 
 AK4Y.Framework = "qb" -- / oldqb | qb = export system | oldqb = triggerevent system
 AK4Y.Mysql = "oxmysql" -- Check fxmanifest.lua when you change it! | ghmattimysql / oxmysql / mysql-async
-AK4Y.OpenCommand = "caseOpening"
+AK4Y.OpenCommand = "caseopening"
 
 AK4Y.WeaponsAreItem = true -- If your weapons are item then you should set this TRUE.
 
