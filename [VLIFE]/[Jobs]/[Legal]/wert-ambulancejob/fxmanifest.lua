@@ -31,7 +31,8 @@ client_scripts {
 
 server_scripts {
     '@oxmysql/lib/MySQL.lua',
-	'server.lua',
+    'oxinvserver.lua',
+    'server.lua',
 }
 
 escrow_ignore {

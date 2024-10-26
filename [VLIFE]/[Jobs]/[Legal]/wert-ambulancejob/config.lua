@@ -377,25 +377,25 @@ Config.Beds = {
 
 -- Photos
 Config.MrPhotos = {
-    ["beyin"] = "https://cdn.discordapp.com/attachments/971695978962907176/971696814157885460/unknown.png?ex=65f2bbad&is=65e046ad&hm=4c613e7d957d585abc4e2d73cb3f652f8b49b6b27be65ca72c65c52bf91b1f69&",
-    ["kalca"] = "https://cdn.discordapp.com/attachments/971695978962907176/971696110202658866/unknown.png?ex=65f2bb05&is=65e04605&hm=73b7f5c64ae5616986e16c375a94649286901b7329751d787cc1b3a36bf262d8&",
-    ["tabdomen"] = "https://cdn.discordapp.com/attachments/971695978962907176/971696236375736350/unknown.png?ex=65f2bb23&is=65e04623&hm=e4f6cea673ceec2de0823756eb61dcd93e42fa77ac0d635d37c7910d429c4d2e&",
-    ["tchest"] = "https://cdn.discordapp.com/attachments/971695978962907176/971696442508980234/unknown.png?ex=65f2bb55&is=65e04655&hm=17fd836e2a714f159b105d095969d356b5e44da8769a0d49f32cea96adcfa8a9&",
-    ["elbilek"] = "https://cdn.discordapp.com/attachments/971695978962907176/971696521085087784/unknown.png?ex=65f2bb67&is=65e04667&hm=0da5966d2293a5a70cfe47633ddee20e7a1e29883cab1bcc815bd77b6f85a2b4&",
-    ["omuz"] = "https://cdn.discordapp.com/attachments/971695978962907176/971696619865133056/unknown.png?ex=65f2bb7f&is=65e0467f&hm=f9d4fc8ff166c8bfe2ffbfaa055c96bac0026b8826e7d0c10f78946542cc1e94&",
-    ["diz"] = "https://cdn.discordapp.com/attachments/971695978962907176/971696691629686834/unknown.png?ex=65f2bb90&is=65e04690&hm=7d3dac932dca55bab55cb0bcb71b4fba0a9a4c0ff7752ff764e531b4cc87bdf2&",
-    ["tboyun"] = "https://cdn.discordapp.com/attachments/971695978962907176/1213049350939353098/fdhc-900x400.png?ex=65f40f3e&is=65e19a3e&hm=9f2e079cfaa0c4d19a88adc3f9db70e7cfc42206b3536febdcc3fb3ac4feb140&",
-    ["hipofiz"] = "https://cdn.discordapp.com/attachments/971695978962907176/971696882663444520/unknown.png?ex=65f2bbbe&is=65e046be&hm=6ea7ed59b63528c1117a5192f2898acc5253bf1a579f7fdeb6fd5aa9d1588dc1&",
+    ["beyin"] = "https://www.hekimoglugoruntuleme.com/wp-content/uploads/2022/01/beyin-mr-fiyatlari.jpg",
+    ["kalca"] = "https://www.acikemar.info/wp-content/uploads/2023/03/kalca-mr-640x400.jpg",
+    ["tabdomen"] = "https://www.hekimoglugoruntuleme.com/wp-content/uploads/2021/12/abdominal-mr-2-300x123.png",
+    ["tchest"] = "https://greaterwaterburyimagingcenter.org/wp-content/uploads/2022/11/Chest-image-118252.png",
+    ["elbilek"] = "https://www.hekimoglugoruntuleme.com/wp-content/uploads/2022/01/el-ve-el-bilegi-mr-fiyatlari-1000x400.jpg",
+    ["omuz"] = "https://www.hekimoglugoruntuleme.com/wp-content/uploads/2022/01/omuz-mr-fiyatlari.jpg",
+    ["diz"] = "https://www.hekimoglugoruntuleme.com/wp-content/uploads/2022/01/diz-mr-fiyatlari.png",
+    ["tboyun"] = "https://www.hekimoglugoruntuleme.com/wp-content/uploads/2021/12/servikal-mr-1000x400.jpg",
+    ["hipofiz"] = "https://bosstanci.com/wp-content/uploads/2017/02/fgff.png",
 }
 
 Config.XrayPhotos = {
-    ["kafa"] = "https://cdn.discordapp.com/attachments/971695978962907176/971697604972916746/unknown.png?ex=65f2bc6a&is=65e0476a&hm=47c04a800367511806a82334253e6cbe1f1a980f93b92ec62fb370d7b683e0a4&",
-    ["omuz"] = "https://cdn.discordapp.com/attachments/971695978962907176/971697737886208000/unknown.png?ex=65f2bc89&is=65e04789&hm=f75088c872c437c88a20fafd6df246791764574a77faddecf311d9afed411f0c&",
-    ["humerus"] = "https://cdn.discordapp.com/attachments/971695978962907176/971698068904869928/unknown.png?ex=65f2bcd8&is=65e047d8&hm=e700e4acbe5dd144f94dfd7650f7cf586ab22d0580faf5ca1674377f15bb6e97&",
-    ["onkol"] = "https://cdn.discordapp.com/attachments/971695978962907176/971698142816907304/unknown.png?ex=65f2bcea&is=65e047ea&hm=cd1b98b844b08fde4bcbdd2b71022c556d7fdefa3fd1707672efd3ea06ba8b3d&",
-    ["pelvis"] = "https://cdn.discordapp.com/attachments/971695978962907176/971698255727575100/unknown.png?ex=65f2bd05&is=65e04805&hm=edb7c35c6124f6c6380429543cc09163b5971e98b7ea4ae0d75ca8fd60d81811&",
-    ["femur"] = "https://cdn.discordapp.com/attachments/971695978962907176/971698337914953749/unknown.png?ex=65f2bd19&is=65e04819&hm=9933ebd8ac8783d49d6654fcb8b37f732ce1ab702f9a1dc1be21e8ea0818af05&",
-    ["diz"] = "https://cdn.discordapp.com/attachments/971695978962907176/971698409071345664/unknown.png?ex=65f2bd2a&is=65e0482a&hm=b306da6a90267975873ec7d86e0b188469de2d110562d13960c3b81abfe4cd15&",
-    ["ayak"] = "https://cdn.discordapp.com/attachments/971695978962907176/971698512293158912/unknown.png?ex=65f2bd42&is=65e04842&hm=c87e3db6b0118d6dd3c977f8eb190f4fdb745a3592e343c56a77b7cefbd106af&",
-    ["ciger"] = "https://cdn.discordapp.com/attachments/971695978962907176/971698573102174258/unknown.png?ex=65f2bd51&is=65e04851&hm=a49c67fd6d2f6c6746a80f6a2bcf0a50ee35594027ad0837533aab9f0e37e701&",
+    ["kafa"] = "https://www.hekimoglugoruntuleme.com/wp-content/uploads/2016/01/kafa-grafisi-fiyatlari.png",
+    ["omuz"] = "https://acilci.net/wp-content/uploads/2019/03/Posteriyor-omuz-%C3%A7%C4%B1k%C4%B1%C4%9F%C4%B1-ve-normal-g%C3%B6r%C3%BCn%C3%BCm.jpg",
+    ["humerus"] = "https://sedatseven.com.tr/image/saglik/26042021005048_humeruskirigi.jpg",
+    ["onkol"] = "https://bookacil.wordpress.com/wp-content/uploads/2015/10/f2.png",
+    ["pelvis"] = "https://www.acilci.net/wp-content/uploads/2015/10/Slide11.jpg",
+    ["femur"] = "https://www.kalcacerrahi.org/images/fas-radyoloji/1.jpg",
+    ["diz"] = "https://www.drserhatelci.com/wp-content/uploads/2021/12/2.-DIZ-PROTEZI.jpg",
+    ["ayak"] = "https://www.acilcalisanlari.com/wp-content/uploads/2023/05/ayak-bilegi-grafisi-3-yonlu.jpg",
+    ["ciger"] = "https://toraks.org.tr/site/sf/nmf/pre_migration/0e0199e61ef936c46ef0f75bebaaba56e4ec9480ab8d824a9853af3bdd0630fa.jpg",
 }
