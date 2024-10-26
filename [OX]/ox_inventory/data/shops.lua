@@ -194,8 +194,12 @@ return {
 			
 
 			
-			
-			{ name = 'gps_tracker', price = 20, grade = 0 },
+
+			{ name = 'parachute', price = 20, grade = 0 },
+			{ name = 'diving_gear', price = 20, grade = 0 },
+			{ name = 'diving_fill', price = 20, grade = 0 },
+			{ name = 'WEAPON_FIREEXTINGUISHER', price = 50, metadata = { registered = true, serial = 'POL' }, grade = 0 },
+
 
 			{ name = 'pistol_ammo', price = 20, grade = 1 },
 			{ name = 'smg_ammo', price = 20, grade = 1 },
