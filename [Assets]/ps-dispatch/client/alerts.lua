@@ -265,28 +265,6 @@ local function PaletoBankRobbery(camId)
     TriggerServerEvent('ps-dispatch:server:notify', dispatchData)
 end
 exports('PaletoBankRobbery', PaletoBankRobbery)
-local function CargoRobbery(camId)
-    local coords = GetEntityCoords(cache.ped)
-
-    local dispatchData = {
-        enabled = true,  -- Enables the dispatch notification
-        message = locale('dispatch_cargo_message'),  -- Message for the cargo robbery
-        codeName = 'cargorobbery',
-        code = '10-68',  -- Dispatch code for cargo robbery
-        title = locale('dispatch_cargo_title'),  -- Title for the cargo robbery dispatch
-        icon = 'fas fa-truck',  -- Icon to represent cargo robbery
-        priority = 3,  -- Set the priority of the alert (adjust as necessary)
-        coords = coords,
-        gender = GetPlayerGender(),
-        street = GetStreetAndZone(coords),
-        camId = camId,
-        alertTime = nil,
-        jobs = { 'leo' }  -- Dispatch to law enforcement jobs
-    }
-
-    TriggerServerEvent('ps-dispatch:server:notify', dispatchData)
-end
-exports('CargoRobbery', CargoRobbery)
 
 local function PacificBankRobbery(camId)
     local coords = GetEntityCoords(cache.ped)
@@ -618,22 +596,12 @@ end
 --- @param data string -- Message
 --- @param type string -- What type of emergency
 --- @param anonymous boolean -- Is the call anonymous
---[[ RegisterNetEvent('ps-dispatch:client:sendEmergencyMsg', function(data, type, anonymous)
-    local jobs = { ['911'] = { 'leo' }, ['311'] = { 'ems' } }
-
-    PhoneCall(data, anonymous, jobs[type], type)
-end) ]]
-
 RegisterNetEvent('ps-dispatch:client:sendEmergencyMsg', function(data, type, anonymous)
     local jobs = { ['911'] = { 'leo' }, ['311'] = { 'ems' } }
 
-    PhoneCall(data, anonymous, jobs[type])
-    if type == '311' then
-        TriggerServerEvent('qb-jobchat:server:ambulance', job, fname, lname, phone, data) 
-    elseif type == '911' then
-        TriggerServerEvent('qb-jobchat:server:police', job, fname, lname, phone, data)
-    end
+    PhoneCall(data, anonymous, jobs[type], type)
 end)
+
 
 local function ArtGalleryRobbery()
     local coords = GetEntityCoords(cache.ped)

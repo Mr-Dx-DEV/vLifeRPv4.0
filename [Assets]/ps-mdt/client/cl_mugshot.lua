@@ -5,14 +5,14 @@ local handle, board, board_scaleform, overlay, ped, pedcoords, x, y, z, r, suspe
 local MugShots = {}
 
 -- Mugshot location  ( Position is the default QBCore Prison Interior )
-	x = 472.7
-    y = -1011.18
-    z = 26.27
-    r = {x = 0.0, y = 0.0, z = 172.97}
+	x = 1828.69
+    y = 2581.72
+    z = 46.3
+    r = {x = 0.0, y = 0.0, z = 92.23}
     suspectheading = 265.00
-    suspectx = 472.7
-    suspecty = -1011.18
-    suspectz = 26.27
+    suspectx = 1827.63
+    suspecty = 2581.7
+    suspectz = 44.89
 	
 -- Mugshot functions
 
