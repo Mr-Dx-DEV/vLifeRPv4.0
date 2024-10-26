@@ -91,6 +91,24 @@ Config = {
 						performance = "max",
 					},
 
+
+
+
+					["pbus"] = {
+						CustomName = "Pris Bus",
+						livery = 0,
+						grade = 1,
+						extras = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
+						performance = "max",
+					},
+					["towtruck"] = {
+						CustomName = "Tow Truck",
+						livery = 0,
+						grade = 1,
+						extras = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
+						performance = "max",
+					},
+					
 					-- ["police"] = {
 					-- 	CustomName = "Police Car",
 					-- 	livery = 5,
