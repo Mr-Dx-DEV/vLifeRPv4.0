@@ -184,9 +184,9 @@ stop cfx-tcd-starterpack
 stop r1_vehdebug
 stop ms-peds
 stop ddcz_fov_system
-stop wert-ambulancejob
 
 
+ensure qb-input
 
 
 setr profile_fpsFieldOfView 38.0
