@@ -194,7 +194,8 @@ return {
 			
 
 			
-
+			
+			{ name = 'harness', price = 20, grade = 1 },
 			{ name = 'parachute', price = 20, grade = 0 },
 			{ name = 'diving_gear', price = 20, grade = 0 },
 			{ name = 'diving_fill', price = 20, grade = 0 },
