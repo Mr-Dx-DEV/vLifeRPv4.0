@@ -879,6 +879,8 @@ local Vehicles = {
     { model = 'npolvette', name = 'Corvette Interceptor', brand = 'Chevrolet', price = 5000000, category = 'Interceptor', shop = 'police'},
     { model = 'polalamop', name = 'polalamop', brand = 'Chevrolet', price = 20000, category = 'Interceptor', shop = 'police'},
     { model = 'polalamop2', name = 'polalamop2', brand = 'Chevrolet', price = 20000, category = 'Interceptor', shop = 'police'},
+    { model = 'polaventa', name = 'polaventa', brand = 'PD Lembo', price = 20000, category = 'Interceptor', shop = 'police'},
+    { model = 'polchiron', name = 'polchiron', brand = 'PD chiron', price = 20000, category = 'Interceptor', shop = 'police'},
     { model = 'polamggtr', name = 'polamggtr', brand = 'Chevrolet', price = 20000, category = 'Interceptor', shop = 'police'},
     { model = 'polbikeb2', name = 'polbikeb2', brand = 'Chevrolet', price = 20000, category = 'Interceptor', shop = 'police'},
     { model = 'polbisonp', name = 'polbisonp', brand = 'Chevrolet', price = 20000, category = 'Interceptor', shop = 'police'},
