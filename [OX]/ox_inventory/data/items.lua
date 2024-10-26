@@ -363,7 +363,7 @@ return {
 ['diving_gear'] = {
     label = 'Diving Gear',
     weight = 30000,
-    stack = false,
+    stack = true,
     close = true,
     description = '',
     client = {
@@ -374,7 +374,7 @@ return {
 ['diving_fill'] = {
     label = 'Diving Tube',
     weight = 3000,
-    stack = false,
+    stack = true,
     close = true,
     description = '',
     client = {
@@ -860,94 +860,6 @@ return {
 		}
 	},
 
-
-	['bloodbag'] = {
-		label = 'Blood Bag',
-		weight = 150,
-		stack = false,
-		close = true,
-		description = '',
-		client = {
-			image = 'bloodbag.png',
-		}
-	},
-	
-	['bloodtube'] = {
-		label = 'Blood Tube',
-		weight = 500,
-		stack = false,
-		close = true,
-		description = '',
-		client = {
-			image = 'bloodtube.png',
-		}
-	},
-	
-	['emptybaggy'] = {
-		label = 'Empty Blood Bag',
-		weight = 100,
-		stack = true,
-		close = true,
-		description = '',
-		client = {
-			image = 'emptybaggy.png',
-		}
-	},
-	
-	['emptysyringe'] = {
-		label = 'Empty Syringe',
-		weight = 50,
-		stack = true,
-		close = true,
-		description = '',
-		client = {
-			image = 'emptysyringe.png',
-		}
-	},
-	
-	['emptytube'] = {
-		label = 'Empty Tube',
-		weight = 50,
-		stack = true,
-		close = true,
-		description = '',
-		client = {
-			image = 'emptytube.png',
-		}
-	},
-	
-	['kankart'] = {
-		label = 'Person Blood Card',
-		weight = 50,
-		stack = false,
-		close = true,
-		description = '',
-		client = {
-			image = 'kankart.png',
-		}
-	},
-	
-	['mri'] = {
-		label = 'MRI Document',
-		weight = 150,
-		stack = false,
-		close = true,
-		description = '',
-		client = {
-			image = 'mri.png',
-		}
-	},
-	
-	['xray'] = {
-		label = 'Xray Document',
-		weight = 150,
-		stack = false,
-		close = true,
-		description = '',
-		client = {
-			image = 'xray.png',
-		}
-	},
 	------- tv
 	["vehicletv"] = {
 		label = "TV Remote",
@@ -24531,7 +24443,7 @@ return {
 	["zatresfan"] = {
 		label = "Modern Fan",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Fan - 60 and 120 RPM...",
 		degrade = 4320, -- 3 days
@@ -24556,7 +24468,7 @@ return {
 	["zatpackedweed"] = {
 		label = "Packed Weed",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Weed ready for sale",
 		degrade = 1440, -- 1 day
@@ -24569,7 +24481,7 @@ return {
 	["zatpatioheater"] = {
 		label = "Patio Heater",
 		weight = 100,
-		stack = false,
+		stack = true,
 		degrade = 4320, -- 3 days
 		decay = true,
 		close = true,
@@ -24582,7 +24494,7 @@ return {
 	["zatweedbranch"] = {
 		label = "Weed Branch",
 		weight = 10000,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Weed plant",
 		degrade = 4320, -- 3 days
@@ -24595,7 +24507,7 @@ return {
 	["zatceilinglight"] = {
 		label = "Ceiling Light",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Ceiling light...",
 		degrade = 1440, -- 1 day
@@ -24608,7 +24520,7 @@ return {
 	["zatbluelight"] = {
 		label = "Blue Light",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Blue Wall Light - Perfect for plant growth...",
 		degrade = 2880, -- 2 days
@@ -24621,7 +24533,7 @@ return {
 	["zatwalllight"] = {
 		label = "Wall Light",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Wall Light...",
 		degrade = 1440, -- 1 day
@@ -24634,7 +24546,7 @@ return {
 	["zatweedseed"] = {
 		label = "Weed Seed",
 		weight = 0,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Weed Seed",
 		degrade = 2880, -- 2 days
@@ -24712,7 +24624,7 @@ return {
 	["zatfan01"] = {
 		label = "Fan",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Fan - 20 and 50 RPM...",
 		degrade = 2880, -- 2 days
@@ -24751,7 +24663,7 @@ return {
 	["zatheater"] = {
 		label = "Wall Heater",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Electrical wall heater - LOH 10°C...",
 		degrade = 4320, -- 3 days
@@ -24764,7 +24676,7 @@ return {
 	["zatwallfan"] = {
 		label = "Wall Fan",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Fan - 80 and 200 RPM...",
 		degrade = 2880, -- 2 days
@@ -24777,7 +24689,7 @@ return {
 	["zatjoint"] = {
 		label = "Joint",
 		weight = 0,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Sidney would be very proud at you",
 		degrade = 1440, -- 1 day
@@ -24804,7 +24716,7 @@ return {
 	["farm_seed_carrot"] = {
 		label = "Carrot Seed",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Carrot Seed",
 		degrade = 4320, -- 3 days
@@ -24817,7 +24729,7 @@ return {
 	["farm_carrot_mash"] = {
 		label = "Mash Carrot",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Mash Carrot",
 		degrade = 1440, -- 1 day
@@ -24830,7 +24742,7 @@ return {
 	["farm_sink_s"] = {
 		label = "Sink",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Sink",
 		degrade = 2880, -- 2 days
@@ -24843,7 +24755,7 @@ return {
 	["farm_light_s"] = {
 		label = "Light S",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Light S",
 		degrade = 1440, -- 1 day
@@ -24856,7 +24768,7 @@ return {
 	["farm_carrot_comp"] = {
 		label = "Rotten Carrot",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Rotten Carrot",
 		degrade = 1440, -- 1 day
@@ -24869,7 +24781,7 @@ return {
 	["farm_sink_m"] = {
 		label = "Modern Sink",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Modern Sink",
 		degrade = 2880, -- 2 days
@@ -24882,7 +24794,7 @@ return {
 	["moon_distillation"] = {
 		label = "Moonshine Distillation",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Moonshine Distillation",
 		degrade = 4320, -- 3 days
@@ -24895,7 +24807,7 @@ return {
 	["farm_onion_comp"] = {
 		label = "Rotten Onion",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Rotten Onion",
 		degrade = 1440, -- 1 day
@@ -24908,7 +24820,7 @@ return {
 	["farm_corn_mash"] = {
 		label = "Mash Corn",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Mash Corn",
 		degrade = 1440, -- 1 day
@@ -24921,7 +24833,7 @@ return {
 	["farm_light_l"] = {
 		label = "Light L",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Light L",
 		degrade = 1440, -- 1 day
@@ -24934,7 +24846,7 @@ return {
 	["farm_seed_sunflower"] = {
 		label = "SunFlower Seed",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "SunFlower Seed",
 		degrade = 4320, -- 3 days
@@ -24947,7 +24859,7 @@ return {
 	["moon_moonshine_pack"] = {
 		label = "Moonshine Pack",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Moonshine Pack",
 		degrade = 4320, -- 3 days
@@ -24960,7 +24872,7 @@ return {
 	["farm_seed_wheat"] = {
 		label = "Wheat Seed",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Wheat Seed",
 		degrade = 4320, -- 3 days
@@ -24973,7 +24885,7 @@ return {
 	["farm_sunflower_comp"] = {
 		label = "Rotten SunFlower",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Rotten SunFlower",
 		degrade = 1440, -- 1 day
@@ -24986,7 +24898,7 @@ return {
 	["farm_tomato_comp"] = {
 		label = "Rotten Tomato",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Rotten Tomato",
 		degrade = 1440, -- 1 day
@@ -24999,7 +24911,7 @@ return {
 	["farm_mil"] = {
 		label = "Mil Machine",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Mil Machine",
 		degrade = 4320, -- 3 days
@@ -25012,7 +24924,7 @@ return {
 	["farm_seed_tomato"] = {
 		label = "Tomato Seed",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Tomato Seed",
 		degrade = 4320, -- 3 days
@@ -25025,7 +24937,7 @@ return {
 	["farm_pot_xs"] = {
 		label = "Pot XS",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "XS Pot",
 		degrade = 1440, -- 1 day
@@ -25038,7 +24950,7 @@ return {
 	["farm_pot_m"] = {
 		label = "Pot M",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "M Pot",
 		degrade = 1440, -- 1 day
@@ -25051,7 +24963,7 @@ return {
 	["farm_onion"] = {
 		label = "Onion",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Onion",
 		degrade = 4320, -- 3 days
@@ -25064,7 +24976,7 @@ return {
 	["farm_onion_mash"] = {
 		label = "Mash Onion",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Mash Onion",
 		degrade = 1440, -- 1 day
@@ -25077,7 +24989,7 @@ return {
 	["farm_compost"] = {
 		label = "Compost Box",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Compost Box",
 		degrade = 2880, -- 2 days
@@ -25090,7 +25002,7 @@ return {
 	["farm_water_tap"] = {
 		label = "Water Tap",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Water Tap",
 		degrade = 2880, -- 2 days
@@ -25103,7 +25015,7 @@ return {
 	["farm_corn"] = {
 		label = "Corn",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Corn",
 		degrade = 1440, -- 1 day
@@ -25116,7 +25028,7 @@ return {
 	["farm_tomato_mash"] = {
 		label = "Mash Tomato",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Mash Tomato",
 		degrade = 1440, -- 1 day
@@ -25129,7 +25041,7 @@ return {
 	["moon_moonshine"] = {
 		label = "Moonshine",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Moonshine",
 		degrade = 4320, -- 3 days
@@ -25142,7 +25054,7 @@ return {
 	["farm_seed_corn"] = {
 		label = "Corn Seed",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Corn Seed",
 		degrade = 4320, -- 3 days
@@ -25155,7 +25067,7 @@ return {
 	["farm_pot_s"] = {
 		label = "Pot S",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "S Pot",
 		degrade = 1440, -- 1 day
@@ -25168,7 +25080,7 @@ return {
 	["farm_fertilizer"] = {
 		label = "Fertilizer",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Fertilizer",
 		degrade = 2880, -- 2 days
@@ -25181,7 +25093,7 @@ return {
 	["farm_wheat"] = {
 		label = "Wheat",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Wheat",
 		degrade = 4320, -- 3 days
@@ -25194,7 +25106,7 @@ return {
 	["farm_seed_onion"] = {
 		label = "Onion Seed",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Onion Seed",
 		degrade = 4320, -- 3 days
@@ -25207,7 +25119,7 @@ return {
 	["farm_pot_l"] = {
 		label = "Pot L",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "L Pot",
 		degrade = 1440, -- 1 day
@@ -25220,7 +25132,7 @@ return {
 	["farm_sunflower_mash"] = {
 		label = "Mash SunFlower",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Mash SunFlower",
 		degrade = 1440, -- 1 day
@@ -25233,7 +25145,7 @@ return {
 	["farm_tomato"] = {
 		label = "Tomato",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Tomato",
 		degrade = 1440, -- 1 day
@@ -25246,7 +25158,7 @@ return {
 	["farm_wheat_mash"] = {
 		label = "Mash Wheat",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Mash Wheat",
 		degrade = 1440, -- 1 day
@@ -25259,7 +25171,7 @@ return {
 	["farm_water"] = {
 		label = "Water Can",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Water Can",
 		degrade = 2880, -- 2 days
@@ -25272,7 +25184,7 @@ return {
 	["farm_yeast"] = {
 		label = "Yeast",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Yeast",
 		degrade = 1440, -- 1 day
@@ -25285,7 +25197,7 @@ return {
 	["farm_wheat_comp"] = {
 		label = "Rotten Wheat",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Rotten Wheat",
 		degrade = 1440, -- 1 day
@@ -25298,7 +25210,7 @@ return {
 	["farm_sunflower"] = {
 		label = "SunFlower",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "SunFlower",
 		degrade = 4320, -- 3 days
@@ -25311,7 +25223,7 @@ return {
 	["farm_carrot"] = {
 		label = "Carrot",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Carrot",
 		degrade = 1440, -- 1 day
@@ -25324,7 +25236,7 @@ return {
 	["farm_corn_comp"] = {
 		label = "Rotten Corn",
 		weight = 100,
-		stack = false,
+		stack = true,
 		close = true,
 		description = "Rotten Corn",
 		degrade = 1440, -- 1 day
