@@ -39,6 +39,9 @@ Products = {
         { name = "zatweedseed", price = 200, amount = 250 },
         { name = "zatweedtable", price = 15000, amount = 250 },
 
+
+        { name = "empty_weed_bag", price = 100, amount = 250 },
+
         { name = "joint", price = 500, amount = 1200 },
     },
     ["customcaffe"] = {

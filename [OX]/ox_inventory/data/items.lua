@@ -3890,7 +3890,7 @@ return {
 	},
 
 	["empty_weed_bag"] = {
-		label = "Empty Bag",
+		label = "Coke Empty Bag",
 		weight = 0,
 		stack = true,
 		close = true,
