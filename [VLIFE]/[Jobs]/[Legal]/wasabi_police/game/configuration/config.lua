@@ -207,7 +207,7 @@ Config.handcuff = {                             -- Config in regards to cuffing
     lockpicking = {                             -- Lockpicking someone else out of handcuffs
         enabled = true,                        -- Enable handcuffs to be able to be lockpicked off(MUST HAVE LOCKPICK ITEM IN ITEMS)
         item = 'bobby_pin',
-        breakChance = 50,                       -- Chance of lockpick breaking if failed (Set to 100 for 100% or 0 for never breaking)
+        breakChance = 0,                       -- Chance of lockpick breaking if failed (Set to 100 for 100% or 0 for never breaking)
         difficulty = { 'easy', 'easy', 'easy' } -- Options: 'easy' / 'medium' / 'hard' (Can be stringed along as they are in config)
     }
 }
