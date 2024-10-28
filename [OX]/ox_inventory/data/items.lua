@@ -23398,6 +23398,26 @@ return {
             image = "thefamily_flag.png",
         }
     },
+	["theorder_flag"] = {
+        label = "The Family",
+        weight = 500,
+        stack = true,
+        close = true,
+        description = "The Family",
+        client = {
+            image = "theorder_flag.png",
+        }
+    },
+    ["theorder_first_flag"] = {
+        label = "The Family",
+        weight = 500,
+        stack = true,
+        close = true,
+        description = "The first flag for The Family",
+        client = {
+            image = "theorder_flag.png",
+        }
+    },
 	
 
 	
