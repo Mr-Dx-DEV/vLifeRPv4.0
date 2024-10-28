@@ -186,8 +186,6 @@ stop ms-peds
 stop ddcz_fov_system
 
 
-ensure qb-input
-
 
 setr profile_fpsFieldOfView 38.0
 setr profile_CameraHeight 1  
@@ -266,8 +264,8 @@ add_principal identifier.license:91e750dd43ff972ed7887994c415e915533c966d qbcore
 add_principal identifier.license:91e750dd43ff972ed7887994c415e915533c966d group.admin #themis
 add_principal identifier.discord:119898985744957442 group.admin  #themis
 
-
-
+add_principal identifier.discord:505462181899403295 group.admin # RIC
+add_principal identifier.discord:505462181899403295 qbcore.god # RIC
 
 add_principal identifier.discord:500372148641333249 qbcore.god #Achiles
 add_principal identifier.discord:500372148641333249 group.admin #Achiles

@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS `rcore_reports`;
+DROP TABLE IF EXISTS `rcore_reportsvlife`;
 CREATE TABLE `rcore_reports` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `author` text NOT NULL,

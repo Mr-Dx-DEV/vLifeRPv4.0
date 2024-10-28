@@ -209,7 +209,7 @@ local function LoadGarages() -- If Config.GarageEnabled
             if IsPedInAnyVehicle(PlayerPedId()) then
                 if not headerDrawn then
                     headerDrawn = true
-                    exports['qb-menu']:showHeader({
+                    exports['ox_lib']:showHeader({
                         {
                             header = 'Store vehicle',
                             icon = 'fas fa-door-open',
@@ -223,7 +223,7 @@ local function LoadGarages() -- If Config.GarageEnabled
         else
             if headerDrawn then
                 headerDrawn = false
-                exports['qb-menu']:closeMenu()
+                exports['ox_lib']:closeMenu()
             end
         end
     end)
@@ -232,7 +232,7 @@ local function LoadGarages() -- If Config.GarageEnabled
             if IsPedInAnyVehicle(PlayerPedId()) then
                 if not headerDrawn then
                     headerDrawn = true
-                    exports['qb-menu']:showHeader({
+                    exports['ox_lib']:showHeader({
                         {
                             header = 'Store vehicle',
                             icon = 'fas fa-door-open',
@@ -246,7 +246,7 @@ local function LoadGarages() -- If Config.GarageEnabled
         else
             if headerDrawn then
                 headerDrawn = false
-                exports['qb-menu']:closeMenu()
+                exports['ox_lib']:closeMenu()
             end
         end
     end)
