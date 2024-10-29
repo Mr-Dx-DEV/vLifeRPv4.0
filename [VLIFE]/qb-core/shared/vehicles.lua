@@ -811,7 +811,8 @@ local Vehicles = {
     
     { model = 'lambobarbie', name = 'lambo', brand = 'Gift By RBN', price = 50000, category = 'EDM', shop = 'edm'},
     { model = 'porschebarbie', name = 'porsche', brand = 'Gift By RBN', price = 50000, category = 'EDM', shop = 'edm'},
-
+    { model = 'manscarreragt', name = 'manscarreragt', brand = 'manscarreragt', price = 50000, category = 'EDM', shop = 'edm'},
+    
     { model = 'hs2000', name = 'hs2000', brand = 'hs2000', price = 50000, category = 'EDM', shop = 'edm'},
     { model = 'top91121', name = 'top91121', brand = 'top91121', price = 50000, category = 'EDM', shop = 'edm'},
     { model = 'pbr34paul', name = 'pbr34paul', brand = 'pbr34paul', price = 50000, category = 'EDM', shop = 'edm'},
