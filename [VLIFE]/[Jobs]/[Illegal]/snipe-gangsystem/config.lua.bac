@@ -1,0 +1,389 @@
+Config = {}
+
+Config.Core = "QBCore"
+Config.OldQBCore = false
+Config.CoreFolderName = "qb-core" 
+
+Config.Target = "qb-target"
+
+-- ██ ████████ ███████ ███    ███ ███████      █████  ███    ██ ██████       ██████   █████  ███    ██  ██████  ███████ 
+-- ██    ██    ██      ████  ████ ██          ██   ██ ████   ██ ██   ██     ██       ██   ██ ████   ██ ██       ██      
+-- ██    ██    █████   ██ ████ ██ ███████     ███████ ██ ██  ██ ██   ██     ██   ███ ███████ ██ ██  ██ ██   ███ ███████ 
+-- ██    ██    ██      ██  ██  ██      ██     ██   ██ ██  ██ ██ ██   ██     ██    ██ ██   ██ ██  ██ ██ ██    ██      ██ 
+-- ██    ██    ███████ ██      ██ ███████     ██   ██ ██   ████ ██████       ██████  ██   ██ ██   ████  ██████  ███████
+
+Config.FirstFlagProp = "tr_prop_tr_flag_01a" -- first flag prop for each gang (these will not be targetable or anything)
+
+-- Please follow the comments while creating new gangs. Also make sure to add the items and prop name properly while doing it.
+
+Config.GangFlags = {
+     ["jd"] = { -------------- Light Green
+         Item = "jd_flag",
+         FirstItem = "jd_first_flag", 
+         Prop = "jd_flag",
+         blipColor = 43, -- blip color
+         ped = {"s_m_y_blackops_01"},
+         url = "https://cdn.discordapp.com/attachments/1203605739914928138/1213998850835095552/20240303_143811_0000.png?ex=65f78389&is=65e50e89&hm=b24fa041464420765c0dee5f199cb1fa47d78f2d1ad97205ffd3389fe0a43a06&"
+     },
+     ["bloodpack"] = { -------------- East Bay 
+         Item = "bloodpack_flag",
+         FirstItem = "bloodpack_first_flag", 
+         Prop = "bloodpack_flag",
+         blipColor = 59, -- blip color
+         ped = {"g_m_y_lost_03"},
+         url = "https://cdn.discordapp.com/attachments/1203605739914928138/1216190395751338085/Logo-3-24.png?ex=65ff7c92&is=65ed0792&hm=d6dfe6354819bb89e23dcb1860c4462364912b1644c38183a79bd2d8162d37ed&"
+     },
+     ["rollin60s"] = { -------------- Dark Blue
+         Item = "rollin60s_flag",
+         FirstItem = "rollin60s_first_flag", 
+         Prop = "rollin60s_flag",
+         blipColor = 29, -- blip color
+         ped = {"a_m_m_soucent_03"},
+         url = "https://cdn.discordapp.com/attachments/1203605739914928138/1216190395751338085/Logo-3-24.png?ex=65ff7c92&is=65ed0792&hm=d6dfe6354819bb89e23dcb1860c4462364912b1644c38183a79bd2d8162d37ed&"
+     },
+     ["angelsofdeath"] = { -------------- White
+        Item = "angelsofdeath_flag",
+        FirstItem = "angelsofdeath_first_flag", 
+        Prop = "angelsofdeath_flag",
+        blipColor = 0, -- blip color
+        ped = {"s_m_y_waretech_01"},
+        url = "https://cdn.discordapp.com/attachments/1203605739914928138/1216190395751338085/Logo-3-24.png?ex=65ff7c92&is=65ed0792&hm=d6dfe6354819bb89e23dcb1860c4462364912b1644c38183a79bd2d8162d37ed&"
+    },
+    ["vandalz"] = { -------------- Orange
+        Item = "vandalz_flag",
+        FirstItem = "vandalz_first_flag", 
+        Prop = "vandalz_flag",
+        blipColor = 17, -- blip color
+        ped = {"s_m_y_waretech_01"},
+        url = "https://cdn.discordapp.com/attachments/1203605739914928138/1216190395751338085/Logo-3-24.png?ex=65ff7c92&is=65ed0792&hm=d6dfe6354819bb89e23dcb1860c4462364912b1644c38183a79bd2d8162d37ed&"
+    },
+    ["lucifersd"] = { -------------- Purple
+        Item = "lucifersd_flag",
+        FirstItem = "lucifersd_first_flag", 
+        Prop = "lucifersd_flag",
+        blipColor = 27, -- blip color
+        ped = {"s_m_y_waretech_01"},
+        url = "https://cdn.discordapp.com/attachments/1203605739914928138/1216190395751338085/Logo-3-24.png?ex=65ff7c92&is=65ed0792&hm=d6dfe6354819bb89e23dcb1860c4462364912b1644c38183a79bd2d8162d37ed&"
+    },
+    ["gb"] = { -------------- Black
+        Item = "gb_flag",
+        FirstItem = "gb_first_flag", 
+        Prop = "gb_flag",
+        blipColor = 72, -- blip color
+        ped = {"s_m_y_waretech_01"},
+        url = "https://cdn.discordapp.com/attachments/1203605739914928138/1216190395751338085/Logo-3-24.png?ex=65ff7c92&is=65ed0792&hm=d6dfe6354819bb89e23dcb1860c4462364912b1644c38183a79bd2d8162d37ed&"
+    },
+    ["thequantum"] = { -------------- Gray
+        Item = "thequantum_flag",
+        FirstItem = "thequantum_first_flag", 
+        Prop = "thequantum_flag",
+        blipColor = 62, -- blip color
+        ped = {"s_m_y_waretech_01"},
+        url = "https://cdn.discordapp.com/attachments/1203605739914928138/1216190395751338085/Logo-3-24.png?ex=65ff7c92&is=65ed0792&hm=d6dfe6354819bb89e23dcb1860c4462364912b1644c38183a79bd2d8162d37ed&"
+    },
+    ["lacosanostra"] = { -------------- Beige
+        Item = "lacosanostra_flag",
+        FirstItem = "lacosanostra_first_flag", 
+        Prop = "lacosanostra_flag",
+        blipColor = 36, -- blip color
+        ped = {"s_m_y_waretech_01"},
+        url = "https://cdn.discordapp.com/attachments/1203605739914928138/1216190395751338085/Logo-3-24.png?ex=65ff7c92&is=65ed0792&hm=d6dfe6354819bb89e23dcb1860c4462364912b1644c38183a79bd2d8162d37ed&"
+    },
+    ["pinkpanthers"] = { -------------- Pink
+        Item = "pinkpanthers_flag",
+        FirstItem = "pinkpanthers_first_flag", 
+        Prop = "pinkpanthers_flag",
+        blipColor = 8, -- blip color
+        ped = {"s_m_y_waretech_01"},
+        url = "https://cdn.discordapp.com/attachments/1203605739914928138/1216190395751338085/Logo-3-24.png?ex=65ff7c92&is=65ed0792&hm=d6dfe6354819bb89e23dcb1860c4462364912b1644c38183a79bd2d8162d37ed&"
+    },
+    ["b2a"] = { -------------- Light Yellow
+        Item = "b2a_flag",
+        FirstItem = "b2a_first_flag", 
+        Prop = "b2a_flag",
+        blipColor = 16, -- blip color
+        ped = {"s_m_y_waretech_01"},
+        url = "https://cdn.discordapp.com/attachments/1203605739914928138/1216190395751338085/Logo-3-24.png?ex=65ff7c92&is=65ed0792&hm=d6dfe6354819bb89e23dcb1860c4462364912b1644c38183a79bd2d8162d37ed&"
+    },
+    ["supercivs"] = { -------------- Blizzard Blue
+        Item = "supercivs_flag",
+        FirstItem = "supercivs_first_flag", 
+        Prop = "supercivs_flag",
+        blipColor = 53, -- blip color
+        ped = {"s_m_y_waretech_01"},
+        url = "https://cdn.discordapp.com/attachments/1203605739914928138/1216190395751338085/Logo-3-24.png?ex=65ff7c92&is=65ed0792&hm=d6dfe6354819bb89e23dcb1860c4462364912b1644c38183a79bd2d8162d37ed&"
+    },
+    ["moneygm"] = { -------------- Green
+        Item = "moneygm_flag",
+        FirstItem = "moneygm_first_flag", 
+        Prop = "moneygm_flag",
+        blipColor = 2, -- blip color
+        ped = {"s_m_y_waretech_01"},
+        url = "https://cdn.discordapp.com/attachments/1203605739914928138/1216190395751338085/Logo-3-24.png?ex=65ff7c92&is=65ed0792&hm=d6dfe6354819bb89e23dcb1860c4462364912b1644c38183a79bd2d8162d37ed&"
+    },
+    ["glogang"] = { -------------- Alto Gray
+        Item = "glogang_flag",
+        FirstItem = "glogang_first_flag", 
+        Prop = "glogang_flag",
+        blipColor = 62, -- blip color
+        ped = {"s_m_y_waretech_01"},
+        url = "https://cdn.discordapp.com/attachments/1203605739914928138/1216190395751338085/Logo-3-24.png?ex=65ff7c92&is=65ed0792&hm=d6dfe6354819bb89e23dcb1860c4462364912b1644c38183a79bd2d8162d37ed&"
+    },
+    ["oppsnd"] = { -------------- mamba
+        Item = "oppsnd_flag",
+        FirstItem = "oppsnd_first_flag", 
+        Prop = "oppsnd_flag",
+        blipColor = 65, -- blip color
+        ped = {"s_m_y_waretech_01"},
+        url = "https://cdn.discordapp.com/attachments/1203605739914928138/1216190395751338085/Logo-3-24.png?ex=65ff7c92&is=65ed0792&hm=d6dfe6354819bb89e23dcb1860c4462364912b1644c38183a79bd2d8162d37ed&"
+    },
+}
+
+Config.RemovalItem = {
+    item = "shovel",
+    price = 50000,
+}
+
+-- ██████  ██████  ██    ██  ██████  ███████ 
+-- ██   ██ ██   ██ ██    ██ ██       ██      
+-- ██   ██ ██████  ██    ██ ██   ███ ███████ 
+-- ██   ██ ██   ██ ██    ██ ██    ██      ██ 
+-- ██████  ██   ██  ██████   ██████  ███████
+Config.Drugs = {
+    -- this is broken (pays a lot)
+
+    --[[ ["magicmushroom"] = {
+        price = 210, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["peyote"] = {
+        price = 210, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["crack"] = {
+        price = 725, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["coke_figure"] = {
+        price = 1450, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["weed_package"] = {
+        price = 650, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["meth_bag"] = {
+        price = 4100, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["heroin"] = {
+        price = 825, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["weed_skunk"] = {
+        price = 210, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["weed_og-kush"] = {
+        price = 225, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["weed_white-widow"] = {
+        price = 255, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["weed_ak47"] = {
+        price = 270, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["weed_amnesia"] = {
+        price = 295, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["weed_purple"] = {
+        price = 310, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["weed_gelato"] = {
+        price = 330, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["weed_zkittlez"] = {
+        price = 360, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["oxy"] = {
+        price = 1250, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    },
+    ["coke_brick"] = {
+        price = 20000, -- price if the gang has Config.MinimumFlagsForDrugs (if flags increase, price will increase)
+        maxAmount = 5, -- max amount that can be sold at one time
+    }, ]]
+}
+
+-- ██    ██  █████  ██████  ██  █████  ██████  ██      ███████ ███████ 
+-- ██    ██ ██   ██ ██   ██ ██ ██   ██ ██   ██ ██      ██      ██      
+-- ██    ██ ███████ ██████  ██ ███████ ██████  ██      █████   ███████ 
+--  ██  ██  ██   ██ ██   ██ ██ ██   ██ ██   ██ ██      ██           ██ 
+--   ████   ██   ██ ██   ██ ██ ██   ██ ██████  ███████ ███████ ███████
+
+Config.NumberOfFlagsCanBeDestroyed = 10 -- number of flags that can be destroyed per restart
+Config.NumberOfFlagsGangCanDestroy = 2 -- number of flags that a gang can destroy per restart
+Config.SpawnPedToBuyFlag = true -- if true, the ped will spawn to buy the flag
+
+Config.MinimumFlagsForDrugs = 1 -- minimum amount of flags to be able to get Config.Drugs price (read Config.Drugs)
+Config.RobTime = 120000 -- time in ms to rob the flag (2 minutes)
+Config.PickUpTime = 15000 -- time in ms to pick the flag
+Config.RequiredGangMembers = 5 -- gang members required so other gangs can destroy the gang flags
+Config.RobLocalTime = 50000 -- time in ms to rob the locals
+Config.ChanceToRobLocal = 70 -- chance to rob local gang members
+Config.ChanceToSellDrugsAtCornerSelling = 80 -- chance that local will buy your drugs
+Config.ShowBlip = true -- show blip on map with BlipColors
+Config.RobLocalAmount = 100 -- amount you get when you rob local gang members which is multiplied by random value between 1 and the number of active gang members 
+Config.RequiredGangMembersToRobLocals = 2 -- gang members required to rob locals
+Config.MinimumFlagPrice = 25000 -- minimum price for a flag ( will be multiplied as the number of flags bought increases (check code in server/sv_buyflags.lua))
+Config.FlagPriceIncrease = 2 -- as the number of flags increase, the price of the flags will be increased by number of Flags * Config.FlagPriceIncrease (for 1 flag - 2x, for 2 flags - 4x, etc)
+Config.AllowMultipleBuys = false -- if set to true, gangs can buy multiple flags and removals every tsunami, if set to false, gangs can only buy one flag and removal every tsunami
+Config.AllowCommand = true -- command to enable command (/getflags) which spawns flags, etc if you restart the script. Make sure to get the gang again if you restart. 
+Config.Debug = false -- to print 
+Config.RobReputation = 1000 --if your 1000 locals have been robbed, you will get 0 dollars for the drug sale you make. The logic is as follows (Do not set this to zero at any cost!!!)
+Config.WaitToRobAnotherLocal = 2 -- time in minutes to wait to rob anothe local
+--[[
+local money = (randomAmount * Config.Drugs[itemName].price) * (flags/ Config.MinimumFlagsForDrugs) * (1 - (robbedGangTable[gang] / Config.RobReputation))
+
+randomAmount = random number between 1 and Config.Drugs[itemName].maxAmount
+Config.Drugs[itemName].price = price of the drug you are cornerselling
+Config.MinimumFlagsForDrugs = minimum amount of flags to be able to get Config.Drugs price (read Config.Drugs)
+flags = amount of flags your gang have
+robbedGangTable[gang] = number of time your locals have been robbed successfully
+Config.RobReputation = value mentioned IsMouseCursorAboveInstructionalButtons
+
+So the more flags you have and less locals are robbed of yours, the more money you make with cornerselling the drugs. 
+Also your robbedGangTable[gang] goes down as you sell more drugs. Doesnt go in negative.
+]]--
+
+
+
+-- ██       ██████   ██████  █████  ██      ███████ 
+-- ██      ██    ██ ██      ██   ██ ██      ██      
+-- ██      ██    ██ ██      ███████ ██      █████   
+-- ██      ██    ██ ██      ██   ██ ██      ██      
+-- ███████  ██████   ██████ ██   ██ ███████ ███████
+
+
+Config.Locale = {
+    --notify and progressbar
+    ["cancel"] = "Cancelled..",
+    ["inside"] = "Cannot Place inside Apartments or Houses",
+    ["placing_info"] = "Press E to place or Backspace to cancel or arrow keys to rotate",
+    ["placing"] = "Placing Flag",
+    ["too_far"] = "You are trying to place the flag too far!",
+    ["inventory_full"] = "Inventory is full",
+    ["do_not_have_shovel"] = "You do not have shovel, probably dropped it!",
+
+    ["cannot_place_here"] = "Cannot Place here, Flags have to be 100-140 units away from your own flag",
+    
+    ["not_your_gang"] = "You cannot place other gang's flag",
+    ["no_item_to_remove"] = "You do not have the item to remove flags",
+    ["destroy"] = "Destroying the flag",
+    ["not_enough_gang_members"] = "Not enough gang members available to Rob",
+    ["pick_up"] = "Picking Up the flag",
+
+    ["already_sold_to_local"] = "Already Sold to this local",
+    ["no_drugs_to_sell"] = "You do not have drugs to sell",
+    ["already_robbed_local"] = "Already Robbed this person",
+    ["cannot_rob_locals_now"] = "Cannot Rob Local Right now",
+    ["on_cooldown"] = "Wait some time before robbing another local",
+    ["local_rejected_offer"] = "Local Rejected the offer to buy drugs",
+
+    ["gang_already_bought_flag"] = "Someone from your gang already bought the flag",
+    ["not_enough_money"] = "You do not have enough money, Required", -- this will have the price at the end of notify
+    ["gang_already_bought_removal"] = "Someone from your gang already bought the removal",
+
+    ["cannot_destroy_now"] = "Cannot Destroy the flag now!",
+    ["limit_reached_to_destroy"] = "You have already reached your limit to destroy flags",
+
+    --Management notify
+    ["removed_from_gang"] = "You have been removed from the gang!",
+    ["role_changed"] = "Your role in gang has been changed!",
+    -- UI notifications
+    ["no_role_selected"] = "Please select the right grade!",
+    ["already_in_gang"] = "The player you are trying to hire, is already in a gang.",
+    ["cannot_find_player"] = "Invalid player id",
+    ["error"] = "Error",
+}
+
+--[[
+    * Notify Config
+    * Set only one to true 
+    * Config.QBCoreNotify - Uses default QBCore notify system
+    * Config.okokNotify - Uses OkOkNotify system
+    * Config.pNotify - Uses pNotify system
+
+    * Config.pNotifyLayout - set layout of where the notification will show. Check the layouts below. 
+    * Layouts:
+                top
+                topLeft
+                topCenter
+                topRight
+                center
+                centerLeft
+                centerRight
+                bottom
+                bottomLeft
+                bottomCenter
+                bottomRight
+    
+    * Config.OkOkNotifyTitle - Title to show on okokNotify
+]]--
+Config.Notify = {
+    ['QBCore'] = false, --(Default)
+    ['okokNotify'] = true,
+    ['pNotify'] = false,
+}
+
+Config.pNotifyLayout = "centerRight" --more options can be found in pNotify Readme. Make sure you put the right layout name.
+Config.OkOkNotifyTitle = "Container" --Title that displays on okoknotify
+
+-- ██████  ██████   ██████   ██████  ██████  ███████ ███████ ███████ ██████   █████  ██████      ██  ██████  ██████  ███    ██ ███████ 
+-- ██   ██ ██   ██ ██    ██ ██       ██   ██ ██      ██      ██      ██   ██ ██   ██ ██   ██     ██ ██      ██    ██ ████   ██ ██      
+-- ██████  ██████  ██    ██ ██   ███ ██████  █████   ███████ ███████ ██████  ███████ ██████      ██ ██      ██    ██ ██ ██  ██ ███████ 
+-- ██      ██   ██ ██    ██ ██    ██ ██   ██ ██           ██      ██ ██   ██ ██   ██ ██   ██     ██ ██      ██    ██ ██  ██ ██      ██ 
+-- ██      ██   ██  ██████   ██████  ██   ██ ███████ ███████ ███████ ██████  ██   ██ ██   ██     ██  ██████  ██████  ██   ████ ███████
+
+-- icons if you use project sloth progressbar, if you use rectangular progressbar, do not worry about it
+Config.ProgressBarIcons = {
+    ["robbing_player"] = "fa-solid fa-user-secret",
+    ["destroying"] = "fa-solid fa-hammer",
+    ["picking"] = "fa-solid fa-hammer",
+    ["placing"] = "fa-solid fa-flag"
+}
+
+-- ███    ███  ██████  ███    ██ ███████ ██    ██     ████████ ██    ██ ██████  ███████     ██████  ███████ ██       █████  ████████ ███████ ██████  
+-- ████  ████ ██    ██ ████   ██ ██       ██  ██         ██     ██  ██  ██   ██ ██          ██   ██ ██      ██      ██   ██    ██    ██      ██   ██ 
+-- ██ ████ ██ ██    ██ ██ ██  ██ █████     ████          ██      ████   ██████  █████       ██████  █████   ██      ███████    ██    █████   ██   ██ 
+-- ██  ██  ██ ██    ██ ██  ██ ██ ██         ██           ██       ██    ██      ██          ██   ██ ██      ██      ██   ██    ██    ██      ██   ██ 
+-- ██      ██  ██████  ██   ████ ███████    ██           ██       ██    ██      ███████     ██   ██ ███████ ███████ ██   ██    ██    ███████ ██████
+
+-- what type of money type is required to do the following action
+-- for eg., you need cash to buy flags
+Config.CashType = {
+    ["buyflags"] = "cash", --("bank", "crypto")
+    ["buyremoval"] = "cash",  --("bank", "crypto")
+    ["selldrugs"] = "cash", --("bank", "crypto")
+    ["robLocal"] = "cash", --("bank", "crypto")
+}
+
+
+-- ██████  ██    ██ ██    ██ ███████ ██       █████   ██████      ██████  ███████ ██████  
+-- ██   ██ ██    ██  ██  ██  ██      ██      ██   ██ ██           ██   ██ ██      ██   ██ 
+-- ██████  ██    ██   ████   █████   ██      ███████ ██   ███     ██████  █████   ██   ██ 
+-- ██   ██ ██    ██    ██    ██      ██      ██   ██ ██    ██     ██      ██      ██   ██ 
+-- ██████   ██████     ██    ██      ███████ ██   ██  ██████      ██      ███████ ██████
+
+Config.BuyFlagLocation = vector4(103.7453, -1424.1494, 29.3061, 230.4816)
+Config.BuyFlagModel = "csb_ramp_gang"
+
+
+Config.UseCommandToOpenLaptop = false --if true, you can use /openlaptop to open the laptop
