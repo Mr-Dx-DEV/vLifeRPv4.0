@@ -160,7 +160,7 @@ Config.JobItems = {
 -- this for jobs if he not have tablet like (cctv) to open camera
 Config.JobConnectLocations = {
     ['police'] = {
-        Coords = vector3(440.71, -978.79, 29.69),
+        Coords = vector3(452.588, -979.42, 30.69),
         Distance = 1
     }
 }
