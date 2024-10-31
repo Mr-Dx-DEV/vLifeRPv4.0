@@ -31,7 +31,7 @@ Config.VpnItem = 'vpn'                      -- require this item in location wif
 -- Settings
 Config.SignalLength = 12   -- how much characters and numbers in signal 
 Config.MoveCamForwardDistance = 0.2     -- this only move camera coords to forward because some times big cam props hide the vision
-Config.DisableWifiSystem = false            -- if you want disable wifi system 
+Config.DisableWifiSystem = true            -- if you want disable wifi system 
 Config.TimerFixCamera = 10      -- sec (this only for jobs, no fix cam for normal camera)
 Config.EnableWifiIcon = true    -- if you are in zone wifi, is show you a icon wifi up screen
 Config.AutoRepairCameras = true -- to repair all broken camera after server restart
