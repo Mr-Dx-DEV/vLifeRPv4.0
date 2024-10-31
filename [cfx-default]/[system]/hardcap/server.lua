@@ -18,7 +18,7 @@ AddEventHandler('playerDropped', function()
 end)
 
 AddEventHandler('playerConnecting', function(name, setReason)
-  local cv = GetConvarInt('sv_maxclients', 180)
+  local cv = GetConvarInt('sv_maxclients', 32)
 
   print('Connecting: ' .. name .. '^7')
 
