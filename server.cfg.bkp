@@ -137,6 +137,7 @@ setr game_enableDynamicDoorCreation "true"
 
 # These resources will start by default.
 ensure mapmanager
+ensure chat
 ensure spawnmanager
 ensure sessionmanager
 ensure hardcap
