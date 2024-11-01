@@ -17,6 +17,7 @@ Selector.PlayerMaxCharacters = {
     ["license:9fea4d27fcb69642ec77d8ea6a666becd1ce2182"] = 5,
     ["license:f85bf7de7a3861c1a5ddd06bece47484ce935f56"] = 5,
     ["license:45f6789013b9db1d9a3a4836a457b20fc2bcc52f"] = 5,
+    ["license:f09c493dfdfc87728726a137b3f1189c9c8c0f26"] = 5,
 }
 
 Selector.InteriorCoords = vector3(-827.42388916016, -730.15417480469, 108.13386535645) -- This is something that you shouldn't touch (used to load interior)
