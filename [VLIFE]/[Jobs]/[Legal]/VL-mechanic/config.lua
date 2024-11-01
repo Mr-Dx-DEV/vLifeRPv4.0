@@ -136,8 +136,8 @@ Config = {
 	},
 
 	Repairs = {	--Repair Related
-		FreeRepair = false,  		-- Are repairs free? True means yes
-		StashRepair = false, 		-- Enable for repair materials to be removed from a job stash (disabled if RequiresJob = false)
+		FreeRepair = true,  		-- Are repairs free? True means yes
+		StashRepair = true, 		-- Enable for repair materials to be removed from a job stash (disabled if RequiresJob = false)
 
 		ExtraDamages = true,		-- When enabled, it will use the built in extra damage systems (Like qb-mechanicjobs functions)
 
