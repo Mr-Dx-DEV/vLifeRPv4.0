@@ -59,7 +59,7 @@ Config = {
 				vec2(-617.80517578125, -1079.7291259766),
 				vec2(-599.44097900391, -1079.6105957031)
 			},
-			blip = vec3(-581.06, -1066.22, 22.34), blipcolor = 48, blipsprite = 89, blipscale = 0.7, blipdisp = 6, blipcat = nil,
+			blip = vec3(-581.06, -1066.22, 22.34), blipcolor = 48, blipsprite = 89, blipscale = 0.5, blipdisp = 6, blipcat = nil,
 			garage = { spawn = vec4(-594.62, -1086.59, 21.76, 220.09),
 						out = vec4(-593.19, -1084.99, 22.33, 311.96),
 						list = { "panto", "burrito3", } },

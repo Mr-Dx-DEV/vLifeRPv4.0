@@ -4,7 +4,7 @@ local Blips = {}
 
 local function applyBlipSettings(blip, color, name, sprite)
     SetBlipSprite(blip, sprite)
-    SetBlipScale(blip, 1.0)
+    SetBlipScale(blip, 0.5)
     SetBlipColour(blip, color)
     SetBlipAsShortRange(blip, true)
     BeginTextCommandSetBlipName('STRING')

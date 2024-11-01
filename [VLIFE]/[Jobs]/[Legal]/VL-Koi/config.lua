@@ -56,7 +56,7 @@ Config.Koi = {
 				vector2(-1012.6766357422, -1473.8658447266),
 				vector2(-1040.5207519531, -1424.4459228516)
 			},
-			blip = vector3(-1038.1516113281, -1476.5269775391, 17.018213272095), blipcolor = 64, blipsprite = 514, blipscale = 0.7, blipdisp = 514, blipcat = nil,
+			blip = vector3(-1038.1516113281, -1476.5269775391, 17.018213272095), blipcolor = 64, blipsprite = 514, blipscale = 0.5, blipdisp = 514, blipcat = nil,
 			garage = { spawn = vec4(0, 0, 0, 0),
 			out = vec4( 0, 0, 0, 0),
 				list = { "stalion2" } },

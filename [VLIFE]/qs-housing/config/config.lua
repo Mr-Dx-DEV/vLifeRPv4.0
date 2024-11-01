@@ -235,7 +235,7 @@ Config.Blips = {
     ['SetBlipColourOwner'] = 3,
     ['SetBlipColourAvailable'] = 2,
     ['SetBlipDisplay'] = 4,
-    ['SetBlipScale'] = 0.45,
+    ['SetBlipScale'] = 0.5,
     ['SetBlipAsShortRange'] = true,
 
 }

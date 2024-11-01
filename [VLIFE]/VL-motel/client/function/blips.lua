@@ -10,7 +10,7 @@ function SetupBlips()
         local coords = v.rent.coords
         local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
         SetBlipSprite(blip, options.sprite)
-        SetBlipScale(blip, 0.6)
+        SetBlipScale(blip, 0.5)
         SetBlipColour(blip, options.color)
         SetBlipDisplay(blip, 4)
         SetBlipAsShortRange(blip, true)

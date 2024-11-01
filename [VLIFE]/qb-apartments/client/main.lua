@@ -625,7 +625,7 @@ RegisterNetEvent('apartments:client:SetHomeBlip', function(home)
                 SetBlipSprite(Apartments.Locations[name].blip, 476)
             end
             SetBlipDisplay(Apartments.Locations[name].blip, 4)
-            SetBlipScale(Apartments.Locations[name].blip, 0.65)
+            SetBlipScale(Apartments.Locations[name].blip, 0.5)
             SetBlipAsShortRange(Apartments.Locations[name].blip, true)
             SetBlipColour(Apartments.Locations[name].blip, 3)
 

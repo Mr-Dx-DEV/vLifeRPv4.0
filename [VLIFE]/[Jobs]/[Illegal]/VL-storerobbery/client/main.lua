@@ -2363,7 +2363,7 @@ RegisterNetEvent('VL-StoreVlifeRobbery:client:robberyCall', function(_, _, _, co
         SetBlipColour(blip, 1)
         SetBlipDisplay(blip, 4)
         SetBlipAlpha(blip, transG)
-        SetBlipScale(blip, 1.0)
+        SetBlipScale(blip, 0.5)
         BeginTextCommandSetBlipName('STRING')
         AddTextComponentString("10-31 | Shop Robbery")
         EndTextCommandSetBlipName(blip)

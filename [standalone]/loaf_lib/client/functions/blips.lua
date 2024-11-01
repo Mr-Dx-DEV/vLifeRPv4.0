@@ -10,7 +10,7 @@ function functions.AddBlip(blipData)
     local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
     SetBlipSprite(blip, blipData.sprite or 1)
     SetBlipColour(blip, blipData.colour or blipData.color or 0)
-    SetBlipScale(blip, blipData.scale or 0.7)
+    SetBlipScale(blip, blipData.scale or 0.5)
     SetBlipAsShortRange(blip, blipData.shortRange or true)
     SetBlipDisplay(blip, blipData.display or 2)
     if blipData.category then

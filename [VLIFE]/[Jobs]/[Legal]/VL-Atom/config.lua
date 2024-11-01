@@ -55,7 +55,7 @@ Config.Atoms = {
 				vector2(84.69017791748, 315.20291137695),
 				vector2(108.69412231445, 306.02398681641)
 			},
-			blip = vector3(86.74, 281.58, 110.20), blipcolor = 75, blipsprite = 76, blipscale = 0.7, blipdisp = 6, blipcat = nil,
+			blip = vector3(86.74, 281.58, 110.20), blipcolor = 75, blipsprite = 76, blipscale = 0.5, blipdisp = 6, blipcat = nil,
 			garage = { spawn = vec4(95.82674407959, 308.240234375, 110.02256011963, 156.83001708984), 
 			out = vec4(95.82674407959, 308.240234375, 110.02256011963, 156.83001708984),  
 				list = { "speedo4" } },

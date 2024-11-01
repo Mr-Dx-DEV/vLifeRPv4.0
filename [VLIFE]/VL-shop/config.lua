@@ -64,7 +64,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = true,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['247supermarket2'] = {    --s2
@@ -77,7 +77,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = true,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['247supermarket3'] = {    --s3
@@ -90,7 +90,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = true,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['247supermarket4'] = {    --s4
@@ -103,7 +103,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = true,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['247supermarket5'] = {    --s5
@@ -116,7 +116,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = true,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     }, 
     ['247supermarket6'] = {    --s6
@@ -129,7 +129,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = true,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['247supermarket7'] = {    --s7
@@ -142,7 +142,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = true,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['247supermarket8'] = {    --s8
@@ -155,7 +155,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = true,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['247supermarket9'] = {    --s9
@@ -168,7 +168,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = true,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['COM SHOP'] = {    --s27
@@ -181,7 +181,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = false,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
          -- LTD Gasoline Locations
@@ -195,7 +195,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = false,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
      },
     ['ltdgasoline2'] = {     --s11
@@ -208,7 +208,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = false,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
      },
     ['ltdgasoline3'] = {     --s12
@@ -221,7 +221,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = false,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
      },
     ['ltdgasoline4'] = {     --s13
@@ -234,7 +234,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = false,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['ltdgasoline5'] = {     --s14
@@ -247,7 +247,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = false,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
          -- Hardware Store Locations
@@ -261,7 +261,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Hardware Store',
         ['showblip'] = true,
         ['blipsprite'] = 402,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['hardware2'] = {     --s16
@@ -274,7 +274,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Hardware Store',
         ['showblip'] = true,
         ['blipsprite'] = 402,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['hardware3'] = {     --s17
@@ -287,7 +287,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Hardware Store',
         ['showblip'] = true,
         ['blipsprite'] = 402,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
 
@@ -302,7 +302,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Ammunation',
         ['showblip'] = true,
         ['blipsprite'] = 313,
-        ['blipscale'] = 0.8,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['ammunation2'] = {     --s19
@@ -315,7 +315,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Ammunation',
         ['showblip'] = true,
         ['blipsprite'] = 313,
-        ['blipscale'] = 0.8,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['ammunation3'] = {     --s20
@@ -328,7 +328,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Ammunation',
         ['showblip'] = true,
         ['blipsprite'] = 313,
-        ['blipscale'] = 0.8,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['ammunation4'] = {     --s21
@@ -341,7 +341,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Ammunation',
         ['showblip'] = true,
         ['blipsprite'] = 313,
-        ['blipscale'] = 0.8,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['ammunation5'] = {     --s22
@@ -354,7 +354,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Ammunation',
         ['showblip'] = true,
         ['blipsprite'] = 313,
-        ['blipscale'] = 0.8,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['seaword'] = {     --s24
@@ -367,7 +367,7 @@ Config.Locations = {
         ['targetLabel'] = 'Sea Word',
         ['showblip'] = true,
         ['blipsprite'] = 266,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['leisureshop'] = {     --s25
@@ -380,7 +380,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Leisure Shop',
         ['showblip'] = true,
         ['blipsprite'] = 52,
-        ['blipscale'] = 0.6,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['fishingstore'] = {     --s25
@@ -393,7 +393,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Leisure Shop',
         ['showblip'] = true,
         ['blipsprite'] = 371,
-        ['blipscale'] = 0.9,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
     ['pharmacy'] = {     --s26
@@ -406,7 +406,7 @@ Config.Locations = {
         ['targetLabel'] = 'Open Shop',
         ['showblip'] = true,
         ['blipsprite'] = 51,
-        ['blipscale'] = 0.7,
+        ['blipscale'] = 0.5,
         ['blipcolor'] = 4,
     },
 }

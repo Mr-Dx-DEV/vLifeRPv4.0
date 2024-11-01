@@ -23,8 +23,8 @@ Config.Radius = 25 -- Maximum distance the animal can spawn when baited.
 Config.EnableZones = true
 Config.Radius = 50 -- Radius of the zone if you use Enable Zones
 Config.HuntingZones = {
-	[1] = {coords = vector3(495.66, 5587.17, 794.22), illegal = true, blipEnable = true, blipSprie = 313, blipColour = 1, blipScale = 0.8, blipName = "Illegal Hunting" },
-	[2] = {coords = vector3(-712.77, 5302.93, 72.27), illegal = false, blipEnable = true, blipSprie = 313, blipColour = 2, blipScale = 0.8, blipName = "Legal Hunting" }
+	[1] = {coords = vector3(495.66, 5587.17, 794.22), illegal = true, blipEnable = true, blipSprie = 313, blipColour = 1, blipScale = 0.5, blipName = "Illegal Hunting" },
+	[2] = {coords = vector3(-712.77, 5302.93, 72.27), illegal = false, blipEnable = true, blipSprie = 313, blipColour = 2, blipScale = 0.5, blipName = "Legal Hunting" }
 }
 
 ---------------
