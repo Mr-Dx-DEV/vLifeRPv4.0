@@ -2,7 +2,7 @@ Config.contracts.laundromat = {
     ---@type ContractSettings
     settings = {
         disabled = false,
-        chance = 10,
+        chance = 20,
         price = 75,
         requiredExperience = 500,
         expiry = 24 * 60,

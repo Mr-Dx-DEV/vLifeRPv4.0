@@ -2,7 +2,7 @@ Config.contracts.fleeca = {
     ---@type ContractSettings
     settings = {
         disabled = false,
-        chance = 10,
+        chance = 20,
         price = 250,
         requiredExperience = 1000,
         expiry = 24 * 60,
