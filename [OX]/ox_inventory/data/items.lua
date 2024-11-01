@@ -1,4 +1,24 @@
 return {
+
+---	chopshop
+["car_door"] = {label = "car door",weight = 100,stack = true,close = false,description = "",client = {	image = "car_door.png",}
+	},
+    ["car_wheel"] = {label = "car wheel",weight = 100,stack = true,close = false,description = " :D",client = {	image = "car_wheel.png",}
+	},
+    ["car_battery"] = {label = "car battery",weight = 100,stack = true,close = false,description = " :D",client = {	image = "car_battery.png",}
+	},
+    ["car_gearbox"] = {label = "car gearbox",weight = 100,stack = true,close = false,description = " :D",client = {	image = "car_gearbox.png",}
+	},
+    ["car_radiator"] = {label = "car radiator",weight = 100,stack = true,close = false,description = " :D",client = {	image = "car_radiator.png",}
+	},
+    ["car_scrap"] = {label = "car scrap",weight = 100,stack = true,close = false,description = " :D",client = {	image = "car_scrap.png",}
+	},
+    ["car_hood"] = {label = "car hood",weight = 100,stack = true,close = false,description = " :D",client = {	image = "car_hood.png",}
+	},
+    ["car_trunk"] = {label = "car trunk",weight = 100,stack = true,close = false,description = " :D",client = {	image = "car_trunk.png",}
+	},
+    ["chop_contract"] = {label = "chop_contract",weight = 100,stack = true,close = false,description = " :D",client = {	image = "chop_contract.png",}
+	},
 ---- cctv
 ['camera_pd'] = {
 	label = 'PD Camera',
@@ -23606,32 +23626,6 @@ return {
             image = "thehightable_flag.png",
         }
     },
-    
-  
- 
-
-
-
-	["car_wheel"] = {
-		label = "car wheel",
-		weight = 500,
-		stack = true,
-		close = true,
-		description = "...",
-		client = {
-			image = "car_wheel.png",
-		}
-	},
-	["car_door"] = {
-		label = "car door part",
-		weight = 500,
-		stack = true,
-		close = true,
-		description = "...",
-		client = {
-			image = "car_door.png",
-		}
-	},
 	["radiator"] = {
 		label = "car radiator",
 		weight = 500,
@@ -23652,17 +23646,6 @@ return {
 			image = "trunk.png",
 		}
 	},
-
-
-
-
-
-
-
-
-
-
-
 
 	["mechanic_tools"] = {
 		label = "Mechanic tools", weight = 0, stack = false, close = true, description = "Needed for vehicle repairs",
