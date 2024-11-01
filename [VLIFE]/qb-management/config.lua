@@ -22,6 +22,9 @@ Config.BossMenus = {
     burgershort = {
         vector3(-1202.11, -896.00, 13.88),
     },
+    atoms = {
+        vector3(81.446, 296.326, 110.249),
+    },
     urbanmechanic = {
         vector3(81.87, -1734.17, 29.61),
     },
