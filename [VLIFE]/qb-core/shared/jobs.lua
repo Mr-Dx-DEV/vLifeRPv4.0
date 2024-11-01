@@ -832,6 +832,18 @@ QBShared.Jobs = {
 			['4'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 150 },
 		},
 	},
+    pdmmechancis = {
+		label = 'PDM Mechanic',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Recruit', payment = 50 },
+			['1'] = { name = 'Showroom Sales', payment = 75 },
+			['2'] = { name = 'Business Sales', payment = 100 },
+			['3'] = { name = 'Finance', payment = 125 },
+			['4'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 150 },
+		},
+	},
 	--[[ bennys = {
 		label = 'Benny\'s Original Motor Works',
 		type = 'mechanic',
@@ -965,18 +977,7 @@ QBShared.Jobs = {
 			['4'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 3200 },
         },
 	},
-    ['upnatom'] = {
-		label = 'Up N Atoms',
-		defaultDuty = true,
-        offDutyPay = false,
-		grades = {
-            ['0'] = { name = 'New Hire', payment = 2000 },
-			['1'] = { name = 'Employee', payment = 2300 },
-			['2'] = { name = 'Supervisor', payment = 2600 },
-			['3'] = { name = 'Manager', payment = 2900 },
-			['4'] = { name = 'Owner', isboss = true, bankAuth = true, payment = 3200 },
-        },
-	},
+    
     ['beanmachine'] = {
 		label = 'Bean Machine',
 		defaultDuty = true,
