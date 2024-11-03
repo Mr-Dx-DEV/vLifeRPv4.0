@@ -53,7 +53,7 @@ Config.ChopShops = { -- Add as many as you need
         -- Management Settings
         Ownable = true,
         ManagementLocation = vec3(727.8610, -1067.2437, 27.31),
-        Price = 100000,
+        Price = 1000000,
         Percentage = 10,   -- Owner will recieve 10% of the total chop value into management fund
         CanSell = true,    -- Can sell the business to get back % of the original price
         SellPercentage = 50, -- % of the original price you get back when selling the business
@@ -91,7 +91,7 @@ Config.ChopShops = { -- Add as many as you need
         -- Management Settings
         Ownable = true,
         ManagementLocation = vector3(2041.43, 3187.44, 45.18),
-        Price = 75000,
+        Price = 750000,
         Percentage = 10,   -- Owner will recieve 10% of the total chop value into management fund
         CanSell = true,    -- Can sell the business to get back % of the original price
         SellPercentage = 50, -- % of the original price you get back when selling the business
@@ -182,7 +182,7 @@ Config.LootMax = 3 -- Max amount of items to receive
 
 -- Optional Advanced Rewards Per Chopping Stage
 Config.CarPartsItems = {
-    Enabled = false, -- Set to false to disable
+    Enabled = true, -- Set to false to disable
     Door = 'car_door',   -- 'item_name'
     Wheels = 'car_wheel',
     Battery = 'car_battery',
