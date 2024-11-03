@@ -59,13 +59,13 @@ QBShared.Jobs = {
             ['9'] = {
                 name = 'Asst. Chief',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 2500
             },
             ['10'] = {
                 name = 'Chief',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 3500
             },
             ['11'] = {
@@ -125,13 +125,13 @@ QBShared.Jobs = {
             ['9'] = {
                 name = 'Under Sheriff',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 2500
             },
             ['10'] = {
                 name = 'Sheriff',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 3500
             },
         },
@@ -181,13 +181,13 @@ QBShared.Jobs = {
             ['9'] = {
                 name = 'Lt Colonel',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 2500
             },
             ['10'] = {
                 name = 'Colonel',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 3500
             },
         },
@@ -237,13 +237,13 @@ QBShared.Jobs = {
             ['9'] = {
                 name = 'Under Sheriff',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 2500
             },
             ['10'] = {
                 name = 'Sheriff',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 3500
             },
         },
@@ -293,13 +293,13 @@ QBShared.Jobs = {
             ['9'] = {
                 name = 'Asst. Chief',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 2500
             },
             ['10'] = {
                 name = 'Chief',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 3500
             },
         },
@@ -349,13 +349,13 @@ QBShared.Jobs = {
             ['9'] = {
                 name = 'Deputy Warden',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 2500
             },
             ['10'] = {
                 name = 'Warden',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 3500
             },
         },
@@ -405,13 +405,13 @@ QBShared.Jobs = {
             ['9'] = {
                 name = 'Deputy Director',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 2500
             },
             ['10'] = {
                 name = 'Director',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 3500
             },
         },
@@ -461,13 +461,13 @@ QBShared.Jobs = {
             ['9'] = {
                 name = 'Deputy Director',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 2500
             },
             ['10'] = {
                 name = 'Director',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 3500
             },
         },
@@ -517,13 +517,13 @@ QBShared.Jobs = {
             ['9'] = {
                 name = 'Deputy Diector',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 2500
             },
             ['10'] = {
                 name = 'Director',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 3500
             },
         },
@@ -573,13 +573,13 @@ QBShared.Jobs = {
             ['9'] = {
                 name = 'Deputy Director',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 2500
             },
             ['10'] = {
                 name = 'Director',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 3500
             },
         },
@@ -616,8 +616,8 @@ QBShared.Jobs = {
             ['19'] = { name = 'Sheriff', payment = 7000 },
             ['20'] = { name = 'Trooper Lieutenant', payment = 6500 },
             ['21'] = { name = 'Trooper Captain', payment = 7000, },
-            ['22'] = { name = 'Deputy Commissioner', isboss = true, bankAuth = true, payment = 7500 },
-            ['23'] = { name = 'Commissioner', isboss = true, bankAuth = true, payment = 8000 },
+            ['22'] = { name = 'Deputy Commissioner', isboss = true,  payment = 7500 },
+            ['23'] = { name = 'Commissioner', isboss = true,  payment = 8000 },
         },
 	},
     vcorporation = {
@@ -636,9 +636,9 @@ QBShared.Jobs = {
             ['7'] = { name = 'Event Management Officer', payment = 2000 },
             ['8'] = { name = 'Manager', payment = 2500 },
             ['9'] = { name = 'Department Head', payment = 3000 },
-            ['10'] = { name = 'CEO', isboss = true, bankAuth = true, payment = 3500 },
-            ['11'] = { name = 'Managing Director', isboss = true, bankAuth = true, payment = 4000 },
-            ['12'] = { name = 'Chairman', isboss = true, bankAuth = true, payment = 5000 },
+            ['10'] = { name = 'CEO', isboss = true,  payment = 3500 },
+            ['11'] = { name = 'Managing Director', isboss = true,  payment = 4000 },
+            ['12'] = { name = 'Chairman', isboss = true,  payment = 5000 },
         },
     },
     
@@ -656,9 +656,9 @@ QBShared.Jobs = {
     --         ['5'] = { name = 'Sergeant', payment = 5750 },
     --         ['6'] = { name = 'Sergeant First Class', payment = 6000 },
     --         ['7'] = { name = 'Lieutenant', payment = 6250 },
-    --         ['8'] = { name = 'Captain', isboss = true, bankAuth = true, payment = 6500 },
-    --         ['9'] = { name = 'Deputy Commissioner', isboss = true, bankAuth = true, payment = 6750 },
-    --         ['10'] = { name = 'Commissioner', isboss = true, bankAuth = true, payment = 7000 },
+    --         ['8'] = { name = 'Captain', isboss = true,  payment = 6500 },
+    --         ['9'] = { name = 'Deputy Commissioner', isboss = true,  payment = 6750 },
+    --         ['10'] = { name = 'Commissioner', isboss = true,  payment = 7000 },
 	-- 	},
 	-- },
 	--[[ bcso = {
@@ -703,24 +703,24 @@ QBShared.Jobs = {
             },
 			['4'] = {
                 name = 'District Judge',
-             --   bankAuth = true,
+             --   
                 payment = 2800
             },
 			['5'] = {
                 name = 'Appellate Judge',
-              --  bankAuth = true,
+              --  
                 payment = 3100
             },
 			['6'] = {
                 name = 'Deputy Chief Justice',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 3500
             },
 			['7'] = {
                 name = 'Chief Justice',
                 isboss = true,
-                bankAuth = true,
+                
                 payment = 3900
             },
         },
@@ -738,9 +738,9 @@ QBShared.Jobs = {
             ['4'] = { name = 'Trooper Sergeant', payment = 12593 },
             ['5'] = { name = 'Trooper Sergeant First Class', payment = 13182 },
             ['6'] = { name = 'Trooper Lieutenant', payment = 13771 },
-            ['7'] = { name = 'Trooper Captain', isboss = true, bankAuth = true, payment = 14360, },
-            ['8'] = { name = 'Deputy Commissioner', isboss = true, bankAuth = true, payment = 15360 },
-            ['9'] = { name = 'Commissioner', isboss = true, bankAuth = true, payment = 16360 },
+            ['7'] = { name = 'Trooper Captain', isboss = true,  payment = 14360, },
+            ['8'] = { name = 'Deputy Commissioner', isboss = true,  payment = 15360 },
+            ['9'] = { name = 'Commissioner', isboss = true,  payment = 16360 },
 		},
 	}, ]]
 	ambulance = {
@@ -759,7 +759,7 @@ QBShared.Jobs = {
             ['6'] = { name = 'Captain', payment = 8000 },
 			['7'] = { name = 'Assistant Chief', isboss = true, payment = 8500 },
 			['8'] = { name = 'Deputy Chief', isboss = true, payment = 9000 },
-			['9'] = { name = 'Chief of EMS', isboss = true, bankAuth = true,  payment = 9000 },
+			['9'] = { name = 'Chief of EMS', isboss = true,   payment = 9000 },
 		},
 	},
 	senator = {
@@ -767,7 +767,7 @@ QBShared.Jobs = {
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
-			['0'] = { name = 'Boss', isboss = true, bankAuth = true, payment = 3000 },
+			['0'] = { name = 'Boss', isboss = true,  payment = 3000 },
 		},
 	},
 	realestate = {
@@ -779,7 +779,7 @@ QBShared.Jobs = {
 			['1'] = { name = 'House Sales', payment = 75 },
 			['2'] = { name = 'Business Sales', payment = 100 },
 			['3'] = { name = 'Broker', payment = 125 },
-			['4'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 150 },
+			['4'] = { name = 'Manager', isboss = true,  payment = 150 },
 		},
 	},
 	['tax'] = {
@@ -817,7 +817,7 @@ QBShared.Jobs = {
 			['1'] = { name = 'Driver', payment = 75 },
 			['2'] = { name = 'Event Driver', payment = 100 },
 			['3'] = { name = 'Sales', payment = 125 },
-			['4'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 150 },
+			['4'] = { name = 'Manager', isboss = true,  payment = 150 },
 		},
 	},
 	cardealer = {
@@ -829,7 +829,7 @@ QBShared.Jobs = {
 			['1'] = { name = 'Showroom Sales', payment = 75 },
 			['2'] = { name = 'Business Sales', payment = 100 },
 			['3'] = { name = 'Finance', payment = 125 },
-			['4'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 150 },
+			['4'] = { name = 'Manager', isboss = true,  payment = 150 },
 		},
 	},
     pdmmechancis = {
@@ -841,7 +841,7 @@ QBShared.Jobs = {
 			['1'] = { name = 'Showroom Sales', payment = 75 },
 			['2'] = { name = 'Business Sales', payment = 100 },
 			['3'] = { name = 'Finance', payment = 125 },
-			['4'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 150 },
+			['4'] = { name = 'Manager', isboss = true,  payment = 150 },
 		},
 	},
 	--[[ bennys = {
@@ -854,7 +854,7 @@ QBShared.Jobs = {
 			['1'] = { name = 'Novice', payment = 75 },
 			['2'] = { name = 'Experienced', payment = 100 },
 			['3'] = { name = 'Advanced', payment = 125 },
-			['4'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 150 },
+			['4'] = { name = 'Manager', isboss = true,  payment = 150 },
 		},
 	}, ]]
 	urbanmechanic = {
@@ -866,7 +866,7 @@ QBShared.Jobs = {
 			['0'] = { name = 'Recruit', payment = 50 },
 			['1'] = { name = 'Novice', payment = 75 },
 			['2'] = { name = 'Advanced', payment = 125 },
-			['3'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 150 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 150 },
 		},
 	},
     countymechanic = {                             --- petelo
@@ -878,7 +878,7 @@ QBShared.Jobs = {
 			['0'] = { name = 'Recruit', payment = 50 },
 			['1'] = { name = 'Novice', payment = 75 },
 			['2'] = { name = 'Advanced', payment = 125 },
-			['3'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 150 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 150 },
 		},
 	},
     mechanic = {                             --- petelo
@@ -890,7 +890,7 @@ QBShared.Jobs = {
 			['0'] = { name = 'Recruit', payment = 50 },
 			['1'] = { name = 'Novice', payment = 75 },
 			['2'] = { name = 'Advanced', payment = 125 },
-			['3'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 150 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 150 },
 		},
 	},
 	
@@ -962,7 +962,7 @@ QBShared.Jobs = {
 			['1'] = { name = 'Employee', payment = 2300 },
 			['2'] = { name = 'Supervisor', payment = 2600 },
 			['3'] = { name = 'Manager', payment = 2900 },
-			['4'] = { name = 'Owner', isboss = true, bankAuth = true, payment = 3200 },
+			['4'] = { name = 'Owner', isboss = true,  payment = 3200 },
         },
 	},
     ['henhouse'] = {
@@ -974,7 +974,7 @@ QBShared.Jobs = {
 			['1'] = { name = 'Novice', payment = 2300 },
 			['2'] = { name = 'Experienced', payment = 2600 },
 			['3'] = { name = 'Advanced', payment = 2900 },
-			['4'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 3200 },
+			['4'] = { name = 'Manager', isboss = true,  payment = 3200 },
         },
 	},
     
@@ -986,7 +986,7 @@ QBShared.Jobs = {
 			['1'] = { name = 'Employee', payment = 2300 },
 			['2'] = { name = 'Supervisor', payment = 2600 },
 			['3'] = { name = 'Manager', payment = 2900 },
-			['4'] = { name = 'Owner', isboss = true, bankAuth = true, payment = 3200 },
+			['4'] = { name = 'Owner', isboss = true,  payment = 3200 },
         },
 	},
     ['customcaffe'] = {
@@ -997,7 +997,7 @@ QBShared.Jobs = {
 			['1'] = { name = 'Employee', payment = 2300 },
 			['2'] = { name = 'Supervisor', payment = 2600 },
 			['3'] = { name = 'Manager', payment = 2900 },
-			['4'] = { name = 'Owner', isboss = true, bankAuth = true, payment = 3200 },
+			['4'] = { name = 'Owner', isboss = true,  payment = 3200 },
         },
 	},
 	--[[ beeker = {
@@ -1010,7 +1010,7 @@ QBShared.Jobs = {
 			['1'] = { name = 'Novice', payment = 75 },
 			['2'] = { name = 'Experienced', payment = 100 },
 			['3'] = { name = 'Advanced', payment = 125 },
-			['4'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 150 },
+			['4'] = { name = 'Manager', isboss = true,  payment = 150 },
 		},
 	}, ]]
 	burgershot = {
@@ -1021,7 +1021,7 @@ QBShared.Jobs = {
 			['0'] = { name = 'Waiter', payment = 5 },
 			['1'] = { name = 'Cashier', payment = 7 },
 			['2'] = { name = 'Chef', payment = 10 },
-			['3'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 12 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 12 },
 		},
 	},
 	catcafe = {
@@ -1032,7 +1032,7 @@ QBShared.Jobs = {
 			['0'] = { name = 'Waiter', payment = 5 },
 			['1'] = { name = 'Cashier', payment = 7 },
 			['2'] = { name = 'Chef', payment = 10 },
-			['3'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 12 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 12 },
 		},
 	},
     diner = {
@@ -1043,10 +1043,10 @@ QBShared.Jobs = {
 			['0'] = { name = 'Waiter', payment = 50 },
 			['1'] = { name = 'Cashier', payment = 75 },
 			['2'] = { name = 'Chef', payment = 100 },
-			['3'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 125 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 125 },
 		},
 	},
-	atoms = {
+	vwupnatom = {
 		label = 'Up Atoms',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -1054,7 +1054,7 @@ QBShared.Jobs = {
 			['0'] = { name = 'Waiter', payment = 50 },
 			['1'] = { name = 'Cashier', payment = 75 },
 			['2'] = { name = 'Chef', payment = 100 },
-			['3'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 125 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 125 },
 		},
 	},
 	pearls = {
@@ -1065,7 +1065,7 @@ QBShared.Jobs = {
 			['0'] = { name = 'Waiter', payment = 50 },
 			['1'] = { name = 'Cashier', payment = 75 },
 			['2'] = { name = 'Chef', payment = 100 },
-			['3'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 125 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 125 },
 		},
 	},
 	--[[ bennysmechanic = {
@@ -1076,7 +1076,7 @@ QBShared.Jobs = {
 			['0'] = { name = 'Waiter', payment = 50 },
 			['1'] = { name = 'Cashier', payment = 75 },
 			['2'] = { name = 'Chef', payment = 100 },
-			['3'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 125 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 125 },
 		},
 	}, ]]
 
@@ -1091,7 +1091,7 @@ QBShared.Jobs = {
 			['1'] = { name = 'Employee', payment = 2300 },
 			['2'] = { name = 'Supervisor', payment = 2600 },
 			['3'] = { name = 'Manager', payment = 2900 },
-			['4'] = { name = 'Owner', isboss = true, bankAuth = true, payment = 3200 },
+			['4'] = { name = 'Owner', isboss = true,  payment = 3200 },
         },
 	},
     ['rexdiner'] = {
@@ -1103,7 +1103,7 @@ QBShared.Jobs = {
 			['1'] = { name = 'Employee', payment = 2300 },
 			['2'] = { name = 'Supervisor', payment = 2600 },
 			['3'] = { name = 'Manager', payment = 2900 },
-			['4'] = { name = 'Owner', isboss = true, bankAuth = true, payment = 3200 },
+			['4'] = { name = 'Owner', isboss = true,  payment = 3200 },
         },
 	},
     ['hornys'] = {
@@ -1114,8 +1114,8 @@ QBShared.Jobs = {
             ['0'] = { name = 'New Hire', payment = 2000 },
 			['1'] = { name = 'Employee', payment = 2300 },
 			['2'] = { name = 'Supervisor', payment = 2600 },
-			['3'] = { name = 'Manager', isboss = true, bankAuth = true, payment = 2900 },
-			['4'] = { name = 'Owner', isboss = true, bankAuth = true, payment = 3200 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 2900 },
+			['4'] = { name = 'Owner', isboss = true,  payment = 3200 },
         },
 	},
     ['vanilla'] = {
@@ -1128,7 +1128,7 @@ QBShared.Jobs = {
 			['2'] = { name = 'Dancer', payment = 2480 },
 			['3'] = { name = 'Bar Tender', payment = 2720 },
 			['4'] = { name = 'Manager', payment = 2960 },
-            ['5'] = { name = 'CEO', isboss = true, bankAuth = true, payment = 3200 },
+            ['5'] = { name = 'CEO', isboss = true,  payment = 3200 },
         },
 	},
     ['tropical'] = {
@@ -1141,7 +1141,7 @@ QBShared.Jobs = {
 			['2'] = { name = 'Dancer', payment = 2480 },
 			['3'] = { name = 'Bar Tender', payment = 2720 },
 			['4'] = { name = 'Manager', payment = 2960 },
-            ['5'] = { name = 'CEO', isboss = true, bankAuth = true, payment = 3200 },
+            ['5'] = { name = 'CEO', isboss = true,  payment = 3200 },
         },
 	},
     ['skyclub'] = {
@@ -1184,7 +1184,7 @@ QBShared.Jobs = {
             ['8'] = {
                 name = 'Owner',
                 payment = 3200,
-                isboss = true, bankAuth = true,
+                isboss = true, 
             },
         },
     },
@@ -1212,7 +1212,7 @@ QBShared.Jobs = {
             ['4'] = {
                 name = 'Owner',
                 payment = 3200,
-                isboss = true, bankAuth = true,
+                isboss = true, 
             },
         },
     },
@@ -1240,7 +1240,7 @@ QBShared.Jobs = {
 			['4'] = {
                 name = 'Owner',
 				isboss = true,
-                bankAuth = true,
+                
                 payment = 3200
             },
         },
@@ -1269,7 +1269,7 @@ QBShared.Jobs = {
 			['4'] = {
                 name = 'Owner',
 				isboss = true,
-                bankAuth = true,
+                
                 payment = 800
             },
         },
@@ -1281,7 +1281,7 @@ QBShared.Jobs = {
         grades = {
             ['0'] = { name = 'Novice', payment = 100 },
             ['1'] = { name = 'Experienced', payment = 100 },
-            ['2'] = { name = 'Boss', isboss = true, bankAuth = true, payment = 200 },
+            ['2'] = { name = 'Boss', isboss = true,  payment = 200 },
         },
     },
     ['bahamas'] = {
@@ -1321,7 +1321,7 @@ QBShared.Jobs = {
                 name = 'Owner',
                 payment = 3200,
                 isboss = true, 
-                bankAuth = true,
+                
             },
         },
     },
@@ -1347,12 +1347,12 @@ QBShared.Jobs = {
             },
             ['3'] = {
                 name = 'Deputy Mayor',
-				isboss = true, bankAuth = true,
+				isboss = true, 
                 payment = 1500
             },
 			['4'] = {
                 name = 'Mayor',
-				isboss = true, bankAuth = true,
+				isboss = true, 
                 payment = 2000
             },
 		},
@@ -1491,12 +1491,12 @@ QBShared.Jobs = {
             },
 			['5'] = {
                 name = 'Manager',
-				isboss = true, bankAuth = true,
+				isboss = true, 
                 payment = 3000
             },
 			['6'] = {
                 name = 'Owner',
-				isboss = true, bankAuth = true,
+				isboss = true, 
                 payment = 3200
             },
         },
@@ -1528,7 +1528,7 @@ QBShared.Jobs = {
             },
 			['5'] = {
                 name = 'Owner',
-				isboss = true, bankAuth = true,
+				isboss = true, 
                 payment = 3200
             },
         },
@@ -1553,7 +1553,7 @@ QBShared.Jobs = {
             },
 			['3'] = {
                 name = 'Owner',
-                isboss = true, bankAuth = true,
+                isboss = true, 
                 payment = 3200
             },
 			
@@ -1588,7 +1588,7 @@ QBShared.Jobs = {
             ['5'] = {
                 name = 'CEO',
                 payment = 3200,
-                bankAuth = true,
+                
                 isboss = true
             },
         },
@@ -1622,7 +1622,7 @@ QBShared.Jobs = {
             ['5'] = {
                 name = 'CEO',
                 payment = 3200,
-                bankAuth = true,
+                
                 isboss = true
             },
         },
@@ -1652,7 +1652,7 @@ QBShared.Jobs = {
             ['4'] = {
                 name = 'CEO',
                 payment = 3200,
-                bankAuth = true,
+                
                 isboss = true
             },
         },
@@ -1682,7 +1682,7 @@ QBShared.Jobs = {
             ['4'] = {
                 name = 'CEO',
                 payment = 3200,
-                bankAuth = true,
+                
                 isboss = true
             },
         },
