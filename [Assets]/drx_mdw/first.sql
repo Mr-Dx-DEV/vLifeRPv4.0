@@ -1,3 +1,0 @@
--- (Change the text on line 3, where it says "INSERT ****" on the person that needs full access)
-INSERT INTO `drx_mdw_officers` (`citizenid`, `firstname`, `lastname`, `callsign`, `alias`, `phone`, `department`, `rank`, `image`, `roles`) VALUES
-	('INSERT CITIZEN ID HERE', 'INSERT FIRST NAME HERE', 'INSERT LAST NAME HERE', 401, 'DRX', 'INSERT PHONE NUMBER HERE', 'LSPD', 'Head of police department', 'https://i.imgur.com/PDJ3oiB.png', '[{"access":true,"id":0,"role":"Full Access"}]');
