@@ -1,0 +1,304 @@
+.citizen-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    .left {
+        padding: 5px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex: 0.25;
+        img {
+            height: 50%;
+        }
+        .record-list {
+            &.warrant {
+                background-color: #ab1d1d3d;
+            }
+            &.incident {
+                background-color: #d46b083d;
+            }
+            &.expired_warrant {
+                background-color: #47454b3d;
+            }
+            &.used_warrant {
+                background-color: #000000b4;
+            }
+        }
+        .ant-list-item-meta {
+            text-align: left;
+
+            .ant-list-item-meta-title {
+                margin-bottom: 0;
+            }
+            .ant-list-item-meta-avatar {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                font-size: 2em;
+                margin-top: auto;
+                margin-bottom: auto;
+                color: var(---token-colorPrimary);
+            }
+        }
+    }
+    .right {
+        flex: 0.75;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .upper {
+            flex: 0.5;
+            display: flex;
+            flex-direction: row;
+
+            .citizen-img {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                flex: 0.3;
+                img {
+                    width: 180px;
+                    height: 230px;
+                    object-fit: cover;
+                }
+                .img-wrapper {
+                    position: relative;
+                    border: 1px solid var(---token-colorBorder);
+                    background-color: var(---token-colorBorder);
+                }
+
+                .controls {
+                    margin-top: auto;
+                    background-color: rgb(58, 25, 25);
+                    border-radius: 10px;
+                    padding: 10px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 5px;
+                    width: 90%;
+                    button {
+                        flex-grow: 0;
+                        flex-basis: auto;
+                        width: auto;
+                        white-space: nowrap;
+                    }
+                }
+            }
+            .citizen-info {
+                flex: 0.7;
+                background-color: rgb(36, 18, 18);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                #info {
+                    background-color: rgb(24, 12, 12);
+                    margin-bottom: 3px;
+                }
+
+                #info-row {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 3px;
+
+                    #info {
+                        width: 48%;
+                    }
+                }
+
+                .title {
+                    padding: 5px 10px;
+                    font-family: 'Courier New', Courier, monospace;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 1em;
+                    font-weight: lighter;
+                    position: relative;
+
+                    .icon {
+                        position: absolute;
+                        right: 5px;
+                        top: 5px;
+                        font-size: 1.25em;
+                    }
+                }
+
+                .data {
+                    padding: 5px 10px;
+                    background-color: rgb(58, 35, 35);
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    text-align: left;
+                    gap: 10px;
+                    &.licenses {
+                        text-align: center;
+                        span {
+                            font-weight: 500;
+                            color: red;
+
+                            &.owned {
+                                color: green;
+                            }
+                        }
+                    }
+                }
+
+                .buttons {
+                    padding: 5px;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    background-color: rgb(58, 35, 35);
+                    height: auto;
+                }
+            }
+        }
+
+        .bottom {
+            flex: 0.5;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            .vehicle-list {
+                overflow-x: auto;
+                overflow-y: hidden;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 5px 0;
+                height: 50%;
+                .vehicle-card {
+                    background-color: var(---token-colorBgElevated);
+                    margin-right: 20px;
+                    padding: 10px;
+                    user-select: none;
+                    cursor: pointer;
+                    height: fit-content;
+                    width: 25%;
+                    height: 90%;
+                    .upper {
+                        display: flex;
+                        flex-direction: row;
+
+                        .vehicle-icon {
+                            svg {
+                                font-size: 2em;
+                            }
+                        }
+
+                        .vehicle-info {
+                            margin-left: auto;
+                            margin-right: 5px;
+                            text-align: right;
+
+                            h2,
+                            p {
+                                margin: 2px 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .notes-list {
+                overflow-x: auto;
+                overflow-y: hidden;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 5px 0;
+                height: 50%;
+                .note-card {
+                    background-color: var(---token-colorBgElevated);
+                    user-select: none;
+                    cursor: pointer;
+                    margin-right: 20px;
+                    padding: 10px;
+                    max-width: 25%;
+                    height: 90%;
+                    min-width: 25%;
+
+                    .upper {
+                        display: flex;
+                        flex-direction: row;
+
+                        .note-icon {
+                            svg {
+                                font-size: 2em;
+                            }
+                        }
+
+                        .note-info {
+                            margin-left: auto;
+                            margin-right: 5px;
+                            text-align: right;
+
+                            h2,
+                            p {
+                                margin: 2px 0;
+                            }
+
+                            p {
+                                text-align: left;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.citizen-calendar {
+    .ant-picker-cell-selected .ant-picker-cell-inner {
+        background-color: var(---token-colorBorder) !important;
+    }
+    .ant-picker-cell-inner {
+        border-top: 1px solid var(---token-colorPrimary) !important;
+    }
+    .citizen-calendar-events {
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        margin: 0;
+        padding-bottom: 7px;
+        white-space: nowrap;
+        li {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            .dot {
+                width: .5vh;
+                height: .5vh;
+                border-radius: 50%;
+                background: var(---token-colorPrimary);
+            }
+            .title {
+                width: 9vh;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+.calendar-events-alert-content {
+    display: flex;
+    align-items: center;
+    button {
+        margin-left: auto;
+    }
+}

@@ -1,0 +1,81 @@
+.announcements-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+    width: 100%;
+    margin: 0 auto;
+
+    .button {
+        margin-top: 20px;
+    }
+    .ant-form-item {
+        margin: 0;
+    }
+    .editor-wrapper {
+        height: 45vh;
+    }
+}
+
+.ant-input-no-focus-border {
+    margin-bottom: 1rem;
+}
+
+.mantine-RichTextEditor-root {
+    border-radius: 6px;
+    padding: 1rem;
+    height: 100%;
+
+    background-color: var(---token-colorBgContainer);
+    border: 1px solid var(---token-colorPrimaryBorder);
+    .quill {
+        border: 1px solid var(---token-colorPrimaryBorder);
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+        height: calc(100% - 60px);
+        overflow: auto;
+        color: var(---token-colorText);
+        text-align: left;
+    }
+    .ql-tooltip {
+        color: var(---token-colorText);
+        background-color: var(---token-colorBgContainer);
+        border: 1px solid var(---token-colorPrimaryBorder);
+        input {
+            color: var(---token-colorText);
+            background-color: var(---token-colorBgContainer);
+            border: 1px solid var(---token-colorPrimaryBorder);
+        }
+    }
+    .ql-action {
+        background-color: var(---token-colorPrimary);
+        border-radius: 10px;
+    }
+}
+
+.mantine-RichTextEditor-toolbar {
+    background-color: var(---token-colorBgElevated);
+    border: 1px solid var(---token-colorPrimaryBorder);
+}
+
+.mantine-RichTextEditor-toolbarGroup {
+    button {
+        &.ql-active {
+            background-color: var(---token-colorPrimary);
+            color: var(---token-colorPrimaryBorder);
+        }
+        background-color: var(---token-colorBgElevated);
+        border: 1px solid var(---token-colorPrimaryBorder);
+        color: var(---token-colorPrimary);
+        &:hover {
+            border: 1px solid var(---token-colorPrimary);
+            color: var(---token-colorPrimary);
+            background-color: var(---token-colorBgElevated);
+        }
+    }
+}
+
+.mantine-RichTextEditor-content {
+    color: var(---token-colorText);
+    height: 100%;
+    text-align: left !important;
+}
