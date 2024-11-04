@@ -137,7 +137,6 @@ setr game_enableDynamicDoorCreation "true"
 
 # These resources will start by default.
 ensure mapmanager
-ensure chat
 ensure spawnmanager
 ensure sessionmanager
 ensure hardcap
@@ -177,8 +176,13 @@ ensure [data]
 
 ensure zdiscord
 
+ensure WC_Male_Without_Brands
+ensure WC_Female_Without_Brands
+ensure EUPack
+ensure lspd
+ensure x_vlife
 
-restart Gang
+
 restart 0r-chat
 
 stop cfx-tcd-starterpack
