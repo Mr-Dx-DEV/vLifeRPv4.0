@@ -98,5 +98,5 @@ Link.input = {
 ---
 --- 'standalone' -- Built in dispatch system
 Link.dispatch = {
-    system = 'standalone'
+    system = 'cd'
 }

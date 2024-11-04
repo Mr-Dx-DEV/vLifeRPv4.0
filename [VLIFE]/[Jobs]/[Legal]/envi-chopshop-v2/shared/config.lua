@@ -70,7 +70,7 @@ Config.ChopShops = { -- Add as many as you need
         },
 
         -- Dispatch 
-        Dispatch = false, -- Set to true to enable police alerts when chopping a vehicle
+        Dispatch = true, -- Set to true to enable police alerts when chopping a vehicle
     },
 
     ['Sandy Shores'] = {   -- Name of the Chop Shop - [MUST BE UNIQUE]
@@ -293,7 +293,7 @@ function Notify(message, type, time) -- Change this to your own notification sys
 end
 
 function DispatchEvent(coords) 
-    exports['ps-dispatch']:SuspiciousActivity() -- Change this to your own dispatch triggers
+    exports['cd_dispatch']:SuspiciousActivity() -- Change this to your own dispatch triggers
 end
 
 

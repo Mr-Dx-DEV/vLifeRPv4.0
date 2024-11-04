@@ -839,7 +839,7 @@ function AttemptPoliceAlert(type)
             chance = Config.PoliceNightAlertChance
         end
         if math.random(1, 100) <= chance then
-            exports['ps-dispatch']:VehicleTheft(vehicle)
+            exports['cd_dispatch']:VehicleTheft(vehicle)
         end
         AlertSend = true
         SetTimeout(Config.AlertCooldown, function()

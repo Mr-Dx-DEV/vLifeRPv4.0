@@ -62,16 +62,16 @@ Config.LoanJobs = { -- job with grade. If you want to add more jobs, just add th
 
 -- this is the place from which only the manage UI will open. So for example, you can put this in the police station or cityhall from where police/judges can freeze/flag accounts.
 Config.ManagementLocations = {
-    vector3(441.16, -978.85, 30.69)
+    vector3(441.29, -996.68, 34.97)
 }
 
 Config.SupervisorJobs = { -- jobs that can manage the accounts like freeze/manage/export transactions for anyone
     ["police"] = 4,
 }
 
-Config.Dispatch = "ps" -- cd || ps || moz || other (if you select other, you will have to add your own dispatch alert from the function SendPoliceAlertForFlaggedAccount() in client/open/cl_customise.lua)
+Config.Dispatch = "cd" -- cd || ps || moz || other (if you select other, you will have to add your own dispatch alert from the function SendPoliceAlertForFlaggedAccount() in client/open/cl_customise.lua)
 
-Config.Progress = "ox" -- "ox" || "qb"
+Config.Progress = "qb" -- "ox" || "qb"
 
 -- ONLY FOR ESX
 -- if you have any job that starts with off, make sure to add it here. For example, if you have a job called office, you can add it here and it will be shown in the job list.
