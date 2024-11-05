@@ -20,11 +20,11 @@ local lvl1 = false
 local lvl0 = false
 
 ---------------
---cd_dispatch--
+--ps-dispatch--
 ---------------
 
--- IF YOU ARE USING cd_dispatch v2 IGNORE THE FOLLOWING, OTHERWISE YOU CONFIGURE YOUR cd_dispatch v1 AS FOLLOWS:
--- YOU MUST MAKE SURE YOU ADD THESE TO YOUR cd_dispatch/SERVER/SV_DISPATCHCODES.LUA FILE (of course remove the "--" at the start of the code for each): 
+-- IF YOU ARE USING ps-dispatch v2 IGNORE THE FOLLOWING, OTHERWISE YOU CONFIGURE YOUR ps-dispatch v1 AS FOLLOWS:
+-- YOU MUST MAKE SURE YOU ADD THESE TO YOUR ps-dispatch/SERVER/SV_DISPATCHCODES.LUA FILE (of course remove the "--" at the start of the code for each): 
 
 -- ["VL-StoreVlifeRobbery-register"] =  {displayCode = '10-90', description = "Forced Entry: Cash Register", radius = 0, recipientList = {'police'}, blipSprite = 628, blipColour = 1, blipScale = 1.5, blipLength = 2, sound = "Lose_1st", sound2 = "GTAO_FM_Events_Soundset", offset = "false", blipflash = "false"},
 -- ["VL-StoreVlifeRobbery-safe"] =  {displayCode = '10-90', description = "Store Robbery In Progress", radius = 0, recipientList = {'police'}, blipSprite = 350, blipColour = 1, blipScale = 1.5, blipLength = 2, sound = "Lose_1st", sound2 = "GTAO_FM_Events_Soundset", offset = "false", blipflash = "false"},
@@ -69,7 +69,7 @@ RegisterNetEvent('VL-StoreVlifeRobbery:client:mzRegisterHit', function()
             job = {"police"}                                        -- jobs that will get the alerts
         })
     elseif Config.dispatchver2 then 
-        exports['cd_dispatch']:storeRegister(camId)
+        exports['ps-dispatch']:storeRegister(camId)
     end 
 end)
 
@@ -98,7 +98,7 @@ RegisterNetEvent('VL-StoreVlifeRobbery:client:mzSafeHit', function()
             job = {"police"}                                    -- jobs that will get the alerts
         })
     elseif Config.dispatchver2 then 
-        exports['cd_dispatch']:storeSafe(camId)
+        exports['ps-dispatch']:storeSafe(camId)
     end 
 end)
 
@@ -127,7 +127,7 @@ RegisterNetEvent('VL-StoreVlifeRobbery:client:mzLiquorHit', function()
             job = {"police"}                                    -- jobs that will get the alerts
         })
     elseif Config.dispatchver2 then 
-        exports['cd_dispatch']:liquorStore(camId)
+        exports['ps-dispatch']:liquorStore(camId)
     end 
 end)
 

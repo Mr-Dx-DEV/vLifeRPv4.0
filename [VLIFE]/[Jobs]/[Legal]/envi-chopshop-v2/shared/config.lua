@@ -23,7 +23,7 @@ Config.DropToolsKey = 73 -- Key to drop the tools [Default: X]
 
 
 -- Cool Down Time
-Config.CooldownTime = 30 -- Time in minutes before you can chop another vehicle
+Config.CooldownTime = 1 -- Time in minutes before you can chop another vehicle
 Config.ShowTimeRemaining = true -- Shows a notification with the time remaining until you can chop another vehicle
 
 -- Contract Settings
@@ -53,7 +53,7 @@ Config.ChopShops = { -- Add as many as you need
         -- Management Settings
         Ownable = true,
         ManagementLocation = vec3(727.8610, -1067.2437, 27.31),
-        Price = 1000000,
+        Price = 10000000,
         Percentage = 10,   -- Owner will recieve 10% of the total chop value into management fund
         CanSell = true,    -- Can sell the business to get back % of the original price
         SellPercentage = 50, -- % of the original price you get back when selling the business
@@ -91,7 +91,7 @@ Config.ChopShops = { -- Add as many as you need
         -- Management Settings
         Ownable = true,
         ManagementLocation = vector3(2041.43, 3187.44, 45.18),
-        Price = 750000,
+        Price = 7500000,
         Percentage = 10,   -- Owner will recieve 10% of the total chop value into management fund
         CanSell = true,    -- Can sell the business to get back % of the original price
         SellPercentage = 50, -- % of the original price you get back when selling the business
@@ -160,7 +160,7 @@ Config.ClassMultipliers = {  -- Reward Multiplier for each vehicle class
 
 Config.RewardsAccount = 'cash' -- [QB] - 'cash' or 'bank' or 'crypto' // [ESX] - 'cash' or 'bank' or 'black_money'   -- Go to Server/server_edit.lua to edit the reward functions to your liking if you want to use something else.
 Config.Rewards = 1000 -- Base reward for each vehicle - (please keep above 10 for the multiplier to work)
-Config.AdditionalRewardsItem = 'cryptostick' -- Item to receive when using item rewards, set to false to disable
+Config.AdditionalRewardsItem = false -- Item to receive when using item rewards, set to false to disable
 Config.AdditionalRewardsAmount = math.random(1,3) -- Amount of item to receive when using item rewards
 
 -- Item Rewards
@@ -293,7 +293,7 @@ function Notify(message, type, time) -- Change this to your own notification sys
 end
 
 function DispatchEvent(coords) 
-    exports['cd_dispatch']:SuspiciousActivity() -- Change this to your own dispatch triggers
+    exports['ps-dispatch']:SuspiciousActivity() -- Change this to your own dispatch triggers
 end
 
 

@@ -37,7 +37,7 @@ Link = {
 --- 'qs-inventory' -- Quasar inventory system
 --- 'ps-inventory' -- Project Sloth inventory system
 --- 'codem-inventory' -- CodeM inventory system
-Link.inventory = 'framework'
+Link.inventory = 'ox_inventory'
 
 
 --- NOTIFICATION OPTIONS
