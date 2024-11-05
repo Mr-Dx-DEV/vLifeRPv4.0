@@ -1,16 +1,22 @@
 fx_version 'cerulean'
 game 'gta5'
+
 description 'Gang System'
 version '1.3.0'
 author 'Snipe'
+
 lua54 'yes'
 ui_page 'html/index.html'
+
 shared_scripts { 
 	'config.lua'
 }
+
+
 files {
 	'html/**/*',
 }
+
 client_scripts{
     'client/cl_main.lua',
     'client/cl_customise.lua',
@@ -21,6 +27,7 @@ client_scripts{
     'client/cl_nui.lua',
     'client/cl_cornerselling_customise.lua'
 } 
+
 server_scripts{
     '@oxmysql/lib/MySQL.lua',
     'server/sv_main.lua',
@@ -31,6 +38,7 @@ server_scripts{
     'server/sv_nui.lua',
     'server/sv_webhooks.lua'
 } 
+
 escrow_ignore {
     'config.lua',
     'client/cl_customise.lua',
@@ -45,8 +53,10 @@ escrow_ignore {
     'client/cl_cornerselling_customise.lua',
     'server/sv_webhooks.lua'
 }
+
 server_exports {
     'GetGangFlags', -- exports["snipe-gangsystem"]:GetGangFlags(gangName) - returns the amount of flags a gang has
     'GetGangMembersCount' -- exports["snipe-gangsystem"]:GetGangMembersCount(gangName) - returns the amount of members in a gang that are online
 }
+
 dependency '/assetpacks'
