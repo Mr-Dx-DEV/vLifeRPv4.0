@@ -279,7 +279,8 @@ add_principal identifier.discord:505462181899403295 qbcore.god # RIC
 add_principal identifier.discord:500372148641333249 qbcore.god #Achiles
 add_principal identifier.discord:500372148641333249 group.admin #Achiles
 
-
+add_principal identifier.discord:500372148641333249 qbcore.god #Tanvir
+add_principal identifier.discord:500372148641333249 group.admin #Tanvir
 
 
 
