@@ -29,16 +29,22 @@ if Config.PoliceAlerts.ENABLE then
     RegisterServerEvent('cd_dispatch:pdalerts:Gunshots')
     AddEventHandler('cd_dispatch:pdalerts:Gunshots', function(data)
         if GetResourceState('cd_radar') == 'started' then
-            TriggerEvent('cd_radar:RadarDatabase_ADD', {
-                plate = data.vehicle_plate,
-                model = data.vehicle_label,
-                colour = data.vehicle_colour,
-                reason = 'Firearms',
-                type = 'bolo',
-                name = L('dispatch')..L('policealerts_gunshots_title'),
-                notes = message,
-                date = nil,
-            })
+            if exports["pug-paintball"]:IsInPaintball() then return end
+            if LocalPlayer.state.inArena then return end -- Arena PvP shit
+            local CallPoliceChance = 90
+            local random = math.random(1, 100)
+            if random <= CallPoliceChance then
+                TriggerEvent('cd_radar:RadarDatabase_ADD', {
+                    plate = data.vehicle_plate,
+                    model = data.vehicle_label,
+                    colour = data.vehicle_colour,
+                    reason = 'Firearms',
+                    type = 'bolo',
+                    name = L('dispatch')..L('policealerts_gunshots_title'),
+                    notes = message,
+                    date = nil,
+                })
+            end
         end
     end)
 
