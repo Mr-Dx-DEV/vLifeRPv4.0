@@ -20,7 +20,7 @@ Config.GangFlags = {
     ["rbit"] = { -- gang name (should be in qb-core/shared/gangs.lua)
         Item = "rbit_flag", -- item to give to player
         FirstItem = "rbit_first_flag", --  item to give to player to place the first flag
-        Prop = "cs6_03_flag", -- prop to spawn
+        Prop = "rbit_flag", -- prop to spawn
         blipColor = 1, -- blip color
         ped = {"g_m_y_ballasout_01", "g_m_y_ballaeast_01"}, -- ped to spawn
         url = "https://i.ibb.co.com/gdYR1Fy/5-KI1-MIX-R2qbbh-PVm4ad1-A-processed.png" -- image that will be visible on the tablet
@@ -30,7 +30,7 @@ Config.GangFlags = {
     ["tokyomanji"] = {
         Item = "tokyomanji_flag",
         FirstItem = "tokyomanji_first_flag", -- item to give to player to place the first flag
-        Prop = "cs6_03_flag",
+        Prop = "tokyomanji_flag",
         blipColor = 38, -- blip color
         ped = {"g_m_y_lost_01", "g_m_y_lost_02"},
         url = "https://media.discordapp.net/attachments/1103650225844928573/1279405996695093312/tokyomanji.png?ex=66d4532f&is=66d301af&hm=3a7a96b08a9a951e32c284a66633fb05dad949519a50d1442d87c30b4a7c4a23&=&format=webp&quality=lossless"
@@ -38,7 +38,7 @@ Config.GangFlags = {
     ["thehightable"] = {
         Item = "lthehightable_flag",
         FirstItem = "thehightable_first_flag", -- item to give to player to place the first flag
-        Prop = "cs6_03_flag",
+        Prop = "thehightable_flag",
         blipColor = 55, -- blip color
         ped = {"g_m_y_lost_01", "g_m_y_lost_02"},
         url = "https://media.discordapp.net/attachments/1103650225844928573/1279405997839880316/thehightable.jpg?ex=66d45330&is=66d301b0&hm=7c6871df2c857ea50ca6ec1711f784a58ed530f792a8686c2bfd7c89d9172936&=&format=webp&width=560&height=560"
@@ -46,7 +46,7 @@ Config.GangFlags = {
     ["outcast"] = {
         Item = "loutcast_flag",
         FirstItem = "outcast_first_flag", -- item to give to player to place the first flag
-        Prop = "cs6_03_flag",
+        Prop = "outcast_flag",
         blipColor = 55, -- blip color
         ped = {"g_m_y_lost_01", "g_m_y_lost_02"},
         url = "https://media.discordapp.net/attachments/1103650225844928573/1279405997839880316/outcast.jpg?ex=66d45330&is=66d301b0&hm=7c6871df2c857ea50ca6ec1711f784a58ed530f792a8686c2bfd7c89d9172936&=&format=webp&width=560&height=560"
@@ -54,7 +54,7 @@ Config.GangFlags = {
     ["thefamily"] = {
         Item = "lthefamily_flag",
         FirstItem = "thefamily_first_flag", -- item to give to player to place the first flag
-        Prop = "cs6_03_flag",
+        Prop = "thefamily_flag",
         blipColor = 55, -- blip color
         ped = {"g_m_y_lost_01", "g_m_y_lost_02"},
         url = "https://media.discordapp.net/attachments/1103650225844928573/1279405997839880316/thefamily.jpg?ex=66d45330&is=66d301b0&hm=7c6871df2c857ea50ca6ec1711f784a58ed530f792a8686c2bfd7c89d9172936&=&format=webp&width=560&height=560"
@@ -62,7 +62,7 @@ Config.GangFlags = {
     ["theorder"] = {
         Item = "ltheorder_flag",
         FirstItem = "theorder_first_flag", -- item to give to player to place the first flag
-        Prop = "cs6_03_flag",
+        Prop = "theorder_flag",
         blipColor = 55, -- blip color
         ped = {"g_m_y_lost_01", "g_m_y_lost_02"},
         url = "https://media.discordapp.net/attachments/1103650225844928573/1279405997839880316/theorder.jpg?ex=66d45330&is=66d301b0&hm=7c6871df2c857ea50ca6ec1711f784a58ed530f792a8686c2bfd7c89d9172936&=&format=webp&width=560&height=560"
