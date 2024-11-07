@@ -48,38 +48,38 @@ Config.JobData = {
 Config.WheelItems = { -- Items you get when chopping a wheel
     [1] = {
         ["item"] = "aluminum",
-        ["amount"] = math.random(2, 5)
+        ["amount"] = math.random(2, 10)
     },
     [2] = {
         ["item"] = "plastic",
-        ["amount"] = math.random(2, 5)
+        ["amount"] = math.random(2, 10)
     },
     [3] = {
         ["item"] = "rubber",
-        ["amount"] = math.random(2, 5)
+        ["amount"] = math.random(2, 10)
     },
 }
 
 Config.DoorItems = { -- Items you get when chopping a door (also includes the trunk and hood)
     [1] = {
         ["item"] = "steel",
-        ["amount"] = math.random(2, 5)
+        ["amount"] = math.random(2, 10)
     },
     [2] = {
         ["item"] = "plastic",
-        ["amount"] = math.random(2, 5)
+        ["amount"] = math.random(2, 10)
     },
     [3] = {
         ["item"] = "metalscrap",
-        ["amount"] = math.random(2, 5)
+        ["amount"] = math.random(2, 10)
     },
     [4] = {
         ["item"] = "iron",
-        ["amount"] = math.random(2, 5)
+        ["amount"] = math.random(2, 10)
     },
     [5] = {
         ["item"] = "aluminum",
-        ["amount"] = math.random(2, 5)
+        ["amount"] = math.random(2, 10)
     },
 }
 
