@@ -49,6 +49,8 @@ if Config.PoliceAlerts.ENABLE then
 
 
     if Config.PoliceAlerts.GunShots.ENABLE then
+        if exports["pug-paintball"]:IsInPaintball() then return end
+        if LocalPlayer.state.inArena then return end -- Arena PvP shit
         CreateThread(function()
             while not Authorised do Wait(1000) end
             while true do
@@ -56,7 +58,7 @@ if Config.PoliceAlerts.ENABLE then
                 local ped = PlayerPedId()
                 local has_weapon, weapon_hash = GetCurrentPedWeapon(ped)
                 if has_weapon then wait = 5 end
-                if IsPedShooting(ped) and not IsPedCurrentWeaponSilenced(ped) then
+                if IsPedShooting(ped) and not IsPedCurrentWeaponSilenced(ped) and not exports["pug-paintball"]:IsInPaintball() and not LocalPlayer.state.inArena then
                     if not Config.PoliceAlerts.GunShots.WhitelistedWeapons[weapon_hash] then
                         if not IsPlayerJobWhitelisted() and not IsPlayerInGunshotWhitelistZone() and IsWitnessPedInArea() then
                             local weapon_name = Config.PoliceAlerts.GunShots.WeaponLabels[weapon_hash]
