@@ -1,743 +1,1300 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+Config = {}
+Config.Keybind = 'F1' -- FiveM Keyboard, this is registered keymapping, so needs changed in keybindings if player already has this mapped.
+Config.Toggle = false -- use toggle mode. False requires hold of key
+Config.UseWhilstWalking = false -- use whilst walking
+Config.EnableExtraMenu = true
+Config.Fliptime = 15000
 
-local isJudge = false
-local isPolice = false
-local isTow = false
-local isTaxi = false
-local isMedic = false
-local isDead = false
-local myJob = "Unemployed"
-local isHandcuffed = false
-local hasOxygenTankOn = false
-local bennyscivpoly = false
-local onDuty = false
-local inGarage = false
-local inDepots = false
-
-rootMenuConfig =  {
-    --[[ {
-        id = "expressions",
-        displayName = "Expressions",
-        icon = "#expressions",
-        enableMenu = function()
-            local src = source
-            local Player = QBCore.Functions.GetPlayerData(src)
-            local inlaststand = Player.metadata["inlaststand"]
-            local isdead = Player.metadata["isdead"]
-
-         
-            return not inlaststand and not isdead
-        end,
-        subMenus = { "expressions:drunk", "expressions:angry", "expressions:dumb", "expressions:electrocuted", "expressions:grumpy", "expressions:happy", "expressions:injured", "expressions:joyful", "expressions:mouthbreather", "expressions:shocked", "expressions:sleeping", "expressions:smug", "expressions:speculative", "expressions:stressed", "expressions:sulking", "expressions:weird", "expressions:weird2"}
-    }, ]]
-    {
-        id = "blips",
-        displayName = "GPS",
-        icon = "#blips",
-        enableMenu = function()
-            local src = source
-            local Player = QBCore.Functions.GetPlayerData(src)
-            local inlaststand = Player.metadata["inlaststand"]
-            local isdead = Player.metadata["isdead"]
-
-            return not isdead and not inlaststand
-        end,
-        subMenus = { "blips:gasstations", --[["blips:trainstations",]] "blips:barbershop", "blips:tattooshop", "fk:karakol", "fk:hastane", "fk:galeri", "fk:motel"}
+Config.MenuItems = {
+    [1] = {
+        id = 'citizen',
+        title = 'Citizen',
+        icon = 'user',
+        items = {
+             {
+                id = 'getintrunk',
+                title = 'Get In Trunk',
+                icon = 'car',
+                type = 'client',
+                event = 'qb-trunk:client:GetIn',
+                shouldClose = true
+            },  {
+                id = 'emotemenu',
+                title = 'Emote Menu',
+                icon = 'face-smile',
+                type = 'client',
+                event = 'emote:open:menu',
+                shouldClose = true
+            },
+        }
     },
-    {
-        id = "General",
-        displayName = "General",
-        icon = "#globe-europe",
-        enableMenu = function()
-            local src = source
-            local Player = QBCore.Functions.GetPlayerData(src)
-            local inlaststand = Player.metadata["inlaststand"]
-            local isdead = Player.metadata["isdead"]
-
-            return not inlaststand and not isdead
-        end,
-        subMenus = {--[[ "general:givenum", ]] "drug:sell"}
+    [2] = {
+        id = 'interactions',
+        title = 'Interaction',
+        icon = 'triangle-exclamation',
+        items = {
+            -- {
+            --     id = 'handcuff',
+            --     title = 'Cuff',
+            --     icon = 'user-lock',
+            --     type = 'client',
+            --     event = 'police:client:CuffPlayerSoft',
+            --     shouldClose = true
+            -- }, 
+            {
+                id = 'playerinvehicle',
+                title = 'Put In Vehicle',
+                icon = 'car-side',
+                type = 'client',
+                event = 'police:client:PutPlayerInVehicle',
+                shouldClose = true
+            }, {
+                id = 'playeroutvehicle',
+                title = 'Take Out Of Vehicle',
+                icon = 'car-side',
+                type = 'client',
+                event = 'police:client:SetPlayerOutVehicle',
+                shouldClose = true
+            }, --[[ {
+                id = 'stealplayer',
+                title = 'Rob',
+                icon = 'mask',
+                type = 'client',
+                event = 'police:client:RobPlayer',
+                shouldClose = true
+            }, ]] {
+                id = 'escort',
+                title = 'Kidnap',
+                icon = 'user-group',
+                type = 'client',
+                event = 'police:client:KidnapPlayer',
+                shouldClose = true
+            }, {
+                id = 'escort2',
+                title = 'Escort',
+                icon = 'user-group',
+                type = 'client',
+                event = 'police:client:EscortPlayer',
+                shouldClose = true
+            }, {
+                id = 'escort554',
+                title = 'Hostage',
+                icon = 'child',
+                type = 'client',
+                event = 'A5:Client:TakeHostage',
+                shouldClose = true
+            },{
+                id = 'shoesteal',
+                title = 'Steal Shoe',
+                icon = 'child',
+                type = 'client',
+                event = 'tnj-stealshoes:client:TheftShoe',
+                shouldClose = true
+            },{
+                id = 'stealplayer',
+                title = 'Rob',
+                icon = 'mask',
+                type = 'client',
+                event = 'police:client:RobPlayer',
+                shouldClose = true
+            },
+        }
     },
-    {
-        id = "Interaction",
-        displayName = "Interaction",
-        icon = "#general",
-        enableMenu = function()
-            local src = source
-            local Player = QBCore.Functions.GetPlayerData(src)
-            local inlaststand = Player.metadata["inlaststand"]
-            local isdead = Player.metadata["isdead"]
-
-            return not isdead and not inlaststand
-        end,
-        
-        subMenus = {"general:pinvehicle", "general:cuff", "general:rob", "general:playerinvehicle", "general:playeroutvehicle", }
+    [3] = {
+        id = 'general',
+        title = 'General',
+        icon = 'rectangle-list',
+        items = {
+            {
+                id = 'sex',
+                title = 'Sex',
+                icon = 'house',
+                items = {
+                    {
+                        id = 'sexsetup',
+                        title = 'Setup Sex Scene',
+                        icon = 'key',
+                        type = 'client',
+                        event = 'elevate:client:sexsetup',
+                        shouldClose = true
+                    }, {
+                        id = 'sleepsetup',
+                        title = 'Setup Sleep Scene',
+                        icon = 'key',
+                        type = 'client',
+                        event = 'elevate:client:sleepsetup',
+                        shouldClose = true
+                    }
+                }
+            }, {
+                id = 'house',
+                title = 'House Interaction',
+                icon = 'house',
+                items = {
+                    {
+                        id = 'givehousekey',
+                        title = 'Give House Keys',
+                        icon = 'key',
+                        type = 'client',
+                        event = 'qb-houses:client:giveHouseKey',
+                        shouldClose = true
+                    }, {
+                        id = 'removehousekey',
+                        title = 'Remove House Keys',
+                        icon = 'key',
+                        type = 'client',
+                        event = 'qb-houses:client:removeHouseKey',
+                        shouldClose = true
+                    }, {
+                        id = 'togglelock',
+                        title = 'Toggle Doorlock',
+                        icon = 'door-closed',
+                        type = 'client',
+                        event = 'qb-houses:client:toggleDoorlock',
+                        shouldClose = true
+                    }, {
+                        id = 'decoratehouse',
+                        title = 'Decorate House',
+                        icon = 'box',
+                        type = 'client',
+                        event = 'qb-houses:client:decorate',
+                        shouldClose = true
+                    }, {
+                        id = 'houseLocations',
+                        title = 'Interaction Locations',
+                        icon = 'house',
+                        items = {
+                            {
+                                id = 'setstash',
+                                title = 'Set Stash',
+                                icon = 'box-open',
+                                type = 'client',
+                                event = 'qb-houses:client:setLocation',
+                                shouldClose = true
+                            }, {
+                                id = 'setoutift',
+                                title = 'Set Wardrobe',
+                                icon = 'shirt',
+                                type = 'client',
+                                event = 'qb-houses:client:setLocation',
+                                shouldClose = true
+                            }, {
+                                id = 'setlogout',
+                                title = 'Set Logout',
+                                icon = 'door-open',
+                                type = 'client',
+                                event = 'qb-houses:client:setLocation',
+                                shouldClose = true
+                            }
+                        }
+                    }
+                }
+            }, {
+                id = 'clothesmenu',
+                title = 'Clothing',
+                icon = 'shirt',
+                items = {
+                    --[[ {
+                        id = 'Hair',
+                        title = 'Hair',
+                        icon = 'user',
+                        type = 'client',
+                        event = 'qb-radialmenu:ToggleClothing',
+                        shouldClose = true
+                    }, {
+                        id = 'Ear',
+                        title = 'Ear Piece',
+                        icon = 'ear-deaf',
+                        type = 'client',
+                        event = 'qb-radialmenu:ToggleProps',
+                        shouldClose = true
+                    }, {
+                        id = 'Neck',
+                        title = 'Neck',
+                        icon = 'user-tie',
+                        type = 'client',
+                        event = 'qb-radialmenu:ToggleClothing',
+                        shouldClose = true
+                    }, {
+                        id = 'Top',
+                        title = 'Top',
+                        icon = 'shirt',
+                        type = 'client',
+                        event = 'qb-radialmenu:ToggleClothing',
+                        shouldClose = true
+                    },]] {
+                        id = 'Shirt',
+                        title = 'Shirt',
+                        icon = 'shirt',
+                        type = 'client',
+                        event = 'qb-radialmenu:ToggleClothing',
+                        shouldClose = true
+                    }, {
+                        id = 'Pants',
+                        title = 'Pants',
+                        icon = 'user',
+                        type = 'client',
+                        event = 'qb-radialmenu:ToggleClothing',
+                        shouldClose = true
+                    }, {
+                        id = 'Shoes',
+                        title = 'Shoes',
+                        icon = 'shoe-prints',
+                        type = 'client',
+                        event = 'qb-radialmenu:ToggleClothing',
+                        shouldClose = true
+                    }, {
+                        id = 'meer',
+                        title = 'Extras',
+                        icon = 'plus',
+                        items = {
+                            {
+                                id = 'Hat',
+                                title = 'Hat',
+                                icon = 'hat-cowboy-side',
+                                type = 'client',
+                                event = 'qb-radialmenu:ToggleProps',
+                                shouldClose = true
+                            }, {
+                                id = 'Glasses',
+                                title = 'Glasses',
+                                icon = 'glasses',
+                                type = 'client',
+                                event = 'qb-radialmenu:ToggleProps',
+                                shouldClose = true
+                            }, --[[ {
+                                id = 'Visor',
+                                title = 'Visor',
+                                icon = 'hat-cowboy-side',
+                                type = 'client',
+                                event = 'qb-radialmenu:ToggleProps',
+                                shouldClose = true
+                            }, ]] {
+                                id = 'Mask',
+                                title = 'Mask',
+                                icon = 'masks-theater',
+                                type = 'client',
+                                event = 'qb-radialmenu:ToggleClothing',
+                                shouldClose = true
+                            }, {
+                                id = 'Vest',
+                                title = 'Vest',
+                                icon = 'vest',
+                                type = 'client',
+                                event = 'qb-radialmenu:ToggleClothing',
+                                shouldClose = true
+                            }, --[[ {
+                                id = 'Bag',
+                                title = 'Bag',
+                                icon = 'bag-shopping',
+                                type = 'client',
+                                event = 'qb-radialmenu:ToggleClothing',
+                                shouldClose = true
+                            }, {
+                                id = 'Bracelet',
+                                title = 'Bracelet',
+                                icon = 'user',
+                                type = 'client',
+                                event = 'qb-radialmenu:ToggleProps',
+                                shouldClose = true
+                            }, {
+                                id = 'Watch',
+                                title = 'Watch',
+                                icon = 'stopwatch',
+                                type = 'client',
+                                event = 'qb-radialmenu:ToggleProps',
+                                shouldClose = true
+                            }, ]] {
+                                id = 'Gloves',
+                                title = 'Gloves',
+                                icon = 'mitten',
+                                type = 'client',
+                                event = 'qb-radialmenu:ToggleClothing',
+                                shouldClose = true
+                            }
+                        }
+                    }
+                }
+            },
+        }
     },
-    {
-        id = "copDead",
-         displayName = "11-A",
-         icon = "#police-dead",
-         functionName = "police:client:SendPoliceEmergencyAlert",
-         enableMenu = function()
-            local src = source
-            local Player = QBCore.Functions.GetPlayerData(src)
-            local inlaststand = Player.metadata["inlaststand"]
-            local isdead = Player.metadata["isdead"]
+}
 
-            return isPolice and inlaststand and isdead -- and onDuty 
-          end,
-     },
-     --[[ {
-     id = "k9",
-     displayName = "K9",
-     icon = "#k9",
-     enableMenu = function()
-         return (isPolice and not isDead)
-     end,
-     subMenus = {"k9:follow", "k9:vehicle",  "k9:sniffvehicle", "k9:huntfind", "k9:sit", "k9:stand", "k9:sniff", "k9:lay", }
-    }, ]]
-    {    
-        id = "Police",
-        displayName = "Police Interaction",
-        icon = "#police-action",
-        enableMenu = function()
-            local src = source
-            local Player = QBCore.Functions.GetPlayerData(src)
-            local inlaststand = Player.metadata["inlaststand"]
-            local isdead = Player.metadata["isdead"]
+Config.VehicleDoors = {
+    id = 'vehicledoors',
+    title = 'Vehicle Doors',
+    icon = 'car-side',
+    items = {
+        {
+            id = 'door0',
+            title = 'Drivers door',
+            icon = 'car-side',
+            type = 'client',
+            event = 'qb-radialmenu:client:openDoor',
+            shouldClose = false
+        }, {
+            id = 'door4',
+            title = 'Hood',
+            icon = 'car',
+            type = 'client',
+            event = 'qb-radialmenu:client:openDoor',
+            shouldClose = false
+        }, {
+            id = 'door1',
+            title = 'Passengers door',
+            icon = 'car-side',
+            type = 'client',
+            event = 'qb-radialmenu:client:openDoor',
+            shouldClose = false
+        }, {
+            id = 'door3',
+            title = 'Right rear',
+            icon = 'car-side',
+            type = 'client',
+            event = 'qb-radialmenu:client:openDoor',
+            shouldClose = false
+        }, {
+            id = 'door5',
+            title = 'Trunk',
+            icon = 'car',
+            type = 'client',
+            event = 'qb-radialmenu:client:openDoor',
+            shouldClose = false
+        }, {
+            id = 'door2',
+            title = 'Left rear',
+            icon = 'car-side',
+            type = 'client',
+            event = 'qb-radialmenu:client:openDoor',
+            shouldClose = false
+        }
+    }
+}
 
-            return (isPolice and not isDead)
-        end,
-        subMenus = {"police:mdt", "general:cuff", "police:seizecash", "police:takedriverlicense", "police:statuscheck", "police:searchplayer", "police:jail", "police:takeoffmask" }
+Config.VehicleExtras = {
+    id = 'vehicleextras',
+    title = 'Vehicle Extras',
+    icon = 'plus',
+    items = {
+        {
+            id = 'extra1',
+            title = 'Extra 1',
+            icon = 'box-open',
+            type = 'client',
+            event = 'qb-radialmenu:client:setExtra',
+            shouldClose = false
+        }, {
+            id = 'extra2',
+            title = 'Extra 2',
+            icon = 'box-open',
+            type = 'client',
+            event = 'qb-radialmenu:client:setExtra',
+            shouldClose = false
+        }, {
+            id = 'extra3',
+            title = 'Extra 3',
+            icon = 'box-open',
+            type = 'client',
+            event = 'qb-radialmenu:client:setExtra',
+            shouldClose = false
+        }, {
+            id = 'extra4',
+            title = 'Extra 4',
+            icon = 'box-open',
+            type = 'client',
+            event = 'qb-radialmenu:client:setExtra',
+            shouldClose = false
+        }, {
+            id = 'extra5',
+            title = 'Extra 5',
+            icon = 'box-open',
+            type = 'client',
+            event = 'qb-radialmenu:client:setExtra',
+            shouldClose = false
+        }, {
+            id = 'extra6',
+            title = 'Extra 6',
+            icon = 'box-open',
+            type = 'client',
+            event = 'qb-radialmenu:client:setExtra',
+            shouldClose = false
+        }, {
+            id = 'extra7',
+            title = 'Extra 7',
+            icon = 'box-open',
+            type = 'client',
+            event = 'qb-radialmenu:client:setExtra',
+            shouldClose = false
+        }, {
+            id = 'extra8',
+            title = 'Extra 8',
+            icon = 'box-open',
+            type = 'client',
+            event = 'qb-radialmenu:client:setExtra',
+            shouldClose = false
+        }, {
+            id = 'extra9',
+            title = 'Extra 9',
+            icon = 'box-open',
+            type = 'client',
+            event = 'qb-radialmenu:client:setExtra',
+            shouldClose = false
+        }, {
+            id = 'extra10',
+            title = 'Extra 10',
+            icon = 'box-open',
+            type = 'client',
+            event = 'qb-radialmenu:client:setExtra',
+            shouldClose = false
+        }, {
+            id = 'extra11',
+            title = 'Extra 11',
+            icon = 'box-open',
+            type = 'client',
+            event = 'qb-radialmenu:client:setExtra',
+            shouldClose = false
+        }, {
+            id = 'extra12',
+            title = 'Extra 12',
+            icon = 'box-open',
+            type = 'client',
+            event = 'qb-radialmenu:client:setExtra',
+            shouldClose = false
+        }, {
+            id = 'extra13',
+            title = 'Extra 13',
+            icon = 'box-open',
+            type = 'client',
+            event = 'qb-radialmenu:client:setExtra',
+            shouldClose = false
+        }
+    }
+}
+
+Config.VehicleSeats = {
+    id = 'vehicleseats',
+    title = 'Vehicle Seats',
+    icon = 'chair',
+    items = {}
+}
+
+Config.JobInteractions = {
+    ["ambulance"] = {
+        {
+            id = 'statuscheck',
+            title = 'Check Health Status',
+            icon = 'heart-pulse',
+            type = 'client',
+            event = 'hospital:client:CheckStatus',
+            shouldClose = true
+        }, {
+            id = 'revivep',
+            title = 'Revive',
+            icon = 'user-doctor',
+            type = 'client',
+            event = 'hospital:client:RevivePlayer',
+            shouldClose = true
+        }, {
+            id = 'revivep2',
+            title = 'Revive Dead',
+            icon = 'user-doctor',
+            type = 'client',
+            event = 'hospital:client:RevivePlayer2',
+            shouldClose = true
+        }, {
+            id = 'treatwounds',
+            title = 'Heal wounds',
+            icon = 'bandage',
+            type = 'client',
+            event = 'hospital:client:TreatWounds',
+            shouldClose = true
+        }, {
+            id = 'emergencybutton2',
+            title = 'Emergency button',
+            icon = 'bell',
+            type = 'client',
+            event = 'police:client:SendPoliceEmergencyAlert2',
+            shouldClose = true
+        }, {
+            id = 'escort',
+            title = 'Escort',
+            icon = 'user-group',
+            type = 'client',
+            event = 'police:client:EscortPlayer',
+            shouldClose = true
+        }, {
+            id = 'stretcheroptions',
+            title = 'Stretcher',
+            icon = 'bed-pulse',
+            items = {
+                {
+                    id = 'spawnstretcher',
+                    title = 'Spawn Stretcher',
+                    icon = 'plus',
+                    type = 'client',
+                    event = 'qb-radialmenu:client:TakeStretcher',
+                    shouldClose = false
+                }, {
+                    id = 'despawnstretcher',
+                    title = 'Remove Stretcher',
+                    icon = 'minus',
+                    type = 'client',
+                    event = 'qb-radialmenu:client:RemoveStretcher',
+                    shouldClose = false
+                }
+            }
+        }
     },
-    {    
-        id = "PoliceObjects",
-        displayName = "Police Objects",
-        icon = "#police-action",
-        enableMenu = function()
-            local src = source
-            local Player = QBCore.Functions.GetPlayerData(src)
-            local inlaststand = Player.metadata["inlaststand"]
-            local isdead = Player.metadata["isdead"]
-
-            return isPolice and not isDead and onduty
-        end,
-        subMenus = {"police:spawn1", "police:spawn2", "police:spawn3", "police:del"}
+    ["taxi"] = {
+        {
+            id = 'togglemeter',
+            title = 'Show/Hide Meter',
+            icon = 'eye-slash',
+            type = 'client',
+            event = 'qb-taxi:client:toggleMeter',
+            shouldClose = false
+        }, {
+            id = 'togglemouse',
+            title = 'Start/Stop Meter',
+            icon = 'hourglass-start',
+            type = 'client',
+            event = 'qb-taxi:client:enableMeter',
+            shouldClose = true
+        }, {
+            id = 'npc_mission',
+            title = 'NPC Mission',
+            icon = 'taxi',
+            type = 'client',
+            event = 'qb-taxi:client:DoTaxiNpc',
+            shouldClose = true
+        }
+    },
+    ["tow"] = {
+        {
+            id = 'togglenpc',
+            title = 'Toggle NPC',
+            icon = 'toggle-on',
+            type = 'client',
+            event = 'jobs:client:ToggleNpc',
+            shouldClose = true
+        }, {
+            id = 'towvehicle',
+            title = 'Tow vehicle',
+            icon = 'truck-pickup',
+            type = 'client',
+            event = 'qb-tow:client:TowVehicle',
+            shouldClose = true
+        }
+    },
+    ["mechanic"] = {
+        {
+            id = 'towvehicle',
+            title = 'Tow vehicle',
+            icon = 'truck-pickup',
+            type = 'client',
+            event = 'qb-tow:client:TowVehicle',
+            shouldClose = true
+        }
+    },
+    ["towing"] = {
+        {
+            id = 'towvehicle',
+            title = 'Tow vehicle',
+            icon = 'truck-pickup',
+            type = 'client',
+            event = 'qb-tow:client:TowVehicle',
+            shouldClose = true
         },
-    {
-    id = "Ambulance",
-    displayName = "Ambulance",
-    icon = "#hospital-amb",
-    enableMenu = function()
-        return isMedic and not isDead and onduty
-    end,
-    subMenus = {"medic:status", "medic:revive", "medic:treat"}
-},
-{
-    id = "Tow",
-    displayName = "Tow",
-    icon = "#tow-job",
-    enableMenu = function()
-        local src = source
-        local Player = QBCore.Functions.GetPlayerData(src)
-        local inlaststand = Player.metadata["inlaststand"]
-        local isdead = Player.metadata["isdead"]
-
-        return isTow and not isDead and onduty
-    end,
-    subMenus = {"tow:togglenpc", "tow:vehicle"}
-},
-{
-    id = "Taxi",
-    displayName = "Taxi",
-    icon = "#tow-job",
-    enableMenu = function()
-        local src = source
-        local Player = QBCore.Functions.GetPlayerData(src)
-        local inlaststand = Player.metadata["inlaststand"]
-        local isdead = Player.metadata["isdead"]
-
-        return isTaxi and not isDead and onduty
-    end,
-    subMenus = {"taxi:npc", "taxi-meter", "taxi:startmeter"}
-},
-    {    
-    id = "Escort",
-    displayName = "Escort",
-    icon = "#general-escort",
-    functionName = "police:client:EscortPlayer",
-    enableMenu = function()
-        local src = source
-        local Player = QBCore.Functions.GetPlayerData(src)
-        local inlaststand = Player.metadata["inlaststand"]
-        local isdead = Player.metadata["isdead"]
-
-        return not isdead and not inlaststand
-    end
+        {
+            id = 'impoundvehicle',
+            title = 'Depot Vehicle',
+            icon = 'truck-moving',
+            type = 'server',
+            event = 'NukeXD-towing:server:ImpoundVehicle',
+            shouldClose = true
+        }
     },
-    {   
-        id = "Vehicle",
-        displayName = "Vehicle",
-        icon = "#vehicle-options-vehicle",
-        functionName = "carmenuOpen",
-        enableMenu = function()
-            return (not isDead and IsPedInAnyVehicle(PlayerPedId(), true))
-        end
+    ["police"] = {
+        {
+            id = 'emergencybutton',
+            title = 'Emergency button',
+            icon = 'bell',
+            type = 'client',
+            event = 'police:client:SendPoliceEmergencyAlert',
+            shouldClose = true
+        }, {
+            id = 'checkvehstatus',
+            title = 'Check Tune Status',
+            icon = 'circle-info',
+            type = 'client',
+            event = 'qb-tunerchip:client:TuneStatus',
+            shouldClose = true
+        }, {
+            id = 'mdt',
+            title = 'Open MDT',
+            icon = 'tablet',
+            type = 'server',
+            event = 'mdt:server:openMDT',
+            shouldClose = true
+        }, {
+            id = 'unlock',
+            title = 'Unlock Vehicle',
+            icon = 'user-lock',
+            type = 'client',
+            event = 'vehiclekeys:client:PoliceUnlock',
+            shouldClose = true
+        }, {
+            id = 'resethouse',
+            title = 'Reset house lock',
+            icon = 'key',
+            type = 'client',
+            event = 'qb-houses:client:ResetHouse',
+            shouldClose = true
+        }, {
+            id = 'takedriverlicense',
+            title = 'Revoke Drivers License',
+            icon = 'id-card',
+            type = 'client',
+            event = 'police:client:SeizeDriverLicense',
+            shouldClose = true
+        }, {--
+            id = 'policeinteraction',
+            title = 'Police Actions',
+            icon = 'list-check',
+            items = {
+                {
+                    id = 'statuscheck',
+                    title = 'Check Health Status',
+                    icon = 'heart-pulse',
+                    type = 'client',
+                    event = 'hospital:client:CheckStatus',
+                    shouldClose = true
+                }, {
+                    id = 'checkstatus',
+                    title = 'Check status',
+                    icon = 'question',
+                    type = 'client',
+                    event = 'police:client:CheckStatus',
+                    shouldClose = true
+                }, {
+                    id = 'escort',
+                    title = 'Escort',
+                    icon = 'user-group',
+                    type = 'client',
+                    event = 'police:client:EscortPlayer',
+                    shouldClose = true
+                }, {
+                    id = 'searchplayer',
+                    title = 'Search',
+                    icon = 'magnifying-glass',
+                    type = 'client',
+                    event = 'police:client:SearchPlayer',
+                    shouldClose = true
+                }, {
+                    id = 'jailplayer',
+                    title = 'Jail',
+                    icon = 'user-lock',
+                    type = 'client',
+                    event = 'police:client:JailPlayer',
+                    shouldClose = true
+                }
+            }
+        }, {
+            id = 'policeobjects',
+            title = 'Objects',
+            icon = 'road',
+            items = {
+                {
+                    id = 'spawnpion',
+                    title = 'Cone',
+                    icon = 'triangle-exclamation',
+                    type = 'client',
+                    event = 'police:client:spawnCone',
+                    shouldClose = false
+                }, {
+                    id = 'spawnhek',
+                    title = 'Gate',
+                    icon = 'torii-gate',
+                    type = 'client',
+                    event = 'police:client:spawnBarrier',
+                    shouldClose = false
+                }, {
+                    id = 'spawnschotten',
+                    title = 'Speed Limit Sign',
+                    icon = 'sign-hanging',
+                    type = 'client',
+                    event = 'police:client:spawnRoadSign',
+                    shouldClose = false
+                }, {
+                    id = 'spawntent',
+                    title = 'Tent',
+                    icon = 'campground',
+                    type = 'client',
+                    event = 'police:client:spawnTent',
+                    shouldClose = false
+                }, {
+                    id = 'spawnverlichting',
+                    title = 'Lighting',
+                    icon = 'lightbulb',
+                    type = 'client',
+                    event = 'police:client:spawnLight',
+                    shouldClose = false
+                }, {
+                    id = 'deleteobject',
+                    title = 'Remove object',
+                    icon = 'trash',
+                    type = 'client',
+                    event = 'police:client:deleteObject',
+                    shouldClose = false
+                }
+            }
+        }
     },
-    {
-        id = "general:parkvehicle",
-        displayName = "Park Vehicle",
-        icon = "#general-parking",
-        functionName = "qb-garages:putingarage",
-        enableMenu = function()
-            return (not isDead and inGarage and isCloseVeh() and not IsPedInAnyVehicle(PlayerPedId(), false))
-        end
-    },
-    {    
-        id = "Emotes",
-        displayName = "Emotes",
-        icon = "#general-emotes",
-        functionName = "animations:client:EmoteMenu",
-        -- eventType = "command",
-        enableMenu = function()
-            local src = source
-            local Player = QBCore.Functions.GetPlayerData(src)
-            local inlaststand = Player.metadata["inlaststand"]
-            local isdead = Player.metadata["isdead"]
-
-            return not isdead and not inlaststand 
-        end
-    },
-    {
-        id = "GiveKeys",
-        displayName = "Give Keys",
-        icon = "#general-keys-give",
-        functionName = "qb-vehiclekeys:client:GiveKeys",
-        enableMenu = function()
-            return (isCloseVeh())
-        end
-    },
-   {
-    
-        id = "general:depots",
-        displayName = "Depots",
-        icon = "#general-keys-give",
-        functionName = "qb-garages:takeoutveh:depot",
-        enableMenu = function()
-            return (not isDead and inDepots and not IsPedInAnyVehicle(PlayerPedId(), false))
-        end
-    } -- add `,` after `}` if you gonna add new button but last button should ended w/o `,`
-
-    -- NOTE
-    -- for add a new function button to menu:
-    -- {
-    --     id = "generalgarage", -- type group id name, can be any name
-    --     displayName = "Garage", -- Display Name
-    --     icon = "#general-garage", -- Icon, should be with `#` cuz from HTML and check HTML for edits
-    --     functionName = "qb-garages:takeout", -- THIS IS THE FUNCTION NAME THAT WILL BE TRIGGERED AFTER CLICKING THE BUTTON
-    --     enableMenu = function()
-    --         return (not isDead and inGarage and not isCloseVeh() and not IsPedInAnyVehicle(PlayerPedId(), false)) -- if person is dead or in vehicle. we don't want dead people to see this button if dead
-    --     end
-    -- }
-
-    -- for open a new menu from the button:
-    -- {
-    --     id = "general", -- type group id name, can be any name
-    --     displayName = "General", -- Display Name
-    --     icon = "#globe-europe", -- Icon, should be with `#` cuz from HTML and check HTML for edits
-    --     enableMenu = function()
-    --         return not isDead -- if person is dead or in vehicle. we don't want dead people to see this button if dead
-    --     end,
-    --     subMenus = {"general:escort", "general:emotes", "general:putinvehicle", "general:unseatnearest"} -- add submenu names that will be shown after clicking General button
-    -- }
-
-    -- NOTE
-    -- EXAMPLE:
-    -- {
-    --     id = "copDead",
-    --     displayName = "11-A",
-    --     icon = "#police-dead",
-    --     enableMenu = function()
-    --         return isPolice and isDead and onDuty -- here button checks if person is cop and dead and on duty. if 3 of them true then this will be shown
-    --     end,
-    --     subMenus = {"general:escort", "general:emotes", "general:putinvehicle", "general:unseatnearest"}
-    -- }
+    ["hotdog"] = {
+        {
+            id = 'togglesell',
+            title = 'Toggle sell',
+            icon = 'hotdog',
+            type = 'client',
+            event = 'qb-hotdogjob:client:ToggleSell',
+            shouldClose = true
+        }
+    }
 }
 
-newSubMenus = { -- NOTE basicly, what will be happen after clicking these buttons and icon of them
-    --[[ ['general:givenum'] = {
-        title = "Give contact",
-        icon = "#contact-share",
-        functionName = "qb-phone:client:GiveContactDetails" -- must be client event, work same as TriggerEvent('emotes:OpenMenu')
-    },  ]]
-    ["expressions:angry"] = {
-        title="Angry",
-        icon="#expressions-angry",
-        functionName = "rp:exp1",
+Config.GangInteractions = {     --- Gang Specific Interactions
+                                --- Drugs are for example you may change it...
+    ["mhf"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:drunk"] = {
-        title="Drunk",
-        icon="#expressions-drunk",
-        functionName = "rp:exp2",
+    ["cc"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:dumb"] = {
-        title="Dumb",
-        icon="#expressions-dumb",
-        functionName = "rp:exp3",
+    ["bxy"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:electrocuted"] = {
-        title="Electrocuted",
-        icon="#expressions-electrocuted",
-        functionName = "rp:exp4",
+    ["jd"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:grumpy"] = {
-        title="Grumpy",
-        icon="#expressions-grumpy",
-        functionName = "rp:exp5",
+    ["ygz"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:happy"] = {
-        title="Happy",
-        icon="#expressions-happy",
-        functionName = "rp:exp8",
+    ["bloodpack"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:injured"] = {
-        title="Injured",
-        icon="#expressions-injured",
-        functionName = "rp:exp9",
+    ["rollin60s"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:joyful"] = {
-        title="Joyful",
-        icon="#expressions-joyful",
-        functionName = "rp:exp10",
+    ["angelsofdeath"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:mouthbreather"] = {
-        title="Mouth Breather",
-        icon="#expressions-mouthbreather",
-        functionName = "rp:exp11",
+    ["vandalz"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:shocked"]  = {
-        title="Shocked",
-        icon="#expressions-shocked",
-        functionName = "rp:exp12",
+    ["lucifersd"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:sleeping"]  = {
-        title="Sleeping",
-        icon="#expressions-sleeping",
-        functionName = "rp:exp13",
+    ["gb"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:smug"]  = {
-        title="smug",
-        icon="#expressions-smug",
-        functionName = "rp:exp14",
+    ["thequantum"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:speculative"]  = {
-        title="Speculative",
-        icon="#expressions-speculative",
-        functionName = "rp:exp15",
+    ["lacosanostra"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:stressed"]  = {
-        title="Stressed",
-        icon="#expressions-stressed",
-        functionName = "rp:exp16",
+    ["pinkpanthers"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:sulking"]  = {
-        title="Sulking",
-        icon="#expressions-sulking",
-        functionName = "rp:exp17",
+    ["b2a"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:weird"]  = {
-        title="Weird",
-        icon="#expressions-weird",
-        functionName = "rp:exp18",
+    ["moneygm"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ["expressions:weird2"]  = {
-        title="Weird2",
-        icon="#expressions-weird2",
-        functionName = "rp:exp19",
+    ["glogang"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-    ['blips:gasstations'] = {
-        title = "Gas Station",
-        icon = "#blips-gasstations",
-        functionName = "ygx:togglegas"
+    ["oppsnd"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
-   --[[ ['blips:trainstations'] = {
-        title = "Tren istasyonları",
-        icon = "#blips-trainstations",
-        functionName = "Trains:ToggleTainsBlip"
-    },--]]
-    ['blips:garages'] = {
-        title = "Garages",
-        icon = "#blips-garages",
-        functionName = "Garages:ToggleGarageBlip"
-    },
-    ['blips:barbershop'] = {
-        title = "Barber",
-        icon = "#blips-barbershop",
-        functionName = "ygx:togglebarber"
-    },
-    ['fk:galeri'] = {
-        title = "PDM",
-        icon = "#blips-garages",
-        functionName = "fk:galeri"
-    },
-    ['animations:brave'] = {
-        title = "Brave",
-        icon = "#animation-brave",
-        functionName = "AnimSet:Brave"
-    },
-    ['animations:hurry'] = {
-        title = "Hurry",
-        icon = "#animation-swagger",
-        functionName = "AnimSet:Hurry"
-    },
-    ['animations:business'] = {
-        title = "Business",
-        icon = "#animation-business",
-        functionName = "AnimSet:Business"
-    },
-    ['animations:tipsy'] = {
-        title = "Tipsy",
-        icon = "#animation-tipsy",
-        functionName = "AnimSet:Tipsy"
-    },
-    ['animations:injured'] = {
-        title = "Injured",
-        icon = "#animation-injured",
-        functionName = "AnimSet:Injured"
-    },
-    ['animations:tough'] = {
-        title = "Tough",
-        icon = "#animation-tough",
-        functionName = "AnimSet:ToughGuy"
-    },	
-    ['animations:sassy'] = {
-        title = "Sassy",
-        icon = "#animation-sassy",
-        functionName = "AnimSet:Sassy"
-    },
-    ['animations:sad'] = {
-        title = "Sad",
-        icon = "#animation-sad",
-        functionName = "AnimSet:Sad"
-    },
-    ['animations:posh'] = {
-        title = "Posh",
-        icon = "#animation-posh",
-        functionName = "AnimSet:Posh"
-    },
-    ['animations:alien'] = {
-        title = "Alien",
-        icon = "#animation-alien",
-        functionName = "AnimSet:Alien"
-    },
-    ['animations:hobo'] = {
-        title = "Hobo",
-        icon = "#animation-hobo",
-        functionName = "AnimSet:Hobo"
-    },
-    ['animations:money'] = {
-        title = "Money",
-        icon = "#animation-money",
-        functionName = "AnimSet:Money"
-    },
-    ['animations:swagger'] = {
-        title = "Swag",
-        icon = "#animation-swagger",
-        functionName = "AnimSet:Swagger"
-    },
-    ['animations:shady'] = {
-        title = "Gangster",
-        icon = "#animation-shady",
-        functionName = "AnimSet:Shady"
-    },
-    ['animations:maneater'] = {
-        title = "Sassy3",
-        icon = "#animation-sassy",
-        functionName = "AnimSet:ManEater"
-    },
-    ['animations:chichi'] = {
-        title = "Sassy2",
-        icon = "#animation-sassy",
-        functionName = "AnimSet:ChiChi"
-    },
-    ['animations:default'] = {
-        title = "Normal",
-        icon = "#animation-default",
-        functionName = "AnimSet:default"
-    },
-    ['general:rob'] = {
-        title = "Rob",
-        icon = "#steal",
-        functionName = "police:client:RobPlayer" -- must be client event, work same as TriggerEvent('emotes:OpenMenu')
-    },
-    ['general:playerinvehicle'] = {
-        title = "Seat Vehicle",
-        icon = "#general-put-in-veh",
-        functionName = "police:client:PutPlayerInVehicle" -- must be client event, work same as TriggerEvent('emotes:OpenMenu')
-    },
-    ['general:pinvehicle'] = {
-        title = "Put In Vehicle",
-        icon = "#car-side",
-        functionName = "police:client:PutPlayerInVehicle" -- must be client event, work same as TriggerEvent('emotes:OpenMenu')
-    }, 
-    ['general:playeroutvehicle'] = {
-        title = "Unseat Vehicle",
-        icon = "#general-put-in-veh",
-        functionName = "police:client:SetPlayerOutVehicle" -- must be client event, work same as TriggerEvent('emotes:OpenMenu')
-    }, 
-    
-    ['drug:sell'] = {
-        title = "Cornersell",
-        icon = "#ped-sell-stolen-items",
-        functionName = "qb-drugs:client:cornerselling"
-    },
-    ['general:cuff'] = {
-        title = "Cuff",
-        icon = "#cuffs-cuff",
-        functionName = "police:client:CuffPlayer"
-    },
-    -- POLICE 
-    ['police:statuscheck'] = {
-        title = "Status Check",
-        icon = "#cocaine-status",
-        functionName = "hospital:client:CheckStatus"
-    },
-    ['police:searchplayer'] = {
-        title = "Search player",
-        icon = "#police-action-frisk",
-        functionName = "police:client:SearchPlayer"
-    },
-    ['police:jail'] = {
-        title = "Jail Player",
-        icon = "#heroin-lock-door",
-        functionName = "police:client:JailPlayer"
-    },
-    ['police:seizecash'] = {
-        title = "Seize Cash",
-        icon = "#dollar-new",
-        functionName = "police:client:SeizeCash"
-    },
-    ['police:bill'] = {
-        title = "Bill",
-        icon = "#general-cuff",
-        functionName = "police:client:BillPlayer"
-    },  
-    ['police:mdt'] = {
-        title = "MDT",
-        icon = "#mdt",
-        functionName = "mdt:client:OpenMDT"    
-    },
-    ['police:takeoffmask'] = {
-        title = "Mask",
-        icon = "#cuffs-remove-mask",
-        functionName = "police:client:takeoffmask" 
-    },
-    -- ['police:checkvehicle'] = {
-    --     title = "Check Vehicle Status",
-    --     icon = "#police-chechvehiclestatus",
-    --     functionName = "qb-tunerchip:server:TuneStatus"     
-    -- },  
-    ['police:takedriverlicense'] = {
-        title = "Revoke Drivers License",
-        icon = "#driver-license",
-        functionName = "police:client:SeizeDriverLicense"     
-    },  
-    -- POLICE
-    ['police:spawn1'] = {
-        title = "Cone",
-        icon = "#police-revokelicense",
-        functionName = "police:client:spawnCone"     
-    },   
-['police:spawn2'] = {
-    title = "Spikes",
-    icon = "#police-revokelicense",
-    functionName = "police:client:SpawnSpikeStrip" 
-},
-    ['police:del'] = {
-        title = "Delete",
-        icon = "#police-revokelicense",
-        functionName = "police:client:deleteObjectw"     
-    },
-    -- HOSPITAL
-    ['medic:status'] = {
-        title = "StatusCheck",
-        icon = "#general-cuff",
-        functionName = "" 
-    },
-    ['medic:revive'] = {
-        title = "Revive",
-        icon = "#hospital-revivep",
-        functionName = "hospital:client:RevivePlayer"
-    },
-    ['medic:treat'] = {
-        title = "Heal wounds",
-        icon = "#hospital-treat",
-        functionName = "hospital:client:TreatWounds"
-    },
-    ['medic:stretcherspawn'] = {
-        title = "Stretcher",
-        icon = "#general-cuff",
-        functionName = "hospital:client:TakeStretcher" 
-    }, 
-    ['medic:stretcherremove'] = {
-        title = "Stretcher Remove",
-        icon = "#general-cuff",
-        functionName = "hospital:client:RemoveStretcher" 
-    },  --TOW --TOW
-    ['tow:togglenpc'] = {
-        title = "Toggle Npc",
-        icon = "#tow-mission",
-        functionName = "jobs:client:ToggleNpc"
-    }, 
-    ['tow:vehicle'] = {
-        title = "Tow vehicle",
-        icon = "#tow-tow",
-        functionName = "qb-tow:client:TowVehicle"
-    },  -- Taxi
-    ['taxi-meter'] = {
-        title = "Toggle Npc",
-        icon = "#tow-mission",
-        functionName = "qb-taxi:client:toggleMeter"
-    }, 
-    ['taxi:npc'] = {
-        title = "Taxi mission",
-        icon = "#tow-tow",
-        functionName = "qb-taxi:client:DoTaxiNpc"
-    },  
-    ['taxi:startmeter'] = {
-        title = "Start/Stop meter",
-        icon = "#tow-tow",
-        functionName = "qb-taxi:client:enableMeter"
-    },
-    -- ['k9:spawn'] = {
-    --     title = "Summon",
-    --     icon = "#k9-spawn",
-    --     functionName = "K9:Create"
-    -- },
-    -- ['k9:delete'] = {
-    --     title = "Dismiss",
-    --     icon = "#k9-dismiss",
-    --     functionName = "K9:Delete"
-    -- },
-    ['k9:follow'] = {
-        title = "Follow",
-        icon = "#k9-follow",
-        functionName = "qb--k9:Follow"
-    },
-    ['k9:vehicle'] = {
-        title = "Get In/Out",
-        icon = "#k9-vehicle",
-        functionName = "qb--k9:EnterVeh"
-    },
-    ['k9:sit'] = {
-        title = "Sit",
-        icon = "#k9-sit",
-        functionName = "qb--k9:Sit"
-    },
-    ['k9:lay'] = {
-        title = "Lay",
-        icon = "#k9-lay",
-        functionName = "qb--k9:laydown"
-    },
-    ['k9:stand'] = {
-        title = "Stand",
-        icon = "#k9-stand",
-        functionName = "qb--k9:Follow"
-    },
-    ['k9:sniff'] = {
-        title = "Sniff Person",
-        icon = "#k9-sniff",
-        functionName = "qb--k9:searchdude"
-    },
-    ['k9:sniffvehicle'] = {
-        title = "Sniff Vehicle",
-        icon = "#k9-sniff-vehicle",
-        functionName = "qb--k9:searchcar"
-    },
-    ['k9:huntfind'] = {
-        title = "Search Area",
-        icon = "#k9-huntfind",
-        functionName = "qb--k9:searcharea"
+    ["hellraisersmc"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        },
     },
 }
-    
 
-RegisterNetEvent("isJudge") -- these are all up to you and your job system, if person become Judge, script will see him as Judge too.
-AddEventHandler("isJudge", function()
-    isJudge = true
-end)
+Config.TrunkClasses = {
+    [0] = {allowed = true, x = 0.0, y = -1.5, z = 0.0}, -- Coupes
+    [1] = {allowed = true, x = 0.0, y = -2.0, z = 0.0}, -- Sedans
+    [2] = {allowed = true, x = 0.0, y = -1.0, z = 0.25}, -- SUVs
+    [3] = {allowed = true, x = 0.0, y = -1.5, z = 0.0}, -- Coupes
+    [4] = {allowed = true, x = 0.0, y = -2.0, z = 0.0}, -- Muscle
+    [5] = {allowed = true, x = 0.0, y = -2.0, z = 0.0}, -- Sports Classics
+    [6] = {allowed = true, x = 0.0, y = -2.0, z = 0.0}, -- Sports
+    [7] = {allowed = true, x = 0.0, y = -2.0, z = 0.0}, -- Super
+    [8] = {allowed = false, x = 0.0, y = -1.0, z = 0.25}, -- Motorcycles
+    [9] = {allowed = true, x = 0.0, y = -1.0, z = 0.25}, -- Off-road
+    [10] = {allowed = true, x = 0.0, y = -1.0, z = 0.25}, -- Industrial
+    [11] = {allowed = true, x = 0.0, y = -1.0, z = 0.25}, -- Utility
+    [12] = {allowed = true, x = 0.0, y = -1.0, z = 0.25}, -- Vans
+    [13] = {allowed = true, x = 0.0, y = -1.0, z = 0.25}, -- Cycles
+    [14] = {allowed = true, x = 0.0, y = -1.0, z = 0.25}, -- Boats
+    [15] = {allowed = true, x = 0.0, y = -1.0, z = 0.25}, -- Helicopters
+    [16] = {allowed = true, x = 0.0, y = -1.0, z = 0.25}, -- Planes
+    [17] = {allowed = true, x = 0.0, y = -1.0, z = 0.25}, -- Service
+    [18] = {allowed = true, x = 0.0, y = -1.0, z = 0.25}, -- Emergency
+    [19] = {allowed = true, x = 0.0, y = -1.0, z = 0.25}, -- Military
+    [20] = {allowed = true, x = 0.0, y = -1.0, z = 0.25}, -- Commercial
+    [21] = {allowed = true, x = 0.0, y = -1.0, z = 0.25} -- Trains
+}
 
-RegisterNetEvent("isJudgeOff") -- opposite of the above
-AddEventHandler("isJudgeOff", function()
-    isJudge = false
-end)
+Config.ExtrasEnabled = true
 
-RegisterNetEvent("isTow") -- these are all up to you and your job system, if person become Judge, script will see him as Judge too.
-AddEventHandler("isTow", function()
-    isTow = true
-end)
+Config.Commands = {
+    -- ["top"] = {
+    --     Func = function() ToggleClothing("Top") end,
+    --     Sprite = "top",
+    --     Desc = "Take your shirt off/on",
+    --     Button = 1,
+    --     Name = "Torso"
+    -- },
+    -- ["gloves"] = {
+    --     Func = function() ToggleClothing("gloves") end,
+    --     Sprite = "gloves",
+    --     Desc = "Take your gloves off/on",
+    --     Button = 2,
+    --     Name = "Gloves"
+    -- },
+    -- ["visor"] = {
+    --     Func = function() ToggleProps("visor") end,
+    --     Sprite = "visor",
+    --     Desc = "Toggle hat variation",
+    --     Button = 3,
+    --     Name = "Visor"
+    -- },
+    -- ["bag"] = {
+    --     Func = function() ToggleClothing("Bag") end,
+    --     Sprite = "bag",
+    --     Desc = "Opens or closes your bag",
+    --     Button = 8,
+    --     Name = "Bag"
+    -- },
+    -- ["shoes"] = {
+    --     Func = function() ToggleClothing("Shoes") end,
+    --     Sprite = "shoes",
+    --     Desc = "Take your shoes off/on",
+    --     Button = 5,
+    --     Name = "Shoes"
+    -- },
+    ["vest"] = {
+        Func = function() ToggleClothing("Vest") end,
+        Sprite = "vest",
+        Desc = "Take your vest off/on",
+        Button = 14,
+        Name = "Vest"
+    },
+    -- ["hair"] = {
+    --     Func = function() ToggleClothing("hair") end,
+    --     Sprite = "hair",
+    --     Desc = "Put your hair up/down/in a bun/ponytail.",
+    --     Button = 7,
+    --     Name = "Hair"
+    -- },
+    ["hat"] = {
+        Func = function() ToggleProps("Hat") end,
+        Sprite = "hat",
+        Desc = "Take your hat off/on",
+        Button = 4,
+        Name = "Hat"
+    },
+    ["glasses"] = {
+        Func = function() ToggleProps("Glasses") end,
+        Sprite = "glasses",
+        Desc = "Take your glasses off/on",
+        Button = 9,
+        Name = "Glasses"
+    },
+    -- ["ear"] = {
+    --     Func = function() ToggleProps("Ear") end,
+    --     Sprite = "ear",
+    --     Desc = "Take your ear accessory off/on",
+    --     Button = 10,
+    --     Name = "Ear"
+    -- },
+    -- ["neck"] = {
+    --     Func = function() ToggleClothing("Neck") end,
+    --     Sprite = "neck",
+    --     Desc = "Take your neck accessory off/on",
+    --     Button = 11,
+    --     Name = "Neck"
+    -- },
+    -- ["watch"] = {
+    --     Func = function() ToggleProps("Watch") end,
+    --     Sprite = "watch",
+    --     Desc = "Take your watch off/on",
+    --     Button = 12,
+    --     Name = "Watch",
+    --     Rotation = 5.0
+    -- },
+    -- ["bracelet"] = {
+    --     Func = function() ToggleProps("Bracelet") end,
+    --     Sprite = "bracelet",
+    --     Desc = "Take your bracelet off/on",
+    --     Button = 13,
+    --     Name = "Bracelet"
+    -- },
+    ["mask"] = {
+        Func = function() ToggleClothing("Mask") end,
+        Sprite = "mask",
+        Desc = "Take your mask off/on",
+        Button = 6,
+        Name = "Mask"
+    }
+}
 
-RegisterNetEvent("isTowOff") -- these are all up to you and your job system, if person become Judge, script will see him as Judge too.
-AddEventHandler("isTowOff", function()
-    isTow = false
-end)
+local bags = {[40] = true, [41] = true, [44] = true, [45] = true}
 
-RegisterNetEvent("isTaxi") -- these are all up to you and your job system, if person become Judge, script will see him as Judge too.
-AddEventHandler("isTaxi", function()
-    isTaxi = true
-end)
-
-RegisterNetEvent("isTaxiOff") -- opposite of the above
-AddEventHandler("isTaxiOff", function()
-    isTaxi = false
-end)
-
-RegisterNetEvent("QBCore:Client:OnJobUpdate") -- dont edit this unless you don't use qb-core
-AddEventHandler("QBCore:Client:OnJobUpdate", function(jobInfo)
-    myJob = jobInfo.name
-    if isMedic and myJob ~= "ambulance" then isMedic = false end
-    if isPolice and myJob ~= "police" then isPolice = false end
-    if isTow and myJob ~= "tow" then isTow = false end
-    if isTaxi and myJob ~= "taxi" then isTaxi = false end
-    if myJob == "police" then isPolice = true end
-    if myJob == "tow" then isTow = true end
-    if myJob == "taxi" then isTaxi = true end
-    if myJob == "ambulance" then isMedic = true end
-end)
-
-RegisterNetEvent('QBCore:Client:SetDuty') -- dont edit this unless you don't use qb-core
-AddEventHandler('QBCore:Client:SetDuty', function(duty)
-    myJob = QBCore.Functions.GetPlayerData().job.name
-    if isMedic and myJob ~= "ambulance" then isMedic = false end
-    if isPolice and myJob ~= "police" then isPolice = false end
-    if myJob == "police" then isPolice = true onDuty = duty end
-    if myJob == "ambulance" then isMedic = true onDuty = duty end
-end)
-
-RegisterNetEvent('deathcheck') -- YOU SHOULD ADD THIS IN YOUR ambulancejob system, basically let the function trigger here when the ped playing anim and add this to
--- your revived function so everytime if person dies, this will be triggered to isDead = true, if he get revived this will be triggered to isDead = false
-AddEventHandler('deathcheck', function()
-    if not isDead then
-        isDead = true
-    else
-        isDead = false
-    end
-end)
-
-
-RegisterNetEvent("police:currentHandCuffedState") -- add this your police:client:GetCuffed @qb-policejob\client\interactions.lua
-AddEventHandler("police:currentHandCuffedState", function(pIsHandcuffed)
-    isHandcuffed = pIsHandcuffed
-end)
-
-RegisterNetEvent("menu:hasOxygenTank") -- add this to your oxygentank wear place, idk where is this for qb-inventory so find out please
-AddEventHandler("menu:hasOxygenTank", function(pHasOxygenTank)
-    hasOxygenTankOn = pHasOxygenTank
-end)
-
-
-RegisterNetEvent('police:client:PutInVehicle')
-AddEventHandler('police:client:PutInVehicle', function()
-    if isEscorted then
-    end
-end)
+Config.ExtraCommands = {
+    -- ["pants"] = {
+    --     Func = function() ToggleClothing("Pants", true) end,
+    --     Sprite = "pants",
+    --     Desc = "Take your pants off/on",
+    --     Name = "Pants",
+    --     OffsetX = -0.04,
+    --     OffsetY = 0.0
+    -- },
+    -- ["shirt"] = {
+    --     Func = function() ToggleClothing("Shirt", true) end,
+    --     Sprite = "shirt",
+    --     Desc = "Take your shirt off/on",
+    --     Name = "shirt",
+    --     OffsetX = 0.04,
+    --     OffsetY = 0.0
+    -- },
+    ["reset"] = {
+        Func = function()
+            if not ResetClothing(true) then
+                Notify('Nothing To Reset', 'error')
+            end
+        end,
+        Sprite = "reset",
+        Desc = "Revert everything back to normal",
+        Name = "reset",
+        OffsetX = 0.12,
+        OffsetY = 0.2,
+        Rotate = true
+    },
+    ["bagoff"] = {
+        Func = function() ToggleClothing("Bagoff", true) end,
+        Sprite = "bagoff",
+        SpriteFunc = function()
+            local Bag = GetPedDrawableVariation(PlayerPedId(), 5)
+            local BagOff = LastEquipped["Bagoff"]
+            if LastEquipped["Bagoff"] then
+                if bags[BagOff.Drawable] then
+                    return "bagoff"
+                else
+                    return "paraoff"
+                end
+            end
+            if Bag ~= 0 then
+                if bags[Bag] then
+                    return "bagoff"
+                else
+                    return "paraoff"
+                end
+            else
+                return false
+            end
+        end,
+        Desc = "Take your bag off/on",
+        Name = "bagoff",
+        OffsetX = -0.12,
+        OffsetY = 0.2
+    }
+}

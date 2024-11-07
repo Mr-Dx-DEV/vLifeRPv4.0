@@ -13,8 +13,8 @@ function L(cd, ...) if Locales[Config.Language][cd] then return string.format(Lo
 
 Config.Framework = 'auto_detect' --[ 'auto_detect' / 'other' ]   If you select 'auto_detect', only ESX and QBCore frameworks will be detected. Use 'other' for custom frameworks.
 Config.Database = 'auto_detect' --[ 'auto_detect' ]   If you select 'auto_detect', only MySQL, GHMattimysql, and Oxmysql SQL database resources will be detected.
-Config.AutoInsertSQL = true --Would you like the script to insert the necessary SQL tables into your database automatically? If you have already done this, please set it to false.
-Config.Notification = 'QBCore' --[ 'auto_detect' / 'other' ]   If you select 'auto_detect', only ESX, QBCore, cd_notifications, okokNotify, ps-ui and ox_lib notifications will be detected. Use 'other' for custom notification resources.
+Config.AutoInsertSQL = false --Would you like the script to insert the necessary SQL tables into your database automatically? If you have already done this, please set it to false.
+Config.Notification = 'auto_detect' --[ 'auto_detect' / 'other' ]   If you select 'auto_detect', only ESX, QBCore, cd_notifications, okokNotify, ps-ui and ox_lib notifications will be detected. Use 'other' for custom notification resources.
 Config.Language = 'EN' --[ 'EN' / 'DK' / 'FR' / 'NL' ]   You can add your own locales to Locales.lua, but be sure to update the Config.Language to match it.
 
 Config.FrameworkTriggers = {
@@ -127,7 +127,7 @@ Config.Dispatcher = {
     Perms = { --A list of jobs and the minimum job grade for those who are allowed to use the dispatcher features.
         ['police'] = 0,
         ['ambulance'] = 0,
-        ['mechanic'] = 0,
+        -- ['mechanic'] = 0,
     },
 
     AutoRefreshBlips = {
@@ -214,8 +214,8 @@ Config.Ping = {
 Config.PoliceAlerts = {
     ENABLE = true, --Do you want to use the built in police alerts?
     police_jobs = {'police', }, --The jobs who will be notified from these police alerts.
-    whitelisted_jobs = {'police', 'ambulance', }, --These jobs will NOT trigger these police alerts.
-    cooldown = 30, --(in seconds) This cooldown is to prevent alerts from being spammed by the same player.
+    whitelisted_jobs = { 'police', 'ambulance', }, --These jobs will NOT trigger these police alerts.
+    cooldown = 60, --(in seconds) This cooldown is to prevent alerts from being spammed by the same player.
     add_bolos = true, --(requires cd_radar) Do you want to add a bolo for the vehicle that was used in the crime?
     require_witness_peds = {
         ENABLE = false, --Do you want police alerts only to be sent if a witness (npc ped) is in the area?
@@ -263,11 +263,11 @@ Config.PoliceAlerts = {
 
     --[[SPEEDTRAP CONFIG]]--
     SpeedTrap = {
-        ENABLE = true, ----Do you want speeding vehicles to alert police?
+        ENABLE = false, ----Do you want speeding vehicles to alert police?
         check_owner_for_fine = true, --Do you want players to only be fined in vehicles they own? (if enabled, players in stolen cars will not be fined).
 
         Blip = {
-            ENABLE = true, --Do you want speed traps to display on a players minimap?
+            ENABLE = false, --Do you want speed traps to display on a players minimap?
             sprite = 184, --Icon of the blip.
             scale = 0.7, --Size of the blip.
             colour = 0, --Colour of the blip.

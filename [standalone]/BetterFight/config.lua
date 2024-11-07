@@ -137,54 +137,54 @@ Config.Weapons= {
 
 
 
-   [63] = { hash = `WEAPON_ILLGLOCK17`, recoil = 0.5, rightLeftRecoil = 0.2, vehicleRecoil = 0.8, vehicleRightLeftRecoil = 0.3, gripMultiplier = 0.9, suppressorMultiplier = 0.95, damageMultiplier = 0.4 },
-   [64] = { hash = `WEAPON_MIDASGLOCK`, recoil = 0.6, rightLeftRecoil = 0.25, vehicleRecoil = 0.9, vehicleRightLeftRecoil = 0.35, gripMultiplier = 0.92, suppressorMultiplier = 0.95, damageMultiplier = 0.35 },
-   [65] = { hash = `WEAPON_BLUEGLOCKS`, recoil = 0.5, rightLeftRecoil = 0.2, vehicleRecoil = 0.85, vehicleRightLeftRecoil = 0.3, gripMultiplier = 0.9, suppressorMultiplier = 0.94, damageMultiplier = 0.32 },
-   [66] = { hash = `WEAPON_GLOCK21`, recoil = 0.6, rightLeftRecoil = 0.3, vehicleRecoil = 0.9, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.88, suppressorMultiplier = 0.93, damageMultiplier = 0.45 },
-   [67] = { hash = `WEAPON_P210`, recoil = 0.4, rightLeftRecoil = 0.15, vehicleRecoil = 0.7, vehicleRightLeftRecoil = 0.25, gripMultiplier = 0.9, suppressorMultiplier = 0.95, damageMultiplier = 0.3 },
-   [68] = { hash = `WEAPON_GLOCKBEAMS`, recoil = 0.5, rightLeftRecoil = 0.2, vehicleRecoil = 0.8, vehicleRightLeftRecoil = 0.35, gripMultiplier = 0.9, suppressorMultiplier = 0.92, damageMultiplier = 0.33 },
-   [69] = { hash = `WEAPON_SR40`, recoil = 0.7, rightLeftRecoil = 0.3, vehicleRecoil = 1.0, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.48 },
-   [70] = { hash = `WEAPON_T1911`, recoil = 0.6, rightLeftRecoil = 0.25, vehicleRecoil = 0.9, vehicleRightLeftRecoil = 0.35, gripMultiplier = 0.88, suppressorMultiplier = 0.93, damageMultiplier = 0.4 },
-   [71] = { hash = `WEAPON_MGGLOCK`, recoil = 0.5, rightLeftRecoil = 0.2, vehicleRecoil = 0.8, vehicleRightLeftRecoil = 0.3, gripMultiplier = 0.9, suppressorMultiplier = 0.95, damageMultiplier = 0.38 },
-   [72] = { hash = `WEAPON_TGLOCK19`, recoil = 0.6, rightLeftRecoil = 0.25, vehicleRecoil = 0.85, vehicleRightLeftRecoil = 0.35, gripMultiplier = 0.89, suppressorMultiplier = 0.93, damageMultiplier = 0.35 },
-   [73] = { hash = `WEAPON_GLOCK41`, recoil = 0.7, rightLeftRecoil = 0.3, vehicleRecoil = 0.95, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.88, suppressorMultiplier = 0.92, damageMultiplier = 0.42 },
-   [74] = { hash = `WEAPON_FN57`, recoil = 0.5, rightLeftRecoil = 0.2, vehicleRecoil = 0.8, vehicleRightLeftRecoil = 0.3, gripMultiplier = 0.92, suppressorMultiplier = 0.95, damageMultiplier = 0.34 },
-   [75] = { hash = `WEAPON_P30L`, recoil = 0.4, rightLeftRecoil = 0.15, vehicleRecoil = 0.75, vehicleRightLeftRecoil = 0.25, gripMultiplier = 0.9, suppressorMultiplier = 0.95, damageMultiplier = 0.32 },
-   [76] = { hash = `WEAPON_TEC9S`, recoil = 0.8, rightLeftRecoil = 0.35, vehicleRecoil = 1.1, vehicleRightLeftRecoil = 0.45, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.48 },
-   [77] = { hash = `WEAPON_KRISSVECTOR`, recoil = 0.7, rightLeftRecoil = 0.3, vehicleRecoil = 1.0, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.88, suppressorMultiplier = 0.93, damageMultiplier = 0.45 },
-   [78] = { hash = `WEAPON_REDM4A1`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 1.2, vehicleRightLeftRecoil = 0.5, gripMultiplier = 0.82, suppressorMultiplier = 0.88, damageMultiplier = 0.5 },
-   [79] = { hash = `WEAPON_R590`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 1.3, vehicleRightLeftRecoil = 0.55, gripMultiplier = 0.8, suppressorMultiplier = 0.85, damageMultiplier = 0.5 },
-   [80] = { hash = `WEAPON_M500`, recoil = 1.2, rightLeftRecoil = 0.4, vehicleRecoil = 1.4, vehicleRightLeftRecoil = 0.6, gripMultiplier = 0.78, suppressorMultiplier = 0.83, damageMultiplier = 0.5 },  --- craft
-   [81] = { hash = `WEAPON_LBTARP`, recoil = 0.7, rightLeftRecoil = 0.3, vehicleRecoil = 1.0, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.88, suppressorMultiplier = 0.92, damageMultiplier = 0.45 },
-   [82] = { hash = `WEAPON_BLACKARP`, recoil = 0.6, rightLeftRecoil = 0.25, vehicleRecoil = 0.9, vehicleRightLeftRecoil = 0.35, gripMultiplier = 0.9, suppressorMultiplier = 0.93, damageMultiplier = 0.43 },
-   [83] = { hash = `WEAPON_REDARP`, recoil = 0.5, rightLeftRecoil = 0.2, vehicleRecoil = 0.85, vehicleRightLeftRecoil = 0.3, gripMultiplier = 0.92, suppressorMultiplier = 0.95, damageMultiplier = 0.5 },   -- gun drop
-   [84] = { hash = `WEAPON_TARP`, recoil = 0.7, rightLeftRecoil = 0.3, vehicleRecoil = 1.0, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.88, suppressorMultiplier = 0.92, damageMultiplier = 0.44 },
-   [85] = { hash = `WEAPON_WOARP`, recoil = 0.5, rightLeftRecoil = 0.2, vehicleRecoil = 0.8, vehicleRightLeftRecoil = 0.35, gripMultiplier = 0.9, suppressorMultiplier = 0.95, damageMultiplier = 0.36 },
-   [86] = { hash = `WEAPON_RAM7`, recoil = 0.8, rightLeftRecoil = 0.35, vehicleRecoil = 1.1, vehicleRightLeftRecoil = 0.45, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.48 },
-   [87] = { hash = `WEAPON_THOMPSON`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 1.2, vehicleRightLeftRecoil = 0.5, gripMultiplier = 0.82, suppressorMultiplier = 0.88, damageMultiplier = 0.5 },  --mafia
-   [88] = { hash = `WEAPON_BAR15`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 1.3, vehicleRightLeftRecoil = 0.55, gripMultiplier = 0.8, suppressorMultiplier = 0.85, damageMultiplier = 0.5 },   --- craft
-   [89] = { hash = `WEAPON_BSCAR`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 1.4, vehicleRightLeftRecoil = 0.6, gripMultiplier = 0.78, suppressorMultiplier = 0.83, damageMultiplier = 0.5 },    --mafia
-   [90] = { hash = `WEAPON_DMK18`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 1.1, vehicleRightLeftRecoil = 0.45, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.5 },     -- gun drop
+   [63] = { hash = `WEAPON_ILLGLOCK17`, recoil = 0.5, rightLeftRecoil = 0.2, vehicleRecoil = 3.8, vehicleRightLeftRecoil = 0.3, gripMultiplier = 0.9, suppressorMultiplier = 0.95, damageMultiplier = 0.4 },
+   [64] = { hash = `WEAPON_MIDASGLOCK`, recoil = 0.6, rightLeftRecoil = 0.25, vehicleRecoil = 3.9, vehicleRightLeftRecoil = 0.35, gripMultiplier = 0.92, suppressorMultiplier = 0.95, damageMultiplier = 0.35 },
+   [65] = { hash = `WEAPON_BLUEGLOCKS`, recoil = 0.5, rightLeftRecoil = 0.2, vehicleRecoil = 3.85, vehicleRightLeftRecoil = 0.3, gripMultiplier = 0.9, suppressorMultiplier = 0.94, damageMultiplier = 0.32 },
+   [66] = { hash = `WEAPON_GLOCK21`, recoil = 0.6, rightLeftRecoil = 0.3, vehicleRecoil = 3.9, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.88, suppressorMultiplier = 0.93, damageMultiplier = 0.45 },
+   [67] = { hash = `WEAPON_P210`, recoil = 0.4, rightLeftRecoil = 0.15, vehicleRecoil = 3.7, vehicleRightLeftRecoil = 0.25, gripMultiplier = 0.9, suppressorMultiplier = 0.95, damageMultiplier = 0.3 },
+   [68] = { hash = `WEAPON_GLOCKBEAMS`, recoil = 0.5, rightLeftRecoil = 0.2, vehicleRecoil = 3.8, vehicleRightLeftRecoil = 0.35, gripMultiplier = 0.9, suppressorMultiplier = 0.92, damageMultiplier = 0.33 },
+   [69] = { hash = `WEAPON_SR40`, recoil = 0.7, rightLeftRecoil = 0.3, vehicleRecoil = 3.0, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.48 },
+   [70] = { hash = `WEAPON_T1911`, recoil = 0.6, rightLeftRecoil = 0.25, vehicleRecoil = 3.9, vehicleRightLeftRecoil = 0.35, gripMultiplier = 0.88, suppressorMultiplier = 0.93, damageMultiplier = 0.4 },
+   [71] = { hash = `WEAPON_MGGLOCK`, recoil = 0.5, rightLeftRecoil = 0.2, vehicleRecoil = 3.8, vehicleRightLeftRecoil = 0.3, gripMultiplier = 0.9, suppressorMultiplier = 0.95, damageMultiplier = 0.38 },
+   [72] = { hash = `WEAPON_TGLOCK19`, recoil = 0.6, rightLeftRecoil = 0.25, vehicleRecoil = 3.85, vehicleRightLeftRecoil = 0.35, gripMultiplier = 0.89, suppressorMultiplier = 0.93, damageMultiplier = 0.35 },
+   [73] = { hash = `WEAPON_GLOCK41`, recoil = 0.7, rightLeftRecoil = 0.3, vehicleRecoil = 3.95, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.88, suppressorMultiplier = 0.92, damageMultiplier = 0.42 },
+   [74] = { hash = `WEAPON_FN57`, recoil = 0.5, rightLeftRecoil = 0.2, vehicleRecoil = 3.8, vehicleRightLeftRecoil = 0.3, gripMultiplier = 0.92, suppressorMultiplier = 0.95, damageMultiplier = 0.34 },
+   [75] = { hash = `WEAPON_P30L`, recoil = 0.4, rightLeftRecoil = 0.15, vehicleRecoil = 3.75, vehicleRightLeftRecoil = 0.25, gripMultiplier = 0.9, suppressorMultiplier = 0.95, damageMultiplier = 0.32 },
+   [76] = { hash = `WEAPON_TEC9S`, recoil = 0.8, rightLeftRecoil = 0.35, vehicleRecoil = 3.1, vehicleRightLeftRecoil = 0.45, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.48 },
+   [77] = { hash = `WEAPON_KRISSVECTOR`, recoil = 0.7, rightLeftRecoil = 0.3, vehicleRecoil = 3.0, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.88, suppressorMultiplier = 0.93, damageMultiplier = 0.45 },
+   [78] = { hash = `WEAPON_REDM4A1`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 3.2, vehicleRightLeftRecoil = 0.5, gripMultiplier = 0.82, suppressorMultiplier = 0.88, damageMultiplier = 0.5 },
+   [79] = { hash = `WEAPON_R590`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 3.3, vehicleRightLeftRecoil = 0.55, gripMultiplier = 0.8, suppressorMultiplier = 0.85, damageMultiplier = 0.5 },
+   [80] = { hash = `WEAPON_M500`, recoil = 1.2, rightLeftRecoil = 0.4, vehicleRecoil = 3.4, vehicleRightLeftRecoil = 0.6, gripMultiplier = 0.78, suppressorMultiplier = 0.83, damageMultiplier = 0.5 },  --- craft
+   [81] = { hash = `WEAPON_LBTARP`, recoil = 0.7, rightLeftRecoil = 0.3, vehicleRecoil = 3.0, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.88, suppressorMultiplier = 0.92, damageMultiplier = 0.45 },
+   [82] = { hash = `WEAPON_BLACKARP`, recoil = 0.6, rightLeftRecoil = 0.25, vehicleRecoil = 3.9, vehicleRightLeftRecoil = 0.35, gripMultiplier = 0.9, suppressorMultiplier = 0.93, damageMultiplier = 0.43 },
+   [83] = { hash = `WEAPON_REDARP`, recoil = 0.5, rightLeftRecoil = 0.2, vehicleRecoil = 3.85, vehicleRightLeftRecoil = 0.3, gripMultiplier = 0.92, suppressorMultiplier = 0.95, damageMultiplier = 0.5 },   -- gun drop
+   [84] = { hash = `WEAPON_TARP`, recoil = 0.7, rightLeftRecoil = 0.3, vehicleRecoil = 3.0, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.88, suppressorMultiplier = 0.92, damageMultiplier = 0.44 },
+   [85] = { hash = `WEAPON_WOARP`, recoil = 0.5, rightLeftRecoil = 0.2, vehicleRecoil = 3.8, vehicleRightLeftRecoil = 0.35, gripMultiplier = 0.9, suppressorMultiplier = 0.95, damageMultiplier = 0.36 },
+   [86] = { hash = `WEAPON_RAM7`, recoil = 0.8, rightLeftRecoil = 0.35, vehicleRecoil = 3.1, vehicleRightLeftRecoil = 0.45, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.48 },
+   [87] = { hash = `WEAPON_THOMPSON`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 3.2, vehicleRightLeftRecoil = 0.5, gripMultiplier = 0.82, suppressorMultiplier = 0.88, damageMultiplier = 0.5 },  --mafia
+   [88] = { hash = `WEAPON_BAR15`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 3.3, vehicleRightLeftRecoil = 0.55, gripMultiplier = 0.8, suppressorMultiplier = 0.85, damageMultiplier = 0.5 },   --- craft
+   [89] = { hash = `WEAPON_BSCAR`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 3.4, vehicleRightLeftRecoil = 0.6, gripMultiplier = 0.78, suppressorMultiplier = 0.83, damageMultiplier = 0.5 },    --mafia
+   [90] = { hash = `WEAPON_DMK18`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 3.1, vehicleRightLeftRecoil = 0.45, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.5 },     -- gun drop
    
 
 
    --- pd new 
-   [91] = { hash = `WEAPON_PDBATON`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 0.0, vehicleRightLeftRecoil = 0.0, gripMultiplier = 1.0, suppressorMultiplier = 1.0, damageMultiplier = 0.1 },  -- Baton, no recoil
-   [92] = { hash = `WEAPON_BTASER`, recoil = 0.2, rightLeftRecoil = 0.1, vehicleRecoil = 0.3, vehicleRightLeftRecoil = 0.1, gripMultiplier = 1.0, suppressorMultiplier = 1.0, damageMultiplier = 0.25 },  -- Taser, very minimal recoil
-   [93] = { hash = `WEAPON_YTASER`, recoil = 0.2, rightLeftRecoil = 0.1, vehicleRecoil = 0.3, vehicleRightLeftRecoil = 0.1, gripMultiplier = 1.0, suppressorMultiplier = 1.0, damageMultiplier = 0.0 },  -- Taser, very minimal recoil
-   [94] = { hash = `WEAPON_PDG19`, recoil = 0.6, rightLeftRecoil = 0.2, vehicleRecoil = 0.9, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.9, suppressorMultiplier = 0.95, damageMultiplier = 0.35 },  -- Pistol
-   [95] = { hash = `WEAPON_PD870`, recoil = 1.2, rightLeftRecoil = 0.4, vehicleRecoil = 1.5, vehicleRightLeftRecoil = 0.6, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.5 },  -- Shotgun
-   [96] = { hash = `WEAPON_PDM700`, recoil = 0.8, rightLeftRecoil = 0.3, vehicleRecoil = 1.3, vehicleRightLeftRecoil = 0.5, gripMultiplier = 0.88, suppressorMultiplier = 0.92, damageMultiplier = 0.45 },  -- Rifle
-   [97] = { hash = `WEAPON_HK417`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 1.4, vehicleRightLeftRecoil = 0.55, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.5 },  -- Rifle
-   [98] = { hash = `WEAPON_PDCM607`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 1.6, vehicleRightLeftRecoil = 0.6, gripMultiplier = 0.8, suppressorMultiplier = 0.88, damageMultiplier = 0.5 },  -- Carbine Rifle
-   [99] = { hash = `WEAPON_PDC7`, recoil = 0.9, rightLeftRecoil = 0.3, vehicleRecoil = 1.2, vehicleRightLeftRecoil = 0.5, gripMultiplier = 0.88, suppressorMultiplier = 0.92, damageMultiplier = 0.42 },  -- Rifle
-   [100] = { hash = `WEAPON_PDG22`, recoil = 0.6, rightLeftRecoil = 0.2, vehicleRecoil = 0.9, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.9, suppressorMultiplier = 0.95, damageMultiplier = 0.35 },  -- Pistol
-   [101] = { hash = `WEAPON_PDBM3`, recoil = 0.8, rightLeftRecoil = 0.45, vehicleRecoil = 1.7, vehicleRightLeftRecoil = 0.65, gripMultiplier = 0.8, suppressorMultiplier = 0.88, damageMultiplier = 0.5 },  -- Shotgun
-   [102] = { hash = `WEAPON_PDP88`, recoil = 0.7, rightLeftRecoil = 0.25, vehicleRecoil = 1.0, vehicleRightLeftRecoil = 0.45, gripMultiplier = 0.88, suppressorMultiplier = 0.93, damageMultiplier = 0.38 },  -- Pistol
-   [103] = { hash = `WEAPON_PDHK45`, recoil = 0.8, rightLeftRecoil = 0.3, vehicleRecoil = 1.1, vehicleRightLeftRecoil = 0.5, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.4 },  -- Pistol
-   [104] = { hash = `WEAPON_PDHK33`, recoil = 0.7, rightLeftRecoil = 0.35, vehicleRecoil = 1.3, vehicleRightLeftRecoil = 0.55, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.45 },  -- Rifle
-   [105] = { hash = `WEAPON_PDHKUSP`, recoil = 0.9, rightLeftRecoil = 0.3, vehicleRecoil = 1.2, vehicleRightLeftRecoil = 0.5, gripMultiplier = 0.88, suppressorMultiplier = 0.92, damageMultiplier = 0.42 },  -- Pistol
-   [106] = { hash = `WEAPON_SMG`, recoil = 0.0, rightLeftRecoil = 0.3, vehicleRecoil = 1.00, vehicleRightLeftRecoil = .4, gripMultiplier = 0.8, suppressorMultiplier = 0.8, damageMultiplier = 0.3},
+   [91] = { hash = `WEAPON_PDBATON`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 3.0, vehicleRightLeftRecoil = 0.0, gripMultiplier = 1.0, suppressorMultiplier = 1.0, damageMultiplier = 0.1 },  -- Baton, no recoil
+   [92] = { hash = `WEAPON_BTASER`, recoil = 0.2, rightLeftRecoil = 0.1, vehicleRecoil = 3.3, vehicleRightLeftRecoil = 0.1, gripMultiplier = 1.0, suppressorMultiplier = 1.0, damageMultiplier = 0.25 },  -- Taser, very minimal recoil
+   [93] = { hash = `WEAPON_YTASER`, recoil = 0.2, rightLeftRecoil = 0.1, vehicleRecoil = 3.3, vehicleRightLeftRecoil = 0.1, gripMultiplier = 1.0, suppressorMultiplier = 1.0, damageMultiplier = 0.0 },  -- Taser, very minimal recoil
+   [94] = { hash = `WEAPON_PDG19`, recoil = 0.6, rightLeftRecoil = 0.2, vehicleRecoil = 3.9, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.9, suppressorMultiplier = 0.95, damageMultiplier = 0.35 },  -- Pistol
+   [95] = { hash = `WEAPON_PD870`, recoil = 1.2, rightLeftRecoil = 0.4, vehicleRecoil = 3.5, vehicleRightLeftRecoil = 0.6, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.5 },  -- Shotgun
+   [96] = { hash = `WEAPON_PDM700`, recoil = 0.8, rightLeftRecoil = 0.3, vehicleRecoil = 3.3, vehicleRightLeftRecoil = 0.5, gripMultiplier = 0.88, suppressorMultiplier = 0.92, damageMultiplier = 0.45 },  -- Rifle
+   [97] = { hash = `WEAPON_HK417`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 3.4, vehicleRightLeftRecoil = 0.55, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.5 },  -- Rifle
+   [98] = { hash = `WEAPON_PDCM607`, recoil = 0.0, rightLeftRecoil = 0.0, vehicleRecoil = 3.6, vehicleRightLeftRecoil = 0.6, gripMultiplier = 0.8, suppressorMultiplier = 0.88, damageMultiplier = 0.5 },  -- Carbine Rifle
+   [99] = { hash = `WEAPON_PDC7`, recoil = 0.9, rightLeftRecoil = 0.3, vehicleRecoil = 3.2, vehicleRightLeftRecoil = 0.5, gripMultiplier = 0.88, suppressorMultiplier = 0.92, damageMultiplier = 0.42 },  -- Rifle
+   [100] = { hash = `WEAPON_PDG22`, recoil = 0.6, rightLeftRecoil = 0.2, vehicleRecoil = 3.9, vehicleRightLeftRecoil = 0.4, gripMultiplier = 0.9, suppressorMultiplier = 0.95, damageMultiplier = 0.35 },  -- Pistol
+   [101] = { hash = `WEAPON_PDBM3`, recoil = 0.8, rightLeftRecoil = 0.45, vehicleRecoil = 3.7, vehicleRightLeftRecoil = 0.65, gripMultiplier = 0.8, suppressorMultiplier = 0.88, damageMultiplier = 0.5 },  -- Shotgun
+   [102] = { hash = `WEAPON_PDP88`, recoil = 0.7, rightLeftRecoil = 0.25, vehicleRecoil = 3.0, vehicleRightLeftRecoil = 0.45, gripMultiplier = 0.88, suppressorMultiplier = 0.93, damageMultiplier = 0.38 },  -- Pistol
+   [103] = { hash = `WEAPON_PDHK45`, recoil = 0.8, rightLeftRecoil = 0.3, vehicleRecoil = 3.1, vehicleRightLeftRecoil = 0.5, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.4 },  -- Pistol
+   [104] = { hash = `WEAPON_PDHK33`, recoil = 0.7, rightLeftRecoil = 0.35, vehicleRecoil = 3.3, vehicleRightLeftRecoil = 0.55, gripMultiplier = 0.85, suppressorMultiplier = 0.9, damageMultiplier = 0.45 },  -- Rifle
+   [105] = { hash = `WEAPON_PDHKUSP`, recoil = 0.9, rightLeftRecoil = 0.3, vehicleRecoil = 3.2, vehicleRightLeftRecoil = 0.5, gripMultiplier = 0.88, suppressorMultiplier = 0.92, damageMultiplier = 0.42 },  -- Pistol
+   [106] = { hash = `WEAPON_SMG`, recoil = 0.0, rightLeftRecoil = 0.3, vehicleRecoil = 3.00, vehicleRightLeftRecoil = .4, gripMultiplier = 0.8, suppressorMultiplier = 0.8, damageMultiplier = 0.3},
 
    
    
