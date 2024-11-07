@@ -76,6 +76,26 @@
 				"Src": "./loadingscreen/images/11.png",
 				"Zone": 10,
 				"Duration": 5000
+			},
+			{
+				"Src": "./loadingscreen/images/12.png",
+				"Zone": 10,
+				"Duration": 5000
+			},
+			{
+				"Src": "./loadingscreen/images/13.png",
+				"Zone": 10,
+				"Duration": 5000
+			},
+			{
+				"Src": "./loadingscreen/images/14.png",
+				"Zone": 10,
+				"Duration": 5000
+			},
+			{
+				"Src": "./loadingscreen/images/15.png",
+				"Zone": 10,
+				"Duration": 5000
 			}
 		]
 	},
