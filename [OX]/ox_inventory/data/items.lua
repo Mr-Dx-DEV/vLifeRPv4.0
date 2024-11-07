@@ -8004,16 +8004,7 @@ return {
 			image = 'pure_crack.png'
 		}
 	},
-	['water_bottle'] = {
-		label = 'Bottled Water',
-		weight = 100,
-		stack = true,
-		close = true,
-		description = '',
-		client = {
-			image = 'water_bottle.png'
-		}
-	},
+	
 	['emptybaggies'] = {
 		label = 'Empty Baggies',
 		weight = 200,
