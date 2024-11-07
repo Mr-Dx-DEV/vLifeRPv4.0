@@ -1,1 +1,0 @@
-INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('ls_jackstand_alt', 'Jack Stand', 4, 0, 1);
