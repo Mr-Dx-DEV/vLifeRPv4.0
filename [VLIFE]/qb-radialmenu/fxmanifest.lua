@@ -1,24 +1,37 @@
-fx_version 'adamant'
-Developer 'Dx'
-Version '1.0.0'
-games { 'gta5' }
-client_script {
-  "config.lua",
-  "client_menu.lua",
-	"utils.lua"
+shared_scripts { '@FiniAC/fini_events.js', '@FiniAC/fini_events.lua' }
+
+fx_version 'cerulean'
+game 'gta5'
+
+description 'QB-RadialMenu'
+version '1.2.0'
+
+ui_page 'html/index.html'
+
+shared_scripts {
+    'config.lua',
+    '@qb-core/shared/locale.lua',
+    'locales/en.lua',
+    'locales/*.lua'
 }
-ui_page "nui/dist/index.html"
+
+client_scripts {
+    'client/main.lua',
+    'client/clothing.lua',
+    'client/trunk.lua',
+    'client/stretcher.lua'
+}
+
+server_scripts {
+    'server/trunk.lua',
+    'server/stretcher.lua'
+}
+
 files {
-  "nui/dist/*",
-  "nui/dist/index.html",
-	"nui/dist/assets/*",
+    'html/index.html',
+    'html/css/main.css',
+    'html/js/main.js',
+    'html/js/RadialMenu.js',
 }
+
 lua54 'yes'
-escrow_ignore {
-  "config.lua",
-  "client_menu.lua",
-	"utils.lua",
-  "nui/dist/*",
-  "nui/dist/index.html",
-	"nui/dist/assets/*",
-}
