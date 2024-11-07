@@ -20,7 +20,7 @@ Config.InventoryType    = "ox_inventory"
 Config.TargetType       = "ox_target"
 
 Config.CraftableItems_1 = {
-    [1] = {
+    --[[ [1] = {
         name = "electronickit",
         label = "Electronic Kit",
         propModel = "prop_prototype_minibomb",
@@ -136,14 +136,14 @@ Config.CraftableItems_1 = {
             rope = 20,
         },
         price = 1000,
-    },
-    [7] = {
-        name = "PISTOL_SUPPRESSOR",
-        label = "Pistol Suppressor",
-        propModel = "w_at_ar_supp_02",
+    }, ]]
+    [1] = {
+        name = "at_flashlight",
+        label = "Flashlight",
+        propModel = "w_at_pi_flsh",
         count = 1,
         duration = 300000,
-        image = "items/pistol_suppressor.png",
+        image = "items/flashlight.png",
         ingredients = {
             rubber = 150,
             scrapmetal = 50,
@@ -154,13 +154,13 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [8] = {
-        name = "SMG_SUPPRESSOR",
-        label = "SMG Suppressor",
-        propModel = "w_at_ar_supp_02",
+    [2] = {
+        name = "at_grip",
+        label = "SMG Grip",
+        propModel = "w_at_ar_afgrip",
         count = 1,
         duration = 300000,
-        image = "items/smg_suppressor.png",
+        image = "items/grip.png",
         ingredients = {
             rubber = 300,
             spring = 300,
@@ -171,13 +171,13 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [9] = {
-        name = "RIFLE_SUPPRESSOR",
-        label = "Rifle Suppressor",
-        propModel = "w_at_ar_supp_02",
+    [3] = {
+        name = "at_scope_medium",
+        label = "Medium Scope",
+        propModel = "w_at_scope_medium",
         count = 1,
         duration = 300000,
-        image = "items/rifle_suppressor.png",
+        image = "items/scope_medium.png",
         ingredients = {
             rubber = 500,
             metalscrap = 300,
@@ -189,13 +189,13 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [10] = {
-        name = "PISTOL_EXTCLIP",
-        label = "Pistol Ext Clip",
-        propModel = "w_ar_advancedrifle_mag1",
+    [4] = {
+        name = "at_suppressor_light",
+        label = "Light Suppressor",
+        propModel = "w_at_pi_supp",
         count = 1,
         duration = 300000,
-        image = "items/pistol_extclip.png",
+        image = "items/suppressor_light.png",
         ingredients = {
             steel = 200,
             aluminum = 100,
@@ -207,13 +207,13 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [11] = {
-        name = "SMG_EXTCLIP",
-        label = "SMG Ext Clip",
-        propModel = "w_ar_advancedrifle_mag1",
+    [5] = {
+        name = "at_clip_extended_pistol",
+        label = "Extended Pistol Clip",
+        propModel = "w_pi_pistolmag1",
         count = 1,
         duration = 300000,
-        image = "items/smg_extclip.png",
+        image = "items/extended_pistol_clip.png",
         ingredients = {
             metal = 300,
             iron = 100,
@@ -224,13 +224,13 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [12] = {
-        name = "RIFLE_EXTCLIP",
-        label = "Rifle Ext Clip",
-        propModel = "w_at_scope_medium_2",
+    [6] = {
+        name = "at_clip_extended_smg",
+        label = "Extended SMG Clip",
+        propModel = "w_sb_smgmag1",
         count = 1,
         duration = 300000,
-        image = "items/rifle_extclip.png",
+        image = "items/extended_smg_clip.png",
         ingredients = {
             metal = 500,
             steel = 500,
@@ -242,13 +242,13 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [13] = {
-        name = "SMG_SCOPE",
-        label = "SMG Scope",
-        propModel = "w_at_scope_max",
+    [7] = {
+        name = "at_clip_extended_rifle",
+        label = "Extended Rifle Clip",
+        propModel = "w_ar_riflemag1",
         count = 1,
         duration = 300000,
-        image = "items/smg_scope.png",
+        image = "items/extended_rifle_clip.png",
         ingredients = {
             glass = 300,
             plastic = 300,
@@ -258,13 +258,13 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [14] = {
-        name = "RIFLE_SCOPE",
-        label = "Rifle Scope",
-        propModel = "w_at_scope_medium_2",
+    [8] = {
+        name = "at_clip_drum_rifle",
+        label = "Drum Rifle Clip",
+        propModel = "w_ar_assaultrifle_mag2",
         count = 1,
         duration = 300000,
-        image = "items/rifle_suppressor.png",
+        image = "items/drum_rifle_clip.png",
         ingredients = {
             glass = 500,
             plastic = 500,
@@ -274,13 +274,13 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [15] = {
-        name = "RIFLE_GRIP",
-        label = "Rifle Grip",
-        propModel = "w_at_ar_afgrip_luxe",
+    [9] = {
+        name = "at_clip_drum_pistol",
+        label = "Drum Pistol Clip",
+        propModel = "w_ar_carbinerifle_mag2",
         count = 1,
         duration = 300000,
-        image = "items/rifle_grip.png",
+        image = "items/drum_pistol_clip.png",
         ingredients = {
             rubber = 500,
             plastic = 500,
@@ -291,30 +291,13 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [16] = {
-        name = "at_clip_100_pistol",
-        label = "100 Round Mag",
-        propModel = "w_ar_bullpuprifle_mag2",
-        count = 1,
-        duration = 300000,
-        image = "items/at_clip_100_pistol.png",
-        ingredients = {
-            rubber = 500,
-            plastic = 500,
-            metalscrap = 200,
-            metal = 200,
-            iron = 150,
-            spring = 200,
-        },
-        price = 1000,
-    },
-    [17] = {
+    [10] = {
         name = "at_clip_clear",
         label = "Clear Clip",
         propModel = "w_ar_carbinerifle_mag1",
         count = 1,
         duration = 300000,
-        image = "items/at_clip_clear.png",
+        image = "items/clear_clip.png",
         ingredients = {
             rubber = 500,
             plastic = 500,
@@ -325,7 +308,24 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [18] = {
+    [11] = {
+        name = "at_clip_100_pistol",
+        label = "100 Round Pistol Clip",
+        propModel = "w_ar_bullpuprifle_mag2",
+        count = 1,
+        duration = 300000,
+        image = "items/100_round_pistol_clip.png",
+        ingredients = {
+            rubber = 500,
+            plastic = 500,
+            metalscrap = 200,
+            metal = 200,
+            iron = 150,
+            spring = 200,
+        },
+        price = 1000,
+    },
+    [12] = {
         name = "at_clip_drum_pistol",
         label = "50 Round Drum",
         propModel = "w_ar_carbinerifle_mag2",
@@ -343,7 +343,7 @@ Config.CraftableItems_1 = {
         price = 1000,
     },
 
-    [19] = {
+    [13] = {
         name = "WEAPON_BAR15",
         label = "AR-15",
         propModel = "w_ar_kyrosbar15",
@@ -364,7 +364,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [20] = {
+    [14] = {
         name = "WEAPON_LBTARP",
         label = "LB TAN ARP",
         propModel = "w_ar_kyroslbtarp",
@@ -385,7 +385,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [21] = {
+    [15] = {
         name = "WEAPON_M500",
         label = "MOSSBERG 500",
         propModel = "w_sg_kyrosm500",
@@ -406,7 +406,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [22] = {
+    [16] = {
         name = "WEAPON_T1911",
         label = "TAN 1911",
         propModel = "w_pi_kyrostan1911",
@@ -426,7 +426,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [23] = {
+    [17] = {
         name = "WEAPON_TEC9S",
         label = "TEC 9 W STRAP",
         propModel = "w_sb_kyrostec9s",

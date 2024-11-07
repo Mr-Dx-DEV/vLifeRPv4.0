@@ -1,32 +1,20 @@
 return {
+	
+	
 	['ls_jackstand'] = {
-		name = 'ls_jackstand',
 		label = 'Jack Stand',
-		weight = 0,
-		stack = false, -- unique item, not stackable
+		weight = 20,
+		stack = true,
 		close = true,
-		description = 'A jack stand to lift vehicles safely.',
-		client = {
-			image = 'jack_stand.png'
-		},
-		consumable = false,
-		usable = true
+		description = '',
 	},
-	
 	['ls_jackstand_alt'] = {
-		name = 'ls_jackstand_alt',
 		label = 'Alternative Jack Stand',
-		weight = 0,
-		stack = false, -- unique item, not stackable
+		weight = 20,
+		stack = true,
 		close = true,
-		description = 'An alternative jack stand for lifting vehicles.',
-		client = {
-			image = 'jack_stand.png'
-		},
-		consumable = false,
-		usable = [true],
+		description = '',
 	},
-	
 
 ---	mt resturent
 

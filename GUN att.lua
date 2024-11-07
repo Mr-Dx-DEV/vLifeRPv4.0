@@ -85,3 +85,20 @@ WEAPON_PDHK33
 WEAPON_PDHK45
 WEAPON_PDHKUSP
 		
+
+
+at_flashlight
+at_grip
+at_scope_medium
+
+at_suppressor_light
+
+at_clip_extended_pistol
+at_clip_extended_smg
+at_clip_extended_rifle
+
+at_clip_drum_rifle
+
+at_clip_drum_pistol
+at_clip_clear
+at_clip_100_pistol
