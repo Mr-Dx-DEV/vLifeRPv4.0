@@ -509,14 +509,14 @@ AC = {
                     ["image"] = "redw.png",
                     ["itemname"] = "redw",
                 },
-               --[[  [12] = {
-                    ["name"] = "Marlboro Pack",
-                    ["price"] = 1000,
+               [12] = {
+                    ["name"] = "Screwdriver Set",
+                    ["price"] = 3000,
                     ["amount"] = 100,
                     ["type"] = "item",
-                    ["image"] = "marlboro.png",
-                    ["itemname"] = "marlboro",
-                }, ]]
+                    ["image"] = "screwdriverset.png",
+                    ["itemname"] = "screwdriverset",
+                },
                 
             },
         },
