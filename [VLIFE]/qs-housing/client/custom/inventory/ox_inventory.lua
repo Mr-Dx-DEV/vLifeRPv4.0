@@ -10,7 +10,7 @@ end
 
 function HousingStash(id, other, mlo)
     if mlo then -- For MLO stashes
-        TriggerServerEvent('housing:server:registerOxInventory', id, 50, 5000000)
+        TriggerServerEvent('housing:server:registerOxInventory', id, 300, 5000000)
         TriggerEvent('housing:client:registerOxInventory', id)
     else -- For IPL and Shell stashes
         TriggerServerEvent('housing:server:registerOxInventory', id, other.slots, other.weight)
