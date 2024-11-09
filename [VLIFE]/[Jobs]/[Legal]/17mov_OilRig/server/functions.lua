@@ -40,7 +40,7 @@ function GetPlayerIdentity(source)
 
         if xPlayer == nil then return "Example Name" end
 
-        cachedNames[source] = xPlayer.PlayerData.charinfo.firstname .. " " .. xPlayer.PlayerData.charinfo.lastname 
+        cachedNames[source] = xPlayer.PlayerData.charinfo.firstname .. " " .. xPlayer.PlayerData.charinfo.lastname
     elseif Config.Framework == "ESX" then
         local xPlayer = Core.GetPlayerFromId(source)
 
@@ -52,15 +52,15 @@ function GetPlayerIdentity(source)
         end
 
         if xPlayer == nil then return "Example Name" end
-    
+
         cachedNames[source] = xPlayer.getName()
     else
         cachedNames[source] = GetPlayerName(source)
     end
 
     return cachedNames[source]
-end    
-     
+end
+
 function Notify(source, msg)
     if Config.UseBuiltInNotifications then
         TriggerClientEvent("17mov_DrawDefaultNotification"..GetCurrentResourceName(), source, msg)
@@ -75,7 +75,7 @@ function Notify(source, msg)
     end
 end
 
-function Pay(source, amount)
+function Pay(source, amount, gasProgress, tasksProgress, lobbySize)
     if Config.Framework == "QBCore" then
         local Player = Core.Functions.GetPlayer(source)
         if Player ~= nil and Player.Functions ~= nil then
@@ -88,6 +88,24 @@ function Pay(source, amount)
         end
     else
         -- Configure here ur payment
+    end
+
+    -- Adding reward items
+    local itemsToAdd = {}
+    for i = 1, math.floor(gasProgress) do
+        for k, item in pairs(Config.RewardItemsToGive) do
+            if math.random(100) <= item.chance and gasProgress >= item.minimumGasProgressPercent then
+                if itemsToAdd[item.itemName] == nil then
+                    itemsToAdd[item.itemName] = 0
+                end
+
+                itemsToAdd[item.itemName] = itemsToAdd[item.itemName] +  item.amountPerPercent
+            end
+        end
+    end
+
+    for k, v in pairs(itemsToAdd) do
+        AddItem(source, k, math.floor(v))
     end
 end
 
@@ -107,14 +125,33 @@ function PayPenalty(source, amount)
     end
 end
 
-function isHaveRequiredItem(source)
+function AddItem(source, itemName, quantity)
+    if Config.Framework == "QBCore" then
+        local Player = Core.Functions.GetPlayer(source)
+
+        if Player ~= nil and Player.Functions ~= nil then
+            Player.Functions.AddItem(itemName, quantity)
+        end
+    elseif Config.Framework == "ESX" then
+        local xPlayer = Core.GetPlayerFromId(source)
+
+        if xPlayer ~= nil and xPlayer.addInventoryItem ~= nil then
+            xPlayer.addInventoryItem(itemName, quantity)
+        end
+    else
+        -- Configure your items system here
+    end
+end
+
+function IsHaveRequiredItem(source)
     if Config.RequiredItem ~= "none" then
         if Config.Framework == "QBCore" then
             local counter = 0
             for k,v in pairs(Core.Functions.GetPlayer(source).PlayerData.items) do
                 if v.name == Config.RequiredItem then
-                    counter = counter + v.amount
-                    if v.amount > 0 then break end
+                    local amount = v.amount or v.count
+                    counter = counter + amount
+                    if amount > 0 then break end
                 end
             end
 

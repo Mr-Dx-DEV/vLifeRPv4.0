@@ -1,11 +1,13 @@
 local targetSystem
 
-
-
 if Config.Framework == "QBCore" then
     targetSystem = "qb-target"
 else
     targetSystem = "qtarget"
+end
+
+if GetResourceState("ox_target") ~= "missing" then
+    targetSystem = "qtarget"    -- OX_Target have a backward compability to qtarget
 end
 
 function SpawnPeds()
@@ -15,12 +17,12 @@ function SpawnPeds()
 		Citizen.Wait(50)
 	end
 
-    spawnedPed = CreatePed(0, model, Config.Locations.DutyToggle.Coords[1].x, Config.Locations.DutyToggle.Coords[1].y, Config.Locations.DutyToggle.Coords[1].z - 1.0, 91.53, false, true)
+    SpawnedPed = CreatePed(0, model, Config.Locations.DutyToggle.Coords[1].x, Config.Locations.DutyToggle.Coords[1].y, Config.Locations.DutyToggle.Coords[1].z - 1.0, 91.53, false, true)
 
-    FreezeEntityPosition(spawnedPed, true)
-    SetBlockingOfNonTemporaryEvents(spawnedPed, true)
-    SetEntityInvincible(spawnedPed, true)
-    exports[targetSystem]:AddTargetEntity(spawnedPed, {
+    FreezeEntityPosition(SpawnedPed, true)
+    SetBlockingOfNonTemporaryEvents(SpawnedPed, true)
+    SetEntityInvincible(SpawnedPed, true)
+    exports[targetSystem]:AddTargetEntity(SpawnedPed, {
         options = {
             {
                 event = "oilrigJob:OpenMainMenu",

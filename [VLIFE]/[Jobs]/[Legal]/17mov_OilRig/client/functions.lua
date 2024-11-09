@@ -49,7 +49,7 @@ function DeleteVehicleByCore(vehicle)
             Core.Functions.DeleteVehicle(vehicle)
         elseif Config.Framework == "ESX" then
             Core.Game.DeleteVehicle(vehicle)
-        else 
+        else
             SetEntityAsMissionEntity(vehicle, false, true)
             DeleteVehicle(vehicle)
         end
@@ -76,7 +76,7 @@ function Notify(msg)
         else
             SetNotificationTextEntry('STRING')
             AddTextComponentString(msg)
-            DrawNotification(0,1)
+            DrawNotification(false, true)
         end
     end
 end
@@ -91,7 +91,7 @@ function SetVehicle(_vehicle)
     model = GetDisplayNameFromVehicleModel(GetEntityModel(vehicle))
     plate = GetVehicleNumberPlateText(vehicle)
     table.insert(keys, {vehicle = vehicle, model = model, plate = plate})
-    
+
     -- Keys Systems
     if GetResourceState("qs-vehiclekeys") == "started" then
         exports["qs-vehiclekeys"]:GiveKeys(plate, model, true)
@@ -101,7 +101,6 @@ function SetVehicle(_vehicle)
     TriggerServerEvent("vehicles_keys:selfGiveVehicleKeys", plate)
     TriggerEvent("vehiclekeys:client:SetOwner", plate)
 
-    
     -- Fuel systems
     if GetResourceState("LegacyFuel") == "started" then
         exports["LegacyFuel"]:SetFuel(vehicle, 100.0)
@@ -118,7 +117,7 @@ function SetVehicle(_vehicle)
     Entity(vehicle).state.fuel = 100.0
 end
 
-function RemoveKeys() 
+function RemoveKeys()
     if GetResourceState("qs-vehiclekeys") == "started" then
         for k,v in pairs(keys) do
             exports["qs-vehiclekeys"]:RemoveKeys(v.plate, v.model)
@@ -132,23 +131,25 @@ function ShowHelpNotification(msg)
     DisplayHelpTextThisFrame('HelpNotification', false)
 end
 
-function DrawText3Ds(x,y,z, text)
-    local onScreen,_x,_y=World3dToScreen2d(x,y,z)
-    local px,py,pz=table.unpack(GetGameplayCamCoords())
+function DrawText3Ds(x, y, z, text)
+    local onScreen,_x,_y=World3dToScreen2d(x, y, z)
     SetTextScale(0.32, 0.32)
     SetTextFont(4)
-    SetTextProportional(1)
+    SetTextProportional(true)
     SetTextColour(255, 255, 255, 255)
     SetTextEntry("STRING")
-    SetTextCentre(1)
+    SetTextCentre(true)
     AddTextComponentString(text)
-    DrawText(_x,_y)
-    local factor = (string.len(text)) / 500
-    DrawRect(_x,_y+0.0125, 0.030+ factor, 0.03, 0, 0, 0, 150)
+    DrawText(_x, _y)
+    local factor = string.len(text) / 500
+    DrawRect(_x, _y + 0.0125, 0.030 + factor, 0.03, 0, 0, 0, 150)
+end
+
+function IsDead(ped)
+    return GetEntityHealth(ped) == 0
 end
 
 function ChangeClothes(type)
-    
     if Config.Framework ~= "QBCore" and Config.Framework ~= "ESX" then
         print("CANNOT CHANGE CLOTHES, PLEASE CONFIGURE UR CLOTHES SYSTEM IN /Client/Functions.lua file.")
         return
@@ -158,7 +159,7 @@ function ChangeClothes(type)
     while not HasAnimDictLoaded("clothingshirt") do Citizen.Wait(0) end
 
     local PlayerPed = PlayerPedId()
-    TaskPlayAnim(PlayerPed, "clothingshirt", "try_shirt_positive_d", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+    TaskPlayAnim(PlayerPed, "clothingshirt", "try_shirt_positive_d", 8.0, 1.0, -1, 49, 0, false, false, false)
     Citizen.Wait(1000)
     if type == "work" then
         if GetEntityModel(PlayerPedId()) == 1885233650 then
@@ -170,7 +171,7 @@ function ChangeClothes(type)
                 SetPedComponentVariation(PlayerPed, v["component_id"], v["drawable"], v["texture"], 0)
             end
         end
-    else 
+    else
         if Config.Framework == "QBCore" then
             TriggerServerEvent('qb-clothes:loadPlayerSkin')
         elseif Config.Framework == "ESX" then

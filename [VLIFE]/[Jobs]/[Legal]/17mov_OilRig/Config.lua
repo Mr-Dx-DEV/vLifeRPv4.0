@@ -17,7 +17,7 @@ Config.RequireOneFriendMinimum = false              -- Set to true if you want t
 Config.letBossSplitReward = true                    -- If it's true, then boss can manage whole party rewards percent in menu. If set to false, then everybody will get same amount. Avalible only in modern UI
 Config.multiplyRewardWhileWorkingInGroup = false     -- If it's false, then reward will stay by default. For example $1000 for completing whole job. If you set it to true, then the payout will depend on how many players is there in the group. For example, if for full job there's $1000, then if player works in a 4 member group, the reward will be $4000. (baseReward * partyCount)
 
-Config.PenaltyAmount = 10000                          -- Penalty that is levied when a player finishes work without a company vehicle
+Config.PenaltyAmount = 10000                                                    -- Penalty that is levied when a player finishes work without a company vehicle
 Config.DontPayRewardWithoutVehicle = false          -- Set to true if you want to not pay reward to players who want to end without company vehicle (accepting the penalty)
 Config.DeleteVehicleWithPenalty = false             -- Delete Vehicle even if its not company vehicle
 Config.JobCooldown = 0 * 60 -- 10 * 60              -- 0 minutes cooldown between making jobs (in brackets there's example for 10 minutes)
@@ -27,6 +27,7 @@ Config.ProgressBarOffset = "25px"                   -- Value in px of counter of
 Config.ProgressBarAlign = "bottom-center"           -- Align of the progressbar
 
 Config.SoundVolumeMultipler = 1.0                   -- Here you can change sounds volume multipler
+Config.RequireAllTeamOnRig = true                   -- Here you force that everyone from lobby needs to be at rig to perform any work action
 
 Config.ExplodeChance = {
     [110] = 10,
@@ -36,28 +37,37 @@ Config.ExplodeChance = {
     [150] = 70,
 }
 
+Config.RewardItemsToGive = { -- Here you can add items reward as payout for job
+    -- {
+    --     itemName = "water_bottle",            -- Name of item
+    --     chance = 100,                  -- chance to get item. Must be between 0-100 (0 = 0% chance, 1 = 1% chance, 100 = 100% chance etc.)
+    --     amountPerPercent = 1,          -- How much items player will get for each percent of done job
+    --     minimumGasProgressPercent = 0, -- Mininal progress of collected gas to "got chance" to get item
+    -- },
+}
+
 Config.RequireWorkClothes = false                   -- Set it to true, to change players clothes everytime they're starting the job.
 Config.EnableCloakroom = false                       -- if false, then you can't see the Cloakroom button under Work Menu
 Config.Clothes = {
     male = {
         ["mask"] = {clotheId = 0, variation = 0},
-        ["arms"] = {clotheId = 0, variation = 0},
-        ["pants"] = {clotheId = 210, variation = 19},
+        ["arms"] = {clotheId = 63, variation = 0},
+        ["pants"] = {clotheId = 36, variation = 0},
         ["bag"] = {clotheId = 0, variation = 0},
-        ["shoes"] = {clotheId = 118, variation = 0},
-        ["t-shirt"] = {clotheId = 15, variation = 0},
-        ["torso"] = {clotheId = 362, variation = 19},
+        ["shoes"] = {clotheId = 25, variation = 0},
+        ["t-shirt"] = {clotheId = 77, variation = 1},
+        ["torso"] = {clotheId = 69, variation = 2},
         ["decals"] = {clotheId = 0, variation = 0},
         ["kevlar"] = {clotheId = 0, variation = 0},
     },
     female = {
         ["mask"] = {clotheId = 0, variation = 0},
-        ["arms"] = {clotheId = 0, variation = 0},
-        ["pants"] = {clotheId = 177, variation = 0},
+        ["arms"] = {clotheId = 75, variation = 0},
+        ["pants"] = {clotheId = 35, variation = 0},
         ["bag"] = {clotheId = 0, variation = 0},
-        ["shoes"] = {clotheId = 148, variation = 0},
-        ["t-shirt"] = {clotheId = 411, variation = 0},
-        ["torso"] = {clotheId = 370, variation = 0},
+        ["shoes"] = {clotheId = 25, variation = 0},
+        ["t-shirt"] = {clotheId = 95, variation = 1},
+        ["torso"] = {clotheId = 63, variation = 2},
         ["decals"] = {clotheId = 0, variation = 0},
         ["kevlar"] = {clotheId = 0, variation = 0},
     },
@@ -91,14 +101,12 @@ Config.Blips = { -- Here you can configure Company blip.
 }
 
 Config.BlipsStyles = {
-
     EndJob = {
         label = "~b~[OILRIG]~s~ End Job",
         sprite = 1,
         scale = 1.0,
         color = 26,
     },
-
     Boat = {
         label = "~b~[OILRIG]~s~ Boat Location",
         sprite = 1,
@@ -410,6 +418,7 @@ Config.Lang = {
     ["noContainerLocation"] = "There's no free container locations",
     ["noRig"] = "There's no avalible work to do",
     ["endJob"] = "Press ~INPUT_CONTEXT~ to ~y~end ~s~working.",
+    ["unableToPerform"] = "To perform this action everyone from your party need to be at rig platform",
 
     -- Server
     ["isAlreadyHost"] = "This player leads his team.",
@@ -426,7 +435,7 @@ Config.Lang = {
     ["clientsPenalty"] = "The team's host accepted the punishment. You have not received the payment",
     ["dontHaveReqItem"] = "You or someone from your team does not have the required item to start work",
     ["notEverybodyHasRequiredJob"] = "Not all of your friends have the required job",
-    ["someoneIsOnCooldown"] = "%s can't start the job now (cooldown: %s)", 
+    ["someoneIsOnCooldown"] = "%s can't start the job now (cooldown: %s)",
     ["hours"] = "h",
     ["minutes"] = "m",
     ["seconds"] = "s",
