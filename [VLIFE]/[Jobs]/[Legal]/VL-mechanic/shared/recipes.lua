@@ -279,7 +279,7 @@ Stores = {
 			{ name = "carbattery", price = 3000, amount = 1000, info = {}, type = "item", },
 			{ name = "sparkplugs", price = 3000, amount = 1000, info = {}, type = "item", },
 			{ name = "newoil", price = 5000, amount = 1000, info = {}, type = "item", },
-		--	{ name = "advancedrepairkit", price = 2000, amount = 10, info = {}, type = "item", },
+			{ name = "advancedrepairkit", price = 2000, amount = 10, info = {}, type = "item", },
 		},
 	},
 	ToolItems = {
