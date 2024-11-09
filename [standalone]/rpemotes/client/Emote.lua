@@ -143,13 +143,13 @@ CreateThread(function()
     TriggerEvent('chat:addSuggestion', '/emotecancel', Translate('cancel_emote'))
 end) ]]
 
---[[ RegisterCommand('e', function(source, args, raw) EmoteCommandStart(source, args, raw) end, false)
-RegisterCommand('emote', function(source, args, raw) EmoteCommandStart(source, args, raw) end, false) ]]
+--[[ RegisterCommand('e', function(source, args, raw) EmoteCommandStart(source, args, raw) end, false) ]]
+RegisterCommand('emote', function(source, args, raw) EmoteCommandStart(source, args, raw) end, false)
 --[[ if Config.SqlKeybinding then
     RegisterCommand('emotebind', function(source, args, raw) EmoteBindStart(source, args, raw) end, false)
     RegisterCommand('emotebinds', function(source, args, raw) EmoteBindsStart() end, false)
     RegisterCommand('emotedelete', function(source, args) DeleteEmote(source, args) end, false)
-end
+end  ]]
 if Config.MenuKeybindEnabled then
     RegisterCommand('emoteui', function() OpenEmoteMenu() end, false)
     RegisterKeyMapping("emoteui", Translate('register_open_menu'), "keyboard", Config.MenuKeybind)
@@ -157,7 +157,7 @@ else
     RegisterCommand('emotemenu', function() OpenEmoteMenu() end, false)
 end
 RegisterCommand('emotes', function() EmotesOnCommand() end, false)
-RegisterCommand('emotecancel', function() EmoteCancel() end, false) ]]
+RegisterCommand('emotecancel', function() EmoteCancel() end, false)
 
 local disableHandsupControls = {
 
