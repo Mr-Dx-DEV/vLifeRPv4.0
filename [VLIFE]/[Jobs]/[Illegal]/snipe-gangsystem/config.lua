@@ -36,7 +36,7 @@ Config.GangFlags = {
         url = "https://media.discordapp.net/attachments/1103650225844928573/1279405996695093312/tokyomanji.png?ex=66d4532f&is=66d301af&hm=3a7a96b08a9a951e32c284a66633fb05dad949519a50d1442d87c30b4a7c4a23&=&format=webp&quality=lossless"
     },
     ["thehightable"] = {
-        Item = "lthehightable_flag",
+        Item = "thehightable_flag",
         FirstItem = "thehightable_first_flag", -- item to give to player to place the first flag
         Prop = "thehightable_flag",
         blipColor = 55, -- blip color
@@ -44,7 +44,7 @@ Config.GangFlags = {
         url = "https://media.discordapp.net/attachments/1103650225844928573/1279405997839880316/thehightable.jpg?ex=66d45330&is=66d301b0&hm=7c6871df2c857ea50ca6ec1711f784a58ed530f792a8686c2bfd7c89d9172936&=&format=webp&width=560&height=560"
     },
     ["outcast"] = {
-        Item = "loutcast_flag",
+        Item = "outcast_flag",
         FirstItem = "outcast_first_flag", -- item to give to player to place the first flag
         Prop = "outcast_flag",
         blipColor = 55, -- blip color
@@ -52,7 +52,7 @@ Config.GangFlags = {
         url = "https://media.discordapp.net/attachments/1103650225844928573/1279405997839880316/outcast.jpg?ex=66d45330&is=66d301b0&hm=7c6871df2c857ea50ca6ec1711f784a58ed530f792a8686c2bfd7c89d9172936&=&format=webp&width=560&height=560"
     },
     ["thefamily"] = {
-        Item = "lthefamily_flag",
+        Item = "thefamily_flag",
         FirstItem = "thefamily_first_flag", -- item to give to player to place the first flag
         Prop = "thefamily_flag",
         blipColor = 55, -- blip color
@@ -60,7 +60,7 @@ Config.GangFlags = {
         url = "https://media.discordapp.net/attachments/1103650225844928573/1279405997839880316/thefamily.jpg?ex=66d45330&is=66d301b0&hm=7c6871df2c857ea50ca6ec1711f784a58ed530f792a8686c2bfd7c89d9172936&=&format=webp&width=560&height=560"
     },
     ["theorder"] = {
-        Item = "ltheorder_flag",
+        Item = "theorder_flag",
         FirstItem = "theorder_first_flag", -- item to give to player to place the first flag
         Prop = "theorder_flag",
         blipColor = 55, -- blip color
