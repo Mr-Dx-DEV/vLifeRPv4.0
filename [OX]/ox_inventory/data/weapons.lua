@@ -493,6 +493,34 @@ return {
 			durability = 0.02,
 		},
 
+		['WEAPON_KATANA_R'] = {
+			label = 'Red Blood katana',
+			weight = 5000,
+			durability = 0.001,
+			throwable = false,
+		},
+
+		['WEAPON_KATANA_Y'] = {
+			label = 'Yellow Fire Katana',
+			weight = 5000,
+			durability = 0.001,
+			throwable = false,
+		},
+
+		['WEAPON_KATANA_B'] = {
+			label = 'Blue Electric Katana',
+			weight = 5000,
+			durability = 0.001,
+			throwable = false,
+		},
+
+		['WEAPON_KATANA_G'] = {
+			label = 'Green Butterfly Katana',
+			weight = 5000,
+			durability = 0.001,
+			throwable = false,
+		},
+
 		['WEAPON_THERMAL_KATANA'] = {
 			label = 'Thermal Katana',
 			weight = 250,
@@ -1200,58 +1228,6 @@ return {
 		},
 
 
-		["weapon_katana_r"] = {
-			name = "weapon_katana_r",
-			type = "weapon",
-			unique = false,
-			useable = true,
-			shouldClose = false,
-			label = "Red Katana",
-			weight = 500,
-			stack = true,
-			close = false,
-			description = "",
-			image = "weapon_katana_r.png",
-		},
-		["weapon_katana_y"] = {
-			name = "weapon_katana_y",
-			type = "weapon",
-			unique = false,
-			useable = true,
-			shouldClose = false,
-			label = "Yellow Katana",
-			weight = 500,
-			stack = true,
-			close = false,
-			description = "",
-			image = "weapon_katana_y.png",
-		},
-		["weapon_katana_b"] = {
-			name = "weapon_katana_b",
-			type = "weapon",
-			unique = false,
-			useable = true,
-			shouldClose = false,
-			label = "Blue Katana",
-			weight = 500,
-			stack = true,
-			close = false,
-			description = "",
-			image = "weapon_katana_b.png",
-		},
-		["weapon_katana_g"] = {
-			name = "weapon_katana_g",
-			type = "weapon",
-			unique = false,
-			useable = true,
-			shouldClose = false,
-			label = "Green Katana",
-			weight = 500,
-			stack = true,
-			close = false,
-			description = "",
-			image = "weapon_katana_g.png",
-		},
 		['WEAPON_RAYMINIGUN'] = {
 			label = 'Widowmaker',
 			weight = 7000,
