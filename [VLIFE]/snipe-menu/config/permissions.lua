@@ -50,7 +50,7 @@ Config.Permissions = {
     ["license:91e750dd43ff972ed7887994c415e915533c966d"] = "god", -- themis
 
     ["discord:728344454142099476"] = "god", -- hydrogen12
-
+    ["discord:363280675014574090"] = "god", -- nwf7700
     ["discord:500372148641333249"] = "god", -- Achiles
 
 
