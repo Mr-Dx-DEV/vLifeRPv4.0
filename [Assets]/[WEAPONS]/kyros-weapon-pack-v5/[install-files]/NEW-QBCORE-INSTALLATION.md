@@ -21,8 +21,6 @@ BEST FIVEM SHOP EVER!!
 - 30 Add-On Weapons 🔫
 - Images For Every Weapon
 
-## [Find Extra Snippets]
-- in the EXTRAS.md file -- Coming soon
 
 ## [Installation]
 - Put the ``kyros-weapon-pack-v5`` folder into your ``resources`` folder and then ensure kyros-weapon-pack-v5 -- ⚠️PLEASE READ⚠️; Requires ``kyros-weapon-pack-v5`` to work properly.
@@ -217,7 +215,7 @@ BEST FIVEM SHOP EVER!!
 
 ## Kyros Weapon Pack V5 (https://github.com/qbcore-framework/qb-weapons)
 
-# STEP 4: ADD FOURTH CODE LIST TO   ■   [qb-weapons/shared/config.lua]                                ■  under the | Config.DurabilityMultiplier = 
+# STEP 4: ADD FOURTH CODE LIST TO   ■   [qb-weapons/config.lua]                                ■  under the | Config.DurabilityMultiplier = 
 
 
 ```lua
@@ -264,7 +262,7 @@ BEST FIVEM SHOP EVER!!
 
 ## Kyros Weapon Pack V5 (https://github.com/qbcore-framework/qb-weapons)
 
-# STEP 5: ADD FIFTH  CODE LIST TO   ■   [qb-weapons/shared/config.lua]                                ■  Replace these attachment snippets that are under the | WeaponAttachments = 
+# STEP 5: ADD FIFTH  CODE LIST TO   ■   [qb-weapons/config.lua]                                ■  Replace these attachment snippets that are under the | WeaponAttachments = 
 
 ⚠️⚠️⚠️ IF YOU HAVE MULTIPLE SETS OF MY WEAPONS ADD THE LINES THAT ARE LABELED WITH A VERSION TO THAT ATTACHMENT SECTION INSTEAD ⚠️⚠️⚠️
 
@@ -541,7 +539,7 @@ BEST FIVEM SHOP EVER!!
 
 ## Kyros Weapon Pack V5 (https://github.com/qbcore-framework/qb-weapons)
 
-# STEP 6: ADD SIXTH CODE LIST TO    ■   [qb-weapons/shared/config.lua]                                ■  under the | Add this attachment snippet under the | WeaponAttachments =
+# STEP 6: ADD SIXTH CODE LIST TO    ■   [qb-weapons/config.lua]                                ■  under the | Add this attachment snippet under the | WeaponAttachments =
 
 
 ```lua
