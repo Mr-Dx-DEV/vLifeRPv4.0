@@ -82,6 +82,7 @@ Framework.GetItem = function(item, metadata, strict)
     local items = {}
     ---@cast items table<number, Item>
     local PlayerData = QBCore.Functions.GetPlayerData()
+    if not PlayerData then return end
     for k, v in pairs(PlayerData.items) do
         if v.name ~= item then goto skipLoop end
         if metadata and (strict and not table.matches(v.info, metadata) or not table.contains(v.info, metadata)) then goto skipLoop end

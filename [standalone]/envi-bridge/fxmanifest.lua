@@ -3,10 +3,9 @@ use_experimental_fxv2_oal 'yes'
 lua54 'yes'
 game 'gta5'
 
-name 'reFlow-Bridge'
-author 'reFlow'
-version '0.3.8'
-description 'reFlow Bridge - reflow-store.com'
+name 'Envi-Bridge'
+author 'Envi-Scripts'
+version '0.3.8b'
 
 client_scripts {
     'runtime/**/client.lua',

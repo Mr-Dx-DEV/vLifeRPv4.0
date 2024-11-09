@@ -504,3 +504,11 @@ Framework.NetworkRequestControlOfDoor = function(door)
         end
     end
 end
+
+Framework.AwaitCallback = function(name, ...)
+    local promise = promise.new()
+    Framework.TriggerCallback(name, function(...)
+        promise:resolve(...)
+    end, ...)
+    return Citizen.Await(promise)
+end

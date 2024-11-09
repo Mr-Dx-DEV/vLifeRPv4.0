@@ -133,8 +133,11 @@ Framework.Notify = function(message, type, length)
 end
 
 Framework.IsPlayerDead = function()
+    if GetResourceState('qbx_medical') ~= 'missing' then
+        return exports['qbx_medical']:IsDead() or exports['qbx_medical']:IsLaststand()
+    end
     local PlayerData = QBX.PlayerData
-    return (PlayerData.metadata['isdead'] or PlayerData.metadata['inlaststand'])
+    return PlayerData.metadata.isdead or PlayerData.metadata.inlaststand
 end
 
 Framework.GetStatus = function(key)

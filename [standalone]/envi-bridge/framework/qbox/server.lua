@@ -191,10 +191,8 @@ end
 
 Framework.SocietyGetMoney = function(name, type)
     if type ~= 'job' and type ~= 'gang' then error('Society Type Must Be Job Or Gang', 0) return 0 end
-    if type == "job" then
-        return exports['qbx_management']:GetAccount(name)
-    elseif type == "gang" then
-        return exports['qbx_management']:GetGangAccount(name)
+    if type == "job" or type == "gang" then
+        return exports['Renewed-Banking']:getAccountMoney(name)
     end
     return 0
 end
@@ -202,11 +200,8 @@ end
 Framework.SocietyAddMoney = function(name, type, amount)
     if type ~= 'job' and type ~= 'gang' then error('Society Type Must Be Job Or Gang', 0) return false end
     if amount < 0 or amount == 0 then return false end
-    if type == "job" then
-        exports['qbx_management']:AddMoney(name, amount)
-        return true
-    elseif type == "gang" then
-        exports['qbx_management']:AddGangMoney(name, amount)
+    if type == "job" or type == "gang" then
+        exports['Renewed-Banking']:addAccountMoney(name, amount)
         return true
     end
     return false
@@ -214,10 +209,8 @@ end
 
 Framework.SocietyRemoveMoney = function(name, type, amount)
     if type ~= 'job' and type ~= 'gang' then error('Society Type Must Be Job Or Gang', 0) return false end
-    if type == "job" then
-        return exports['qbx_management']:RemoveMoney(name, amount)
-    elseif type == "gang" then
-        return exports['qbx_management']:RemoveGangMoney(name, amount)
+    if type == "job" or type == "gang" then
+        return exports['Renewed-Banking']:removeAccountMoney(name, amount)
     end
     return false
 end

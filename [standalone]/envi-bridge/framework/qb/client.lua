@@ -145,6 +145,7 @@ end
 
 Framework.IsPlayerDead = function()
     local PlayerData = QBCore.Functions.GetPlayerData()
+    if not PlayerData then return false end
     return (PlayerData.metadata['isdead'] or PlayerData.metadata['inlaststand'])
 end
 
