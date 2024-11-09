@@ -23,7 +23,7 @@ Config.MenuItems = {
                 title = 'Emote Menu',
                 icon = 'face-smile',
                 type = 'client',
-                event = 'emote:open:menu',
+                event = 'animations:client:EmoteMenu',
                 shouldClose = true
             },
         }
