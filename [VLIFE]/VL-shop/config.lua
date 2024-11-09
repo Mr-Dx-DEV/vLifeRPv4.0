@@ -509,14 +509,7 @@ AC = {
                     ["image"] = "redw.png",
                     ["itemname"] = "redw",
                 },
-               [12] = {
-                    ["name"] = "Screwdriver Set",
-                    ["price"] = 3000,
-                    ["amount"] = 100,
-                    ["type"] = "item",
-                    ["image"] = "screwdriverset.png",
-                    ["itemname"] = "screwdriverset",
-                },
+               
                 
             },
         },
@@ -1522,7 +1515,7 @@ AC = {
                 },
                 [4] = {
                     ["name"] = "Repairkit",
-                    ["price"] = 2000,
+                    ["price"] = 10000,
                     ["amount"] = 100,
                     ["type"] = "item",
                     ["image"] = "repairkit.png",
@@ -1569,13 +1562,22 @@ AC = {
                     ["itemname"] = "bobby_pin",
                 },
                 [10] = {
-                    ["name"] = "Repairkit",
-                    ["price"] = 10000,
+                    ["name"] = "Screwdriver Set",
+                    ["price"] = 3000,
                     ["amount"] = 100,
                     ["type"] = "item",
-                    ["image"] = "repairkit.png",
-                    ["itemname"] = "repairkit",
+                    ["image"] = "screwdriverset.png",
+                    ["itemname"] = "screwdriverset",
                 },
+                [11] = {
+                    ["name"] = "Advanced Lockpick",
+                    ["price"] = 8000,
+                    ["amount"] = 100,
+                    ["type"] = "item",
+                    ["image"] = "advancedlockpick.png",
+                    ["itemname"] = "advancedlockpick",
+                },
+                
                 --[[ [9] = {
                     ["name"] = "Sodium Bi Carbonate",
                     ["price"] = 500,
