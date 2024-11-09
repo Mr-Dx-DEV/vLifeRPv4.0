@@ -17,7 +17,7 @@ bedoflex.MarkerSize = 240.0 -- Airdrop zone size
 
 bedoflex.WinnerAnnounceEveryone = true -- When enabled, it announces the winner to the entire server. When disabled, it only sends the announcement to the people inside the airdrop.
 
-bedoflex.EnableDropTimes = true -- Enables or disables scheduled drop times
+bedoflex.EnableDropTimes = false -- Enables or disables scheduled drop times
 
 bedoflex.EnableAnnouncementManualStarts = true -- Should a countdown notification be sent for manual airdrop starts?
 
@@ -32,10 +32,10 @@ bedoflex.AnnounceTimes = { -- You need to sort this place from the highest to th
 }
 
 bedoflex.DropTimes = {
-    [1] = { hour = 16, minute = 00 }, -- Schedule for an airdrop at 4:00 PM
-    [2] = { hour = 21, minute = 00 }, -- Schedule for an airdrop at 9:00 PM
-    [3] = { hour = 24, minute = 00 }, -- Schedule for an airdrop at 12:00 PM
-    [5] = { hour = 03, minute = 00 }, -- Schedule for an airdrop at 3:00 AM
+ --   [1] = { hour = 16, minute = 00 }, -- Schedule for an airdrop at 4:00 PM
+ --   [2] = { hour = 21, minute = 00 }, -- Schedule for an airdrop at 9:00 PM
+ --   [3] = { hour = 24, minute = 00 }, -- Schedule for an airdrop at 12:00 PM
+  --  [5] = { hour = 03, minute = 00 }, -- Schedule for an airdrop at 3:00 AM
 }
 
 bedoflex.AirdropHeight = 180 -- The height at which the airdrop crate is dropped
