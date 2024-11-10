@@ -15,7 +15,7 @@ Config.Setup = {
     -- Set your interaction system below
     -- Available options are: 'ox_target', 'qb-target', 'interact', 'textui' & 'custom'
     -- 'custom' needs to be added to client/functions.lua
-    interact = 'textui',
+    interact = 'ox_target',
     -- Set your notification system below
     -- Available options are: 'ox_lib', 'esx', 'qb', 'okok', 'sd-notify', 'wasabi_notify' & 'custom'
     -- 'custom' needs to be added to client/functions.lua
@@ -128,13 +128,13 @@ Config.Shops = {
             enabled = true, -- Enable or disable this blip
             sprite = 103, -- Blip sprite ID (https://docs.fivem.net/docs/game-references/blips/)
             color = 0, -- Blip color (https://docs.fivem.net/docs/game-references/blips/#blip-colors)
-            scale = 0.8, -- Size of blip
+            scale = 0.5, -- Size of blip
             label = 'Metal Detectors' -- Label
         }
     },
     sellShop = {
         -- You can disable this shop by setting to false
-        enabled = true,
+        enabled = false,
         -- The ped model used for the shopkeeper
         ped = 'a_m_o_genstreet_01',
         -- The location this shop exists at
@@ -197,7 +197,7 @@ Config.Shops = {
             ['md_presidentialwatch'] = 5000
         },
         blip = {
-            enabled = true,
+            enabled = false,
             sprite = 207,
             color = 2,
             scale = 0.8,
