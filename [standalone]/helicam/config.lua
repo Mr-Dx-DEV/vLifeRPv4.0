@@ -282,6 +282,26 @@ Config.Helicopters = {
             [1] = "AIR AMBULANCE"
         }
     },
+    
+    
+    [`polas350`] = {
+        offset = vector3(0.0, 3.0, -1.15),
+        labels = { --  Liveries
+                 [0] = "LOS SANTOS POLICE DEPARTMENT",
+                 [1] = "SAN ANDREAS HIGHWAY PATROL",
+                 [2] = "BLAIN COUNTY SHERIFF OFFICE",
+                 [3] = "SAN ANDREAS FIRE DEPARTMENT"
+             }
+         },
+         [`emsaw139`] = {
+            offset = vector3(0.0, 3.0, -1.15),
+            labels = { --  Liveries
+                     [0] = "LOS SANTOS POLICE DEPARTMENT",
+                     [1] = "SAN ANDREAS HIGHWAY PATROL",
+                     [2] = "BLAIN COUNTY SHERIFF OFFICE",
+                     [3] = "SAN ANDREAS FIRE DEPARTMENT"
+                 }
+             },
     [-1804332227] = {
         offset = vector3(0.0, 2.65, -1.0),
         labels = { -- Liveries
