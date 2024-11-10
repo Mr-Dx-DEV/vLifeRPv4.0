@@ -16,12 +16,12 @@ end)
 
 CreateThread(function()
     if Config.Enablecommand then
-        QBCore.Commands.Add("cashregister", Loc[Config.Lan].command["cash_reg"], {}, false, function(source) TriggerClientEvent("jim-payments:client:Charge", source, {}, true) end)
+        QBCore.Commands.Add("billing", Loc[Config.Lan].command["cash_reg"], {}, false, function(source) TriggerClientEvent("jim-payments:client:Charge", source, {}, true) end)
     end
 end)
 
-QBCore.Commands.Add("polcharge", Loc[Config.Lan].command["charge"], {}, false, function(source) TriggerClientEvent("jim-payments:client:PolCharge", source) end)
-QBCore.Commands.Add("emscharge", Loc[Config.Lan].command["charge"], {}, false, function(source) TriggerClientEvent("jim-payments:client:EmsCharge", source) end)
+QBCore.Commands.Add("billpol", Loc[Config.Lan].command["charge"], {}, false, function(source) TriggerClientEvent("jim-payments:client:PolCharge", source) end)
+QBCore.Commands.Add("billems", Loc[Config.Lan].command["charge"], {}, false, function(source) TriggerClientEvent("jim-payments:client:EmsCharge", source) end)
 
 RegisterServerEvent('jim-payments:Tickets:Give', function(data, biller, gang)
     local billed = QBCore.Functions.GetPlayer(source) -- This should always be from the person who accepted the payment
