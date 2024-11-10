@@ -40,7 +40,7 @@ Config.Fuel = "cdn-fuel"
 
 -- Google Docs Link
 Config.sopLink = {
-    ['police'] = 'https://docs.google.com/document/d/1Uh4LTGU-curtbJ-5LUkQ9LgjXD7cgWkMoPDnE_OcWSw/edit?usp=sharing',
+    ['police'] = 'https://drive.google.com/file/d/1j4_w5fMkWYiRdxLJU3qriMq01AzEyWm1/edit',
     ['ambulance'] = 'https://docs.google.com/spreadsheets/d/1SlyuiFKqHyn_6zbVen7L8cxTo2GVXlRD9t2MdOsFMtY/edit?usp=sharing',
     ['bcso'] = '',
     ['doj'] = '',
