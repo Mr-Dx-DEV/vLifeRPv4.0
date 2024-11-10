@@ -143,11 +143,15 @@ Config.RewardsIPL = {
 
         ["cabin"] = { -- Total chance = 100
             {Name = "screwdriverset", Chance = 15, Amount = {min = 1, max = 1}},
+            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "fitbit", Chance = 15, Amount = {min = 1, max = 1}},
             {Name = "lockpick", Chance = 15, Amount = {min = 1, max = 1}},
             {Name = "samsungphone", Chance = 15, Amount = {min = 1, max = 1}},
             {Name = "condom", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "romantic_book", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "glassbottle", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "notepad", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "pencil", Chance = 10, Amount = {min = 1, max = 1}},
@@ -169,7 +173,11 @@ Config.RewardsIPL = {
             {Name = "samsungphone", Chance = 15, Amount = {min = 1, max = 1}},
             {Name = "phone", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "earings", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "goldchain", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "gold_bracelet", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "gunpowder", Chance = 10, Amount = {min = 1, max = 1}}
         },
@@ -205,6 +213,10 @@ Config.RewardsShell = {
 
         ["cabin"] = { -- Total chance = 100
             {Name = "screwdriverset", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "fitbit", Chance = 15, Amount = {min = 1, max = 1}},
             {Name = "lockpick", Chance = 15, Amount = {min = 1, max = 1}},
             {Name = "samsungphone", Chance = 15, Amount = {min = 1, max = 1}},
@@ -218,8 +230,12 @@ Config.RewardsShell = {
         ["kitchen"] = { -- Total chance = 100
             {Name = "bandage", Chance = 20, Amount = {min = 1, max = 2}},
             {Name = "painkillers", Chance = 20, Amount = {min = 1, max = 1}},
+            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "water_bottle", Chance = 20, Amount = {min = 1, max = 2}},
             {Name = "joint", Chance = 20, Amount = {min = 1, max = 1}},
+            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "emptycan", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "cardboard", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "emptypapercup", Chance = 10, Amount = {min = 1, max = 1}}
@@ -239,6 +255,10 @@ Config.RewardsShell = {
             {Name = "fitbit", Chance = 15, Amount = {min = 1, max = 1}},
             {Name = "screwdriverset", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "bandage", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "plastic", Chance = 15, Amount = {min = 1, max = 1}},
             {Name = "copper_wires", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "condom_used", Chance = 10, Amount = {min = 1, max = 1}},
@@ -262,6 +282,10 @@ Config.RewardsShell = {
             {Name = "joint", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "condom", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "glassbottle", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "romantic_book", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "notepad", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "pencil", Chance = 10, Amount = {min = 1, max = 1}}
@@ -281,10 +305,14 @@ Config.RewardsShell = {
             {Name = "handcuffs", Chance = 15, Amount = {min = 1, max = 1}},
             {Name = "diamond", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "diamond_ring", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "condom", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "glassbottle", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "romantic_book", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "advancedlockpick", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "laptop_green", Chance = 10, Amount = {min = 1, max = 1}}
         },
         -- Repeat for other sections ("kitchen", "chest", "livingroom") following similar structure for tier 3
