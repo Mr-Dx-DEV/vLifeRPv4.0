@@ -264,6 +264,30 @@ Config.PawnItems = {
         item = 'md_presidentialwatch',
         price = math.random(5000, 5000)
     },
+    [60] = { item = 'romantic_book', price = math.random(20, 80) },
+    [61] = { item = 'condom', price = math.random(20, 80) },
+    [62] = { item = 'glassbottle', price = math.random(20, 80) },
+    [63] = { item = 'notepad', price = math.random(20, 80) },
+    [64] = { item = 'pencil', price = math.random(20, 80) },
+    [65] = { item = 'emptycan', price = math.random(20, 80) },
+    [66] = { item = 'bong', price = math.random(20, 80) },
+    [67] = { item = 'cardboard', price = math.random(20, 80) },
+    [68] = { item = 'emptypapercup', price = math.random(20, 80) },
+    [69] = { item = 'earings', price = math.random(20, 80) },
+    [70] = { item = 'gold_bracelet', price = math.random(20, 80) },
+    [71] = { item = 'goldchain', price = math.random(20, 80) },
+    [72] = { item = 'copper_wires', price = math.random(20, 80) },
+    [73] = { item = 'condom', price = math.random(20, 80) },
+    [74] = { item = 'gold_watch', price = math.random(20, 80) },
+    [75] = { item = 'laptop_green', price = math.random(20, 80) },
+    [76] = { item = 'gold_bracelet', price = math.random(20, 80) },
+    [77] = { item = 'goldchain', price = math.random(20, 80) },
+    [78] = { item = 'glassbottle', price = math.random(20, 80) },
+    
+
+
+
+
     
 }
 

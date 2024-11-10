@@ -187,8 +187,8 @@ Config.RewardsIPL = {
         ["safe"] = { -- Total chance = 100
             {Name = "rolex", Chance = 25, Amount = {min = 2, max = 3}},
             {Name = "diamond", Chance = 25, Amount = {min = 2, max = 3}},
-            {Name = "goldchain", Chance = 25, Amount = {min = 2, max = 3}},
-            {Name = "weapon_pistol", Chance = 25, Amount = {min = 1, max = 1}}
+            {Name = "goldchain", Chance = 25, Amount = {min = 2, max = 3}}
+           
         }
     },
     -- Repeat similar structure for other tiers with respective items and chances
