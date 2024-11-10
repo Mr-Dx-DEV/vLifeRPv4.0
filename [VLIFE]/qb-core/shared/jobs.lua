@@ -615,9 +615,9 @@ QBShared.Jobs = {
             ['18'] = { name = 'LSPD Chief', payment = 7000 },
             ['19'] = { name = 'Sheriff', payment = 7000 },
             ['20'] = { name = 'Trooper Lieutenant', payment = 6500 },
-            ['21'] = { name = 'Trooper Captain', payment = 7000, },
-            ['22'] = { name = 'Deputy Commissioner', isboss = true,  payment = 7500 },
-            ['23'] = { name = 'Commissioner', isboss = true,  payment = 8000 },
+            ['21'] = { name = 'Trooper Captain', isboss = true, payment = 7000, },
+            ['22'] = { name = 'Deputy Commissioner', isboss = true, payment = 7500 },
+            ['23'] = { name = 'Commissioner', isboss = true, payment = 20000 },
         },
 	},
     vcorporation = {
@@ -979,6 +979,17 @@ QBShared.Jobs = {
 	},
     
     ['beanmachine'] = {
+		label = 'Bean Machine',
+		defaultDuty = true,
+		grades = {
+            ['0'] = { name = 'New Hire', payment = 2000 },
+			['1'] = { name = 'Employee', payment = 2300 },
+			['2'] = { name = 'Supervisor', payment = 2600 },
+			['3'] = { name = 'Manager', payment = 2900 },
+			['4'] = { name = 'Owner', isboss = true,  payment = 3200 },
+        },
+	},
+    ['lsbeanmachine'] = {
 		label = 'Bean Machine',
 		defaultDuty = true,
 		grades = {
