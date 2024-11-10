@@ -36,7 +36,7 @@ AK4Y.Translate = {
     website = "WEBSITE",
     discord = "DISCORD",
     premiumCases = "PREMIUM CASES",
-    standardCases = "STANDARD CASES",
+ --   standardCases = "STANDARD CASES",
     openCase = "OPEN CASE",
     openFast = "OPEN FAST",
     coinShopTitle = "GC SHOP",
@@ -89,54 +89,68 @@ AK4Y.PremiumCases = {
     },
     {
         uniqueId = 2, -- IDs must be different and sequential
-        label = "Vehicle Case",
+        label = "Weapon and Item Case",
         price = 300,
         priceType = "GC", -- GC OR SC
         caseTheme = "orange", -- red, blue, orange, purple, green
         caseType = "premium",
         isNew = true, -- If you set it true, the case will be labeled "new"
         items = {
-            { itemName = "issi", label = "ISSI", chance = 10, sellCredit = 15, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/issi.png" },
-            { itemName = "bf400", label = "BF400", chance = 10, sellCredit = 15, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/bf400.png" },
-            { itemName = "sentinel", label = "SENTINEL", chance = 10, sellCredit = 15, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/sentinel.png" },
-            { itemName = "blade", label = "BLADE", chance = 10, sellCredit = 15, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/blade.png" },
-            { itemName = "baller", label = "BALLER", chance = 10, sellCredit = 15, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/baller.png" },
-            { itemName = "asterope", label = "ASTEROPE", chance = 10, sellCredit = 15, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/asterope.png" },
-            { itemName = "dominator", label = "DOMINATOR", chance = 7.5, sellCredit = 40, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/dominator.png" },
-            { itemName = "voodoo", label = "VOODOO", chance = 7.5, sellCredit = 40, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/voodoo.png" },
-            { itemName = "bati", label = "BATI", chance = 7.5, sellCredit = 40, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/bati.png" },
-            { itemName = "elegy2", label = "ELEGY 2", chance = 5, sellCredit = 100, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/elegy2.png" },
-            { itemName = "sultan", label = "SULTAN", chance = 5, sellCredit = 100, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/sultan.png" },
-            { itemName = "hakuchou", label = "HAKUCHOU", chance = 2, sellCredit = 150, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/hakuchou.png" },
-            { itemName = "schlagen", label = "SCHLAGEN", chance = 2, sellCredit = 150, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/schlagen.png" },
-            { itemName = "kuruma", label = "KURUMA", chance = 2, sellCredit = 150, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/KURUMA.png" },
-            { itemName = "t20", label = "T20", chance = 1, sellCredit = 250, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/t20.png" },
-            { itemName = "zentorno", label = "ZENTORNO", chance = 0.5, sellCredit = 250, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/zentorno.png" },
+            { itemName = "WEAPON_STONE_HATCHET", label = "Stone Hatchet", chance = 10, sellCredit = 30, itemType = "medium rare", itemCount = 1, giveItemType = "weapon", image = "./images/items/WEAPON_STONE_HATCHET.png" },
+            { itemName = "Lockpick", label = "Lockpick", chance = 15, sellCredit = 5, itemType = "common", itemCount = 1, giveItemType = "tool", image = "./images/items/lockpick.png" },
+            { itemName = "WEAPON_SLEDGEHAMMER", label = "Sledgehammer", chance = 7.5, sellCredit = 40, itemType = "rare", itemCount = 1, giveItemType = "weapon", image = "./images/items/WEAPON_SLEDGEHAMMER.png" },
+            { itemName = "rifle_ammo", label = "Rifle Ammo (1000)", chance = 8, sellCredit = 80, itemType = "common", itemCount = 1000, giveItemType = "ammo", image = "./images/items/rifle_ammo.png" },
+            { itemName = "pistol_ammo", label = "Pistol Ammo (500)", chance = 10, sellCredit = 50, itemType = "common", itemCount = 500, giveItemType = "ammo", image = "./images/items/pistol_ammo.png" },
+            { itemName = "casinochips", label = "Casino Chips (80000)", chance = 5, sellCredit = 100, itemType = "rare", itemCount = 80000, giveItemType = "currency", image = "./images/items/casinochips.png" },
+            { itemName = "Burrito_custom", label = "Burrito Custom (PDM Van)", chance = 7.5, sellCredit = 50, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/burrito_custom.png" },
+            { itemName = "WEAPON_KATANA", label = "Katana", chance = 5, sellCredit = 60, itemType = "rare", itemCount = 1, giveItemType = "weapon", image = "./images/items/WEAPON_KATANA.png" },
+            { itemName = "WEAPON_BLUEGLOCKS", label = "Blue Glocks", chance = 10, sellCredit = 40, itemType = "medium rare", itemCount = 1, giveItemType = "weapon", image = "./images/items/WEAPON_BLUEGLOCKS.png" },
+            { itemName = "Lockpick", label = "Lockpick", chance = 15, sellCredit = 5, itemType = "common", itemCount = 1, giveItemType = "tool", image = "./images/items/lockpick.png" },
+            { itemName = "rifle_ammo", label = "Rifle Ammo (500)", chance = 10, sellCredit = 50, itemType = "common", itemCount = 500, giveItemType = "ammo", image = "./images/items/rifle_ammo.png" },
+            { itemName = "pistol_ammo", label = "Pistol Ammo (250)", chance = 12, sellCredit = 25, itemType = "common", itemCount = 250, giveItemType = "ammo", image = "./images/items/pistol_ammo.png" },
+            { itemName = "handcuffs", label = "Handcuffs", chance = 15, sellCredit = 20, itemType = "common", itemCount = 1, giveItemType = "tool", image = "./images/items/handcuffs.png" },
+            { itemName = "money", label = "Cash (50,000)", chance = 8, sellCredit = 75, itemType = "medium rare", itemCount = 50000, giveItemType = "currency", image = "./images/items/money.png" },
+            { itemName = "sandwich", label = "Sandwich", chance = 20, sellCredit = 2, itemType = "common", itemCount = 1, giveItemType = "food", image = "./images/items/sandwich.png" },
+            { itemName = "bandage", label = "Bandage (20)", chance = 18, sellCredit = 20, itemType = "common", itemCount = 20, giveItemType = "medical", image = "./images/items/bandage.png" },
+            { itemName = "armor", label = "Armor (5)", chance = 10, sellCredit = 50, itemType = "common", itemCount = 5, giveItemType = "armor", image = "./images/items/armor.png" },
+            { itemName = "at_suppressor_light", label = "SMG Scope", chance = 10, sellCredit = 45, itemType = "medium rare", itemCount = 1, giveItemType = "attachment", image = "./images/items/smg_scope.png" },
+            { itemName = "at_clip_extended_rifle", label = "Rifle Extended", chance = 7.5, sellCredit = 60, itemType = "rare", itemCount = 1, giveItemType = "attachment", image = "./images/items/rifle_extendedclip.png" },
+            { itemName = "at_grip", label = "Grip", chance = 10, sellCredit = 50, itemType = "medium rare", itemCount = 1, giveItemType = "attachment", image = "./images/items/at_grip.png" },
         },
     },
+    
     {
         uniqueId = 3, -- IDs must be different and sequential
-        label = "Money Case",
+        label = "Special Item Case",
         price = 230,
         priceType = "GC", -- GC OR SC
         caseTheme = "green", -- red, blue, orange, purple, green
         caseType = "premium",
         isNew = false, -- If you set it true, the case will be labeled "new"
         items = {
-            { itemName = "money", label = "10.000$", chance = 15, sellCredit = 10, itemType = "mythical", itemCount = 10000, giveItemType = "money", image = "./images/items/money-1.png" },
-            { itemName = "money", label = "12.000$", chance = 15, sellCredit = 10, itemType = "mythical", itemCount = 12000, giveItemType = "money", image = "./images/items/money-1.png" },
-            { itemName = "money", label = "13.000$", chance = 15, sellCredit = 10, itemType = "mythical", itemCount = 13000, giveItemType = "money", image = "./images/items/money-1.png" },
-            { itemName = "money", label = "14.000$", chance = 15, sellCredit = 10, itemType = "mythical", itemCount = 14000, giveItemType = "money", image = "./images/items/money-1.png" },
-            { itemName = "money", label = "15.000$", chance = 10, sellCredit = 10, itemType = "mythical", itemCount = 15000, giveItemType = "money", image = "./images/items/money-1.png" },
-            { itemName = "money", label = "16.000$", chance = 10, sellCredit = 10, itemType = "mythical", itemCount = 16000, giveItemType = "money", image = "./images/items/money-1.png" },
-            { itemName = "money", label = "20.000$", chance = 5, sellCredit = 40, itemType = "mythical", itemCount = 20000, giveItemType = "money", image = "./images/items/money-2.png" },
-            { itemName = "money", label = "23.000$", chance = 5, sellCredit = 40, itemType = "mythical", itemCount = 23000, giveItemType = "money", image = "./images/items/money-2.png" },
-            { itemName = "money", label = "27.000$", chance = 5, sellCredit = 40, itemType = "mythical", itemCount = 27000, giveItemType = "money", image = "./images/items/money-2.png" },
-            { itemName = "money", label = "40.000$", chance = 2, sellCredit = 100, itemType = "mythical", itemCount = 40000, giveItemType = "money", image = "./images/items/money-3.png" },
-            { itemName = "money", label = "50.000$", chance = 2, sellCredit = 100, itemType = "mythical", itemCount = 50000, giveItemType = "money", image = "./images/items/money-3.png" },
-            { itemName = "money", label = "100.000$", chance = 1, sellCredit = 250, itemType = "mythical", itemCount = 100000, giveItemType = "money", image = "./images/items/money-4.png" },
+            { itemName = "weapon_katana_g", label = "Golden Katana", chance = 7.5, sellCredit = 60, itemType = "rare", itemCount = 1, giveItemType = "weapon", image = "./images/items/weapon_katana_g.png" },
+            { itemName = "rifle_ammo", label = "Rifle Ammo (5000)", chance = 10, sellCredit = 75, itemType = "medium rare", itemCount = 5000, giveItemType = "ammo", image = "./images/items/rifle_ammo.png" },
+            { itemName = "gummy_rasberry", label = "Gummy Raspberry (20)", chance = 12, sellCredit = 5, itemType = "common", itemCount = 20, giveItemType = "food", image = "./images/items/ww_rasberrygummies.png" },
+            { itemName = "Corvet_C7", label = "Corvette C7", chance = 5, sellCredit = 100, itemType = "rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/corvette_c7.png" },
+            { itemName = "WEAPON_MOLOTOV", label = "Molotov (10)", chance = 10, sellCredit = 40, itemType = "medium rare", itemCount = 10, giveItemType = "weapon", image = "./images/items/WEAPON_MOLOTOV.png" },
+            { itemName = "edm_car_card", label = "EDM Car Card", chance = 5, sellCredit = 100, itemType = "rare", itemCount = 1, giveItemType = "special", image = "./images/items/edm_car_card.png" },
+            { itemName = "pdm_bike_card", label = "PDM Bike Card", chance = 7.5, sellCredit = 60, itemType = "medium rare", itemCount = 1, giveItemType = "special", image = "./images/items/pdm_bike_card.png" },
+            { itemName = "c4_bomb", label = "C4 Bomb", chance = 5, sellCredit = 120, itemType = "rare", itemCount = 1, giveItemType = "weapon", image = "./images/items/c4_bomb.png" },
+            { itemName = "WEAPON_STONE_HATCHET", label = "Stone Hatchet", chance = 10, sellCredit = 30, itemType = "medium rare", itemCount = 1, giveItemType = "weapon", image = "./images/items/WEAPON_STONE_HATCHET.png" },
+            { itemName = "lockpick", label = "Lockpick", chance = 15, sellCredit = 10, itemType = "common", itemCount = 1, giveItemType = "tool", image = "./images/items/lockpick.png" },
+            { itemName = "WEAPON_SLEDGEHAMMER", label = "Sledgehammer", chance = 7.5, sellCredit = 50, itemType = "rare", itemCount = 1, giveItemType = "weapon", image = "./images/items/WEAPON_SLEDGEHAMMER.png" },
+            { itemName = "rifle_ammo", label = "Rifle Ammo (1000)", chance = 10, sellCredit = 50, itemType = "common", itemCount = 1000, giveItemType = "ammo", image = "./images/items/rifle_ammo.png" },
+            { itemName = "pistol_ammo", label = "Pistol Ammo (500)", chance = 10, sellCredit = 25, itemType = "common", itemCount = 500, giveItemType = "ammo", image = "./images/items/pistol_ammo.png" },
+            { itemName = "casinochips", label = "Casino Chips (80,000)", chance = 8, sellCredit = 90, itemType = "medium rare", itemCount = 80000, giveItemType = "currency", image = "./images/items/casinochips.png" },
+            { itemName = "WEAPON_GRENADE", label = "Grenade", chance = 12, sellCredit = 30, itemType = "common", itemCount = 1, giveItemType = "weapon", image = "./images/items/WEAPON_GRENADE.png" },
+            { itemName = "Burrito_custom", label = "Burrito Custom", chance = 10, sellCredit = 75, itemType = "medium rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/burrito_custom.png" },
+            { itemName = "WEAPON_KATANA", label = "Katana", chance = 7.5, sellCredit = 60, itemType = "rare", itemCount = 1, giveItemType = "weapon", image = "./images/items/katana.png" },
+            { itemName = "at_suppressor_light", label = "SMG Scope", chance = 10, sellCredit = 45, itemType = "medium rare", itemCount = 1, giveItemType = "attachment", image = "./images/items/smg_scope.png" },
+            { itemName = "at_clip_extended_rifle", label = "Rifle Extended", chance = 7.5, sellCredit = 60, itemType = "rare", itemCount = 1, giveItemType = "attachment", image = "./images/items/rifle_extendedclip.png" },
+            { itemName = "at_grip", label = "Grip", chance = 10, sellCredit = 50, itemType = "medium rare", itemCount = 1, giveItemType = "attachment", image = "./images/items/at_grip.png" },
         },
     },
+    
     {
         uniqueId = 4, -- IDs must be different and sequential
         label = "Operation Case",
@@ -146,17 +160,30 @@ AK4Y.PremiumCases = {
         caseType = "premium",
         isNew = false, -- If you set it true, the case will be labeled "new"
         items = {
-            { itemName = "money", label = "100.000$", chance = 1, sellCredit = 250, itemType = "mythical", itemCount = 100000, giveItemType = "money", image = "./images/items/money-4.png" },
-            { itemName = "weapon_pistol", label = "ITEM 1", chance = 30, sellCredit = 10, itemType = "legendary", itemCount = 1, giveItemType = "item", image = "./images/items/item.png" },
-            { itemName = "weapon_pistol", label = "ITEM 2", chance = 30, sellCredit = 10, itemType = "legendary", itemCount = 1, giveItemType = "item", image = "./images/items/item.png" },
-            { itemName = "weapon_pistol", label = "ITEM 3", chance = 10, sellCredit = 15, itemType = "legendary", itemCount = 1, giveItemType = "item", image = "./images/items/item.png" },
-            { itemName = "weapon_pistol", label = "ITEM 4", chance = 10, sellCredit = 15, itemType = "legendary", itemCount = 1, giveItemType = "item", image = "./images/items/item.png" },
-            { itemName = "weapon_pistol", label = "ITEM 5", chance = 10, sellCredit = 15, itemType = "legendary", itemCount = 1, giveItemType = "item", image = "./images/items/item.png" },
-            { itemName = "weapon_pistol", label = "ITEM 6", chance = 4.5, sellCredit = 20, itemType = "legendary", itemCount = 1, giveItemType = "item", image = "./images/items/item.png" },
-            { itemName = "weapon_pistol", label = "ITEM 7", chance = 4.5, sellCredit = 20, itemType = "legendary", itemCount = 1, giveItemType = "item", image = "./images/items/item.png" },
-            { itemName = "weapon_pistol", label = "ITEM 8", chance = 0.5, sellCredit = 25, itemType = "legendary", itemCount = 1, giveItemType = "item", image = "./images/items/item.png" },
+            { itemName = "c4_bomb", label = "C4 Bomb", chance = 10, sellCredit = 50, itemType = "common", itemCount = 1, giveItemType = "weapon", image = "./images/items/c4_bomb.png" },
+            { itemName = "WEAPON_GRENADE", label = "Grenade (20)", chance = 7.5, sellCredit = 40, itemType = "medium rare", itemCount = 20, giveItemType = "weapon", image = "./images/items/WEAPON_GRENADE.png" },
+            { itemName = "rifle_ammo", label = "Rifle Ammo (5000)", chance = 10, sellCredit = 75, itemType = "common", itemCount = 5000, giveItemType = "ammo", image = "./images/items/rifle_ammo.png" },
+            { itemName = "pistol_ammo", label = "Pistol Ammo (1000)", chance = 10, sellCredit = 50, itemType = "common", itemCount = 1000, giveItemType = "ammo", image = "./images/items/pistol_ammo.png" },
+            { itemName = "WEAPON_MOLOTOV", label = "Molotov (10)", chance = 7.5, sellCredit = 40, itemType = "medium rare", itemCount = 10, giveItemType = "weapon", image = "./images/items/WEAPON_MOLOTOV.png" },
+            { itemName = "weapon_katana_g", label = "Golden Katana", chance = 5, sellCredit = 60, itemType = "rare", itemCount = 1, giveItemType = "weapon", image = "./images/items/weapon_katana_g.png" },
+            { itemName = "heli_card", label = "Heli Card", chance = 2, sellCredit = 200, itemType = "onek besi rare", itemCount = 1, giveItemType = "special", image = "./images/items/heli_card.png" },
+            { itemName = "money", label = "Cash (2 Crore)", chance = 2.5, sellCredit = 250, itemType = "rare", itemCount = 20000000, giveItemType = "currency", image = "./images/items/money.png" },
+            { itemName = "one_of_one_car_card", label = "1 of 1 Car Choice Card", chance = 1, sellCredit = 500, itemType = "onek besi besi besi rare", itemCount = 1, giveItemType = "special", image = "./images/items/one_of_one_car_card.png" },
+            { itemName = "boat_card", label = "Boat Card", chance = 2, sellCredit = 150, itemType = "onek besi rare", itemCount = 1, giveItemType = "special", image = "./images/items/boat_card.png" },
+            { itemName = "gummy_rasberry", label = "Gummy Raspberry (50)", chance = 15, sellCredit = 5, itemType = "common", itemCount = 50, giveItemType = "food", image = "./images/items/ww_rasberrygummies.png" },
+            { itemName = "WEAPON_BSCAR", label = "BS Car (5)", chance = 1.5, sellCredit = 300, itemType = "onek besi rare", itemCount = 5, giveItemType = "weapon", image = "./images/items/weapon_bscar.png" },
+            { itemName = "WEAPON_BLUEGLOCKS", label = "Blue Glocks", chance = 10, sellCredit = 40, itemType = "medium rare", itemCount = 1, giveItemType = "weapon", image = "./images/items/WEAPON_BLUEGLOCKS.png" },
+            { itemName = "armor", label = "Armor (10)", chance = 12, sellCredit = 50, itemType = "common", itemCount = 10, giveItemType = "armor", image = "./images/items/armor.png" },
+            { itemName = "edm_car", label = "EDM Car", chance = 2.5, sellCredit = 150, itemType = "onek besi rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/edm_car.png" },
+            { itemName = "bandage", label = "Bandage (25)", chance = 15, sellCredit = 10, itemType = "common", itemCount = 25, giveItemType = "medical", image = "./images/items/bandage.png" },
+            { itemName = "shinobi_pdm_bike", label = "Shinobi PDM Bike", chance = 10, sellCredit = 70, itemType = "medium rare", itemCount = 1, giveItemType = "vehicle", image = "./images/items/shinobi_pdm_bike.png" },
+            { itemName = "personal_pet_card", label = "Personal Pet Card", chance = 1.5, sellCredit = 500, itemType = "onek besi rare", itemCount = 1, giveItemType = "special", image = "./images/items/personal_pet_card.png" },
+            { itemName = "at_suppressor_light", label = "SMG Scope", chance = 10, sellCredit = 45, itemType = "medium rare", itemCount = 1, giveItemType = "attachment", image = "./images/items/smg_scope.png" },
+            { itemName = "at_clip_extended_rifle", label = "Rifle Extended", chance = 7.5, sellCredit = 60, itemType = "rare", itemCount = 1, giveItemType = "attachment", image = "./images/items/rifle_extendedclip.png" },
+            { itemName = "at_grip", label = "Grip", chance = 10, sellCredit = 50, itemType = "medium rare", itemCount = 1, giveItemType = "attachment", image = "./images/items/at_grip.png" },
         },
     },
+    
     --[[ {
         uniqueId = 5, -- IDs must be different and sequential
         label = "Chrome Case",
@@ -236,7 +263,7 @@ AK4Y.PremiumCases = {
 }
 
 AK4Y.StandardCases = {
-    {
+   --[[  {
         uniqueId = 1,
         label = "Standard Case (1)",
         price = 150,
@@ -307,7 +334,7 @@ AK4Y.StandardCases = {
             { itemName = "weapon_pistol", label = "ITEM 7", chance = 4.5, sellCredit = 20, itemType = "legendary", itemCount = 1, giveItemType = "item", image = "./images/items/item.png" },
             { itemName = "weapon_pistol", label = "ITEM 8", chance = 0.5, sellCredit = 25, itemType = "legendary", itemCount = 1, giveItemType = "item", image = "./images/items/item.png" },
         },
-    },
+    }, ]]
    --[[  {
         uniqueId = 5,
         label = "Standard Case (5)",
