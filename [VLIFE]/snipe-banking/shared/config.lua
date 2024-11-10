@@ -69,7 +69,7 @@ Config.SupervisorJobs = { -- jobs that can manage the accounts like freeze/manag
     ["police"] = 4,
 }
 
-Config.Dispatch = "cd" -- cd || ps || moz || other (if you select other, you will have to add your own dispatch alert from the function SendPoliceAlertForFlaggedAccount() in client/open/cl_customise.lua)
+Config.Dispatch = "ps" -- cd || ps || moz || other (if you select other, you will have to add your own dispatch alert from the function SendPoliceAlertForFlaggedAccount() in client/open/cl_customise.lua)
 
 Config.Progress = "qb" -- "ox" || "qb"
 

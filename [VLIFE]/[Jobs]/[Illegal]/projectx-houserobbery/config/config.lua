@@ -13,7 +13,7 @@ Config = {
     Core = {resource = "qb-core", name = "QBCore", abbrev = "qb"}, -- (QBCore Only) If you arent using qb-core no need to change anything here
     ESX = "new", -- (only for ESX users) "new" or "old" chosoe the version of ESX you are using
     Inventory = "ox", -- "ox" or "qs" or "qb" or "esx" or "lj" or "ps", if you arent using any of these inventories, put it as "other" and you will need to edit the inventory export function, or open a ticket on discord.
-    Dispatch = "cd", -- "ps" "cd" "qs" "origen" "tk" "codem" "rcore" or "outlaw", if you arent using any of these dispatch systems, put it as "other" and you will need to edit the dispatch export function, or open a ticket on discord.
+    Dispatch = "ps", -- "ps" "cd" "qs" "origen" "tk" "codem" "rcore" or "outlaw", if you arent using any of these dispatch systems, put it as "other" and you will need to edit the dispatch export function, or open a ticket on discord.
     Notification = "ox", -- "ox" or "qb" or "esx"
     Progressbar = "ox", -- "ox" or "qb"
     Weather = "qb", -- "qb" or "cd" "renewed" or "av"

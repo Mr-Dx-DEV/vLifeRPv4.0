@@ -42,7 +42,7 @@ Config.RewardAmount = 2  -- Number of reward items to give from each cache item 
 
 -- Police Alert for Cocaine Package Drops
 policeAlert = function()
-    exports['cd_dispatch']:Coke()
+    exports['ps-dispatch']:Coke()
 end -- This is the function that is called when the police are meant to be alerted. You can modify this in any way.
 
 Config.EnableAnimation = true -- Animation for the talking to the Ped.
