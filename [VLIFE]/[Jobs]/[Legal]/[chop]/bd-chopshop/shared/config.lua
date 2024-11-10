@@ -58,6 +58,10 @@ Config.WheelItems = { -- Items you get when chopping a wheel
         ["item"] = "rubber",
         ["amount"] = math.random(2, 10)
     },
+    [4] = {
+        ["item"] = "metal",
+        ["amount"] = math.random(2, 10)
+    },
 }
 
 Config.DoorItems = { -- Items you get when chopping a door (also includes the trunk and hood)
@@ -79,6 +83,10 @@ Config.DoorItems = { -- Items you get when chopping a door (also includes the tr
     },
     [5] = {
         ["item"] = "aluminum",
+        ["amount"] = math.random(2, 10)
+    },
+    [6] = {
+        ["item"] = "metal",
         ["amount"] = math.random(2, 10)
     },
 }

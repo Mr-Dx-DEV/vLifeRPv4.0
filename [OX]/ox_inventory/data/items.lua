@@ -1914,6 +1914,13 @@ return {
 		close = true,
 		description = nil
 	},
+	['remote'] = {
+		label = 'Remote',
+		weight = 3,
+		stack = true,
+		close = true,
+		description = nil
+	},
 	['phone_bomb'] = {
 		label = 'Detonator Device',
 		weight = 1000,
@@ -3640,6 +3647,16 @@ return {
 
 	["metalscrap"] = {
 		label = "Metal Scrap",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "You can probably make something nice out of this",
+		client = {
+			image = "metalscrap.png",
+		}
+	},
+	["metal"] = {
+		label = "Metal",
 		weight = 100,
 		stack = true,
 		close = false,
