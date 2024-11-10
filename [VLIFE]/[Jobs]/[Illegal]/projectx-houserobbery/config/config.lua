@@ -133,11 +133,11 @@ Config = {
 
 Config.RewardsIPL = {
     [1] = { -- IPL Tier
-        itemCount = {min = 1, max = 2}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 3}, -- Amount of items that can be obtained in this tier
         chance = 50, -- Chance of getting an item while searching in this tier
         bonusItem = "rolex", -- Item that can be obtained as a bonus
         bonusChance = 10, -- Chance of getting the bonus item
-        bonusAmount = {min = 1, max = 1}, -- Amount of the bonus item
+        bonusAmount = {min = 1, max = 2}, -- Amount of the bonus item
         Exp = {min = 15, max = 18}, -- Only if you have a level system
         ExpProps = {min = 20, max = 23}, -- Only if you have a level system
 
@@ -196,11 +196,11 @@ Config.RewardsIPL = {
 
 Config.RewardsShell = {
     [1] = { -- Shell Tier
-        itemCount = {min = 1, max = 1}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 3}, -- Amount of items that can be obtained in this tier
         chance = 40, -- Chance of getting an item while searching in this tier
         bonusItem = "rolex", -- Item that can be obtained as a bonus
         bonusChance = 10, -- Chance of getting the bonus item
-        bonusAmount = {min = 1, max = 1}, -- Amount of the bonus item
+        bonusAmount = {min = 1, max = 2}, -- Amount of the bonus item
         Exp = {min = 4, max = 5}, -- Only if you have a level system
 
         ["cabin"] = { -- Total chance = 100
@@ -248,11 +248,11 @@ Config.RewardsShell = {
         }
     },
     [2] = { -- Shell Tier
-        itemCount = {min = 1, max = 2}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 3}, -- Amount of items that can be obtained in this tier
         chance = 50, -- Chance of getting an item while searching in this tier
         bonusItem = "diamond", -- Item that can be obtained as a bonus
         bonusChance = 10, -- Chance of getting the bonus item
-        bonusAmount = {min = 1, max = 1}, -- Amount of the bonus item
+        bonusAmount = {min = 1, max = 2}, -- Amount of the bonus item
         Exp = {min = 6, max = 7}, -- Only if you have a level system
 
         ["cabin"] = { -- Total chance = 100
@@ -269,11 +269,11 @@ Config.RewardsShell = {
         -- Repeat for other sections ("kitchen", "chest", "livingroom") following similar structure for tier 2
     },
     [3] = { -- Shell Tier
-        itemCount = {min = 1, max = 3}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 4}, -- Amount of items that can be obtained in this tier
         chance = 60, -- Chance of getting an item while searching in this tier
         bonusItem = "diamond_ring", -- Item that can be obtained as a bonus
         bonusChance = 40, -- Chance of getting the bonus item
-        bonusAmount = {min = 1, max = 1}, -- Amount of the bonus item
+        bonusAmount = {min = 1, max = 2}, -- Amount of the bonus item
         Exp = {min = 9, max = 10}, -- Only if you have a level system
 
         ["cabin"] = { -- Total chance = 100
