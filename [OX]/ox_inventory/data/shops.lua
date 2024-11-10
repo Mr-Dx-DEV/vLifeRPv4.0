@@ -243,8 +243,8 @@ return {
 			{ name = 'fingerprintkit', price = 1000, grade = 0 },
 			{ name = 'mikrosil', price = 1000, grade = 0 },
 			{ name = 'fingerprinttape', price = 1000, grade = 0 },
-
-
+			{ name = 'jerrycan', price = 1000, grade = 0 },
+			
 
 		}, locations = {
 			vector3(482.564, -995.179, 30.69)
