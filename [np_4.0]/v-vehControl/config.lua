@@ -1,5 +1,5 @@
 Config = {
-    Debug = true,
+    Debug = false,
     CommandName = "carmenu",
     Keybind = {
         enabled = true,
