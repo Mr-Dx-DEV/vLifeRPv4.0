@@ -5,7 +5,7 @@ lua54 'yes'
 
 author 'Lunar Scripts'
 description 'Heist Contracts'
-version '1.1.4'
+version '1.1.5'
 
 -- What to run
 escrow_ignore {
