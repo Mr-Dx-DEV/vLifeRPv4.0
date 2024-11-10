@@ -7,14 +7,14 @@ print("^2Jim^7-^2Payments ^7v^42^7.^48^7.^45 ^7- ^2Payments Script by ^1Jimathy^
 Config = {
 	Lan = "en",
 	Debug = false,
-	Notify = "qb",		-- "qb" | "okok" | "t" | "infinity" | "rr"
+	Notify = "ox",		-- "qb" | "okok" | "t" | "infinity" | "rr"
 	Menu = "ox",
 
 	---------------------------------
 	-- Default Job Payment Systems --
 	---------------------------------
 
-	Banking = "renewed", 	
+	Banking = "qb-management", 	
 								-- "qb-management" 	- This is for the older version of QBCore
 								-- "qb-banking" 	- This is for the latest QBCore updates
 								-- "renewed"
