@@ -13,10 +13,10 @@ Config.Currency = "USD"
 Config.Framework = "auto" -- or "QBCore", "Qbox", "ESX"
 Config.FuelSystem = "cdn-fuel" -- or "LegacyFuel", "ps-fuel", "lj-fuel", "ox_fuel", "cdn-fuel", "hyon_gas_station", "okokGasStation", "nd_fuel", "myFuel", "ti_fuel", "none"
 Config.VehicleKeys = "qb-vehiclekeys" -- or "qb-vehiclekeys", "MrNewbVehicleKeys", "jaksam-vehicles-keys", "qs-vehiclekeys", "mk_vehiclekeys", "wasabi_carlock", "cd_garage", "okokGarage", "t1ger_keys", "Renewed", "none"
-Config.Notifications = "ox_lib" -- or "default", "okokNotify", "ox_lib", "ps-ui"
+Config.Notifications = "auto" -- or "default", "okokNotify", "ox_lib", "ps-ui"
 
 -- Draw text UI prompts (key binding control IDs here: https://docs.fivem.net/docs/game-references/controls/)
-Config.DrawText = "jg-textui" -- or "jg-textui", "qb-DrawText", "okokTextUI", "ox_lib", "ps-ui"
+Config.DrawText = "auto" -- or "jg-textui", "qb-DrawText", "okokTextUI", "ox_lib", "ps-ui"
 Config.OpenGarageKeyBind = 38
 Config.OpenGaragePrompt = "[E] Open Garage"
 Config.OpenImpoundKeyBind = 38
@@ -59,6 +59,7 @@ Config.EnableTransfers = {
   betweenGarages = true,
   betweenPlayers = false
 }
+Config.DisableTransfersToUnregisteredGarages = false -- Potential hacking protection for vigilant servers - unregistered garages are ones created via events in third-party script integrations, such as housing scripts, and therefore could be prone to script kiddie attacks.
 
 -- Prevent vehicle duplication
 -- Learn more: https://docs.jgscripts.com/advanced-garages/vehicle-duplication-prevention
@@ -339,6 +340,58 @@ Config.JobGarageUniqueBlips = false
 Config.JobGarageUniqueLocations = true
 Config.JobGarageEnableInteriors = true
 Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
+  --[[ ["Mechanic"] = {
+    coords = vector3(157.86, -3005.9, 7.03),
+    spawn = vector4(165.26, -3014.94, 5.9, 268.8),
+    distance = 15,
+    job = {"mechanic"},
+    type = "car",
+    hideBlip = false,
+    blip = {
+      id = 357,
+      color = 0,
+      scale = 0.5
+    },
+    hideMarkers = true,
+    markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
+    vehiclesType = "owned", -- Use owned vehicles that can anyone in this society can access - more details: https://docs.jgscripts.com/advanced-garages/job-and-gang-garages
+  },
+  ["Police"] = {
+    coords = vector3(434.48, -1016.97, 28.83),
+    spawn = vector4(434.55, -1014.54, 28.49, 91.56),
+    distance = 15,
+    job = {"police"},
+    type = "car",
+    hideBlip = false,
+    blip = {
+      id = 357,
+      color = 0,
+      scale = 0.5
+    },
+    hideMarkers = true,
+    markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
+    vehiclesType = "spawner", -- Spawn a basic vehicle from a list
+    showLiveriesExtrasMenu = true, -- Allow player to select a livery and extras before pulling vehicle out 
+    vehicles = {
+      [1] = {
+        model = "police", -- spawn code for vehicle
+        plate = "PD", -- set as false for a random plate; do not use a plate already in use in the DB!
+        minJobGrade = 0, -- only available to players with set minimum grade
+        nickname = "Police car", -- Show a custom name instead of the vehicle's real name
+        livery = 1,
+        extras = {1, 2},
+        maxMods = true
+      },
+      [2] = {
+        model = "police2",
+        plate = false,
+        minJobGrade = 3,
+        livery = 2,
+        extras = {},
+        maxMods = true
+      }
+    }
+  } ]]
   ['PD Garage'] = {
     coords = vector3(456.49, -973.551, 25.7),
     spawn = {
@@ -378,10 +431,11 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
       drawOnEnts = 0,
     },
     showLiveriesExtrasMenu = true,
-  },
+  }
 }
 
--- Gang Garages (QBCore only)
+-- Gang Garages (QBCore/Qbox only by default)
+Config.GangEnableCustomESXIntegration = false -- Set to true if you've added a custom system to cl/sv-functions.lua
 Config.GangGarageShowBlips = true
 Config.GangGarageSetVehicleCommand = "setgangvehicle" -- admin only
 Config.GangGarageRemoveVehicleCommand = "removegangvehicle" -- admin only
@@ -463,6 +517,21 @@ Config.ImpoundLocations = { -- IMPORTANT - Every impound name must be unique
     hideMarkers = true,
     markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
   },
+  --[[ ["Impound B"] = {
+    coords = vector3(1649.71, 3789.61, 34.79),
+    spawn = vector4(1643.66, 3798.36, 34.49, 216.16),
+    distance = 15,
+    type = "car",
+    job = {"police"},
+    hideBlip = false,
+    blip = {
+      id = 68,
+      color = 0,
+      scale = 0.5
+    },
+    hideMarkers = true,
+    markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
+  } ]]
   ["Impound Heli"] = {
     coords = vector3(-1666.75, -3148.88, 13.99),
     spawn = vector4(-1666.75, -3148.88, 13.99, 348.51),
@@ -477,22 +546,7 @@ Config.ImpoundLocations = { -- IMPORTANT - Every impound name must be unique
     },
     hideMarkers = true,
     markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
-  },
-  -- ["Impound B"] = {
-  --   coords = vector3(444.341, -975.739, 25.7),
-  --   spawn = vector4(450.253, -975.712, 25.7, 92.144),
-  --   distance = 15,
-  --   type = "car",
-  --   job = {"police"},
-  --   hideBlip = true,
-  --   blip = {
-  --     id = 68,
-  --     color = 0,
-  --     scale = 0.5
-  --   },
-  --   hideMarkers = false,
-  --   markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
-  -- }
+  }
 }
 
 -- Garage Interior
