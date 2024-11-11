@@ -151,7 +151,7 @@ function QBCore.Functions.IsWearingGloves()
 end
 
 -- NUI Calls
- 
+--[[  
 function QBCore.Functions.Notify(text, texttype, length, icon)
     local message = {
         action = 'notify',
@@ -173,9 +173,28 @@ function QBCore.Functions.Notify(text, texttype, length, icon)
     SendNUIMessage(message)
 end
 
+ ]]
 
+ function QBCore.Functions.Notify(text, texttype, length)
+    length = length or 5000
+    texttype = texttype or 'info'
+    
+    local convert = {
+        ["primary"] = 3, 
+        ["police"] = 5, 
+        ["ambulance"] = 4, 
+        ["error"] = 1, 
+        ["success"] = 2,
+        ["money"] = 6,
+        ["custom"] = 8 
+    }
+    
+    local themeId = convert[texttype] or 3
 
+    local textposition = 3 -- follow readme to know positions
 
+    exports['FL-Notify']:Notify("Notification", "", text, length, themeId, textposition)
+end
 --[[  function QBCore.Functions.Notify(text, texttype, length)
     local color = 0
     if texttype == 'success' then color = 3 elseif texttype == 'error' then color = 2 else color = 1 end
