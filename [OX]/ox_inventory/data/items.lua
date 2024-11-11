@@ -1,4 +1,17 @@
 return {
+	---- truck rob
+	
+	['gold'] = {
+		label = 'Gold',
+		weight = 100,
+		stack = true,
+		close = true,
+	},
+
+
+
+
+
 	['impact_driver '] = {        
 		label = 'Impact Driver',        
 		weight = 1000,         
