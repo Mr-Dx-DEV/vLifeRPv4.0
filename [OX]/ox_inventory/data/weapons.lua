@@ -21,6 +21,11 @@ return {
 			weight = 125,
 			durability = 0.1,
 		},
+		['WEAPON_MEGAPHONE'] = {
+			label = 'MEGAPHONE',
+			weight = 125,
+			durability = 0.1,
+		},
 
 		['WEAPON_GLOCK21'] = {
             label = 'GLOCK 21',
