@@ -1,4 +1,82 @@
 return {
+	['impact_driver '] = {        
+		label = 'Impact Driver',        
+		weight = 1000,         
+		stack = false,        
+		close = true,        
+		description = 'Impact Driver',    
+	},
+	['spanner'] = {        
+		label = 'Spanner',        
+		weight = 1000,         
+		stack = false,        
+		close = true,        
+		description = 'Spanner',    
+	},      
+	['pliers '] = {        
+		label = 'Pliers',        
+		weight = 1000,         
+		stack = false,        
+		close = true,        
+		description = 'Pliers',    
+	},          
+	['adjustable_spanner'] = {        
+		label = 'Adjustable Spanner',        
+		weight = 1000,         
+		stack = false,        
+		close = true,        
+		description = 'Adjustable Spanner',    
+	},    
+	
+	['buzz_saw'] = {        
+		label = 'Buzz Saw',        
+		weight = 1000,         
+		stack = false,        
+		close = true,        
+		description = 'Buzz Saw',    
+	},
+	['screwdriver'] = {        
+		label = 'Screwdriver',        
+		weight = 1000,         
+		stack = false,        
+		close = true,        
+		description = 'Screwdriver',    
+	},
+	['ignition_bomb'] = {        
+		label = 'Ignition Bomb',        
+		weight = 1000,         
+		stack = false,        
+		close = true,        
+		description = 'Ignition Bomb',    
+	},
+	['impact_bomb'] = {        
+		label = 'Impact Bomb',        
+		weight = 1000,         
+		stack = false,        
+		close = true,        
+		description = 'Impact Bomb',    
+	},
+	['remote_bomb'] = {        
+		label = 'Remote Bomb',        
+		weight = 1000,         
+		stack = false,        
+		close = true,        
+		description = 'Remote Bomb',    
+	},
+	['speed_bomb'] = {        
+		label = 'Speed Bomb',        
+		weight = 1000,         
+		stack = false,        
+		close = true,        
+		description = 'Speed Bomb',    
+	},
+	['firelighter'] = {        
+		label = 'Firelighter',        
+		weight = 1000,         
+		stack = false,        
+		close = true,        
+		description = 'Firelighter',    
+	},
 ---- matel derection	
 	-- Add items into ox_inventory/data/items.lua
 ['blue_metaldetector'] = {
