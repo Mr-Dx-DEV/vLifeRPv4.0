@@ -1,15 +1,18 @@
 fx_version "cerulean"
 game "gta5"
 lua54 "yes"
+
 description "For support or other queries: discord.gg/jgscripts"
-version 'v3.1.1'
+version 'v3.1.6'
 author "JG Scripts"
+
 dependencies {
   "oxmysql",
   "ox_lib",
   "/server:7290",
   "/onesync",
 }
+
 shared_scripts {
   "@ox_lib/init.lua",
   "config/config.lua",
@@ -17,12 +20,14 @@ shared_scripts {
   "shared/main.lua",
   "framework/main.lua"
 }
+
 client_scripts {
   "framework/**/cl-*.lua",
   "config/config-cl.lua",
   "client/cl-main.lua",
   "client/*.lua"
 }
+
 server_scripts {
   "@oxmysql/lib/MySQL.lua",
   "framework/**/sv-*.lua",
@@ -30,12 +35,15 @@ server_scripts {
   "server/sv-main.lua",
   "server/*.lua"
 }
+
 ui_page "web/dist/index.html"
+
 files {
   "web/dist/index.html",
   "web/dist/**/*",
   "vehicle_images/*"
 }
+
 escrow_ignore {
   "config/**/*",
   "framework/**/*",
@@ -44,4 +52,5 @@ escrow_ignore {
   "client/cl-locations.lua",
   "server/sv-webhooks.lua"
 }
+
 dependency '/assetpacks'

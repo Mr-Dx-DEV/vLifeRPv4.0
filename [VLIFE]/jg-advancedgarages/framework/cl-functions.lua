@@ -248,6 +248,9 @@ function Framework.Client.GetPlayerGang()
       grade = player.gang.grade.level
     }
   elseif Config.Framework == "ESX" then
+    -- To implement gangs in ESX, enable Config.GangEnableCustomESXIntegration & then add the necessary exports here.
+    -- It must return the same data structure as QB/X above, with { name, label, grade }
+    -- Heads up, you must also add the exports to sv-functions.lua -> Framework.Server.GetPlayerGang
     error("ESX does not natively support gangs.");
   end
 
@@ -313,6 +316,12 @@ end
 ---@param vehicleEntity integer
 function Framework.Client.VehicleGiveKeys(plate, vehicleEntity)
   if not DoesEntityExist(vehicleEntity) then return false end
+  if not plate or plate == "" then
+    print("^1[ERROR] No plate provided to VehicleGiveKeys function^0")
+    return false
+  end
+
+  plate = plate:upper()
 
   if Config.VehicleKeys == "qb-vehiclekeys" then
     TriggerEvent("vehiclekeys:client:SetOwner", plate)
@@ -344,6 +353,12 @@ end
 ---@param vehicleEntity integer
 function Framework.Client.VehicleRemoveKeys(plate, vehicleEntity)
   if not DoesEntityExist(vehicleEntity) then return false end
+  if not plate or plate == "" then
+    print("^1[ERROR] No plate provided to VehicleRemoveKeys function^0")
+    return false
+  end
+
+  plate = plate:upper()
 
   if Config.VehicleKeys == "qs-vehiclekeys" then
     local model = GetDisplayNameFromVehicleModel(GetEntityModel(vehicleEntity))

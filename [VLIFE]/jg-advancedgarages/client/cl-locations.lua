@@ -4,7 +4,7 @@ local cachedGarageLocations
 
 function getAvailableGarageLocations()
   if not cachedGarageLocations then
-    cachedGarageLocations = lib.callback.await("jg-advancedgarages:server:get-available-garage-locations")
+    cachedGarageLocations = lib.callback.await("jg-advancedgarages:server:get-available-garage-locations", false)
   end
 
   return cachedGarageLocations or {}
@@ -168,8 +168,8 @@ local function createGarageZonesAndBlips()
   end
 end
 
-RegisterNetEvent("jg-adavancedgarages:client:update-blips-text-uis", function()
-  cachedGarageLocations = lib.callback.await("jg-advancedgarages:server:get-available-garage-locations")
+RegisterNetEvent("jg-advancedgarages:client:update-blips-text-uis", function()
+  cachedGarageLocations = lib.callback.await("jg-advancedgarages:server:get-available-garage-locations", false)
   createGarageZonesAndBlips()
 end)
 

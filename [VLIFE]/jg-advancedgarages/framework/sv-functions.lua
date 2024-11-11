@@ -98,9 +98,13 @@ function Framework.Server.GetPlayerGang(src)
 
     return {
       name = player.PlayerData.gang.name,
+      label = player.PlayerData.gang.label,
       grade = player.PlayerData.gang.grade.level
     }
   elseif Config.Framework == "ESX" then
+    -- To implement gangs in ESX, enable Config.GangEnableCustomESXIntegration & then add the necessary exports here.
+    -- It must return the same data structure as QB/X above, with { name, label, grade }
+    -- Heads up, you must also add the exports to cl-functions.lua -> Framework.Client.GetPlayerGang
     error("ESX does not natively support gangs.");
   end
 

@@ -5,13 +5,13 @@ if (Config.Framework == "auto" and GetResourceState("es_extended") == "started")
   RegisterNetEvent("esx:playerLoaded")
   AddEventHandler("esx:playerLoaded", function(xPlayer)
     Globals.PlayerData = xPlayer
-    TriggerEvent("jg-adavancedgarages:client:update-blips-text-uis")
+    TriggerEvent("jg-advancedgarages:client:update-blips-text-uis")
   end)
 
   RegisterNetEvent("esx:setJob")
   AddEventHandler("esx:setJob", function(job)
     Globals.PlayerData.job = job
-    TriggerEvent("jg-adavancedgarages:client:update-blips-text-uis")
+    TriggerEvent("jg-advancedgarages:client:update-blips-text-uis")
   end)
 
   -- ESX admincar replacement

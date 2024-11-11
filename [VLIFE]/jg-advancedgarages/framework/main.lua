@@ -21,7 +21,7 @@ Framework = {
     UpdateVehicleNickname = "UPDATE %s SET nickname = ? WHERE %s = ? AND plate = ?",
     UpdateVehiclePlate = "UPDATE %s SET plate = ?, %s = ? WHERE plate = ?",
     ImpoundVehicle = "UPDATE %s SET impound = 1, impound_retrievable = ?, impound_data = ?, garage_id = ?, fuel = ?, body = ?, engine = ?, damage = ? WHERE plate = ?",
-    ImpoundReturnToGarage = "UPDATE %s SET impound = 0, impound_data = '', garage_id = ?, in_garage = 1 WHERE plate = ?",
+    ImpoundReturnToGarage = "UPDATE %s SET impound = 0, impound_data = '', garage_id = ?, in_garage = ? WHERE plate = ?",
     SetJobVehicle = "UPDATE %s SET %s = ?, job_vehicle = 1, job_vehicle_rank = ? WHERE plate = ?",
     SetGangVehicle = "UPDATE %s SET %s = ?, gang_vehicle = 1, gang_vehicle_rank = ? WHERE plate = ?",
     SetSocietyVehicleAsPlayerOwned = "UPDATE %s SET %s = ?, job_vehicle = 0, gang_vehicle = 0 WHERE plate = ?",
