@@ -49,7 +49,7 @@ local function VehicleTheft()
     local dispatchData = {
         message = locale('vehicletheft'),
         codeName = 'vehicletheft',
-        code = '10-35',
+        code = '10-60',
         icon = 'fas fa-car-burst',
         priority = 2,
         coords = coords,
@@ -74,7 +74,7 @@ local function Shooting()
     local dispatchData = {
         message = locale('shooting'),
         codeName = 'shooting',
-        code = '10-11',
+        code = '10-71',
         icon = 'fas fa-gun',
         priority = 2,
         coords = coords,
@@ -117,7 +117,7 @@ local function VehicleShooting()
     local dispatchData = {
         message = locale('vehicleshots'),
         codeName = 'vehicleshots',
-        code = '10-60',
+        code = '10-13',
         icon = 'fas fa-gun',
         priority = 2,
         coords = coords,
@@ -144,7 +144,7 @@ local function SpeedingVehicle()
     local dispatchData = {
         message = locale('speeding'),
         codeName = 'speeding',
-        code = '10-11',
+        code = '10-96',
         icon = 'fas fa-car',
         priority = 2,
         coords = coords,
@@ -169,7 +169,7 @@ local function Fight()
     local dispatchData = {
         message = locale('melee'),
         codeName = 'fight',
-        code = '10-10',
+        code = '10-31',
         icon = 'fas fa-hand-fist',
         priority = 2,
         coords = coords,
@@ -189,7 +189,7 @@ local function PrisonBreak()
     local dispatchData = {
         message = locale('prisonbreak'),
         codeName = 'prisonbreak',
-        code = '10-90',
+        code = '10-98',
         icon = 'fas fa-vault',
         priority = 2,
         coords = coords,
@@ -354,7 +354,7 @@ local function DrugSale()
     local dispatchData = {
         message = locale('drugsell'),
         codeName = 'suspicioushandoff',
-        code = '10-13',
+        code = '10-38',
         icon = 'fas fa-tablets',
         priority = 2,
         coords = coords,
@@ -395,7 +395,7 @@ local function CarJacking(vehicle)
     local dispatchData = {
         message = locale('carjacking'),
         codeName = 'carjack',
-        code = '10-35',
+        code = '10-67',
         icon = 'fas fa-car',
         priority = 2,
         coords = coords,
@@ -420,7 +420,7 @@ local function InjuriedPerson()
     local dispatchData = {
         message = locale('persondown'),
         codeName = 'civdown',
-        code = '10-69',
+        code = '10-47',
         icon = 'fas fa-face-dizzy',
         priority = 1,
         coords = coords,
@@ -440,7 +440,7 @@ local function DeceasedPerson()
     local dispatchData = {
         message = locale('civbled'),
         codeName = 'civdead',
-        code = '10-69',
+        code = '10-54',
         icon = 'fas fa-skull',
         priority = 1,
         coords = coords,
@@ -460,7 +460,7 @@ local function OfficerDown()
     local dispatchData = {
         message = locale('officerdown'),
         codeName = 'officerdown',
-        code = '10-99',
+        code = '10-14',
         icon = 'fas fa-skull',
         priority = 1,
         coords = coords,
@@ -484,7 +484,7 @@ local function OfficerBackup()
     local dispatchData = {
         message = locale('officerbackup'),
         codeName = 'officerbackup',
-        code = '10-32',
+        code = '10-78',
         icon = 'fas fa-skull',
         priority = 1,
         coords = coords,
@@ -554,7 +554,7 @@ local function Explosion()
     local dispatchData = {
         message = locale('explosion'),
         codeName = 'explosion',
-        code = '10-80',
+        code = '10-81',
         icon = 'fas fa-fire',
         priority = 2,
         coords = coords,
@@ -748,7 +748,7 @@ local function CarBoosting(vehicle)
     local dispatchData = {
         message = locale('carboosting'),
         codeName = 'carboosting',
-        code = '10-50',
+        code = '10-67',
         icon = 'fas fa-car',
         priority = 2,
         coords = coords,
