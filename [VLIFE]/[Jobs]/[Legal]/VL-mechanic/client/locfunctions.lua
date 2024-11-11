@@ -341,15 +341,14 @@ function makeLocs()
 				}
 				if b.prop then
 					Prop[name] = makeProp({coords = vec4(b.coords.x, b.coords.y, b.coords.z-1.37, b.coords.w), prop = type(b.prop) == "boolean" and "gr_prop_gr_bench_03a" or b.prop}, 1, 0)
-					createEntityTarget(Prop[name], options, 10.0) -- Increased target range from 5.0 to 10.0
+					createEntityTarget(Prop[name], options, 15.0 )
 				else
 					Targets[name] =
 					createBoxTarget({name, vec3(b.coords.x, b.coords.y, b.coords.z-1), (b.w or 1.2), (b.d or 4.2), { name=name, heading = b.coords.w, debugPoly=Config.System.Debug, minZ=b.coords.z-1, maxZ=b.coords.z+0.4 },},
-						options, 10.0) -- Increased target range from 5.0 to 10.0
+						options, 15.0 )
 				end
 			end
 		end
-		
 		--Blip Creation
 		if loc.blip then
 			local blip = loc.blip

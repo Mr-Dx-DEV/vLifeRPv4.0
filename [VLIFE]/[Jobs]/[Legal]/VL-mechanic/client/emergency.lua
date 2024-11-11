@@ -50,13 +50,12 @@ local carMeta = {}
 
 local bench = {}
 CreateThread(function()
-    for k, v in pairs(Config.Emergency.Locations) do
-        if v.prop then bench[#bench+1] = makeProp({ prop = "gr_prop_gr_bench_03a", coords = vec4(v.coords.x, v.coords.y, v.coords.z-1.37, v.coords.a)}, 1, 0) end
-        createBoxTarget({"bench"..k, vec3(v.coords.x, v.coords.y, v.coords.z-1), 1.2, 4.2, { name="bench"..k, heading = v.coords.a, debugPoly=Config.System.Debug, minZ = v.coords.z-1, maxZ = v.coords.z+1.4, }, },
-            { { action = function() TriggerEvent("jim-mechanic:client:Emergency:Check") end, icon = "fas fa-cogs", label = Loc[Config.Lan]["police"].userepair, job = Config.Emergency.Jobs, }, }, 10.0) -- Increased target range from 5.0 to 10.0
-    end
+	for k, v in pairs(Config.Emergency.Locations) do
+		if v.prop then bench[#bench+1] = makeProp({ prop = "gr_prop_gr_bench_03a", coords = vec4(v.coords.x, v.coords.y, v.coords.z-1.37, v.coords.a)}, 1, 0) end
+		createBoxTarget({"bench"..k, vec3(v.coords.x, v.coords.y, v.coords.z-1), 1.2, 4.2, { name="bench"..k, heading = v.coords.a, debugPoly=Config.System.Debug, minZ = v.coords.z-1, maxZ = v.coords.z+1.4, }, },
+			{ { action = function() TriggerEvent("jim-mechanic:client:Emergency:Check") end, icon = "fas fa-cogs", label = Loc[Config.Lan]["police"].userepair, job = Config.Emergency.Jobs, }, },5.0)
+	end
 end)
-
 
 RegisterNetEvent('jim-mechanic:client:Emergency:Check', function()
     local Menu, vehicle, Ped, coords = {}, nil, PlayerPedId(), GetEntityCoords(PlayerPedId())
@@ -522,14 +521,6 @@ RegisterNetEvent('jim-mechanic:client:Emergency:Paints', function() local Ped = 
         header = Loc[Config.Lan]["paint"].wheel, txt = Loc[Config.Lan]["common"].current..": "..vehWheelColour,
         onSelect = function() TriggerEvent("jim-mechanic:client:Emergency:Paints:Choose", Loc[Config.Lan]["paint"].wheel) end,
     }
-    PaintMenu[#PaintMenu + 1] = { arrow = true,
-        header = Loc[Config.Lan]["paint"].interior, txt = Loc[Config.Lan]["common"].current..": "..interiorColor,
-        onSelect = function() TriggerEvent("jim-mechanic:client:Emergency:Paints:Choose", Loc[Config.Lan]["paint"].interior) end,
-    }
-    PaintMenu[#PaintMenu + 1] = { arrow = true,
-        header = Loc[Config.Lan]["paint"].dashboard, txt = Loc[Config.Lan]["common"].current..": "..dashboardColor,
-        onSelect = function() TriggerEvent("jim-mechanic:client:Emergency:Paints:Choose", Loc[Config.Lan]["paint"].dashboard) end,
-    }    
     openMenu(PaintMenu, {
         header = carMeta.search,
         headertxt = Loc[Config.Lan]["paint"].menuheader,

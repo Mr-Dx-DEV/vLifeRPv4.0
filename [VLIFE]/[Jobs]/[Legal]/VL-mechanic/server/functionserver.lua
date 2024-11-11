@@ -203,7 +203,7 @@ local Previewing, xenonColour, VehicleNitrous, nosColour, dutyList = {}, {}, {},
 		if Config.System.Debug then print("^5Debug^7: ^3chargeCash^7: ^2Adding ^7$^6"..(math.ceil(cost - (cost / 4))).." ^2to account ^7'^6"..society.."^7'") end
 
 		if Config.System.RenewedBanking then
-			exports['qb-management']:AddMoney(society, math.ceil(cost - (cost / 4)))
+			exports['Renewed-Banking']:addAccountMoney(society, math.ceil(cost - (cost / 4)))
 		else
 			exports["qb-management"]:AddMoney(society, math.ceil(cost - (cost / 4)))
 		end
