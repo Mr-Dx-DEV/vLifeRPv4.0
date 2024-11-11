@@ -19,7 +19,7 @@ CONFIG.JOBS = {
     ['police'] = {
         Jobname = 'police',
         SharedBlips = { 'ambulance' }, -- Jobs that will share the map blips
-        GlobalFrequency = 900,
+        GlobalFrequency = 1,
         Ispolice = true,
         Ranks = {
             [0] = 'SASP Trainee',
@@ -69,14 +69,21 @@ CONFIG.JOBS = {
     ['ambulance'] = {
         Jobname = 'ambulance',
         Ispolice = false,
-        GlobalFrequency = 901,
+        GlobalFrequency = 5,
         SharedBlips = { 'police' }, -- Jobs that will share the map blips
         Ranks = {
-            [0] = 'Jr. EMT',
-            [1] = 'EMT',
-            [2] = 'SR. EMT',
-            [3] = 'EMT Supervisor',
+            [0] = 'EMT',
+            [1] = 'EMT Advance',
+            [2] = 'Sergeant',
+            [3] = 'Lead-Paramedic',
+            [4] = 'Specialist',
+            [5] = 'Lieutenant',
+            [6] = 'Captain',
+            [7] = 'Assistant Chief',
+            [8] = 'Deputy Chief',
+            [9] = 'Chief of EMS'
         },
+        
         Blips = {                     -- Each vehicle type has a blip, and no vehicle is equals to 'none'
             ['automobile'] =
             './assets/ambulance.svg', -- The path of the image, you can use a link or a local path
@@ -85,7 +92,9 @@ CONFIG.JOBS = {
             ['none'] = './assets/ambulance.svg'
         },
         Perms = {
-            ['EMT Supervisor'] = true
+            ['Assistant Chief'] = true,
+            ['Deputy Chief'] = true,
+            ['Chief of EMS'] = true
         },
         Units = {
             { 'Command', 805, false, { 'police' } }, -- At the right side, add the jobs which aren't the same job that you want to share unit

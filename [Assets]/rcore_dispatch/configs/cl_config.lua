@@ -7,7 +7,7 @@ CL_CONFIG.EnableUnitOnHeader = true          -- Enable the unit on the header of
 -- Car robbery, shop robbery and bank robbery can be found inside client/api/alert_handlers.lua
 CL_CONFIG.AlertCommands = {
     {
-        command = '911',
+        command = '911dis',
         job = { 'police' },
         code = '10-13',
         default_priority = 'medium',

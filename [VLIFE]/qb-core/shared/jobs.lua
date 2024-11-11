@@ -749,7 +749,6 @@ QBShared.Jobs = {
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
-           
 			['0'] = { name = 'EMT', payment = 4500 },
 			['1'] = { name = 'EMT Advance', payment = 5000 },
 			['2'] = { name = 'Sergeant', payment = 5500 },
