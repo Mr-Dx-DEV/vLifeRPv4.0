@@ -23,7 +23,7 @@ Config.DropToolsKey = 73 -- Key to drop the tools [Default: X]
 
 
 -- Cool Down Time
-Config.CooldownTime = 1 -- Time in minutes before you can chop another vehicle
+Config.CooldownTime = 5 -- Time in minutes before you can chop another vehicle
 Config.ShowTimeRemaining = true -- Shows a notification with the time remaining until you can chop another vehicle
 
 -- Contract Settings
@@ -161,7 +161,7 @@ Config.ClassMultipliers = {  -- Reward Multiplier for each vehicle class
 Config.RewardsAccount = 'cash' -- [QB] - 'cash' or 'bank' or 'crypto' // [ESX] - 'cash' or 'bank' or 'black_money'   -- Go to Server/server_edit.lua to edit the reward functions to your liking if you want to use something else.
 Config.Rewards = 1000 -- Base reward for each vehicle - (please keep above 10 for the multiplier to work)
 Config.AdditionalRewardsItem = false -- Item to receive when using item rewards, set to false to disable
-Config.AdditionalRewardsAmount = math.random(1,6) -- Amount of item to receive when using item rewards
+Config.AdditionalRewardsAmount = math.random(1,10) -- Amount of item to receive when using item rewards
 
 -- Item Rewards
 Config.LootItems = { -- These are recieved when removing batter, scrap, gearboxes and radiators
@@ -174,6 +174,7 @@ Config.LootItems = { -- These are recieved when removing batter, scrap, gearboxe
     'iron',
     'glass',
     'metalscrap',
+    'metal',
 }
 
 Config.LootMin = 1 -- Min amount of items to receive
@@ -182,7 +183,7 @@ Config.LootMax = 3 -- Max amount of items to receive
 
 -- Optional Advanced Rewards Per Chopping Stage
 Config.CarPartsItems = {
-    Enabled = true, -- Set to false to disable
+    Enabled = false, -- Set to false to disable
     Door = 'car_door',   -- 'item_name'
     Wheels = 'car_wheel',
     Battery = 'car_battery',
