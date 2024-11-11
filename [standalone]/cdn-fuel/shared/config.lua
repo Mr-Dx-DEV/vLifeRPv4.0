@@ -10,7 +10,7 @@ Config.GlobalTax = 0.0 -- The tax, in %, that people will be charged at the pump
 Config.FuelNozzleExplosion = false -- When true, it enables the fuel pump exploding when players run away with the nozzle. Highly recommeded to be false.
 Config.FuelDecor = "_FUEL_LEVEL" -- Do not touch! (Default: "_FUEL_LEVEL")
 Config.RefuelTime = 400 -- Highly recommended to leave at 600. This value will be multiplied times the amount the player is fueling for the progress bar and cancellation logic! DON'T GO BELOW 250, performance WILL drop!
-Config.FuelTargetExport = false -- DO NOT USE WITH OX_TARGET! This is only used to fix this qb-target issue: https://github.com/CodineDev/cdn-fuel/issues/3. <br> <br> If you don't have this issue and haven't installed this exports in qb-target, then this should be false. Otherwise there will be an error.
+Config.FuelTargetExport = true -- DO NOT USE WITH OX_TARGET! This is only used to fix this qb-target issue: https://github.com/CodineDev/cdn-fuel/issues/3. <br> <br> If you don't have this issue and haven't installed this exports in qb-target, then this should be false. Otherwise there will be an error.
 
 -- 2.1.1 Update --
 Config.OwnersPickupFuel = true -- If an owner buys fuel, they will have to go pick it up at a configured location.
@@ -56,7 +56,7 @@ Config.Ox = {
     Menu = true, -- Uses OX Libraries instead of qb-menu.
     Input = true, -- Uses Ox Input Dialog instead of qb-input.
     DrawText = true, -- Uses Ox DrawText instead of qb-core DrawText.
-    Progress = false -- Uses Ox ProgressBar instead of progressbar.
+    Progress = true -- Uses Ox ProgressBar instead of progressbar.
 }
 Config.TargetResource = "ox_target" -- Supported: { 'qb-target', 'ox_target'} -- Others must use the same format as QB-Target or manual configuration is required.
 Config.PumpHose = true -- If true, it creates a hose from the pump to the nozzle the client is holding, to give it a more realistic feel.

@@ -10,7 +10,7 @@ Config = {
 	Notify = "ox",  -- set to "ox" if using ox_lib
 
 	UseProgbar = true,
-	ProgressBar = "qb", -- set to "ox" if using ox_lib
+	ProgressBar = "ox", -- set to "ox" if using ox_lib
 
 	Consumables = {
 		-- Default QB food and drink item override

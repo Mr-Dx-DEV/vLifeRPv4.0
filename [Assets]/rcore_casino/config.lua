@@ -40,7 +40,7 @@ Config = {
 
     -- Chips, Inventory Settings
     UseVirtualChips = true, -- false: use inventory for chips, true: use virtual chips which are saved in the casino_players table
-    InventoryResource = Inventory.AutoChoose, -- name of the inventory resource, set to Inventory.Framework if you want to use frameworks' inventory functions
+    InventoryResource = Inventory.OX, -- name of the inventory resource, set to Inventory.Framework if you want to use frameworks' inventory functions
     --[[
     choose InventoryResource = Inventory.AutoChoose for auto choose, or choose between:
     Inventory.Framework for built in inventory functions
@@ -170,7 +170,7 @@ Config = {
     SocietyLimitFromBalance = 10000, -- if society account has less money than this, it will start paying out reduced money, (SocietyLimitPayoutPercentage)
     SocietyLimitPayoutPercentage = 35, -- example: if SocietyLimitPayoutPercentage is 35%, and SocietyLimitFromBalance is 10000 => 1000 payout at the Cashier will be limited to 350, if the society bank account balance is less than 10 000
     -- when enabled, all casino payments (Cashier, Bar, Lucky Wheel) go through the society account, players don't get paid if there's not enough money in the 
-    SocietyFramework = Society.RenewedBanking,
+    SocietyFramework = Society.QbManagement,
     --[[
     set Society.AutoChoose for auto choose, or choose between: 
     Society.QbBanking

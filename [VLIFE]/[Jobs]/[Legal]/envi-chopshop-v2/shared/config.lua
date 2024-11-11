@@ -160,7 +160,7 @@ Config.ClassMultipliers = {  -- Reward Multiplier for each vehicle class
 
 Config.RewardsAccount = 'cash' -- [QB] - 'cash' or 'bank' or 'crypto' // [ESX] - 'cash' or 'bank' or 'black_money'   -- Go to Server/server_edit.lua to edit the reward functions to your liking if you want to use something else.
 Config.Rewards = 1000 -- Base reward for each vehicle - (please keep above 10 for the multiplier to work)
-Config.AdditionalRewardsItem = false -- Item to receive when using item rewards, set to false to disable
+Config.AdditionalRewardsItem = true -- Item to receive when using item rewards, set to false to disable
 Config.AdditionalRewardsAmount = math.random(1,10) -- Amount of item to receive when using item rewards
 
 -- Item Rewards

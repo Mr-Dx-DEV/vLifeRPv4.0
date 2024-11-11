@@ -50,7 +50,7 @@ Link.inventory = 'ox_inventory'
 --- '17mov' -- Notifications system made by 17Movement
 ---
 --- 'standalone' -- A standalone solution will be used for notifications (top left display)
-Link.notifications = 'framework'
+Link.notifications = 'ox'
 
 
 ------------------------

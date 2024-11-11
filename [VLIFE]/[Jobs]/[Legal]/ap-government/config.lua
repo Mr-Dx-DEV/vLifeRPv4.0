@@ -18,7 +18,7 @@ Config = {
 	Currency = '$', -- Set this to the currency your server uses.
 	UsingAPCourt = false, -- Set this to true if your using AP-COURT.
 	NotifyWinnerByPhone = true, -- Set true to email player of winning the election
-	displayVotingChatNotify = false, -- Set too true to show voting notiforcations in chat false for notify
+	displayVotingChatNotify = true, -- Set too true to show voting notiforcations in chat false for notify
 	AddJobsFromConfig = true, -- Set this to true if you want this script to add the jobs from Config.AddSharedJobs below to your shared jobs in qb-core. 
 	VotingSettings = {
 	  Staff = {
@@ -40,8 +40,8 @@ Config = {
 	  menu = "qb-menu",
 	  input = "qb-input"
 	},
-	Context = {QB = true, OX = false},
-	Dialog = {QB = true, OX = false},
+	Context = {QB = false, OX = true},
+	Dialog = {QB = false, OX = true},
 	CustomEdits = "" -- Leave this blank, this is for customers that have a custom version of the government script.
 }
 

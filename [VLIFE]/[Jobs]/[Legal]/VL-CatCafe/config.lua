@@ -10,8 +10,8 @@ Config = {
 	Core = "qb-core", -- set this to your core folder
 	Inv = "ox", -- set to "ox" if using OX Inventory
 	Menu = "ox", -- set to "ox" if using ox_lib context menus
-	Notify = "qb",
-	ProgressBar = "qb", -- set to "ox" if using ox_lib progressbar
+	Notify = "ox",
+	ProgressBar = "ox", -- set to "ox" if using ox_lib progressbar
 
 	MultiCraft = true,
 	MultiCraftAmounts = { [1], [5], [10], [20], [30], [40], [50], [100] },

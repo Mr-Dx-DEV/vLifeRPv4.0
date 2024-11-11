@@ -44,7 +44,7 @@ Config.CoreSettings = {
         --use 'custom' for custom target 
     },
     Notify = {
-        Type = 'qb', -- notification type, support for qb-core notify, okokNotify, boii_ui notify and ox_lib notify
+        Type = 'ox', -- notification type, support for qb-core notify, okokNotify, boii_ui notify and ox_lib notify
         --use 'qb' for default qb-core notify
         --use 'okok' for okokNotify
         --use 'mythic' for mythic_notify

@@ -308,7 +308,7 @@ Config.ChargeForRevive = {
 }
 
 Config.removeItemsOnDeath = false -- Must have supported inventory or add function to sv_customize.lua OR add inventory to wasabi_bridge.
---Config.Inventory = 'ox'           -- NOW USES WSB.INVENTORY FUNCTION
+Config.Inventory = 'ox'           -- NOW USES WSB.INVENTORY FUNCTION
 
 Config.keepItemsOnDeath = {
     enabled = false,

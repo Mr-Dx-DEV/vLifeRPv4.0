@@ -64,25 +64,25 @@ Config = {
 		Debug = true,		-- This enables Debug mode
 							-- Revealing debug prints and debug boxes on targets
 
-		Menu = "qb", 		-- This specifies what menu script will be loaded
+		Menu = "ox", 		-- This specifies what menu script will be loaded
 							-- "qb" = `qb-menu` and edited versions of it
 							-- "ox" = `ox_lib`'s context menu system
 							-- "gta" = `WarMenu' a free script for a gta style menu
 
-		Notify = "gta",		-- This allows you to choose the notification system for scripts
+		Notify = "ox",		-- This allows you to choose the notification system for scripts
 							-- "qb" = `qb-core`'s built in notifications
 							-- "ox" = `ox_lib`'s built in notifications
 							-- "esx" = `esx_notify` esx's default notifications
 							-- "okok" = `okok-notify` okok's notifications
 							-- "gta" = Native GTA style popups
 
-		drawText = "gta",	-- The style of drawText you want to use
+		drawText = "ox",	-- The style of drawText you want to use
 							-- "qb" = `qb-core`'s drawText system
 							-- "ox" = `ox_lib`'s drawTextUI system
 							-- "gta" = Native GTA style popups
 
 
-		progressBar = "gta" -- The style of progressBar you want to use
+		progressBar = "ox" -- The style of progressBar you want to use
 							-- "qb" = `qb-core`'s style progressBar
 							-- "ox" = `ox_lib`'s default progressBar
 							-- "gta" = Native GTA style "spinner"

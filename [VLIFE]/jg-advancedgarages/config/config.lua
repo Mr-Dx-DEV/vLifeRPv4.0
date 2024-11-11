@@ -13,10 +13,10 @@ Config.Currency = "USD"
 Config.Framework = "auto" -- or "QBCore", "Qbox", "ESX"
 Config.FuelSystem = "cdn-fuel" -- or "LegacyFuel", "ps-fuel", "lj-fuel", "ox_fuel", "cdn-fuel", "hyon_gas_station", "okokGasStation", "nd_fuel", "myFuel", "ti_fuel", "none"
 Config.VehicleKeys = "qb-vehiclekeys" -- or "qb-vehiclekeys", "MrNewbVehicleKeys", "jaksam-vehicles-keys", "qs-vehiclekeys", "mk_vehiclekeys", "wasabi_carlock", "cd_garage", "okokGarage", "t1ger_keys", "Renewed", "none"
-Config.Notifications = "auto" -- or "default", "okokNotify", "ox_lib", "ps-ui"
+Config.Notifications = "ox_lib" -- or "default", "okokNotify", "ox_lib", "ps-ui"
 
 -- Draw text UI prompts (key binding control IDs here: https://docs.fivem.net/docs/game-references/controls/)
-Config.DrawText = "auto" -- or "jg-textui", "qb-DrawText", "okokTextUI", "ox_lib", "ps-ui"
+Config.DrawText = "jg-textui" -- or "jg-textui", "qb-DrawText", "okokTextUI", "ox_lib", "ps-ui"
 Config.OpenGarageKeyBind = 38
 Config.OpenGaragePrompt = "[E] Open Garage"
 Config.OpenImpoundKeyBind = 38

@@ -18,8 +18,8 @@ Config.Inventory = 'ox_inventory'
 
 -- Resources
 Config.Target = 'ox_target'     -- ox_target / qb-target
-Config.Notify = 'qb'           -- qb / esx / lib / custom (require to add your custom notify in [sf_camerasecurity/client/utils.lua])
-Config.ProgressBar = 'qb'      -- qb / esx / lib / custom (require to add your custom progressbar in [sf_camerasecurity/client/utils.lua])
+Config.Notify = 'lib'           -- qb / esx / lib / custom (require to add your custom notify in [sf_camerasecurity/client/utils.lua])
+Config.ProgressBar = 'lib'      -- qb / esx / lib / custom (require to add your custom progressbar in [sf_camerasecurity/client/utils.lua])
 
 -- Items
 Config.RemoteTablet = 'camera_viewer'       -- for Citizens

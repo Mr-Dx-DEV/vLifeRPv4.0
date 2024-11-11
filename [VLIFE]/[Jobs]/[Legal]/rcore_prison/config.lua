@@ -31,17 +31,17 @@ Config = {
     -- Framework settings
 
     Framework = Framework.AUTO_DETECT,            -- [ND Framework - ND_Core | ESX - es_extended, QBCore - qb-core, QBOX - qbx_core, Standalone - standalone]
-    Inventory = Inventories.AUTO_DETECT,          -- [OX - ox_inventory, QB - qb-inventory, QS - qs-sinventory, MF - mf-inventory, PS - ps-inventory, LJ - lj-inventory, CORE = core_inventory]
+    Inventory = Inventories.OX,          -- [OX - ox_inventory, QB - qb-inventory, QS - qs-sinventory, MF - mf-inventory, PS - ps-inventory, LJ - lj-inventory, CORE = core_inventory]
     Target = Target.OX,                         -- [NONE - none [pressing E], OX - ox_target, QB - qb-target, Q - qtarget]
-    Database = Database.AUTO_DETECT,              -- [OX - ox_mysql, MYSQL_ASYNC - mysql-async, GHMATTI - ghmattimysql]
+    Database = Database.OX,              -- [OX - ox_mysql, MYSQL_ASYNC - mysql-async, GHMATTI - ghmattimysql]
 
     -- Other script settings
 
     Clothing = Clothing.AUTO_DETECT,              -- [NONE - None, ESX - skin_changer, QB - qb-clothing, FAPPEARANCE - fivem-appearance, IAPPEARANCE - illennium-appearance, TGIANN - tgiann-clothing, CRM - crm_appearance]
-    Phone = Phones.AUTO_DETECT,                   -- [NONE - None, QB_PHONE - qb_phone, LB_PHONE - lb_phone]
-    Notify = Notifies.AUTO_DETECT,                -- [NONE - Native, NATIVE - GTA:V Notify, OX - ox_lib, QBCORE - qb-core, OKOK - okok_notify, ESX - esx_notify, MYTHIC - mythic_notify, PNOTIFY - pNotify, BRUTAL - brutal_notify]
-    TextUI = TextUI.AUTO_DETECT,                  -- [NONE - RCore, ESX - esx_textui, OX - ox_lib, QBCORE - qb-core]
-    Menus = MenuList.RCORE,                       -- [RCORE - RCore, ESX_CONTEXT - esx_context, ESX_MENU - es_extended, OX - ox_menu, QB - qb-core]
+    Phone = Phones.LB_PHONE,                   -- [NONE - None, QB_PHONE - qb_phone, LB_PHONE - lb_phone]
+    Notify = Notifies.OX,                -- [NONE - Native, NATIVE - GTA:V Notify, OX - ox_lib, QBCORE - qb-core, OKOK - okok_notify, ESX - esx_notify, MYTHIC - mythic_notify, PNOTIFY - pNotify, BRUTAL - brutal_notify]
+    TextUI = TextUI.OX,                  -- [NONE - RCore, ESX - esx_textui, OX - ox_lib, QBCORE - qb-core]
+    Menus = MenuList.OX,                       -- [RCORE - RCore, ESX_CONTEXT - esx_context, ESX_MENU - es_extended, OX - ox_menu, QB - qb-core]
     Dispatch = DispatchList.PS,                 -- [NONE - Standalone, RCORE - rcore_dispatch, PS - ps_dispatch, QS - qs_dispatch, CORE - core_dispatch, CD - cd_dispatch, DUSA - dusa_dispatch] 
     
 

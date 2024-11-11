@@ -6,7 +6,7 @@ Config = {
 
 	Core = "qb-core",
 	Menu = "ox",
-	Notify = "qb",
+	Notify = "ox",
 	
 	Locations = {
 

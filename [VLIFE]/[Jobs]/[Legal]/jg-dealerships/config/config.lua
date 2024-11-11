@@ -14,8 +14,8 @@ Config.SpeedUnit = "kph" -- or "kph"
 Config.Framework = "auto" -- or "QBCore", "Qbox", "ESX"
 Config.FuelSystem = "cdn-fuel" -- or "LegacyFuel", "ps-fuel", "lj-fuel", "ox_fuel", "cdn-fuel", "hyon_gas_station", "okokGasStation", "nd_fuel", "myFuel", "ti_fuel", "none"
 Config.VehicleKeys = "qb-vehiclekeys" -- or "qb-vehiclekeys", "MrNewbVehicleKeys", "jaksam-vehicles-keys", "qs-vehiclekeys", "mk_vehiclekeys", "wasabi_carlock", "cd_garage", "okokGarage", "t1ger_keys", "Renewed", "none"
-Config.Notifications = "auto" -- or "default", "okokNotify", "ox_lib", "ps-ui"
-Config.DrawText = "auto" -- or "jg-textui", "qb-DrawText", "okokTextUI", "ox_lib", "ps-ui"
+Config.Notifications = "ox_lib" -- or "default", "okokNotify", "ox_lib", "ps-ui"
+Config.DrawText = "jg-textui" -- or "jg-textui", "qb-DrawText", "okokTextUI", "ox_lib", "ps-ui"
 
 -- Text UI prompts
 Config.OpenShowroomPrompt = "[E] Open Showroom"
