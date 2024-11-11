@@ -40,9 +40,9 @@ Pos = {
     -- Leisure Shop Locations
     [24] = vector3(-1505.91, 1511.95, 115.29),
 
-    -- Fishing Store
+  --[[   -- Fishing Store
     [25] = vector3(726.742, 4169.19, 40.709),
-
+ ]]
     -- Pharmacy
     [26] = vector3(-492.097, -341.377, 42.321),
 
@@ -383,7 +383,7 @@ Config.Locations = {
         ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
     },
-    ['fishingstore'] = {     --s25
+   --[[  ['fishingstore'] = {     --s25
         ['label'] = 'Little Woods Fishing Store',
         ['coords'] = vector4(726.742, 4169.19, 40.709, 350.414),
         ['ped'] = 'a_m_y_beach_01',
@@ -395,7 +395,7 @@ Config.Locations = {
         ['blipsprite'] = 371,
         ['blipscale'] = 0.5,
         ['blipcolor'] = 0,
-    },
+    }, ]]
     ['pharmacy'] = {     --s26
         ['label'] = 'Pharmacy',
         ['coords'] = vector4(-492.097, -341.377, 42.321, 355.177),

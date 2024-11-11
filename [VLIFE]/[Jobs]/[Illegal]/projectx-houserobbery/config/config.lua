@@ -133,7 +133,7 @@ Config = {
 
 Config.RewardsIPL = {
     [1] = { -- IPL Tier
-        itemCount = {min = 1, max = 3}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 6}, -- Amount of items that can be obtained in this tier
         chance = 50, -- Chance of getting an item while searching in this tier
         bonusItem = "rolex", -- Item that can be obtained as a bonus
         bonusChance = 10, -- Chance of getting the bonus item
@@ -204,7 +204,7 @@ Config.RewardsIPL = {
 
 Config.RewardsShell = {
     [1] = { -- Shell Tier
-        itemCount = {min = 1, max = 3}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 6}, -- Amount of items that can be obtained in this tier
         chance = 40, -- Chance of getting an item while searching in this tier
         bonusItem = "rolex", -- Item that can be obtained as a bonus
         bonusChance = 10, -- Chance of getting the bonus item
@@ -268,7 +268,7 @@ Config.RewardsShell = {
         }
     },
     [2] = { -- Shell Tier
-        itemCount = {min = 1, max = 3}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 6}, -- Amount of items that can be obtained in this tier
         chance = 50, -- Chance of getting an item while searching in this tier
         bonusItem = "diamond", -- Item that can be obtained as a bonus
         bonusChance = 10, -- Chance of getting the bonus item
@@ -293,7 +293,7 @@ Config.RewardsShell = {
         -- Repeat for other sections ("kitchen", "chest", "livingroom") following similar structure for tier 2
     },
     [3] = { -- Shell Tier
-        itemCount = {min = 1, max = 4}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 6}, -- Amount of items that can be obtained in this tier
         chance = 60, -- Chance of getting an item while searching in this tier
         bonusItem = "diamond_ring", -- Item that can be obtained as a bonus
         bonusChance = 40, -- Chance of getting the bonus item
