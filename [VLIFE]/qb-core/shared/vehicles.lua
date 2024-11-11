@@ -821,8 +821,8 @@ local Vehicles = {
     { model = 'x6DRCustoM', name = 'x6DRCustoM', brand = 'x6DRCustoM', price = 50000, category = 'EDM', shop = 'edm'},
     { model = 'zlay_gtz2077', name = 'zlay_gtz2077', brand = 'zlay_gtz2077', price = 50000, category = 'EDM', shop = 'edm'},
     { model = 'veneno', name = 'veneno', brand = 'veneno', price = 50000, category = 'EDM', shop = 'edm'},
-    { model = 'manscarreragt', name = 'manscarreragt', brand = 'manscarreragt', price = 50000, category = 'EDM', shop = 'edm'},
-    
+    { model = 'abfesc', name = 'abfesc', brand = 'abfesc', price = 50000, category = 'EDM', shop = 'edm'},
+    { model = 'hussar', name = 'hussar', brand = 'hussar', price = 50000, category = 'EDM', shop = 'edm'},
 
 
     { model = 'ellie6str', name = 'Ellie 6STR', brand = '6STR', price = 2225000, category = 'EDM', shop = 'tuner'},
