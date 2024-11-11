@@ -1,14 +1,26 @@
 fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
-author 'Kakarot'
-description 'Syncs the time & weather for all players on the server and allows editing by command'
-version '2.1.0'
-shared_scripts {
-    'config.lua',
-    '@qb-core/shared/locale.lua',
-    'locales/en.lua',
-    'locales/*.lua'
+use_fxv2_oal 'yes'
+
+name 'Renewed Weather Sync'
+author 'FjamZoo - Renewed Scripts'
+version '1.1.6'
+
+shared_scripts{
+    '@ox_lib/init.lua',
 }
-server_script 'server/server.lua'
-client_script 'client/client.lua'
+
+client_scripts {
+    'client/*.lua',
+    'compatability/**/client.lua',
+}
+
+server_scripts {
+    'server/time.lua',
+    'server/weather.lua',
+    'compatability/**/server.lua',
+}
+
+provide 'qb-weathersync'
+provide 'cd_easytime'
