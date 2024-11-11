@@ -2,7 +2,7 @@ local QBCore = exports['qb-core']:GetCoreObject()
 
 local itemcraft = 'markedbills'
 
-RegisterServerEvent('VL-WeedPick:pickedUpCannabis', function()
+RegisterServerEvent('qb-weedpicking:pickedUpCannabis', function()
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
 
@@ -12,7 +12,7 @@ RegisterServerEvent('VL-WeedPick:pickedUpCannabis', function()
 	    end
 end)
 
-RegisterServerEvent('VL-WeedPick:processweed', function()
+RegisterServerEvent('qb-weedpicking:processweed', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local cannabis = Player.Functions.GetItemByName("cannabis")
@@ -35,7 +35,7 @@ end)
 
 --selldrug ok
 
-RegisterServerEvent('VL-WeedPick:selld', function()
+RegisterServerEvent('qb-weedpicking:selld', function()
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
 	local Item = Player.Functions.GetItemByName('weed_bag')
@@ -66,7 +66,7 @@ function CancelProcessing(playerId)
 	end
 end
 
-RegisterServerEvent('VL-WeedPick:cancelProcessing', function()
+RegisterServerEvent('qb-weedpicking:cancelProcessing', function()
 	CancelProcessing(source)
 end)
 
@@ -74,7 +74,7 @@ AddEventHandler('QBCore_:playerDropped', function(playerId, reason)
 	CancelProcessing(playerId)
 end)
 
-RegisterServerEvent('VL-WeedPick:onPlayerDeath', function(data)
+RegisterServerEvent('qb-weedpicking:onPlayerDeath', function(data)
 	local src = source
 	CancelProcessing(src)
 end)
