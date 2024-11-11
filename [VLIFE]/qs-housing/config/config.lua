@@ -219,10 +219,10 @@ Config.LimitOfHouses = 5       -- Limit of houses for each player.
 ]]
 
 Config.BlipsOptions = {
-    ShowAllHouses = true,      -- Shows all houses equally with owner and without owner alike
+    ShowAllHouses = false,      -- Shows all houses equally with owner and without owner alike
     ShowAvailableForJob = true, -- Shows houses available to sell only for Job -> Config.Realestatejob
-    OwnedHouses = false,        -- Shows the houses that the player bought
-    AvalibleHouses = false,     -- Shows the houses that are not bought
+    OwnedHouses = true,        -- Shows the houses that the player bought
+    AvalibleHouses = true,     -- Shows the houses that are not bought
     BoughtHouses = false,       -- Shows houses bought by other players
 }
 
@@ -304,7 +304,7 @@ Config.Realestatejob = {
         'none' -- Don't give money to anyone
 ]]
 
-Config.Society = 'ap-government' -- or "Society" options.
+Config.Society = 'qb-management' -- or "Society" options.
 Config.SocietyPorcentage = 50
 Config.PercentageForSell = 50
 Config.Taxes = { AgencyFee = 7, BankFee = 10, TaxesFee = 20 }
@@ -398,7 +398,7 @@ Config.PoliceJob = {
     weed_ak47_seed
 ]]
 
-Config.Plants = true                           -- Enable weed plants?
+Config.Plants = false                           -- Enable weed plants?
 Config.PlantsLimit = 5                         -- Limit plants
 Config.HarvestTime = 5                         -- Setting it by hours (1 = 60 minutes)
 Config.PoliceFirePlants = true                 -- Police can fire plants?
