@@ -1,10 +1,10 @@
 
-██╗  ██╗██╗   ██╗██████╗  █████╗  ██████╗   ██████╗ ██╗   ██╗███╗  ██╗  ██████╗  █████╗  █████╗ ██╗  ██╗  ██╗   ██╗███████╗
-██║ ██╔╝╚██╗ ██╔╝██╔══██╗██╔══██╗██╔════╝  ██╔════╝ ██║   ██║████╗ ██║  ██╔══██╗██╔══██╗██╔══██╗██║ ██╔╝  ██║   ██║██╔════╝
-█████═╝  ╚████╔╝ ██████╔╝██║  ██║╚█████╗   ██║  ██╗ ██║   ██║██╔██╗██║  ██████╔╝███████║██║  ╚═╝█████═╝   ╚██╗ ██╔╝██████╗
-██╔═██╗   ╚██╔╝  ██╔══██╗██║  ██║ ╚═══██╗  ██║  ╚██╗██║   ██║██║╚████║  ██╔═══╝ ██╔══██║██║  ██╗██╔═██╗    ╚████╔╝ ╚════██╗
-██║ ╚██╗   ██║   ██║  ██║╚█████╔╝██████╔╝  ╚██████╔╝╚██████╔╝██║ ╚███║  ██║     ██║  ██║╚█████╔╝██║ ╚██╗    ╚██╔╝  ██████╔╝
-╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚════╝ ╚═════╝    ╚═════╝  ╚═════╝ ╚═╝  ╚══╝  ╚═╝     ╚═╝  ╚═╝ ╚════╝ ╚═╝  ╚═╝     ╚═╝   ╚═════╝
+██╗  ██╗██╗   ██╗██████╗  █████╗  ██████╗   ██████╗ ██╗   ██╗███╗  ██╗  ██████╗  █████╗  █████╗ ██╗  ██╗  ██╗   ██╗███████╗
+██║ ██╔╝╚██╗ ██╔╝██╔══██╗██╔══██╗██╔════╝  ██╔════╝ ██║   ██║████╗ ██║  ██╔══██╗██╔══██╗██╔══██╗██║ ██╔╝  ██║   ██║██╔════╝
+█████═╝  ╚████╔╝ ██████╔╝██║  ██║╚█████╗   ██║  ██╗ ██║   ██║██╔██╗██║  ██████╔╝███████║██║  ╚═╝█████═╝   ╚██╗ ██╔╝██████╗
+██╔═██╗   ╚██╔╝  ██╔══██╗██║  ██║ ╚═══██╗  ██║  ╚██╗██║   ██║██║╚████║  ██╔═══╝ ██╔══██║██║  ██╗██╔═██╗    ╚████╔╝ ╚════██╗
+██║ ╚██╗   ██║   ██║  ██║╚█████╔╝██████╔╝  ╚██████╔╝╚██████╔╝██║ ╚███║  ██║     ██║  ██║╚█████╔╝██║ ╚██╗    ╚██╔╝  ██████╔╝
+╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚════╝ ╚═════╝    ╚═════╝  ╚═════╝ ╚═╝  ╚══╝  ╚═╝     ╚═╝  ╚═╝ ╚════╝ ╚═╝  ╚═╝     ╚═╝   ╚═════╝
 
 
 # [HELLO EVERYONE THIS IS THE INSTALLATION FOR AK47 INVENTORY SERVERS !!! COMMON W/L BUT ANYWAYS I SUPPORT YALL]
@@ -12,8 +12,8 @@
 #################################################################################################
 
 
-## [█▀▄ █ █▀ █▀▀ █▀█ █▀█ █▀▄   █▀▀ █▀▀   ▄▀ █▄▀ █▄█ █▀█ █▀█] ##
-## [█▄▀ █ ▄█ █▄▄ █▄█ █▀▄ █▄▀ ▄ █▄█ █▄█ ▄▀   █ █  █  █▀▄ █▄█] ##
+## [█▀▄ █ █▀ █▀▀ █▀█ █▀█ █▀▄   █▀▀ █▀▀   ▄▀ █▄▀ █▄█ █▀█ █▀█] ##
+## [█▄▀ █ ▄█ █▄▄ █▄█ █▀▄ █▄▀ ▄ █▄█ █▄█ ▄▀   █ █  █  █▀▄ █▄█] ##
 
 
 BEST FIVEM SHOP EVER!!
@@ -28,14 +28,10 @@ BEST FIVEM SHOP EVER!!
 # FIVE EASY STEPS 
 
 # STEP 1: USE THE SQL
-# STEP 2: ADD IMAGES TO INVENTORY   ■   [ak47_inventory\html\img\items]
-# STEP 3: ADD FIRST CODE LIST TO    ■   [es_extended\config.weapons.lua]
-# STEP 4: ADD SECOND CODE LIST TO   ■   [ak47_inventory\plugins\ammo\config.lua]
-# STEP 4: ADD THIRD CODE LIST TO    ■   [ak47_inventory\configs\config-components.lua]
-
-# [OPTIONAL-SNIPPETS]
-
-If you want specific weapons to be allowed to rob go to `ak47_inventory\plugins\rob\config.lua` and add my weapon spawn codes in there.
+# STEP 2: ADD IMAGES TO INVENTORY   ■   [ak47_inventory\web\build\images]
+# STEP 3: ADD FIRST CODE LIST TO    ■   [ak47_inventory\shared\weapons.lua]
+# STEP 4: ADD SECOND CODE LIST TO   ■   [ak47_inventory\shared\components.lua]
+# STEP 4: ADD THIRD CODE LIST TO    ■   [ak47_inventory\shared\components.lua]
 
 =================================================================
 ⚠️ ██╗       ██╗ █████╗ ██████╗ ███╗  ██╗██╗███╗  ██╗ ██████╗ ⚠️
@@ -64,288 +60,218 @@ If you want specific weapons to be allowed to rob go to `ak47_inventory\plugins\
 ╚═╝     ╚═╝╚═╝  ╚═╝╚═════╝    ╚═╝      ╚════╝  ╚════╝ ╚═════╝ ╚══════╝
 
 
-## Kyros Weapon Pack V5 es_extended/config.weapons.lua
+## Kyros Weapon Pack V5 ak47_inventory\shared\weapons.lua
+
 
 ```lua
 	--Kyros Weapon Pack V5
-	{
-		name = 'WEAPON_BAR15', 
-		label = "AR-15",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
-		components = {
-			{hash = 'COMPONENT_BAR15_CLIP_01'},
-			{hash = 'COMPONENT_AT_BAR15_SCOPE_MEDIUM'},
-			{hash = 'COMPONENT_AT_AR_BAR15_FLSH'},
-			{hash = 'COMPONENT_AT_AR_BAR15_AFGRIP'},
-		}
-	},
-    {name = 'WEAPON_AXE', label = _U('weapon_axe'), components = {}},
-	{
-		name = 'WEAPON_BLACKARP', 
-		label = "BLACK ARP",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
-		components = {
-			{hash = 'COMPONENT_CARBINERIFLE_CLIP_01'},
-			{hash = 'COMPONENT_CARBINERIFLE_CLIP_02'},
-		}
-	},
-	{
-		name = 'WEAPON_BSCAR', 
-		label = "BLACK SCAR",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
-		components = {
-			{hash = 'COMPONENT_BSCAR_CLIP_01'},
-			{hash = 'COMPONENT_BSCAR_CLIP_02'},
-		}
-	},
-	{
-		name = 'WEAPON_THOMPSON', 
-		label = "BLACK THOMPSON",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_MG'},
-		components = {
-			{hash = 'COMPONENT_THOMPSON_CLIP_01'},
-			{hash = 'COMPONENT_THOMPSON_CLIP_02'},
-		}
-	},
-	{
-		name = 'WEAPON_BLUEGLOCKS', 
-		label = "BLUE GLOCK SWITCH",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
-		components = {
-			{hash = 'COMPONENT_BLUEGLOCKS_CLIP_01'},
-			{hash = 'COMPONENT_BLUEGLOCKS_CLIP_02'},
-			{hash = 'COMPONENT_BLUEGLOCKS_CLIP_03'},
-			{hash = 'COMPONENT_BLUEGLOCKS_CLIP_04'},
-			{hash = 'COMPONENT_BLUEGLOCKS_CLIP_05'},
-		}
-	},
-    {name = 'WEAPON_CHAIR', label = _U('weapon_chair'), components = {}},
-	{
-		name = 'WEAPON_DMK18', 
-		label = "DESERET MK18",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
-		components = {
-			{hash = 'COMPONENT_DMK18_CLIP_01'},
-			{hash = 'COMPONENT_AT_DMK18_SCOPE_MEDIUM'},
-			{hash = 'COMPONENT_AT_AR_DMK18_SUPP'},
-			{hash = 'COMPONENT_AT_AR_DMK18_FLSH'},
-			{hash = 'COMPONENT_AT_AR_DMK18_AFGRIP'},
-		}
-	},
-	{
-		name = 'WEAPON_FN57', 
-		label = "FN Five-seveN",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
-		components = {
-			{hash = 'COMPONENT_FN57V5_CLIP_01'},
-		}
-	},
-	{
-		name = 'WEAPON_GLOCK21', 
-		label = "GLOCK 21",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
-		components = {
-			{hash = 'COMPONENT_GLOCK21_CLIP_01'},
-			{hash = 'COMPONENT_AT_PI_FLSH'},
-		}
-	},
-	{
-		name = 'WEAPON_GLOCK41', 
-		label = "GLOCK 41",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
-		components = {
-			{hash = 'COMPONENT_GLOCK41_CLIP_01'},
-			{hash = 'COMPONENT_GLOCK41_CLIP_02'},
-		}
-	},
-	{
-		name = 'WEAPON_GLOCKBEAMS', 
-		label = "GLOCK BEAM SWITCH",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
-		components = {
-			{hash = 'COMPONENT_GLOCKBEAMS_CLIP_01'},
-			{hash = 'COMPONENT_GLOCKBEAMS_CLIP_02'},
-			{hash = 'COMPONENT_GLOCKBEAMS_CLIP_03'},
-			{hash = 'COMPONENT_GLOCKBEAMS_CLIP_04'},
-			{hash = 'COMPONENT_GLOCKBEAMS_CLIP_05'},
-			{hash = 'COMPONENT_AT_PI_GLOCKBEAMS_FLSH'},
-		}
-	},
-	{
-		name = 'WEAPON_P30L', 
-		label = "H&K P30L",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
-		components = {
-			{hash = 'COMPONENT_P30L_CLIP_01'},
-		}
-	},
-	{
-		name = 'WEAPON_ILLGLOCK17', 
-		label = "ILLEGAL GLOCK 17",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
-		components = {
-			{hash = 'COMPONENT_ILLGLOCK17_CLIP_01'},
-			{hash = 'COMPONENT_ILLGLOCK17_CLIP_02'},
-			{hash = 'COMPONENT_ILLGLOCK17_CLIP_03'},
-			{hash = 'COMPONENT_ILLGLOCK17_CLIP_04'},
-			{hash = 'COMPONENT_ILLGLOCK17_CLIP_05'},
-			{hash = 'COMPONENT_AT_PI_FLSH'},
-		}
-	},
-	{
-		name = 'WEAPON_KRISSVECTOR', 
-		label = "KRISS VECTOR",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SMG'},
-		components = {
-			{hash = 'COMPONENT_KRISSVECTOR_CLIP_01'},
-		}
-	},
-	{
-		name = 'WEAPON_LBTARP', 
-		label = "LB TAN ARP",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
-		components = {
-			{hash = 'COMPONENT_LBTANARP_CLIP_01'},
-			{hash = 'COMPONENT_LBTANARP_CLIP_02'},
-			{hash = 'COMPONENT_LBTANARP_CLIP_03'},
-			{hash = 'COMPONENT_LBTANARP_CLIP_04'},
-		}
-	},
-	{
-		name = 'WEAPON_MGGLOCK', 
-		label = "MG GLOCK",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
-		components = {
-			{hash = 'COMPONENT_MGGLOCK_CLIP_01'},
-			{hash = 'COMPONENT_MGGLOCK_CLIP_02'},
-			{hash = 'COMPONENT_MGGLOCK_CLIP_03'},
-			{hash = 'COMPONENT_MGGLOCK_CLIP_04'},
-			{hash = 'COMPONENT_MGGLOCK_CLIP_05'},
-		}
-	},
-	{
-		name = 'WEAPON_MIDASGLOCK', 
-		label = "MIDAS GLOCK",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
-		components = {
-			{hash = 'COMPONENT_MIDASGLOCK_CLIP_01'},
-			{hash = 'COMPONENT_MIDASGLOCK_CLIP_02'},
-			{hash = 'COMPONENT_MIDASGLOCK_CLIP_03'},
-			{hash = 'COMPONENT_MIDASGLOCK_CLIP_04'},
-			{hash = 'COMPONENT_MIDASGLOCK_CLIP_05'},
-		}
-	},
-	{
-		name = 'WEAPON_M500', 
-		label = "MOSSBERG 500",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SHOTGUN'},
-		components = {}
-	},
-	{
-		name = 'WEAPON_P210', 
-		label = "P210 CARRY",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
-		components = {
-			{hash = 'COMPONENT_P210_CLIP_01'},
-		}
-	},
-	{
-		name = 'WEAPON_RAM7', 
-		label = "RAM-7",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
-		components = {
-			{hash = 'COMPONENT_RAM7_CLIP_01'},
-			{hash = 'COMPONENT_RAM7_CLIP_02'},
-		}
-	},
-	{
-		name = 'WEAPON_REDARP', 
-		label = "RED DRAG ARP",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
-		components = {
-			{hash = 'COMPONENT_REDARP_CLIP_01'},
-			{hash = 'COMPONENT_REDARP_CLIP_02'},
-			{hash = 'COMPONENT_REDARP_CLIP_03'},
-			{hash = 'COMPONENT_REDARP_CLIP_04'},
-		}
-	},
-	{
-		name = 'WEAPON_REDM4A1', 
-		label = "RED DRAG M4A1",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
-		components = {
-			{hash = 'COMPONENT_REDM4A1_CLIP_01'},
-			{hash = 'COMPONENT_REDM4A1_CLIP_02'},
-			{hash = 'COMPONENT_AT_AR_REDM4A1_SUPP'},
-		}
-	},
-	{
-		name = 'WEAPON_R590', 
-		label = "REMINGTON 590",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SHOTGUN'},
-		components = {}
-	},
-	{
-		name = 'WEAPON_SR40', 
-		label = "RUGER SR40",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
-		components = {
-			{hash = 'COMPONENT_SR40_CLIP_01'},
-		}
-	},
-	{
-		name = 'WEAPON_T1911', 
-		label = "TAN 1911",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
-		components = {
-			{hash = 'COMPONENT_TAN911_CLIP_01'},
-		}
-	},
-	{
-		name = 'WEAPON_TARP', 
-		label = "TAN ARP",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
-		components = {
-			{hash = 'COMPONENT_TANARP_CLIP_01'},
-			{hash = 'COMPONENT_TANARP_CLIP_02'},
-			{hash = 'COMPONENT_TANARP_CLIP_03'},
-			{hash = 'COMPONENT_TANARP_CLIP_04'},
-		}
-	},
-	{
-		name = 'WEAPON_TGLOCK19', 
-		label = "TAN G19",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
-		components = {
-			{hash = 'COMPONENT_TGLOCK19_CLIP_01'},
-			{hash = 'COMPONENT_TGLOCK19_CLIP_02'},
-			{hash = 'COMPONENT_TGLOCK19_CLIP_03'},
-			{hash = 'COMPONENT_TGLOCK19_CLIP_04'},
-			{hash = 'COMPONENT_TGLOCK19_CLIP_05'},
-			{hash = 'COMPONENT_AT_PI_FLSH'},
+		['WEAPON_FN57'] = {
+            label = 'FN Five-seveN',
+            weight = 1500,
+            durability = 0.1,
+            ammoname = 'ammo-9'
+        },
 
-		}
-	},
-	{
-		name = 'WEAPON_TEC9S', 
-		label = "TEC 9 W STRAP",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SMG'},
-		components = {
-			{hash = 'COMPONENT_TEC9S_CLIP_01'},
-			{hash = 'COMPONENT_TEC9S_CLIP_02'},
-		}
-	},
-	{
-		name = 'WEAPON_WOARP', 
-		label = "WHITE OUT ARP",
-		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
-		components = {
-			{hash = 'COMPONENT_WOARP_CLIP_01'},
-			{hash = 'COMPONENT_WOARP_CLIP_02'},
-			{hash = 'COMPONENT_WOARP_CLIP_03'},
-			{hash = 'COMPONENT_WOARP_CLIP_04'},
-		}
-	},
+		['WEAPON_T1911'] = {
+            label = 'TAN 1911',
+            weight = 2000,
+            durability = 0.1,
+            ammoname = 'ammo-45'
+        },
+
+		['WEAPON_GLOCK21'] = {
+            label = 'GLOCK 21',
+            weight = 2000,
+            durability = 0.1,
+            ammoname = 'ammo-45'
+        },
+
+		['WEAPON_TARP'] = {
+            label = 'TAN ARP',
+            weight = 4600,
+            durability = 0.1,
+            ammoname = 'ammo-rifle'
+        },
+
+		['WEAPON_LBTARP'] = {
+            label = 'LB TAN ARP',
+            weight = 5500,
+            durability = 0.1,
+            ammoname = 'ammo-rifle2'
+        },
+
+		['WEAPON_WOARP'] = {
+            label = 'WHITE-OUT ARP',
+            weight = 4000,
+            durability = 0.1,
+            ammoname = 'ammo-rifle'
+        },
+
+		['WEAPON_SR40'] = {
+            label = 'RUGER SR40',
+            weight = 1400,
+            durability = 0.1,
+            ammoname = 'ammo-9'
+        },
+
+		['WEAPON_ILLGLOCK17'] = {
+            label = 'ILLEGAL GLOCK 17',
+            weight = 2000,
+            durability = 0.1,
+            ammoname = 'ammo-9'
+        },
+
+		['WEAPON_DMK18'] = {
+            label = 'DESERET MK18',
+            weight = 6000,
+            durability = 0.1,
+            ammoname = 'ammo-rifle'
+        },
+
+		['WEAPON_BLACKARP'] = {
+            label = 'BLACK ARP',
+            weight = 5500,
+            durability = 0.1,
+            ammoname = 'ammo-rifle'
+        },
+
+		['WEAPON_REDM4A1'] = {
+            label = 'RED DRAG M4A1',
+            weight = 6200,
+            durability = 0.1,
+            ammoname = 'ammo-rifle'
+        },
+
+		['WEAPON_BLUEGLOCKS'] = {
+            label = 'BLUE GLOCK SWITCH',
+            weight = 2000,
+            durability = 0.1,
+            ammoname = 'ammo-9'
+        },
+
+		['WEAPON_GLOCKBEAMS'] = {
+            label = 'GLOCK BEAM SWITCH',
+            weight = 2000,
+            durability = 0.1,
+            ammoname = 'ammo-9'
+        },
+
+		['WEAPON_MGGLOCK'] = {
+            label = 'MG GLOCK',
+            weight = 2000,
+            durability = 0.1,
+            ammoname = 'ammo-9'
+        },
+
+		['WEAPON_TGLOCK19'] = {
+            label = 'TAN G19',
+            weight = 2100,
+            durability = 0.1,
+            ammoname = 'ammo-9'
+        },
+
+		['WEAPON_MIDASGLOCK'] = {
+            label = 'MIDAS GLOCK',
+            weight = 5000,
+            durability = 0.1,
+            ammoname = 'ammo-9'
+        },
+
+		['WEAPON_TEC9S'] = {
+            label = 'TEC 9 W STRAP',
+            weight = 4500,
+            durability = 0.1,
+            ammoname = 'ammo-9'
+        },
+
+		['WEAPON_CHAIR'] = {
+			label = 'BRAWL CHAIR',
+			weight = 3000,
+			durability = 0.3,
+		},
+
+		['WEAPON_REDARP'] = {
+            label = 'RED DRAG ARP',
+            weight = 4500,
+            durability = 0.1,
+            ammoname = 'ammo-rifle'
+        },
+
+		['WEAPON_P30L'] = {
+            label = 'H&K P30L',
+            weight = 1900,
+            durability = 0.1,
+            ammoname = 'ammo-9'
+        },
+
+		['WEAPON_GLOCK41'] = {
+            label = 'GLOCK 41',
+            weight = 1700,
+            durability = 0.1,
+            ammoname = 'ammo-45'
+        },
+
+		['WEAPON_THOMPSON'] = {
+            label = 'BLACK THOMPSON',
+            weight = 6000,
+            durability = 0.1,
+            ammoname = 'ammo-45'
+        },
+
+		['WEAPON_RAM7'] = {
+            label = 'RAM-7',
+            weight = 5200,
+            durability = 0.1,
+            ammoname = 'ammo-rifle'
+        },
+
+		['WEAPON_M500'] = {
+            label = 'MOSSBERG 500',
+            weight = 4500,
+            durability = 0.1,
+            ammoname = 'ammo-shotgun'
+        },
+
+		['WEAPON_R590'] = {
+            label = 'REMINGTON 590',
+            weight = 3100,
+            durability = 0.1,
+            ammoname = 'ammo-shotgun'
+        },
+
+		['WEAPON_BAR15'] = {
+            label = 'AR-15',
+            weight = 5500,
+            durability = 0.1,
+            ammoname = 'ammo-rifle'
+        },
+
+		['WEAPON_BSCAR'] = {
+            label = 'BLACK SCAR',
+            weight = 5500,
+            durability = 0.1,
+            ammoname = 'ammo-rifle2'
+        },
+
+		['WEAPON_AXE'] = {
+			label = 'AXE',
+			weight = 2000,
+			durability = 0.1,
+		},
+
+		['WEAPON_P210'] = {
+            label = 'P210 CARRY',
+            weight = 1800,
+            durability = 0.1,
+            ammoname = 'ammo-9'
+        },
+
+		['WEAPON_KRISSVECTOR'] = {
+            label = 'KRISS VECTOR',
+            weight = 3900,
+            durability = 0.1,
+            ammoname = 'ammo-9'
+        },
 ```
 
 
@@ -357,95 +283,297 @@ If you want specific weapons to be allowed to rob go to `ak47_inventory\plugins\
 ╚═════╝ ╚══════╝ ╚════╝  ╚════╝ ╚═╝  ╚══╝╚═════╝    ╚════╝  ╚════╝ ╚═════╝ ╚══════╝
 
 
-## Kyros Weapon Pack V5 ak47_inventory\plugins\ammo\config.lua
+## Kyros Weapon Pack V5 ak47_inventory\shared\components.lua [READ] -- Each attachment u see below replace it with the one in here? make sense dumbass? (NO DUPLICATES)
+
+## [Features]
+
+⦿ THIS INCLUDES Attachment codes for V1/V2/V3/V4/V5/PD/Female Packs | **IF YOU HAVE V4 AND V5 MAKE SURE `THE NEXT STEP` IS DONE IN V5**
+⦿ SKIP THIS STEP IF U DID IT ALREADY IN ANY OF THE PACKS ABOVE ^^ AND IF THERE IS NO STEP AFTER IT THAN YOUR DONE.
+
+
 
 ```lua
-	--Kyros Weapon Pack V5
-    [`WEAPON_BAR15`] ={
-        weapon = 'WEAPON_BAR15',
-        ammo = 'ammo_rifle',
-    },[`WEAPON_BLACKARP`] ={
-        weapon = 'WEAPON_BLACKARP',
-        ammo = 'ammo_rifle',
-    },[`WEAPON_BSCAR`] ={
-        weapon = 'WEAPON_BSCAR',
-        ammo = 'ammo_rifle',
-    },[`WEAPON_THOMPSON`] ={
-        weapon = 'WEAPON_THOMPSON',
-        ammo = 'ammo_mg',
-    },[`WEAPON_BLUEGLOCKS`] ={
-        weapon = 'WEAPON_BLUEGLOCKS',
-        ammo = 'ammo_pistol',
-    },[`WEAPON_DMK18`] ={
-        weapon = 'WEAPON_DMK18',
-        ammo = 'ammo_rifle',
-    },[`WEAPON_FN57`] ={
-        weapon = 'WEAPON_FN57',
-        ammo = 'ammo_pistol',
-    },[`WEAPON_GLOCK21`] ={
-        weapon = 'WEAPON_GLOCK21',
-        ammo = 'ammo_pistol',
-    },[`WEAPON_GLOCK41`] ={
-        weapon = 'WEAPON_GLOCK41',
-        ammo = 'ammo_pistol',
-    },[`WEAPON_GLOCKBEAMS`] ={
-        weapon = 'WEAPON_GLOCKBEAMS',
-        ammo = 'ammo_pistol',
-    },[`WEAPON_BARP`] ={
-        weapon = 'WEAPON_BARP',
-        ammo = 'ammo_pistol',
-    },[`WEAPON_P30L`] ={
-        weapon = 'WEAPON_P30L',
-        ammo = 'ammo_pistol',
-    },[`WEAPON_ILLGLOCK17`] ={
-        weapon = 'WEAPON_ILLGLOCK17',
-        ammo = 'ammo_pistol',
-    },[`WEAPON_KRISSVECTOR`] ={
-        weapon = 'WEAPON_KRISSVECTOR',
-        ammo = 'ammo_smg',
-    },[`WEAPON_LBTARP`] ={
-        weapon = 'WEAPON_LBTARP',
-        ammo = 'ammo_rifle',
-    },[`WEAPON_MGGLOCK`] ={
-        weapon = 'WEAPON_MGGLOCK',
-        ammo = 'ammo_pistol',
-    },[`WEAPON_M500`] ={
-        weapon = 'WEAPON_M500',
-        ammo = 'ammo_shotgun',
-    },[`WEAPON_P210`] ={
-        weapon = 'WEAPON_P210',
-        ammo = 'ammo_pistol',
-    },[`WEAPON_RAM7`] ={
-        weapon = 'WEAPON_RAM7',
-        ammo = 'ammo_rifle',
-    },[`WEAPON_REDARP`] ={
-        weapon = 'WEAPON_REDARP',
-        ammo = 'ammo_rifle',
-    },[`WEAPON_REDM4A1`] ={
-        weapon = 'WEAPON_REDM4A1',
-        ammo = 'ammo_rifle',
-    },[`WEAPON_R590`] ={
-        weapon = 'WEAPON_R590',
-        ammo = 'ammo_shotgun',
-    },[`WEAPON_SR40`] ={
-        weapon = 'WEAPON_SR40',
-        ammo = 'ammo_pistol',
-    },[`WEAPON_T1911`] ={
-        weapon = 'WEAPON_T1911',
-        ammo = 'ammo_pistol',
-    },[`WEAPON_TARP`] ={
-        weapon = 'WEAPON_TARP',
-        ammo = 'ammo_rifle',
-    },[`WEAPON_TGLOCK19`] ={
-        weapon = 'WEAPON_TGLOCK19',
-        ammo = 'ammo_pistol',
-    },[`WEAPON_TEC9S`] ={
-        weapon = 'WEAPON_TEC9S',
-        ammo = 'ammo_smg',
-	},[`WEAPON_WOARP`] ={
-        weapon = 'WEAPON_WOARP',
-        ammo = 'ammo_rifle',
-    },
+		['at_flashlight'] = {
+			label = 'Tactical Flashlight',
+			weight = 120,
+			type = 'flashlight',
+			client = {
+				component = {
+					`COMPONENT_AT_AR_FLSH`,
+					`COMPONENT_AT_AR_FLSH_REH`,
+					`COMPONENT_AT_PI_FLSH`,
+					`COMPONENT_AT_PI_FLSH_02`,
+					`COMPONENT_AT_PI_FLSH_03`,
+				    `COMPONENT_AT_PI_PDG19G4_FLSH`, -- pd
+					`COMPONENT_AT_AR_PDHK417_FLSH`,	-- pd
+					`COMPONENT_AT_PI_PINKGLOCK19FLSH`, -- female
+                    `COMPONENT_AT_G18C_FLSH`, -- v1
+                    `COMPONENT_AT_AR_NSR_FLSH`, -- v1
+					`COMPONENT_AT_AR_HERAARMS_FLSH`, -- v2
+                    `COMPONENT_AT_PI_G2C_FLSH`, -- v3
+                    `COMPONENT_AT_PI_PMR_FLSH`, -- v3
+                    `COMPONENT_AT_PI_G19X_FLSH`, -- v3
+                    `COMPONENT_AT_PI_G26_FLSH`, -- v3
+					`COMPONENT_AT_AR_BARPFLSH`, -- v4
+					`COMPONENT_AT_PI_RUGER57FLSH`, -- v4
+					`COMPONENT_AT_AR_BAR15_FLSH`, -- v5
+					`COMPONENT_AT_AR_DMK18_FLSH`, -- v5
+					`COMPONENT_AT_PI_GLOCKBEAMS_FLSH`, -- v5 check
+					`COMPONENT_AT_PI_FLSH`, -- v5 check
+				},
+				usetime = 2500
+			}
+		},
+
+		['at_suppressor_light'] = {
+			label = 'Suppressor',
+			weight = 280,
+			type = 'muzzle',
+			client = {
+				component = {
+					`COMPONENT_AT_PI_SUPP`,
+					`COMPONENT_AT_PI_SUPP_02`,
+					`COMPONENT_CERAMICPISTOL_SUPP`,
+					`COMPONENT_PISTOLXM3_SUPP`,
+					`COMPONENT_AT_PI_PDG19G4_SUPP`, -- pd
+					`COMPONENT_AT_AR_PINKPM9SUPP_02`, -- feamle
+					`COMPONENT_AT_AR_PINKMK18_SUPP`, -- female
+					`COMPONENT_AT_AR_NSR_SUPP`, -- v1
+					`COMPONENT_AT_AR_HERAARMS_SUPP`, -- v2
+					`COMPONENT_AT_AR_MAXIM9_SUPP`, -- v2
+					`COMPONENT_AT_AR_HONEYBADGER_SUPP`, -- v2
+					`COMPONENT_AT_AR_MP9_SUPP`, -- v2
+					`COMPONENT_AT_PI_FN502V2_SUPP`, -- v2
+					`COMPONENT_AT_AR_P416_SUPP`, -- v3
+					`COMPONENT_AT_SR_P90_SUPP`, -- v3
+					`COMPONENT_AT_AR_DMK18_SUPP`, -- v5
+					`COMPONENT_AT_AR_REDM4A1_SUPP`, -- v5
+				},
+				usetime = 2500
+			}
+		},
+
+		['at_grip'] = {
+			label = 'Grip',
+			type = 'grip',
+			weight = 280,
+			client = {
+				component = {
+					`COMPONENT_AT_AR_AFGRIP`,
+					`COMPONENT_AT_AR_AFGRIP_02`,
+					`COMPONENT_AT_AR_PINKMK18_AFGRIP`, -- female
+					`COMPONENT_AT_AR_HERAARMS_AFGRIP`, -- v2
+					`COMPONENT_AT_AR_LVOCA_AFGRIP`, -- v2
+					`COMPONENT_AT_AR_LOKAFGRIP`, -- v4
+					`COMPONENT_AT_AR_PLRAFGRIP`, -- v4
+					`COMPONENT_AT_AR_BAR15_AFGRIP`, -- v5
+					`COMPONENT_AT_AR_DMK18_AFGRIP`, -- v5
+				},
+				usetime = 2500
+			}
+		},
+
+		['at_clip_extended_pistol'] = {
+			label = 'Extended Pistol Clip',
+			type = 'magazine',
+			weight = 280,
+			client = {
+				component = {
+					`COMPONENT_APPISTOL_CLIP_02`,
+					`COMPONENT_CERAMICPISTOL_CLIP_02`,
+					`COMPONENT_COMBATPISTOL_CLIP_02`,
+					`COMPONENT_HEAVYPISTOL_CLIP_02`,
+					`COMPONENT_PISTOL_CLIP_02`,
+					`COMPONENT_PISTOL_MK2_CLIP_02`,
+					`COMPONENT_PISTOL50_CLIP_02`,
+					`COMPONENT_SNSPISTOL_CLIP_02`,
+					`COMPONENT_SNSPISTOL_MK2_CLIP_02`,
+					`COMPONENT_VINTAGEPISTOL_CLIP_02`,
+                    `COMPONENT_TECPISTOL_CLIP_02`,
+  					`COMPONENT_PINKGLOCK19_CLIP_02`, -- female
+					`COMPONENT_PXDS9_CLIP_02`, -- female
+                    `COMPONENT_P226_CLIP_02`, -- v1
+                    `COMPONENT_G18C_CLIP_02`, -- v1
+                    `COMPONENT_G17_CLIP_02`, -- v1
+                    `COMPONENT_GARDONE_CLIP_02`, -- v1
+					`COMPONENT_CJ_CLIP_02`, -- v2
+					`COMPONENT_M45A1V2_CLIP_02`, -- v2
+					`COMPONENT_B93R_CLIP_02`, -- v2
+					`COMPONENT_MAKAROV_CLIP_02`, -- v2
+					`COMPONENT_659_CLIP_02`, -- v2
+                    `COMPONENT_G2C_CLIP_02`, -- v3
+                    `COMPONENT_TGLOCK_CLIP_02`, -- v3
+                    `COMPONENT_G26_CLIP_02`, -- v3
+					`COMPONENT_ARPISTOL_BOXMAG`, -- v4
+					`COMPONENT_GLOCK17_CLIP_02`, -- v4
+					`COMPONENT_GLOCK18C_CLIP_02`, -- v4
+					`COMPONENT_PDG19G4_CLIP_02`, -- pd
+					`COMPONENT_BLUEGLOCKS_CLIP_02`, -- v5
+					`COMPONENT_GLOCK41_CLIP_02`, -- v5
+					`COMPONENT_GLOCKBEAMS_CLIP_02`, -- v5
+					`COMPONENT_ILLGLOCK17_CLIP_02`, -- v5
+					`COMPONENT_MGGLOCK_CLIP_02`, -- v5
+					`COMPONENT_MIDASGLOCK_CLIP_02`, -- v5
+					`COMPONENT_TGLOCK19_CLIP_02`, -- v5
+				},
+				usetime = 2500
+			}
+		},
+
+		['at_clip_extended_rifle'] = {
+			label = 'Extended Rifle Clip',
+			type = 'magazine',
+			weight = 280,
+			client = {
+				component = {
+					`COMPONENT_ADVANCEDRIFLE_CLIP_02`,
+					`COMPONENT_ASSAULTRIFLE_CLIP_02`,
+					`COMPONENT_ASSAULTRIFLE_MK2_CLIP_02`,
+					`COMPONENT_BULLPUPRIFLE_CLIP_02`,
+					`COMPONENT_BULLPUPRIFLE_MK2_CLIP_02`,
+					`COMPONENT_CARBINERIFLE_CLIP_02`,
+					`COMPONENT_CARBINERIFLE_MK2_CLIP_02`,
+					`COMPONENT_COMPACTRIFLE_CLIP_02`,
+					`COMPONENT_HEAVYRIFLE_CLIP_02`,
+					`COMPONENT_MILITARYRIFLE_CLIP_02`,
+					`COMPONENT_SPECIALCARBINE_CLIP_02`,
+					`COMPONENT_SPECIALCARBINE_MK2_CLIP_02`,
+					`COMPONENT_TACTICALRIFLE_CLIP_02`,
+					`COMPONENT_CARBINERIFLE_BOXMAG`,
+					`COMPONENT_PDHK417_CLIP_02`, -- pd
+					`COMPONENT_PINKSCAR_CLIP_02`, -- female 
+					`COMPONENT_ACE_CLIP_02`, -- v2
+					`COMPONENT_HERAARMS_BOXMAG`, -- v2
+					`COMPONENT_G36K_CLIP_02`, -- v2
+                    `COMPONENT_DDM4V7_CLIP_02`, -- v3
+                    `COMPONENT_SCARV3_CLIP_02`, -- v3
+                    `COMPONENT_AUGA1_CLIP_02`, -- v3
+					`COMPONENT_BARP_CLIP_02`, -- v4
+					`COMPONENT_PLR_CLIP_02`, -- v4   
+					`COMPONENT_BSCAR_CLIP_02`, -- v5
+					`COMPONENT_LBTANARP_CLIP_02`, -- v5
+					`COMPONENT_RAM7_CLIP_02`, -- v5
+					`COMPONENT_REDARP_CLIP_02`, -- v5
+					`COMPONENT_REDM4A1_CLIP_02`, -- v5
+					`COMPONENT_BLACKARP_CLIP_02`, -- v5
+					`COMPONENT_TANARP_CLIP_02`, -- v5
+					`COMPONENT_WOARP_CLIP_02`, -- v5
+				},
+				usetime = 2500
+			}
+		},
+
+		['at_clip_extended_shotgun'] = {
+			label = 'Extended Shotgun Clip',
+			type = 'magazine',
+			weight = 280,
+			client = {
+				component = {
+					`COMPONENT_ASSAULTSHOTGUN_CLIP_02`,
+					`COMPONENT_HEAVYSHOTGUN_CLIP_02`,
+					`COMPONENT_AA12_CLIP_02`, -- v2
+				},
+				usetime = 2500
+			}
+		},
+
+		['at_clip_drum_rifle'] = {
+			label = 'Rifle Drum',
+			type = 'magazine',
+			weight = 280,
+			client = {
+				component = {
+					`COMPONENT_ASSAULTRIFLE_CLIP_03`,
+					`COMPONENT_COMPACTRIFLE_CLIP_03`,
+					`COMPONENT_CARBINERIFLE_CLIP_03`,
+					`COMPONENT_SPECIALCARBINE_CLIP_03`,
+					`COMPONENT_TANARP_CLIP_03`, -- v5
+					`COMPONENT_LBTANARP_CLIP_03`, -- v5
+					`COMPONENT_WOARP_CLIP_03`, -- v5
+					`COMPONENT_REDARP_CLIP_03`, -- v5
+					`COMPONENT_THOMPSON_CLIP_02` -- v5
+				},
+				usetime = 2500
+			}
+		},
+
+		['at_clip_extended_smg'] = {
+			label = 'Extended SMG Clip',
+			type = 'magazine',
+			weight = 280,
+			client = {
+				component = {
+					`COMPONENT_ASSAULTSMG_CLIP_02`,
+					`COMPONENT_COMBATPDW_CLIP_02`,
+					`COMPONENT_MACHINEPISTOL_CLIP_02`,
+					`COMPONENT_MICROSMG_CLIP_02`,
+					`COMPONENT_MINISMG_CLIP_02`,
+					`COMPONENT_SMG_CLIP_02`,
+					`COMPONENT_SMG_MK2_CLIP_02`,
+					`COMPONENT_PINKMP9_CLIP_02`, -- female
+					`COMPONENT_MAC_CLIP_02`, -- v1
+					`COMPONENT_TEC9_CLIP_02`, -- v1
+					`CCOMPONENT_MAGPULPDR_CLIP_02`, -- v2
+					`COMPONENT_MP9_CLIP_02`, -- v2
+					`COMPONENT_TUZI_CLIP_02`, -- v3
+					`COMPONENT_TEC9S_CLIP_02`, -- v5
+				},
+				usetime = 2500
+			}
+		},
+
+		['at_scope_small'] = {
+			label = 'Small Scope',
+			type = 'sight',
+			weight = 280,
+			client = {
+				component = {
+					`COMPONENT_AT_SCOPE_SMALL`,
+					`COMPONENT_AT_SCOPE_SMALL_02`,
+					`COMPONENT_AT_SCOPE_SMALL_MK2`,
+					`COMPONENT_AT_SCOPE_SMALL_SMG_MK2`,
+					`COMPONENT_AT_PDG19G4_SCOPE_SMALL`, -- pd
+				},
+				usetime = 2500
+			}
+		},
+
+		['at_scope_medium'] = {
+			label = 'Medium Scope',
+			type = 'sight',
+			weight = 280,
+			client = {
+				component = {
+					`COMPONENT_AT_SCOPE_MEDIUM`,
+					`COMPONENT_AT_SCOPE_MEDIUM_MK2`,
+					`COMPONENT_AT_PINKMK18_SCOPE_MEDIUM`, -- female
+					`COMPONENT_AT_PDHK417_SCOPE_MEDIUM`, -- pd
+					`COMPONENT_AT_SCOPE_HERAARMS_MEDIUM`, -- v2
+					`COMPONENT_AT_MP9_SCOPE_MACRO`, -- v2
+					`COMPONENT_AT_ARPISTOLSCOPE_MEDIUM`, -- v4
+					`COMPONENT_AT_BAR15_SCOPE_MEDIUM`, -- v5
+					`COMPONENT_AT_DMK18_SCOPE_MEDIUM`, -- v5
+				},
+				usetime = 2500
+			}
+		},
+
+        ['at_scope_large'] = {
+			label = 'Large Scope',
+			type = 'sight',
+			weight = 280,
+			client = {
+				component = {
+					`COMPONENT_AT_SCOPE_LARGE_MK2`,
+					`COMPONENT_AT_SCOPE_LARGE`,
+					`COMPONENT_AT_BARRETT50_SCOPE_MAX`, -- v1
+					`COMPONENT_AT_AWP_SCOPE_LARGE`, -- v3
+					`COMPONENT_AT_M200_SCOPE_LARGE`, -- v3
+					`COMPONENT_AT_AS50_SCOPE_LARGE`, -- v3
+				},
+				usetime = 2500
+			}
+		},
 ```
 
 
@@ -457,141 +585,73 @@ If you want specific weapons to be allowed to rob go to `ak47_inventory\plugins\
    ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═════╝    ╚════╝  ╚════╝ ╚═════╝ ╚══════╝
 
 
-## Kyros Weapon Pack V5 ak47_inventory\configs\config-components.lua
+## Kyros Weapon Pack V5 ak47_inventory\shared\components.lua
+
+
+⦿ IF YOU HAVE V4 AND V5 ADD THE CODE BELOW LIKE USUAL INSTEAD OF FROM V4 | and if u have v4 before make sure u replace these not add multiple
+
 
 ```lua
-	--Kyros Weapon Pack V5
-    ['WEAPON_BAR15'] = {
-        [1] = 'COMPONENT_BAR15_CLIP_01',
-        [2] = 'COMPONENT_AT_BAR15_SCOPE_MEDIUM',
-		[3] = 'COMPONENT_AT_AR_BAR15_FLSH',
-        [4] = 'COMPONENT_AT_AR_BAR15_AFGRIP',
-    },
-    ['WEAPON_BLACKARP'] = {
-        [1] = 'COMPONENT_CARBINERIFLE_CLIP_01',
-        [2] = 'COMPONENT_CARBINERIFLE_CLIP_02',
-    },
-    ['WEAPON_BSCAR'] = {
-        [1] = 'COMPONENT_BSCAR_CLIP_01',
-        [2] = 'COMPONENT_BSCAR_CLIP_02',
-    },
-    ['WEAPON_THOMPSON'] = {
-        [1] = 'COMPONENT_THOMPSON_CLIP_01',
-        [2] = 'COMPONENT_THOMPSON_CLIP_02',
-    },
-    ['WEAPON_BLUEGLOCKS'] = {
-        [1] = 'COMPONENT_BLUEGLOCKS_CLIP_01',
-        [2] = 'COMPONENT_BLUEGLOCKS_CLIP_02',
-		[3] = 'COMPONENT_BLUEGLOCKS_CLIP_03',
-        [4] = 'COMPONENT_BLUEGLOCKS_CLIP_04',
-        [5] = 'COMPONENT_BLUEGLOCKS_CLIP_05',
-    },
-    ['WEAPON_DMK18'] = {
-        [1] = 'COMPONENT_DMK18_CLIP_01',
-        [2] = 'COMPONENT_AT_DMK18_SCOPE_MEDIUM',
-		[3] = 'COMPONENT_AT_AR_DMK18_SUPP',
-        [4] = 'COMPONENT_AT_AR_DMK18_FLSH',
-        [5] = 'COMPONENT_AT_AR_DMK18_AFGRIP',
-    },
-    ['WEAPON_FN57'] = {
-        [1] = 'COMPONENT_FN57V5_CLIP_01',
-    },
-    ['WEAPON_GLOCK21'] = {
-        [1] = 'COMPONENT_GLOCK21_CLIP_01',
-        [2] = 'COMPONENT_AT_PI_FLSH',
-    },
-    ['WEAPON_GLOCK41'] = {
-        [1] = 'COMPONENT_GLOCK41_CLIP_01',
-        [2] = 'COMPONENT_GLOCK41_CLIP_02',
-    },
-    ['WEAPON_GLOCKBEAMS'] = {
-        [1] = 'COMPONENT_GLOCKBEAMS_CLIP_01',
-        [2] = 'COMPONENT_GLOCKBEAMS_CLIP_02',
-		[3] = 'COMPONENT_GLOCKBEAMS_CLIP_03',
-        [4] = 'COMPONENT_GLOCKBEAMS_CLIP_04',
-        [5] = 'COMPONENT_GLOCKBEAMS_CLIP_05',
-        [6] = 'COMPONENT_AT_PI_GLOCKBEAMS_FLSH',
-    },
-    ['WEAPON_P30L'] = {
-        [1] = 'COMPONENT_P30L_CLIP_01',
-    },
-    ['WEAPON_ILLGLOCK17'] = {
-        [1] = 'COMPONENT_ILLGLOCK17_CLIP_01',
-        [2] = 'COMPONENT_ILLGLOCK17_CLIP_02',
-		[3] = 'COMPONENT_ILLGLOCK17_CLIP_03',
-        [4] = 'COMPONENT_ILLGLOCK17_CLIP_04',
-        [5] = 'COMPONENT_ILLGLOCK17_CLIP_05',
-        [6] = 'COMPONENT_AT_PI_FLSH',
-    },
-    ['WEAPON_KRISSVECTOR'] = {
-        [1] = 'COMPONENT_KRISSVECTOR_CLIP_01',
-    },
-    ['WEAPON_LBTARP'] = {
-        [1] = 'COMPONENT_LBTANARP_CLIP_01',
-        [2] = 'COMPONENT_LBTANARP_CLIP_02',
-		[3] = 'COMPONENT_LBTANARP_CLIP_03',
-        [4] = 'COMPONENT_LBTANARP_CLIP_04',
-    },
-    ['WEAPON_MGGLOCK'] = {
-        [1] = 'COMPONENT_MGGLOCK_CLIP_01',
-        [2] = 'COMPONENT_MGGLOCK_CLIP_02',
-		[3] = 'COMPONENT_MGGLOCK_CLIP_03',
-        [4] = 'COMPONENT_MGGLOCK_CLIP_04',
-        [5] = 'COMPONENT_MGGLOCK_CLIP_05',
-    },
-    ['WEAPON_MIDASGLOCK'] = {
-        [1] = 'COMPONENT_MIDASGLOCK_CLIP_01',
-        [2] = 'COMPONENT_MIDASGLOCK_CLIP_02',
-		[3] = 'COMPONENT_MIDASGLOCK_CLIP_03',
-        [4] = 'COMPONENT_MIDASGLOCK_CLIP_04',
-        [5] = 'COMPONENT_MIDASGLOCK_CLIP_05',
-    },
-    ['WEAPON_P210'] = {
-        [1] = 'COMPONENT_P210_CLIP_01',
-    },
-    ['WEAPON_RAM7'] = {
-        [1] = 'COMPONENT_RAM7_CLIP_01',
-        [2] = 'COMPONENT_RAM7_CLIP_02',
-    },
-    ['WEAPON_REDARP'] = {
-        [1] = 'COMPONENT_REDARP_CLIP_01',
-        [2] = 'COMPONENT_REDARP_CLIP_02',
-		[3] = 'COMPONENT_REDARP_CLIP_03',
-        [4] = 'COMPONENT_REDARP_CLIP_04',
-    },
-    ['WEAPON_REDM4A1'] = {
-        [1] = 'COMPONENT_REDM4A1_CLIP_01',
-        [2] = 'COMPONENT_REDM4A1_CLIP_02',
-		[3] = 'COMPONENT_AT_AR_REDM4A1_SUPP',
-    },
-    ['WEAPON_SR40'] = {
-        [1] = 'COMPONENT_SR40_CLIP_01',
-    },
-    ['WEAPON_T1911'] = {
-        [1] = 'COMPONENT_TAN911_CLIP_01',
-    },
-    ['WEAPON_TARP'] = {
-        [1] = 'COMPONENT_TANARP_CLIP_01',
-        [2] = 'COMPONENT_TANARP_CLIP_02',
-		[3] = 'COMPONENT_TANARP_CLIP_03',
-        [4] = 'COMPONENT_TANARP_CLIP_04',
-    },
-    ['WEAPON_TGLOCK19'] = {
-        [1] = 'COMPONENT_TGLOCK19_CLIP_01',
-        [2] = 'COMPONENT_TGLOCK19_CLIP_02',
-		[3] = 'COMPONENT_TGLOCK19_CLIP_03',
-        [4] = 'COMPONENT_TGLOCK19_CLIP_04',
-        [5] = 'COMPONENT_TGLOCK19_CLIP_05',
-        [6] = 'COMPONENT_AT_PI_FLSH',
-    },
-    ['WEAPON_TEC9S'] = {
-        [1] = 'COMPONENT_TEC9S_CLIP_01',
-        [2] = 'COMPONENT_TEC9S_CLIP_02',
-    },
-    ['WEAPON_WOARP'] = {
-        [1] = 'COMPONENT_WOARP_CLIP_01',
-        [2] = 'COMPONENT_WOARP_CLIP_02',
-		[3] = 'COMPONENT_WOARP_CLIP_03',
-        [4] = 'COMPONENT_WOARP_CLIP_04',
-    },
+		['at_clip_drum_pistol'] = {
+			label = '50 Round Drum',
+			type = 'magazine',
+			weight = 500,
+			client = {
+				component = {
+					`COMPONENT_GLOCK19X_CLIP_03`, -- v4
+					`COMPONENT_GLOCK19_CLIP_03`, -- v4
+					`COMPONENT_GLOCK40_CLIP_03`, -- v4
+					`COMPONENT_GLOCK40S_CLIP_03`, -- v4
+					`COMPONENT_GLOCK18C_CLIP_03`, -- v4
+					`COMPONENT_ILLGLOCK17_CLIP_03`, -- v5
+					`COMPONENT_BLUEGLOCKS_CLIP_03`, -- v5
+					`COMPONENT_GLOCKBEAMS_CLIP_03`, -- v5
+					`COMPONENT_MGGLOCK_CLIP_03`, -- v5
+					`COMPONENT_TGLOCK19_CLIP_03`, -- v5
+					`COMPONENT_MIDASGLOCK_CLIP_03`, -- v5
+				},
+				usetime = 2500
+			}
+		},
+
+		['at_clip_100_pistol'] = {
+			label = '100 Round Mag',
+			type = 'magazine',
+			weight = 800,
+			client = {
+				component = {
+					`COMPONENT_GLOCK19X_CLIP_04`, -- v4
+					`COMPONENT_GLOCK40_CLIP_04`, -- v4
+					`COMPONENT_GLOCK40S_CLIP_04`, -- v4
+					`COMPONENT_ILLGLOCK17_CLIP_05`, -- v5
+					`COMPONENT_BLUEGLOCKS_CLIP_04`, -- v5
+					`COMPONENT_GLOCKBEAMS_CLIP_04`, -- v5
+					`COMPONENT_MGGLOCK_CLIP_04`, -- v5
+					`COMPONENT_TGLOCK19_CLIP_04`, -- v5
+					`COMPONENT_MIDASGLOCK_CLIP_04`, -- v5
+				},
+				usetime = 5500
+			}
+		},
+
+		['at_clip_clear'] = {
+			label = 'Clear Clip',
+			type = 'magazine',
+			weight = 280,
+			client = {
+				component = {
+					`COMPONENT_TANARP_CLIP_04`, -- rifle
+					`COMPONENT_LBTANARP_CLIP_04`, -- rifle
+					`COMPONENT_WOARP_CLIP_04`, -- rifle
+					`COMPONENT_ILLGLOCK17_CLIP_04`, -- pistol
+					`COMPONENT_BLUEGLOCKS_CLIP_05`, -- pistol
+					`COMPONENT_GLOCKBEAMS_CLIP_05`, -- pistol
+					`COMPONENT_MGGLOCK_CLIP_05`, -- pistol
+					`COMPONENT_TGLOCK19_CLIP_05`, -- pistol
+					`COMPONENT_MIDASGLOCK_CLIP_05`, -- pistol
+					`COMPONENT_REDARP_CLIP_04`, -- rifle
+				},
+				usetime = 2500
+			}
+		},
 ```

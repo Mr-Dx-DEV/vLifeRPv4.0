@@ -299,7 +299,7 @@ BEST FIVEM SHOP EVER!!
 ╚═════╝ ╚══════╝ ╚════╝  ╚════╝ ╚═╝  ╚══╝╚═════╝    ╚════╝  ╚════╝ ╚═════╝ ╚══════╝
 
 
-## Kyros Weapon Pack Female ox_inventory\data\weapons.lua [READ] -- Each attachment u see below replace it with the one in here? make sense dumbass? (NO DUPLICATES)
+## Kyros Weapon Pack V5 ox_inventory\data\weapons.lua [READ] -- Each attachment u see below replace it with the one in here? make sense dumbass? (NO DUPLICATES)
 
 # VIDEO DEMONSTRATION IF YOUR A SPECIAL 🤪 :  https://i.imgur.com/fvptVD0.mp4
 

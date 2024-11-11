@@ -39,5 +39,12 @@
 
 > // ■ Forgot to add something so one of the guns wasent working thx to Czpr for pointing this out <3
 
+## [11/08/2024] Silent Update 
+
+> // ■ New QS guide since they wanna fuckin update the whole way to add weapons.
+> // ■ New AK47 Weapon install guide (NOT TESTED) but a new guide has been created. LMK IF IT WORKS CHAT.
+> // ■ Fixed typo in OX Guide
+
+
 ## [█▀▄ █ █▀ █▀▀ █▀█ █▀█ █▀▄   █▀▀ █▀▀   ▄▀ █▄▀ █▄█ █▀█ █▀█] ##
 ## [█▄▀ █ ▄█ █▄▄ █▄█ █▀▄ █▄▀ ▄ █▄█ █▄█ ▄▀   █ █  █  █▀▄ █▄█] ##
