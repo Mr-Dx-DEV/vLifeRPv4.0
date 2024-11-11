@@ -279,6 +279,46 @@ function Framework.Client.GetVehicleLabel(model)
   return label
 end
 
+---Returns vehicle stats in a table format
+---@param model string model (archetype) name
+function Framework.Client.GetVehicleStats(model)
+  local vehicle = joaat(model) -- convert to hash
+  local class = GetVehicleClassFromName(vehicle)
+
+  local mult, pmult, tmult = 1, 1000, 800
+  if class == 14 or class == 15 or class == 16 then
+    mult, pmult, tmult = 0.1, 10, 8
+  end
+
+  local brake = GetVehicleModelMaxBraking(vehicle) * mult
+  local handling = ((GetVehicleModelMaxBraking(vehicle) + GetVehicleModelMaxBrakingMaxMods(vehicle)) * GetVehicleModelMaxTraction(vehicle)) * mult
+  local topSpeed = math.ceil(GetVehicleModelEstimatedMaxSpeed(vehicle) * 2.2369)
+  if Config.SpeedUnit == "kph" then topSpeed = math.ceil(GetVehicleModelEstimatedMaxSpeed(vehicle) * 3.6) end
+  local power = math.ceil(GetVehicleModelAcceleration(vehicle) * pmult)
+  local torque = math.ceil(GetVehicleModelAcceleration(vehicle) * tmult)
+
+  -- If you are really unhappy with the values being returned from the game, you could write something
+  -- like the following to overwrite the values to custom ones, by writing something like:
+  -- 
+  -- if model == "adder" then
+  --   return {
+  --     brake = 1.0,
+  --     handling = 7.0,
+  --     topSpeed = 150,
+  --     power = 900,
+  --     torque = 800
+  --   }
+  -- end
+
+  return {
+    brake = brake,
+    handling = handling,
+    topSpeed = topSpeed,
+    power = power,
+    torque = torque
+  }
+end
+
 --
 -- Player Functions
 --

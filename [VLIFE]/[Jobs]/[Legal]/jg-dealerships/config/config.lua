@@ -15,7 +15,7 @@ Config.Framework = "auto" -- or "QBCore", "Qbox", "ESX"
 Config.FuelSystem = "cdn-fuel" -- or "LegacyFuel", "ps-fuel", "lj-fuel", "ox_fuel", "cdn-fuel", "hyon_gas_station", "okokGasStation", "nd_fuel", "myFuel", "ti_fuel", "none"
 Config.VehicleKeys = "qb-vehiclekeys" -- or "qb-vehiclekeys", "MrNewbVehicleKeys", "jaksam-vehicles-keys", "qs-vehiclekeys", "mk_vehiclekeys", "wasabi_carlock", "cd_garage", "okokGarage", "t1ger_keys", "Renewed", "none"
 Config.Notifications = "auto" -- or "default", "okokNotify", "ox_lib", "ps-ui"
-Config.DrawText = "jg-textui" -- or "jg-textui", "qb-DrawText", "okokTextUI", "ox_lib", "ps-ui"
+Config.DrawText = "auto" -- or "jg-textui", "qb-DrawText", "okokTextUI", "ox_lib", "ps-ui"
 
 -- Text UI prompts
 Config.OpenShowroomPrompt = "[E] Open Showroom"
@@ -46,6 +46,7 @@ Config.ShowVehicleImages = true
 
 -- Vehicle purchases
 Config.PlateFormat = "1AA111AA" -- https://docs.jgscripts.com/dealerships/plate-format
+Config.HideVehicleStats = false
 
 -- Test drives
 Config.TestDrivePlate = "TEST1111" -- This is a plate seed so it'll be random every time (read: https://docs.jgscripts.com/dealerships/plate-format)
@@ -124,7 +125,7 @@ Config.DealershipLocations = {
     },
     enableSellVehicle = false, -- Allow players to sell vehicles back to dealer
     sellVehiclePercent = 0.6,  -- 60% of current sale price
-    enableFinance = false,
+    enableFinance = true,
     hideMarkers = false,
     markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
     showroomJobWhitelist = {},
@@ -135,7 +136,7 @@ Config.DealershipLocations = {
     job = "cardealer", -- Owned dealerships only
     directSaleDistance = 50,
   },
- --[[  ["luxury"] = {
+  --[[ ["luxury"] = {
     type = "self-service", -- or "owned", "self-service"
     openShowroom = {
       coords = vector3(-1257.4, -369.12, 36.98),
@@ -156,7 +157,7 @@ Config.DealershipLocations = {
       coords = vector4(-146.6166, -596.6301, 166.0, 270.0),
       positions = {5.0, 8.0, 12.0, 8.0}
     },
-    categories = {"sportsclassics", "super", "sports"},
+    categories = {"super", "sports"},
     enableSellVehicle = true, -- Allow players to sell vehicles back to dealer
     sellVehiclePercent = 0.6,  -- 60% of current sale price
     enableTestDrive = true,
@@ -173,8 +174,8 @@ Config.DealershipLocations = {
     showroomGangWhitelist = {},
     societyPurchaseJobWhitelist = {},
     societyPurchaseGangWhitelist = {},
-  }, ]]
-  --[[ ["boats"] = {
+  },
+  ["boats"] = {
     type = "self-service", -- or "owned", "self-service"
     openShowroom = {
       coords = vector3(-739.55, -1333.75, 1.6),
@@ -211,8 +212,8 @@ Config.DealershipLocations = {
     showroomGangWhitelist = {},
     societyPurchaseJobWhitelist = {},
     societyPurchaseGangWhitelist = {},
-  }, ]]
-  --[[ ["air"] = {
+  },
+  ["air"] = {
     type = "self-service", -- or "owned", "self-service"
     openShowroom = {
       coords = vector3(-1623.0, -3151.56, 13.99),
@@ -249,8 +250,8 @@ Config.DealershipLocations = {
     showroomGangWhitelist = {},
     societyPurchaseJobWhitelist = {},
     societyPurchaseGangWhitelist = {},
-  }, ]]
-  --[[ ["truck"] = {
+  },
+  ["truck"] = {
     type = "self-service", -- or "owned", "self-service"
     openShowroom = {
       coords = vector3(1214.37, -3204.53, 6.03),
@@ -297,7 +298,8 @@ Config.DirectSaleCommand = "directsale"
 Config.DealerAdminCommand = "dealeradmin"
 
 -- Nerd options
+Config.RemoveGeneratorsAroundDealership = 60.0
 Config.AutoRunSQL = true
 Config.ReturnToPreviousRoutingBucket = false
 Config.HideWatermark = false
-Config.Logging = false
+Config.Debug = false

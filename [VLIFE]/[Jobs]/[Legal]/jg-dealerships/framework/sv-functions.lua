@@ -30,7 +30,7 @@ function Framework.Server.GetSocietyBalance(society, societyType)
       if societyType == "job" then
         return exports['qb-management']:GetAccount(society)
       elseif societyType == "gang" then
-        return exports['qb-management']:GetAccount(society)
+        return exports['qb-management']:GetGangAccount(society)
       end
     end
   elseif Config.Framework == "ESX" then
@@ -127,6 +127,25 @@ function Framework.Server.SaveVehicleToGarage(src, purchaseType, society, societ
   end
 
   return vehicleId
+end
+
+---@param vehicle boolean|QueryResult|unknown|{ [number]: { [string]: unknown  }|{ [string]: unknown }}
+---@return string | number | false model
+function Framework.Server.GetModelColumn(vehicle)
+  if Config.Framework == "QBCore" or Config.Framework == "Qbox" then
+    return vehicle.vehicle or tonumber(vehicle.hash) or false
+  elseif Config.Framework == "ESX" then
+    if not vehicle or not vehicle.vehicle then return false end
+
+    if type(vehicle.vehicle) == "string" then
+      if not json.decode(vehicle.vehicle) then return false end
+      return json.decode(vehicle.vehicle).model
+    else
+      return vehicle.vehicle.model
+    end
+  end
+
+  return false
 end
 
 ---@param vehicle integer

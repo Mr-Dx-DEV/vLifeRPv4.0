@@ -62,7 +62,7 @@ function round(num, dp)
 end
 
 ---@param list table
----@param item string
+---@param item string|number
 ---@return boolean
 function isItemInList(list, item)
   if #list == 0 then
