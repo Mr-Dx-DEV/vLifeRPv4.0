@@ -173,11 +173,37 @@ function QBCore.Functions.Notify(text, texttype, length, icon)
     SendNUIMessage(message)
 end
  ]]
- function QBCore.Functions.Notify(text, texttype, length)
+
+
+
+--[[  function QBCore.Functions.Notify(text, texttype, length)
     local color = 0
     if texttype == 'success' then color = 3 elseif texttype == 'error' then color = 2 else color = 1 end
     TriggerEvent('notifications:sendNotification', color, text, 5000)
 end
+ ]]
+
+
+
+ function QBCore.Functions.Notify(text, texttype, length, icon)
+    local notifyText = ""
+    local notifyCaption = ""
+
+    -- Check if `text` is a table to retrieve `text` and `caption` keys
+    if type(text) == 'table' then
+        notifyText = text.text or 'Placeholder'
+        notifyCaption = text.caption or 'Placeholder'
+    else
+        notifyText = text
+    end
+
+    -- Set default notification type if none is provided
+    texttype = texttype or 'info'
+
+    -- Trigger xs-notify with the specified parameters
+    TriggerEvent('xs-notify:send', notifyText, notifyCaption, texttype, length or 5000, icon or 'default-icon')
+end
+
 
 function QBCore.Functions.Progressbar(name, label, duration, useWhileDead, canCancel, disableControls, animation, prop, propTwo, onFinish, onCancel)
     if GetResourceState('progressbar') ~= 'started' then error('progressbar needs to be started in order for QBCore.Functions.Progressbar to work') end

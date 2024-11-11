@@ -1,8 +1,8 @@
 Skin = {}
 Skin.Enabled = true                                                              -- Set to false if you want use some third-party skin creator resource. Might need additional configuration.
-Skin.EnableRefreshSkinCommand = false                                             -- /refreshSkin command can be turned off here
+Skin.EnableRefreshSkinCommand = true                                             -- /refreshSkin command can be turned off here
 Skin.EnableAutoMaskClipping = false                                               -- Fix for face clipping trough the mask.
-Skin.GenerateRandomSkin = true                                                   -- Set to false to let players start customization from default freemdoe ped, not the randomized
+Skin.GenerateRandomSkin = false                                                   -- Set to false to let players start customization from default freemdoe ped, not the randomized
 Skin.CreatingPoint = vector4(-819.68, -723.71, 105.87, 2.87)                     -- This is coordinates where player creating his player (skin) after register
 Skin.EnableTattoosDeleting = true                                                -- Set to false to not let players delete tattoos
 Skin.RememberLastOutfit = false                                                  -- Set to true to save your last weared outfit
