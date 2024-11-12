@@ -133,20 +133,24 @@ Config = {
 
 Config.RewardsIPL = {
     [1] = { -- IPL Tier
-        itemCount = {min = 1, max = 6}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 2}, -- Amount of items that can be obtained in this tier
         chance = 50, -- Chance of getting an item while searching in this tier
         bonusItem = "rolex", -- Item that can be obtained as a bonus
         bonusChance = 10, -- Chance of getting the bonus item
-        bonusAmount = {min = 1, max = 2}, -- Amount of the bonus item
+        bonusAmount = {min = 1, max = 1}, -- Amount of the bonus item
         Exp = {min = 15, max = 18}, -- Only if you have a level system
         ExpProps = {min = 20, max = 23}, -- Only if you have a level system
+        -- Safe Settings:
+        -- Chance of a safe spawning is determined indivbidually for each IPL, check the IPL configs themselves
+        SafeItemCount = {min = 1, max = 2}, -- Amount of items that can be obtained from the safe loot table below
+        ExpSafe = {min = 20, max = 25}, -- Only if you have a level system
 
-        ["cabin"] = { -- Total chance = 100
-            {Name = "screwdriverset", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
-            {Name = "fitbit", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "lockpick", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "samsungphone", Chance = 15, Amount = {min = 1, max = 1}},
+        ["cabin"] = { -- The total chance of this section should be = 100
+            {Name = "screwdriverset", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "fitbit", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "lockpick", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "samsungphone", Chance = 25, Amount = {min = 1, max = 1}},
+
             {Name = "condom", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "romantic_book", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
@@ -155,22 +159,24 @@ Config.RewardsIPL = {
             {Name = "glassbottle", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "notepad", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "pencil", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "bong", Chance = 10, Amount = {min = 1, max = 1}}
+            {Name = "bong", Chance = 10, Amount = {min = 1, max = 1}},
         },
-        ["kitchen"] = { -- Total chance = 100
-            {Name = "bandage", Chance = 20, Amount = {min = 1, max = 2}},
-            {Name = "painkillers", Chance = 20, Amount = {min = 1, max = 1}},
-            {Name = "water_bottle", Chance = 20, Amount = {min = 1, max = 2}},
-            {Name = "joint", Chance = 20, Amount = {min = 1, max = 1}},
+        ["kitchen"] = {  -- The total chance of this section should be = 100
+            {Name = "bandage", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "painkillers", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "water_bottle", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "joint", Chance = 25, Amount = {min = 1, max = 1}},
+
             {Name = "emptycan", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "cardboard", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "emptypapercup", Chance = 10, Amount = {min = 1, max = 1}}
+            {Name = "emptypapercup", Chance = 10, Amount = {min = 1, max = 1}},
         },
-        ["chest"] = { -- Total chance = 100
-            {Name = "diamond", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "rolex", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "iphone", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "samsungphone", Chance = 15, Amount = {min = 1, max = 1}},
+        ["chest"] = {  -- The total chance of this section should be = 100
+            {Name = "diamond", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "rolex", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "iphone", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "samsungphone", Chance = 25, Amount = {min = 1, max = 1}},
+
             {Name = "phone", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "earings", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
@@ -179,146 +185,370 @@ Config.RewardsIPL = {
             {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "gold_bracelet", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "gunpowder", Chance = 10, Amount = {min = 1, max = 1}}
+            {Name = "gunpowder", Chance = 10, Amount = {min = 1, max = 1}},
         },
-        ["livingroom"] = { -- Total chance = 100
-            {Name = "fitbit", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "screwdriverset", Chance = 15, Amount = {min = 1, max = 2}},
-            {Name = "bandage", Chance = 15, Amount = {min = 1, max = 2}},
-            {Name = "plastic", Chance = 15, Amount = {min = 1, max = 1}},
+        ["livingroom"] = {  -- The total chance of this section should be = 100
+            {Name = "fitbit", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "screwdriverset", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "bandage", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "plastic", Chance = 25, Amount = {min = 1, max = 1}},
+
             {Name = "copper_wires", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "condom_used", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "gold_watch", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "cloth", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "laptop_green", Chance = 10, Amount = {min = 1, max = 1}}
+            {Name = "laptop_green", Chance = 10, Amount = {min = 1, max = 1}},
         },
-        ["safe"] = { -- Total chance = 100
+        ["safe"] = {  -- The total chance of this section should be = 100
             {Name = "rolex", Chance = 25, Amount = {min = 2, max = 3}},
             {Name = "diamond", Chance = 25, Amount = {min = 2, max = 3}},
-            {Name = "goldchain", Chance = 25, Amount = {min = 2, max = 3}}
-           
+            {Name = "goldchain", Chance = 25, Amount = {min = 2, max = 3}},
+            
         }
     },
-    -- Repeat similar structure for other tiers with respective items and chances
-}
+    [2] = { -- IPL Tier
+        itemCount = {min = 1, max = 2}, -- Amount of items that can be obtained in this tier
+        chance = 60, -- Chance of getting an item while searching in this tier
+        bonusItem = "diamond", -- Item that can be obtained as a bonus
+        bonusChance = 10, -- Chance of getting the bonus item
+        bonusAmount = {min = 1, max = 1}, -- Amount of the bonus item
+        Exp = {min = 22, max = 24}, -- Only if you have a level system
+        ExpProps = {min = 27, max = 29}, -- Only if you have a level system
+        -- Safe Settings:
+        -- Chance of a safe spawning is determined indivbidually for each IPL, check the IPL configs themselves
+        SafeItemCount = {min = 1, max = 2}, -- Amount of items that can be obtained from the safe loot table below
+        ExpSafe = {min = 20, max = 25}, -- Only if you have a level system
 
+        ["cabin"] = { -- The total chance of this section should be = 100
+            {Name = "screwdriverset", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "fitbit", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "lockpick", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "samsungphone", Chance = 25, Amount = {min = 1, max = 1}},
+
+            {Name = "condom", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "romantic_book", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "glassbottle", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "notepad", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "pencil", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "bong", Chance = 10, Amount = {min = 1, max = 1}},
+        },
+        ["kitchen"] = {  -- The total chance of this section should be = 100
+            {Name = "bandage", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "painkillers", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "water_bottle", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "joint", Chance = 25, Amount = {min = 1, max = 1}},
+
+            {Name = "emptycan", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "cardboard", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "emptypapercup", Chance = 10, Amount = {min = 1, max = 1}},
+        },
+        ["chest"] = {  -- The total chance of this section should be = 100
+            {Name = "diamond", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "rolex", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "iphone", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "samsungphone", Chance = 25, Amount = {min = 1, max = 1}},
+
+            {Name = "phone", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "earings", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "goldchain", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "gold_bracelet", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "gunpowder", Chance = 10, Amount = {min = 1, max = 1}},
+        },
+        ["livingroom"] = {  -- The total chance of this section should be = 100
+            {Name = "fitbit", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "screwdriverset", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "bandage", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "plastic", Chance = 25, Amount = {min = 1, max = 1}},
+
+            {Name = "copper_wires", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "condom_used", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "gold_watch", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "cloth", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "laptop_green", Chance = 10, Amount = {min = 1, max = 1}},
+        },
+        ["safe"] = {  -- The total chance of this section should be = 100
+            {Name = "rolex", Chance = 25, Amount = {min = 2, max = 3}},
+            {Name = "diamond", Chance = 25, Amount = {min = 2, max = 3}},
+            {Name = "goldchain", Chance = 25, Amount = {min = 2, max = 3}},
+            
+        }
+    },
+    [3] = { -- IPL Tier
+        itemCount = {min = 1, max = 3}, -- Amount of items that can be obtained in this tier
+        chance = 70, -- Chance of getting an item while searching in this tier
+        bonusItem = "diamond_ring", -- Item that can be obtained as a bonus
+        bonusChance = 10, -- Chance of getting the bonus item
+        bonusAmount = {min = 1, max = 1}, -- Amount of the bonus item
+        Exp = {min = 26, max = 30}, -- Only if you have a level system
+        ExpProps = {min = 31, max = 35}, -- Only if you have a level system
+        -- Safe Settings:
+        -- Chance of a safe spawning is determined indivbidually for each IPL, check the IPL configs themselves
+        SafeItemCount = {min = 1, max = 2}, -- Amount of items that can be obtained from the safe loot table below
+        ExpSafe = {min = 20, max = 25}, -- Only if you have a level system
+
+        ["cabin"] = { -- The total chance of this section should be = 100
+            {Name = "screwdriverset", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "fitbit", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "lockpick", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "samsungphone", Chance = 25, Amount = {min = 1, max = 1}},
+
+            {Name = "condom", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "romantic_book", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "glassbottle", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "notepad", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "pencil", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "bong", Chance = 10, Amount = {min = 1, max = 1}},
+        },
+        ["kitchen"] = {  -- The total chance of this section should be = 100
+            {Name = "bandage", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "painkillers", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "water_bottle", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "joint", Chance = 25, Amount = {min = 1, max = 1}},
+
+            {Name = "emptycan", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "cardboard", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "emptypapercup", Chance = 10, Amount = {min = 1, max = 1}},
+        },
+        ["chest"] = {  -- The total chance of this section should be = 100
+            {Name = "diamond", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "rolex", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "iphone", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "samsungphone", Chance = 25, Amount = {min = 1, max = 1}},
+
+            {Name = "phone", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "earings", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "goldchain", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "gold_bracelet", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "gunpowder", Chance = 10, Amount = {min = 1, max = 1}},
+        },
+        ["livingroom"] = {  -- The total chance of this section should be = 100
+            {Name = "fitbit", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "screwdriverset", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "bandage", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "plastic", Chance = 25, Amount = {min = 1, max = 1}},
+
+            {Name = "copper_wires", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "condom_used", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "gold_watch", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "cloth", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "laptop_green", Chance = 10, Amount = {min = 1, max = 1}},
+        },
+        ["safe"] = {  -- The total chance of this section should be = 100
+            {Name = "rolex", Chance = 25, Amount = {min = 2, max = 3}},
+            {Name = "diamond", Chance = 25, Amount = {min = 2, max = 3}},
+            {Name = "goldchain", Chance = 25, Amount = {min = 2, max = 3}},
+            
+        }
+    },
+}
 Config.RewardsShell = {
     [1] = { -- Shell Tier
-        itemCount = {min = 1, max = 6}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 1}, -- Amount of items that can be obtained in this tier
         chance = 40, -- Chance of getting an item while searching in this tier
         bonusItem = "rolex", -- Item that can be obtained as a bonus
         bonusChance = 10, -- Chance of getting the bonus item
-        bonusAmount = {min = 1, max = 2}, -- Amount of the bonus item
+        bonusAmount = {min = 1, max = 1}, -- Amount of the bonus item
         Exp = {min = 4, max = 5}, -- Only if you have a level system
 
-        ["cabin"] = { -- Total chance = 100
-            {Name = "screwdriverset", Chance = 15, Amount = {min = 1, max = 2}},
-            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
+        ["cabin"] = {  -- The total chance of this section should be = 100
+            {Name = "screwdriverset", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "fitbit", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "lockpick", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "samsungphone", Chance = 25, Amount = {min = 1, max = 1}},
+
+            {Name = "condom", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "romantic_book", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
-            {Name = "fitbit", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "lockpick", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "samsungphone", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "condom", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "romantic_book", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "glassbottle", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "notepad", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "pencil", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "bong", Chance = 10, Amount = {min = 1, max = 1}}
+            {Name = "bong", Chance = 10, Amount = {min = 1, max = 1}},
         },
-        ["kitchen"] = { -- Total chance = 100
-            {Name = "bandage", Chance = 20, Amount = {min = 1, max = 2}},
-            {Name = "painkillers", Chance = 20, Amount = {min = 1, max = 1}},
-            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
-            {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
-            {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
-            {Name = "water_bottle", Chance = 20, Amount = {min = 1, max = 2}},
-            {Name = "joint", Chance = 20, Amount = {min = 1, max = 1}},
-            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
+        ["kitchen"] = {  -- The total chance of this section should be = 100
+            {Name = "bandage", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "painkillers", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "water_bottle", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "joint", Chance = 25, Amount = {min = 1, max = 1}},
+
             {Name = "emptycan", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "cardboard", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "emptypapercup", Chance = 10, Amount = {min = 1, max = 1}}
+            {Name = "emptypapercup", Chance = 10, Amount = {min = 1, max = 1}},
         },
-        ["chest"] = { -- Total chance = 100
-            {Name = "diamond", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "rolex", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "iphone", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "samsungphone", Chance = 15, Amount = {min = 1, max = 1}},
+        ["chest"] = {  -- The total chance of this section should be = 100
+            {Name = "diamond", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "rolex", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "iphone", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "samsungphone", Chance = 25, Amount = {min = 1, max = 1}},
+
             {Name = "phone", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "earings", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "goldchain", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "gold_bracelet", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "gunpowder", Chance = 10, Amount = {min = 1, max = 1}}
-        },
-        ["livingroom"] = { -- Total chance = 100
-            {Name = "fitbit", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "screwdriverset", Chance = 15, Amount = {min = 1, max = 2}},
-            {Name = "bandage", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "goldchain", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
-            {Name = "plastic", Chance = 15, Amount = {min = 1, max = 1}},
+            {Name = "gold_bracelet", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "gunpowder", Chance = 10, Amount = {min = 1, max = 1}},
+        },
+        ["livingroom"] = {  -- The total chance of this section should be = 100
+            {Name = "fitbit", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "screwdriverset", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "bandage", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "plastic", Chance = 25, Amount = {min = 1, max = 1}},
+
+
             {Name = "copper_wires", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "condom_used", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "gold_watch", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "cloth", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "laptop_green", Chance = 10, Amount = {min = 1, max = 1}}
-        }
+            {Name = "laptop_green", Chance = 10, Amount = {min = 1, max = 1}},
+        },
     },
     [2] = { -- Shell Tier
-        itemCount = {min = 1, max = 6}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 2}, -- Amount of items that can be obtained in this tier
         chance = 50, -- Chance of getting an item while searching in this tier
         bonusItem = "diamond", -- Item that can be obtained as a bonus
         bonusChance = 10, -- Chance of getting the bonus item
-        bonusAmount = {min = 1, max = 2}, -- Amount of the bonus item
+        bonusAmount = {min = 1, max = 1}, -- Amount of the bonus item
         Exp = {min = 6, max = 7}, -- Only if you have a level system
 
-        ["cabin"] = { -- Total chance = 100
-            {Name = "advancedlockpick", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "iphone", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "rolex", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "joint", Chance = 15, Amount = {min = 1, max = 2}},
+        ["cabin"] = {  -- The total chance of this section should be = 100
+            {Name = "screwdriverset", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "fitbit", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "lockpick", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "samsungphone", Chance = 25, Amount = {min = 1, max = 1}},
+
             {Name = "condom", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "glassbottle", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "romantic_book", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
-            {Name = "romantic_book", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "glassbottle", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "notepad", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "pencil", Chance = 10, Amount = {min = 1, max = 1}}
+            {Name = "pencil", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "bong", Chance = 10, Amount = {min = 1, max = 1}},
         },
-        -- Repeat for other sections ("kitchen", "chest", "livingroom") following similar structure for tier 2
+        ["kitchen"] = {  -- The total chance of this section should be = 100
+            {Name = "bandage", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "painkillers", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "water_bottle", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "joint", Chance = 25, Amount = {min = 1, max = 1}},
+
+            {Name = "emptycan", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "cardboard", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "emptypapercup", Chance = 10, Amount = {min = 1, max = 1}},
+        },
+        ["chest"] = {  -- The total chance of this section should be = 100
+            {Name = "diamond", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "rolex", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "iphone", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "samsungphone", Chance = 25, Amount = {min = 1, max = 1}},
+
+            {Name = "phone", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "earings", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "goldchain", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "gold_bracelet", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "gunpowder", Chance = 10, Amount = {min = 1, max = 1}},
+        },
+        ["livingroom"] = {  -- The total chance of this section should be = 100
+            {Name = "fitbit", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "screwdriverset", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "bandage", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "plastic", Chance = 25, Amount = {min = 1, max = 1}},
+
+
+            {Name = "copper_wires", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "condom_used", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "gold_watch", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "cloth", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "laptop_green", Chance = 10, Amount = {min = 1, max = 1}},
+        }, 
     },
     [3] = { -- Shell Tier
-        itemCount = {min = 1, max = 6}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 3}, -- Amount of items that can be obtained in this tier
         chance = 60, -- Chance of getting an item while searching in this tier
         bonusItem = "diamond_ring", -- Item that can be obtained as a bonus
         bonusChance = 40, -- Chance of getting the bonus item
-        bonusAmount = {min = 1, max = 2}, -- Amount of the bonus item
+        bonusAmount = {min = 1, max = 1}, -- Amount of the bonus item
         Exp = {min = 9, max = 10}, -- Only if you have a level system
 
-        ["cabin"] = { -- Total chance = 100
-            {Name = "goldchain", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "handcuffs", Chance = 15, Amount = {min = 1, max = 1}},
-            {Name = "diamond", Chance = 15, Amount = {min = 1, max = 2}},
-            {Name = "diamond_ring", Chance = 15, Amount = {min = 1, max = 2}},
+        ["cabin"] = {  -- The total chance of this section should be = 100
+            {Name = "screwdriverset", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "fitbit", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "lockpick", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "samsungphone", Chance = 25, Amount = {min = 1, max = 1}},
+
+            {Name = "condom", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "romantic_book", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
-            {Name = "condom", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "glassbottle", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "romantic_book", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "advancedlockpick", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
-            {Name = "laptop_green", Chance = 10, Amount = {min = 1, max = 1}}
+            {Name = "notepad", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "pencil", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "bong", Chance = 10, Amount = {min = 1, max = 1}},
         },
-        -- Repeat for other sections ("kitchen", "chest", "livingroom") following similar structure for tier 3
-    }
-}
+        ["kitchen"] = {  -- The total chance of this section should be = 100
+            {Name = "bandage", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "painkillers", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "water_bottle", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "joint", Chance = 25, Amount = {min = 1, max = 1}},
 
+            {Name = "emptycan", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "cardboard", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "emptypapercup", Chance = 10, Amount = {min = 1, max = 1}},
+        },
+        ["chest"] = {  -- The total chance of this section should be = 100
+            {Name = "diamond", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "rolex", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "iphone", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "samsungphone", Chance = 25, Amount = {min = 1, max = 1}},
+
+            {Name = "phone", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "earings", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "spring", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "goldchain", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "gold_bracelet", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "gunpowder", Chance = 10, Amount = {min = 1, max = 1}},
+        },
+        ["livingroom"] = {  -- The total chance of this section should be = 100
+            {Name = "fitbit", Chance = 25, Amount = {min = 1, max = 1}},
+            {Name = "screwdriverset", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "bandage", Chance = 25, Amount = {min = 1, max = 2}},
+            {Name = "plastic", Chance = 25, Amount = {min = 1, max = 1}},
+
+
+            {Name = "copper_wires", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "condom_used", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "gold_watch", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "cloth", Chance = 10, Amount = {min = 1, max = 1}},
+            {Name = "laptop_green", Chance = 10, Amount = {min = 1, max = 1}},
+        },
+    },
+}
 
 Config.IPL = {
     ["4IntegrityWay"] = {
