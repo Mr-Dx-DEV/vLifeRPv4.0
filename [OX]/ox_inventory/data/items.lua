@@ -24367,21 +24367,21 @@ return {
         }
     },
 	["theorder_flag"] = {
-        label = "The Family",
+        label = "The Order",
         weight = 500,
         stack = true,
         close = true,
-        description = "The Family",
+        description = "The Order",
         client = {
             image = "theorder_flag.png",
         }
     },
     ["theorder_first_flag"] = {
-        label = "The Family",
+        label = "The Order",
         weight = 500,
         stack = true,
         close = true,
-        description = "The first flag for The Family",
+        description = "The first flag for The Order",
         client = {
             image = "theorder_flag.png",
         }
