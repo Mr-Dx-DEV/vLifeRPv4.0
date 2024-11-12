@@ -41,10 +41,10 @@ Config.Stashes = {
         cid = '',  
         stashSize = 2000000,
         stashSlots = 100, 
-    },
+    },]]
     ["theorder_gnagblock"] = 
     {   stashName = "theorder_gnagblock",
-        coords = vector3(-657.478, -884.59, 32.33), 
+        coords = vector3(316.689, -1249.687, 37.785), 
         requirecid = false,
         jobrequired = false,
         gangrequired = true,
@@ -54,7 +54,7 @@ Config.Stashes = {
         cid = '',  
         stashSize = 2000000,
         stashSlots = 100, 
-    },]]
+    },
     
     
     ["tokyomanji_gnagblock"] =
