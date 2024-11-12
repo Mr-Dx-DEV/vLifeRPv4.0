@@ -8,7 +8,7 @@ Config.contracts.pacific = {
         expiry = 24 * 60,
         timeToStart = 2 * 60,
         minMembers = 6,
-        rewards = { crypto = 325, experience = 2500 },
+        rewards = { crypto = 500, experience = 2500 },
         minPolice = 7
     },
 

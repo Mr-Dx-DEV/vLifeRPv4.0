@@ -174,7 +174,7 @@ function QBCore.Functions.Notify(text, texttype, length, icon)
 end
 
  ]]
-
+--[[ 
  function QBCore.Functions.Notify(text, texttype, length)
     length = length or 5000
     texttype = texttype or 'info'
@@ -195,6 +195,14 @@ end
 
     exports['FL-Notify']:Notify("Notification", "", text, length, themeId, textposition)
 end
+ ]]
+ function QBCore.Functions.Notify(text, length, type)
+    exports['qb-notify']:Notify(text, length, type) 
+end
+
+
+
+
 --[[  function QBCore.Functions.Notify(text, texttype, length)
     local color = 0
     if texttype == 'success' then color = 3 elseif texttype == 'error' then color = 2 else color = 1 end
