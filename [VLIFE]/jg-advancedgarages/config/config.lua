@@ -276,7 +276,7 @@ Config.GarageLocations = { -- IMPORTANT - Every garage name must be unique
     spawn = vector4(-1608.356, 105.842, 62.883, 299.57),
     distance = 20,
     type = "air",
-    hideBlip = false,
+    hideBlip = true,
     blip = {
       id = 359,
       color = 0,
@@ -443,6 +443,23 @@ Config.GangGarageUniqueBlips = false
 Config.GangGarageUniqueLocations = true
 Config.GangGarageEnableInteriors = true
 Config.GangGarageLocations = { -- IMPORTANT - Every garage name must be unique
+
+["The Order"] = {
+  coords = vector3(333.028, -1254.019, 31.12),
+  spawn = vector4(333.028, -1254.019, 31.12, 1.42),
+  distance = 15,
+  gang = {"theorder"},
+  type = "car",
+  hideBlip = false,
+  blip = {
+    id = 357,
+    color = 0,
+    scale = 0.5
+  },
+  hideMarkers = true,
+  markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
+  vehiclesType = "personal", -- Use personal vehicles
+},
 
   ["R Bit"] = {
     coords = vector3(-711.487, -896.428, 24.499),
