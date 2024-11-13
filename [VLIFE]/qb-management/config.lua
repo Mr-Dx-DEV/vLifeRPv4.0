@@ -31,6 +31,9 @@ Config.BossMenus = {
     countymechanic = {
         vector3(1073.45, 2717.52, 38.79),
     },
+    beanmachine = {
+        vector3(127.556, -1032.909, 29.278),
+    },
 }
 
 Config.GangMenus = {

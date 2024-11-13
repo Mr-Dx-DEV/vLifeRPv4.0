@@ -1,4 +1,439 @@
 return {
+
+	--- bean 
+	-- Bean Machine Items for QBCore with ox_inventory
+['bdonut'] = {
+    name = 'bdonut',
+    label = 'Donut',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Tasty Donut',
+    client = {
+        image = 'bdonut.png'
+    },
+},
+
+['bbanana'] = {
+    name = 'bbanana',
+    label = 'Banana',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Banana',
+    client = {
+        image = 'bbanana.png'
+    },
+},
+
+['borange'] = {
+    name = 'borange',
+    label = 'Orange',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Orange',
+    client = {
+        image = 'borange.png'
+    },
+},
+
+['bapple'] = {
+    name = 'bapple',
+    label = 'Apple',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Red Apple',
+    client = {
+        image = 'bapple.png'
+    },
+},
+
+['bmuffin'] = {
+    name = 'bmuffin',
+    label = 'Muffin',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Muffin',
+    client = {
+        image = 'bmuffin.png'
+    },
+},
+
+['bchocolatemuffin'] = {
+    name = 'bchocolatemuffin',
+    label = 'Chocolate Muffin',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Chocolate Muffin',
+    client = {
+        image = 'bchocolatemuffin.png'
+    },
+},
+
+['bberrymuffin'] = {
+    name = 'bberrymuffin',
+    label = 'Berry Muffin',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Berry Muffin',
+    client = {
+        image = 'bberrymuffin.png'
+    },
+},
+
+['bmenu'] = {
+    name = 'bmenu',
+    label = 'Bean Machine Menu',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Menu',
+    client = {
+        image = 'bmenu.png'
+    },
+},
+
+['bregularcup'] = {
+    name = 'bregularcup',
+    label = 'Regular Cup',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Regular Cup',
+    client = {
+        image = 'bregularcup.png'
+    },
+},
+
+['bsprite'] = {
+    name = 'bsprite',
+    label = 'Sprite',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Cup Fill With Sprite',
+    client = {
+        image = 'bsprite.png'
+    },
+},
+
+['bcocacola'] = {
+    name = 'bcocacola',
+    label = 'CocaCola',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Cup Fill With Cocacola',
+    client = {
+        image = 'bcocacola.png'
+    },
+},
+
+['bpepper'] = {
+    name = 'bpepper',
+    label = 'DR.Pepper',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Cup Fill With DR.Pepper',
+    client = {
+        image = 'bpepper.png'
+    },
+},
+
+['blemonslush'] = {
+    name = 'blemonslush',
+    label = 'Lemon Slush',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Cup Fill With Lemon Slush',
+    client = {
+        image = 'blemonslush.png'
+    },
+},
+
+['borangeslush'] = {
+    name = 'borangeslush',
+    label = 'Orange Slush',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Cup Fill With Orange Slush',
+    client = {
+        image = 'borangeslush.png'
+    },
+},
+
+['bcoffeebeans'] = {
+    name = 'bcoffeebeans',
+    label = 'Coffee Beans',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Coffee Beans',
+    client = {
+        image = 'bcoffeebeans.png'
+    },
+},
+
+['bhighcoffeeglasscup'] = {
+    name = 'bhighcoffeeglasscup',
+    label = 'High Coffee Glass',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Empty High Coffee Glass',
+    client = {
+        image = 'bhighcoffeeglasscup.png'
+    },
+},
+
+['bcoffeeglass'] = {
+    name = 'bcoffeeglass',
+    label = 'Coffee Glass',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Empty Coffee Glass',
+    client = {
+        image = 'bcoffeeglass.png'
+    },
+},
+
+['bstrawberry'] = {
+    name = 'bstrawberry',
+    label = 'Strawberry',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Strawberry',
+    client = {
+        image = 'bstrawberry.png'
+    },
+},
+
+['bhoney'] = {
+    name = 'bhoney',
+    label = 'Honey',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Honey',
+    client = {
+        image = 'bhoney.png'
+    },
+},
+
+['bmilk'] = {
+    name = 'bmilk',
+    label = 'Milk',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Milk',
+    client = {
+        image = 'bmilk.png'
+    },
+},
+
+['bcream'] = {
+    name = 'bcream',
+    label = 'Whipped Cream',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Whipped Cream',
+    client = {
+        image = 'bcream.png'
+    },
+},
+
+['bice'] = {
+    name = 'bice',
+    label = 'Ice',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Ice',
+    client = {
+        image = 'bice.png'
+    },
+},
+
+['bcaramelsyrup'] = {
+    name = 'bcaramelsyrup',
+    label = 'Caramel Syrup',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Caramel Syrup',
+    client = {
+        image = 'bcaramelsyrup.png'
+    },
+},
+
+['bcloudcafe'] = {
+    name = 'bcloudcafe',
+    label = 'Cloud Cafe',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Cloud Cafe',
+    client = {
+        image = 'bcloudcafe.png'
+    },
+},
+
+['bjavachipfrappuccino'] = {
+    name = 'bjavachipfrappuccino',
+    label = 'Java Chip Frappuccino',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Java Chip Frappuccino',
+    client = {
+        image = 'bjavachipfrappuccino.png'
+    },
+},
+
+['bhotchoc'] = {
+    name = 'bhotchoc',
+    label = 'Hot Choc',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Hot Choc',
+    client = {
+        image = 'bhotchoc.png'
+    },
+},
+
+['bhoneyhazelnutoatlatte'] = {
+    name = 'bhoneyhazelnutoatlatte',
+    label = 'Honey Hazelnut Oat Latte',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Honey Hazelnut Oat Latte',
+    client = {
+        image = 'bhoneyhazelnutoatlatte.png'
+    },
+},
+
+['bstrawberrycreamfrappuccino'] = {
+    name = 'bstrawberrycreamfrappuccino',
+    label = 'Strawberry Cream Frappuccino',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Strawberry Cream Frappuccino',
+    client = {
+        image = 'bstrawberrycreamfrappuccino.png'
+    },
+},
+
+['bicedcaffelatte'] = {
+    name = 'bicedcaffelatte',
+    label = 'Iced Caffe Latte',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Iced Caffe Latte',
+    client = {
+        image = 'bicedcaffelatte.png'
+    },
+},
+
+['bespresso'] = {
+    name = 'bespresso',
+    label = 'Espresso',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Espresso',
+    client = {
+        image = 'bespresso.png'
+    },
+},
+
+['bespressomacchiato'] = {
+    name = 'bespressomacchiato',
+    label = 'Espresso Macchiato',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Espresso Macchiato',
+    client = {
+        image = 'bespressomacchiato.png'
+    },
+},
+
+['bcaramelfrappucino'] = {
+    name = 'bcaramelfrappucino',
+    label = 'Caramel Frappucino',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Caramel Frappucino',
+    client = {
+        image = 'bcaramelfrappucino.png'
+    },
+},
+
+['bcoldbrewlatte'] = {
+    name = 'bcoldbrewlatte',
+    label = 'Cold Brew Latte',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Cold Brew Latte',
+    client = {
+        image = 'bcoldbrewlatte.png'
+    },
+},
+
+['bhotchocolatepowder'] = {
+    name = 'bhotchocolatepowder',
+    label = 'Hot Chocolate Powder',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Hot Chocolate Powder',
+    client = {
+        image = 'bhotchocolatepowder.png'
+    },
+},
+
+['bstrawberryvanillaoatlatte'] = {
+    name = 'bstrawberryvanillaoatlatte',
+    label = 'Strawberry Vanilla Oat Latte',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Strawberry Vanilla Oat Latte',
+    client = {
+        image = 'bstrawberryvanillaoatlatte.png'
+    },
+},
+
+['bespressocoffeecup'] = {
+    name = 'bespressocoffeecup',
+    label = 'Espresso Coffee Cup',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = 'Espresso Coffee Cup',
+    client = {
+        image = 'bespressocoffeecup.png'
+    },
+},
+
 	---- truck rob
 	
 	['gold'] = {

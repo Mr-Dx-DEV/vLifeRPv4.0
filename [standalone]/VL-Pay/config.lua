@@ -97,6 +97,7 @@ Config = {
 		['mechanical'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.40, },
 		['mechanicamotors'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.40, },
 		['beanmachine'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.20, },
+		['lsbeanmachine'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.20, },
 		['mirror'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.20, },
 		['rexdiner'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.20, },
 		['kawaiicafe'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.20, },
@@ -128,6 +129,9 @@ Config = {
 		},
 		["vapeshop"] = { -- Player job role restriction
 		  { coords = vector4(-498.4538269043, 282.31268310547, 83.316009521484, 90.0), prop = false, }, 
+		},
+		["beanmachine"] = { -- Player job role restriction
+		  { coords = vector4(122.12, -1036.4, 29.28, 340.0), prop = false, }, 
 		},
 	},
 
