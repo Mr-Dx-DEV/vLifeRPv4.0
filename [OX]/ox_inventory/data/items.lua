@@ -10713,8 +10713,8 @@ return {
 	["rope"] = {
 		label = "Rope",
 		weight = 10,
-		degrade = 43200,
-		decay = true,
+	--	degrade = 43200,
+	--	decay = true,
 		stack = true,
 		close = true,
 		description = "",
