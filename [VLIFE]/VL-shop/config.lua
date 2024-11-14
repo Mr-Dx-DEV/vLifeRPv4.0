@@ -44,12 +44,12 @@ Pos = {
     [25] = vector3(726.742, 4169.19, 40.709),
  ]]
     -- Pharmacy
-    [26] = vector3(-492.097, -341.377, 42.321),
+    [25] = vector3(-492.097, -341.377, 42.321),
 
 
 
 
-    [27] = vector3(-1403.176, 6750.486, 11.908),
+    [26] = vector3(-1403.176, 6750.486, 11.908),
 }
 
 Config.Locations = {
@@ -2102,7 +2102,7 @@ AC = {
         },
     },
     -- Fishing Store
-
+--[[ 
     [25] = {
         ["name"] = "Little Woods Fishing Store",
         ["category"] = "All In One",
@@ -2266,8 +2266,8 @@ AC = {
                 },
             },
         }
-    },
-    [26] = {
+    }, ]]
+    [25] = {
         ["name"] = "Pharmacy",
         ["category"] = "All In One",
         ["job"] = "",
@@ -2287,7 +2287,7 @@ AC = {
             },
         }
     },
-    [27] = {
+    [26] = {
         ["name"] = "COM SHOP",
         ["category"] = "COM SHOP",
         ["job"] = "",
