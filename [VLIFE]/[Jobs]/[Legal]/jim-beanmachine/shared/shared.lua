@@ -380,11 +380,15 @@ function HasItem(items, amount)
 				return true
             end
         else -- Single item as string
-            if itemData and itemData.name == items and (not amount or (itemData and amount and itemData.amount >= amount)) then
-				if Config.Debug then print("^5Debug^7: ^3HasItem^7: ^2Item^7: '^3"..tostring(items).."^7' ^2FOUND^7") end
+            if itemData and itemData.name == items and 
+               itemData.amount and (not amount or (amount and itemData.amount >= amount)) then
+                if Config.Debug then 
+                    print("^5Debug^7: ^3HasItem^7: ^2Item^7: '^3"..tostring(items).."^7' ^2FOUND^7") 
+                end
                 return true
             end
         end
+        
     end
 	if Config.Debug then print("^5Debug^7: ^3HasItem^7: ^2Items ^1NOT FOUND^7") end
     return false
