@@ -5,7 +5,7 @@ clib_API.DiscordWebhookURL = "https://discordapp.com/api/webhooks/12883567639590
 
 -- 🌎 Discord credentials for checking if a player is VIP (optional)
 clib_API.DiscordGuildId = "1053230196326666270"
-clib_API.DiscordBotToken = "MTI3MTkxMjU1MDU0MzM5MjgxMQ.Gu0B6K.wJMFk2YIxkh3QNVLs9Ui7F9WHkkP5HGTD-EW1c"
+clib_API.DiscordBotToken = "MTI3MTkxMjU1MDU0MzM5MjgxMQ.GryUXB.zWx9fM9cEdFOXBtSwhFCMFK0xxAgyyYeLrZNKU"
 
 -- 📣 Event that is triggered on the server when a player spawns
 RegisterNetEvent(clib_Config.getFrameworkConfig().ServerPlayerLoadEvent, function(sourceId)

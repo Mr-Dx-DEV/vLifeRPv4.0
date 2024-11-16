@@ -133,7 +133,7 @@ Config = {
 
 Config.RewardsIPL = {
     [1] = { -- IPL Tier
-        itemCount = {min = 1, max = 2}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 5}, -- Amount of items that can be obtained in this tier
         chance = 50, -- Chance of getting an item while searching in this tier
         bonusItem = "rolex", -- Item that can be obtained as a bonus
         bonusChance = 10, -- Chance of getting the bonus item
@@ -142,7 +142,7 @@ Config.RewardsIPL = {
         ExpProps = {min = 20, max = 23}, -- Only if you have a level system
         -- Safe Settings:
         -- Chance of a safe spawning is determined indivbidually for each IPL, check the IPL configs themselves
-        SafeItemCount = {min = 1, max = 2}, -- Amount of items that can be obtained from the safe loot table below
+        SafeItemCount = {min = 1, max = 5}, -- Amount of items that can be obtained from the safe loot table below
         ExpSafe = {min = 20, max = 25}, -- Only if you have a level system
 
         ["cabin"] = { -- The total chance of this section should be = 100
@@ -153,7 +153,7 @@ Config.RewardsIPL = {
 
             {Name = "condom", Chance = 10, Amount = {min = 1, max = 1}},
             {Name = "romantic_book", Chance = 10, Amount = {min = 1, max = 1}},
-            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 2}},
+            {Name = "blacktape", Chance = 15, Amount = {min = 1, max = 5}},
             {Name = "rope", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "remote", Chance = 15, Amount = {min = 1, max = 2}},
             {Name = "glassbottle", Chance = 10, Amount = {min = 1, max = 1}},
@@ -207,7 +207,7 @@ Config.RewardsIPL = {
         }
     },
     [2] = { -- IPL Tier
-        itemCount = {min = 1, max = 2}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 5}, -- Amount of items that can be obtained in this tier
         chance = 60, -- Chance of getting an item while searching in this tier
         bonusItem = "diamond", -- Item that can be obtained as a bonus
         bonusChance = 10, -- Chance of getting the bonus item
@@ -216,7 +216,7 @@ Config.RewardsIPL = {
         ExpProps = {min = 27, max = 29}, -- Only if you have a level system
         -- Safe Settings:
         -- Chance of a safe spawning is determined indivbidually for each IPL, check the IPL configs themselves
-        SafeItemCount = {min = 1, max = 2}, -- Amount of items that can be obtained from the safe loot table below
+        SafeItemCount = {min = 1, max = 5}, -- Amount of items that can be obtained from the safe loot table below
         ExpSafe = {min = 20, max = 25}, -- Only if you have a level system
 
         ["cabin"] = { -- The total chance of this section should be = 100
@@ -281,7 +281,7 @@ Config.RewardsIPL = {
         }
     },
     [3] = { -- IPL Tier
-        itemCount = {min = 1, max = 3}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 5}, -- Amount of items that can be obtained in this tier
         chance = 70, -- Chance of getting an item while searching in this tier
         bonusItem = "diamond_ring", -- Item that can be obtained as a bonus
         bonusChance = 10, -- Chance of getting the bonus item
@@ -290,7 +290,7 @@ Config.RewardsIPL = {
         ExpProps = {min = 31, max = 35}, -- Only if you have a level system
         -- Safe Settings:
         -- Chance of a safe spawning is determined indivbidually for each IPL, check the IPL configs themselves
-        SafeItemCount = {min = 1, max = 2}, -- Amount of items that can be obtained from the safe loot table below
+        SafeItemCount = {min = 1, max = 5}, -- Amount of items that can be obtained from the safe loot table below
         ExpSafe = {min = 20, max = 25}, -- Only if you have a level system
 
         ["cabin"] = { -- The total chance of this section should be = 100
@@ -357,11 +357,11 @@ Config.RewardsIPL = {
 }
 Config.RewardsShell = {
     [1] = { -- Shell Tier
-        itemCount = {min = 1, max = 1}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 5}, -- Amount of items that can be obtained in this tier
         chance = 40, -- Chance of getting an item while searching in this tier
         bonusItem = "rolex", -- Item that can be obtained as a bonus
         bonusChance = 10, -- Chance of getting the bonus item
-        bonusAmount = {min = 1, max = 1}, -- Amount of the bonus item
+        bonusAmount = {min = 1, max = 5}, -- Amount of the bonus item
         Exp = {min = 4, max = 5}, -- Only if you have a level system
 
         ["cabin"] = {  -- The total chance of this section should be = 100
@@ -421,11 +421,11 @@ Config.RewardsShell = {
         },
     },
     [2] = { -- Shell Tier
-        itemCount = {min = 1, max = 2}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 5}, -- Amount of items that can be obtained in this tier
         chance = 50, -- Chance of getting an item while searching in this tier
         bonusItem = "diamond", -- Item that can be obtained as a bonus
         bonusChance = 10, -- Chance of getting the bonus item
-        bonusAmount = {min = 1, max = 1}, -- Amount of the bonus item
+        bonusAmount = {min = 1, max = 5}, -- Amount of the bonus item
         Exp = {min = 6, max = 7}, -- Only if you have a level system
 
         ["cabin"] = {  -- The total chance of this section should be = 100
@@ -485,11 +485,11 @@ Config.RewardsShell = {
         }, 
     },
     [3] = { -- Shell Tier
-        itemCount = {min = 1, max = 3}, -- Amount of items that can be obtained in this tier
+        itemCount = {min = 1, max = 5}, -- Amount of items that can be obtained in this tier
         chance = 60, -- Chance of getting an item while searching in this tier
         bonusItem = "diamond_ring", -- Item that can be obtained as a bonus
         bonusChance = 40, -- Chance of getting the bonus item
-        bonusAmount = {min = 1, max = 1}, -- Amount of the bonus item
+        bonusAmount = {min = 1, max = 5}, -- Amount of the bonus item
         Exp = {min = 9, max = 10}, -- Only if you have a level system
 
         ["cabin"] = {  -- The total chance of this section should be = 100
