@@ -96,6 +96,16 @@
 				"Src": "./loadingscreen/images/15.png",
 				"Zone": 10,
 				"Duration": 5000
+			},
+			{
+				"Src": "./loadingscreen/images/16.png",
+				"Zone": 10,
+				"Duration": 5000
+			},
+			{
+				"Src": "./loadingscreen/images/17.png",
+				"Zone": 10,
+				"Duration": 5000
 			}
 		]
 	},
