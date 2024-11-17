@@ -121,7 +121,7 @@ Config.DealershipLocations = {
     blip = {
       id = 326,
       color = 2,
-      scale = 0.6
+      scale = 0.5
     },
     enableSellVehicle = false, -- Allow players to sell vehicles back to dealer
     sellVehiclePercent = 0.6,  -- 60% of current sale price

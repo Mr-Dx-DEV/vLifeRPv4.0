@@ -63,12 +63,12 @@ Config.RequireItemFromWholeTeam = true              -- If it's false, then only 
 Config.RequireFullJob = false                       -- Set it to true, if you want players first to have 100% of progress, otherwise they'll not be able to end job.
 Config.RequireWorkClothes = false                   -- Set it to true, to change players clothes everytime when they're starting job.
 
-Config.RestrictBlipToRequiredJob = false            -- Set to true, to hide job blip for players, who dont have RequiredJob. If requried job is "none", then this option will not have any effect.
+Config.RestrictBlipToRequiredJob = TRUE            -- Set to true, to hide job blip for players, who dont have RequiredJob. If requried job is "none", then this option will not have any effect.
 Config.Blips = { -- Here you can configure Company blip.
     [1] = {
         Sprite = 318,
         Color = 52,
-        Scale = 0.8,
+        Scale = 0.5,
         Pos = vector3(-321.56, -1545.74, 30.01),
         Label = 'Garbage Job'
     },

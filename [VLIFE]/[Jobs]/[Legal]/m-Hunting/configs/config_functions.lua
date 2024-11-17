@@ -26,7 +26,7 @@ function CallCops()
             unique_id = tostring(math.random(0000000,9999999)),
             blip = {
                 sprite = 156,
-                scale = 1.2,
+                scale = 0.5,
                 colour = 1,
                 flashes = false,
                 text = '911 - Illegal Hunting',

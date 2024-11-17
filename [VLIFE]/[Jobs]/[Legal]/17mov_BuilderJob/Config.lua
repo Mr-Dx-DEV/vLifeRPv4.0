@@ -47,12 +47,12 @@ Config.RequireWorkClothes = false                   -- Set it to true, to change
 Config.RequiredItem = "none"                        -- Set it to anything you want, to require players to have some item in their inventory before they start the job
 Config.RequireItemFromWholeTeam = true              -- If it's false, then only host needs to have the required item, otherwise all team needs it.
 
-Config.RestrictBlipToRequiredJob = false            -- Set to true, to hide job blip for players, who dont have RequiredJob. If requried job is "none", then this option will not have any effect.
+Config.RestrictBlipToRequiredJob = TRUE            -- Set to true, to hide job blip for players, who dont have RequiredJob. If requried job is "none", then this option will not have any effect.
 Config.Blips = { -- Here you can configure Company blip.
     [1] = {
         Sprite = 801,
         Color = 69,
-        Scale = 0.8,
+        Scale = 0.5,
         Pos = vector3(926.47, -1560.25, 30.74),
         Label = 'Builder Job'
     },

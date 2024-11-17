@@ -13,7 +13,7 @@ Config.TournamentMinigame = false
 
 Config.BlipTournament = { -- Blip settins when tournamed has created
     Sprite = 104,
-    Scale = 0.8,
+    Scale = 0.5,
     Colour = 3,
     Name = "Fishing Tournament:",
 }

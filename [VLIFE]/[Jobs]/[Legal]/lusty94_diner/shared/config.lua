@@ -28,7 +28,7 @@ Config.UseJimConsumables = true
 
 --Blip Settings
 Config.Blips = {
-    {title = 'Pops Diner', colour = 24, id = 267, coords = vector3(1594.82, 6448.11, 25.32), scale = 0.7, useblip = true},
+    {title = 'Pops Diner', colour = 24, id = 267, coords = vector3(1594.82, 6448.11, 25.32), scale = 0.6, useblip = true},
 }
 
 

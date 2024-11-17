@@ -21,7 +21,7 @@ Config.SeashellRewards = {
 }
 
 -- Selling Seashells
-Config.SeashellsBlip = { enable = true, sprite = 108, colour = 3, scale = 0.8, name = "Sell Seashell" }
+Config.SeashellsBlip = { enable = true, sprite = 108, colour = 3, scale = 0.5, name = "Sell Seashell" }
 Config.SeashellsPed = vector3(-1665.74, -979.0, 8.16) -- Location of the ped fishing shop
 Config.SeashellsPedHeading = 50.39 -- Heading of the ped
 Config.SeashellsPedModel = "a_m_m_hillbilly_01" -- Ped model https://docs.fivem.net/docs/game-references/ped-models/

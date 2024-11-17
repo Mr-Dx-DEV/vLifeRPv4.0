@@ -19,7 +19,7 @@ function RefreshBlips()
 
             v.blipEntityID = createBlip(blipName, v.blipSprite, v.blipPosition, {
                 type = 4,
-                scale = v.blipScale or 1.0,
+                scale = v.blipScale or 0.5,
                 color = colorBlip,
                 shortRange = true,
             })

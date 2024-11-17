@@ -3,7 +3,7 @@ Config.tankModel = `p_s_scuba_tank_s` -- Tank model
 Config.OxygenMaxLevel = 200 -- Max capacity of the tank
 
 -- Sell Corals
-Config.SellCoralsBlip = { enable = true, sprite = 120, colour = 3, scale = 0.8, name = "Sell Corals" }
+Config.SellCoralsBlip = { enable = true, sprite = 120, colour = 3, scale = 0.5, name = "Sell Corals" }
 Config.SellCoralsPed = vector3(3311.14, 5176.33, 19.61) -- Location of the ped fishing shop
 Config.SellCoralsPedHeading = 235.46 -- Heading of the ped
 Config.SellCoralsPedModel = "a_m_y_runner_01" -- Ped model https://docs.fivem.net/docs/game-references/ped-models/

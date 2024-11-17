@@ -73,7 +73,7 @@ Config.Clothes = {
     },
 }
 
-Config.RestrictBlipToRequiredJob = false            -- Set to true, to hide job blip for players, who dont have RequiredJob. If requried job is "none", then this option will not have any effect.
+Config.RestrictBlipToRequiredJob = true            -- Set to true, to hide job blip for players, who dont have RequiredJob. If requried job is "none", then this option will not have any effect.
 
 Config.MarkerSettings = {   -- used only when Config.UseTarget = false. Colors of the marker. Active = when player stands inside the marker.
     Active = {
@@ -94,7 +94,7 @@ Config.Blips = { -- Here you can configure Company blip.
     [1] = {
         Sprite = 356,
         Color = 26,
-        Scale = 0.8,
+        Scale = 0.5,
         Pos = vector3(1395.79, -3278.07, 6.23),
         Label = 'Oil Rig Job'
     },
