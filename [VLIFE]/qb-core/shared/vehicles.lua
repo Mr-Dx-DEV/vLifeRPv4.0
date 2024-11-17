@@ -828,7 +828,7 @@ local Vehicles = {
     { model = 'bbdawn', name = 'bbdawn', brand = 'bbdawn', price = 50000, category = 'EDM', shop = 'edm'},
     { model = 'mbsprinter', name = 'mbsprinter', brand = 'mbsprinter', price = 50000, category = 'EDM', shop = 'edm'},
     { model = 'pranger', name = 'pranger', brand = 'pranger', price = 50000, category = 'EDM', shop = 'edm'},
-    { model = 'rr12', name = 'rr12', brand = 'rr12', price = 50000, category = 'EDM', shop = 'edm'},
+    { model = 'rrst', name = 'rrst', brand = 'rrst', price = 50000, category = 'EDM', shop = 'edm'},
 
     { model = 'ellie6str', name = 'Ellie 6STR', brand = '6STR', price = 2225000, category = 'EDM', shop = 'tuner'},
     { model = 'ladybird6str', name = 'Ladybird 6STR', brand = '6STR', price = 50000, category = 'EDM', shop = 'tuner'},
