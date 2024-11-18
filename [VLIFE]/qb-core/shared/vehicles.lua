@@ -824,6 +824,13 @@ local Vehicles = {
     { model = 'abfesc', name = 'abfesc', brand = 'abfesc', price = 50000, category = 'EDM', shop = 'edm'},
     { model = 'hussar', name = 'hussar', brand = 'hussar', price = 50000, category = 'EDM', shop = 'edm'},
 
+    { model = '720gtr', name = '720gtr', brand = '720gtr', price = 50000, category = 'EDM', shop = 'edm'},
+    { model = 'ikx3_inve23', name = 'ikx3_inve23', brand = 'ikx3_inve23', price = 50000, category = 'EDM', shop = 'edm'},
+    { model = 'rmodg65', name = 'rmodg65', brand = 'rmodg65', price = 50000, category = 'EDM', shop = 'edm'},
+
+    { model = 'Hycade', name = 'Hycade', brand = 'Hycade', price = 50000, category = 'EDM', shop = 'edm'},
+    { model = 'navigator', name = 'navigator', brand = 'navigator', price = 50000, category = 'EDM', shop = 'edm'},
+
     { model = '33hellcat', name = '33hellcat', brand = '33hellcat', price = 50000, category = 'EDM', shop = 'edm'},
     { model = 'bbdawn', name = 'bbdawn', brand = 'bbdawn', price = 50000, category = 'EDM', shop = 'edm'},
     { model = 'mbsprinter', name = 'mbsprinter', brand = 'mbsprinter', price = 50000, category = 'EDM', shop = 'edm'},
