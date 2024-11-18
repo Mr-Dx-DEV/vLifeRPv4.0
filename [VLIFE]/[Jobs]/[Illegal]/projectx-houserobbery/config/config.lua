@@ -285,7 +285,7 @@ Config.RewardsIPL = {
     [3] = { -- IPL Tier
         itemCount = {min = 1, max = 8}, -- Amount of items that can be obtained in this tier
         chance = 70, -- Chance of getting an item while searching in this tier
-        bonusItem = "diamond_ring", -- Item that can be obtained as a bonus
+        bonusItem = "screwdriverset", -- Item that can be obtained as a bonus
         bonusChance = 45, -- Chance of getting the bonus item
         bonusAmount = {min = 1, max = 1}, -- Amount of the bonus item
         Exp = {min = 26, max = 30}, -- Only if you have a level system
