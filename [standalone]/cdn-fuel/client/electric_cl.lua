@@ -81,7 +81,7 @@ if Config.ElectricVehicleCharging then
         local money = nil
         if purchasetype == "bank" then money = QBCore.Functions.GetPlayerData().money['bank'] elseif purchasetype == 'cash' then money = QBCore.Functions.GetPlayerData().money['cash'] end
         FuelPrice = (1 * Config.ElectricChargingPrice)
-        local vehicle = GetClosestVehicle()
+        local vehicle = QBCore.Functions.GetClosestVehicle()
 
         -- Police Discount Math --
         if Config.EmergencyServicesDiscount['enabled'] == true and (Config.EmergencyServicesDiscount['emergency_vehicles_only'] == false or (Config.EmergencyServicesDiscount['emergency_vehicles_only'] == true and GetVehicleClass(vehicle) == 18)) then
@@ -176,7 +176,7 @@ if Config.ElectricVehicleCharging then
                 end
             end
         else
-            Electricity = exports['qb-input']:ShowInput({
+            Electricity = exports['RcFW-input']:ShowInput({
                 header = "Select the Amount of Fuel<br>Current Price: $" ..
                 FuelPrice .. " / KWh <br> Current Charge: " .. finalfuel .. " KWh <br> Full Charge Cost: $" ..
                 wholetankcostwithtax .. "",
@@ -205,9 +205,8 @@ if Config.ElectricVehicleCharging then
     end)
 
     RegisterNetEvent('cdn-fuel:client:electric:SendMenuToServer', function()
-        local vehicle = GetClosestVehicle()
-        local vehModel = GetEntityModel(vehicle)
-        local vehiclename = string.lower(GetDisplayNameFromVehicleModel(vehModel))
+        local vehicle = QBCore.Functions.GetClosestVehicle()
+        local vehiclename = GetEntityModel(vehicle)
         AwaitingElectricCheck = true
         FoundElectricVehicle = false
         :: ChargingMenu :: -- Register the starting point for the goto
@@ -251,7 +250,7 @@ if Config.ElectricVehicleCharging then
                     })
                     lib.showContext('electricmenu')
                 else
-                    exports['qb-menu']:openMenu({
+                    exports['RcFW-menu']:openMenu({
                         {
                             header = Config.GasStations[FetchCurrentLocation()].label,
                             isMenuHeader = true,
@@ -280,7 +279,7 @@ if Config.ElectricVehicleCharging then
                             txt = Lang:t("menu_electric_cancel"),
                             icon = "fas fa-times-circle",
                             params = {
-                                event = "qb-menu:closeMenu",
+                                event = "RcFW-menu:closeMenu",
                             }
                         },
                     })
@@ -291,42 +290,28 @@ if Config.ElectricVehicleCharging then
         else
             if Config.FuelDebug then print("Checking") end
             if AwaitingElectricCheck then
-                if Config.ElectricVehicles[vehiclename] and Config.ElectricVehicles[vehiclename].isElectric then
-                    AwaitingElectricCheck = false
-                    FoundElectricVehicle = true
-                    if Config.FuelDebug then print("^2"..current.. "^5 has been found. It ^2matches ^5the Player's Vehicle: ^2"..vehiclename..". ^5This means charging will be allowed.") end
-                    Wait(50)
-                    goto ChargingMenu -- Attempt to go to the charging menu, now that we have found that there was an electric vehicle.
-                else
-                    FoundElectricVehicle = false
-                    AwaitingElectricCheck = false
-                    Wait(50)
-                    if Config.FuelDebug then print("^2An electric vehicle^5 has NOT been found. ^5This means charging will not be allowed.") end
-                    goto ChargingMenu -- Attempt to go to the charging menu, now that we have not found that there was an electric vehicle.
+                for i = 1, #Config.ElectricVehicles do
+                    if AwaitingElectricCheck then
+                        if Config.FuelDebug then print(i) end
+                        local current = joaat(Config.ElectricVehicles[i])
+                        if Config.FuelDebug then print("^5Current Search: ^2"..current.." ^5Player's Vehicle: ^2"..vehiclename) end
+                        if current == vehiclename then
+                            AwaitingElectricCheck = false
+                            FoundElectricVehicle = true
+                            if Config.FuelDebug then print("^2"..current.. "^5 has been found. It ^2matches ^5the Player's Vehicle: ^2"..vehiclename..". ^5This means charging will be allowed.") end
+                            Wait(50)
+                            goto ChargingMenu -- Attempt to go to the charging menu, now that we have found that there was an electric vehicle.
+                        elseif i == #Config.ElectricVehicles then
+                            FoundElectricVehicle = false
+                            AwaitingElectricCheck = false
+                            Wait(50)
+                            if Config.FuelDebug then print("^2An electric vehicle^5 has NOT been found. ^5This means charging will not be allowed.") end
+                            goto ChargingMenu -- Attempt to go to the charging menu, now that we have not found that there was an electric vehicle.
+                        end
+                    else
+                        if Config.FuelDebug then print('Search ended..') end
+                    end
                 end
-
-                -- for i = 1, #Config.ElectricVehicles do
-                --     if AwaitingElectricCheck then
-                --         if Config.FuelDebug then print(i) end
-                --         local current = joaat(Config.ElectricVehicles[i])
-                --         if Config.FuelDebug then print("^5Current Search: ^2"..current.." ^5Player's Vehicle: ^2"..vehiclename) end
-                --         if current == vehiclename then
-                --             AwaitingElectricCheck = false
-                --             FoundElectricVehicle = true
-                --             if Config.FuelDebug then print("^2"..current.. "^5 has been found. It ^2matches ^5the Player's Vehicle: ^2"..vehiclename..". ^5This means charging will be allowed.") end
-                --             Wait(50)
-                --             goto ChargingMenu -- Attempt to go to the charging menu, now that we have found that there was an electric vehicle.
-                --         elseif i == #Config.ElectricVehicles then
-                --             FoundElectricVehicle = false
-                --             AwaitingElectricCheck = false
-                --             Wait(50)
-                --             if Config.FuelDebug then print("^2An electric vehicle^5 has NOT been found. ^5This means charging will not be allowed.") end
-                --             goto ChargingMenu -- Attempt to go to the charging menu, now that we have not found that there was an electric vehicle.
-                --         end
-                --     else
-                --         if Config.FuelDebug then print('Search ended..') end
-                --     end
-                -- end
             else
                 QBCore.Functions.Notify(Lang:t("electric_vehicle_not_electric"), 'error', 7500)
             end
@@ -355,7 +340,7 @@ if Config.ElectricVehicleCharging then
         if amount < 1 then return end
         if amount < 10 then fuelamount = string.sub(amount, 1, 1) else fuelamount = string.sub(amount, 1, 2) end
         local FuelPrice = (Config.ElectricChargingPrice * 1)
-        local vehicle = GetClosestVehicle()
+        local vehicle = QBCore.Functions.GetClosestVehicle()
 
         -- Police Discount Math --
         if Config.EmergencyServicesDiscount['enabled'] == true and (Config.EmergencyServicesDiscount['emergency_vehicles_only'] == false or (Config.EmergencyServicesDiscount['emergency_vehicles_only'] == true and GetVehicleClass(vehicle) == 18)) then
@@ -409,7 +394,7 @@ if Config.ElectricVehicleCharging then
         end
 
         local refillCost = (fuelamount * FuelPrice) + GlobalTax(fuelamount*FuelPrice)
-        local vehicle = GetClosestVehicle()
+        local vehicle = QBCore.Functions.GetClosestVehicle()
         local ped = PlayerPedId()
         local time = amount * Config.RefuelTime
         if amount < 10 then time = 10 * Config.RefuelTime end
@@ -476,6 +461,17 @@ if Config.ElectricVehicleCharging then
                         if purchasetype == "cash" then
                             TriggerServerEvent('cdn-fuel:server:PayForFuel', refillCost, purchasetype, FuelPrice, true)
                         elseif purchasetype == "bank" then
+                            if Config.NPWD then
+                                exports["npwd"]:createNotification({ -- You can change this export to your own notification
+                                    notisId = "npwd:electricityPaidFor",
+                                    appId = "BANK",
+                                    content = "You have paid $"..refillCost.." for electric at $"..FuelPrice.." per KWh + tax",
+                                    secondaryTitle = "New Transaction",
+                                    keepOpen = false,
+                                    duration = 15000,
+                                    path = "/BANK",
+                                })
+                            end
                             TriggerServerEvent('cdn-fuel:server:PayForFuel', refillCost, purchasetype, FuelPrice, true)
                         end
                         local curfuel = GetFuel(vehicle)
@@ -565,7 +561,7 @@ if Config.ElectricVehicleCharging then
             nozzlePos = GetOffsetFromEntityInWorldCoords(ElectricNozzle, -0.005, 0.185, -0.05)
             AttachEntitiesToRope(Rope, pump, ElectricNozzle, pumpCoords.x, pumpCoords.y, pumpCoords.z + 1.76, nozzlePos.x, nozzlePos.y, nozzlePos.z, 5.0, false, false, nil, nil)
         end
-        CreateThread(function()
+        Citizen.CreateThread(function()
             while HoldingElectricNozzle do
                 local currentcoords = GetEntityCoords(ped)
                 local dist = #(grabbedelectricnozzlecoords - currentcoords)
@@ -683,22 +679,21 @@ if Config.ElectricVehicleCharging then
         end)
     end
 
-    -- Threads
+    -- Threads 
+
     if Config.ElectricChargerModel then
         CreateThread(function()
-            RequestModel('electric_charger')
-            while not HasModelLoaded('electric_charger') do
-                Wait(50)
-            end
-
-            if Config.FuelDebug then
-                print("Electric Charger Model Loaded!")
-            end
-
             for i = 1, #Config.GasStations do
                 if Config.GasStations[i].electricchargercoords ~= nil then
                     if Config.FuelDebug then print(i) end
                     local heading = Config.GasStations[i].electricchargercoords[4] - 180
+                    RequestModel('electric_charger')
+                    while not HasModelLoaded('electric_charger') do
+                        Wait(50)
+                        if Config.FuelDebug then
+                            print("Loading Electric Charger Model.")
+                        end
+                    end
                     Config.GasStations[i].electriccharger = CreateObject('electric_charger', Config.GasStations[i].electricchargercoords.x, Config.GasStations[i].electricchargercoords.y, Config.GasStations[i].electricchargercoords.z, false, true, true)
                     if Config.FuelDebug then print("Created Electric Charger @ Location #"..i) end
                     SetEntityHeading(Config.GasStations[i].electriccharger, heading)
@@ -731,7 +726,7 @@ if Config.ElectricVehicleCharging then
     if Config.TargetResource == 'ox_target' then
         TargetResource = 'qb-target'
     end
-
+    
     exports[TargetResource]:AddTargetModel('electric_charger', {
         options = {
             {
@@ -762,3 +757,17 @@ if Config.ElectricVehicleCharging then
         distance = 2.0
     })
 end
+
+
+CreateThread(function()
+    while true do
+        Wait(0)
+        -- Disable vehicle turning on when pressing W while the car is off.
+        local veh = GetVehiclePedIsIn(PlayerPedId(), false)
+        if IsPedInVehicle(PlayerPedId(), veh, false) and (GetIsVehicleEngineRunning(veh) == false) then
+            DisableControlAction(0, 71, true)
+        elseif IsPedInVehicle(PlayerPedId(), veh, false) and (GetIsVehicleEngineRunning(veh) == true) then
+            EnableControlAction(0, 71, true)
+        end
+    end
+end)
