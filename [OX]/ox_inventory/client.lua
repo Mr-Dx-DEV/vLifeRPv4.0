@@ -194,34 +194,32 @@ function client.openInventory(inv, data)
             return lib.notify({ id = 'cannot_perform', type = 'error', description = locale('cannot_perform') })
         end
 
-        left, right, accessError = lib.callback.await('ox_inventory:openCraftingBench', 200, data.id, data.index)
-
-        if left then
-            right = CraftingBenches[data.id]
-
-            if not right?.items then return end
-
-            local coords, distance
-
-            if not right.zones and not right.points then
-                coords = GetEntityCoords(cache.ped)
-                distance = 2
-            else
-                coords = shared.target and right.zones and right.zones[data.index].coords or right.points and right.points[data.index]
-                distance = coords and shared.target and right.zones[data.index].distance or 2
-            end
-
-            right = {
-                type = 'crafting',
-                id = data.id,
-                label = right.label or locale('crafting_bench'),
-                index = data.index,
-                slots = right.slots,
-                items = right.items,
-                coords = coords,
-                distance = distance
-            }
-        end
+		left, right = lib.callback.await('ox_inventory:openCraftingBench', 200, data.id, data.index)
+ 
+		if left and right then
+			if not right?.items then return end
+		 
+			local coords, distance
+		 
+			if not right.zones and not right.points then
+				coords = GetEntityCoords(cache.ped)
+				distance = 2
+			else
+				coords = shared.target == 'ox_target' and right.zones and right.zones[data.index].coords or right.points and right.points[data.index]
+				distance = coords and shared.target == 'ox_target' and right.zones[data.index].distance or 2
+			end
+		 
+			right = {
+				type = 'crafting',
+				id = data.id,
+				label = right.label or locale('crafting_bench'),
+				index = data.index,
+				slots = right.slots,
+				items = right.items,
+				coords = coords,
+				distance = distance
+			}
+		end
     elseif invOpen ~= nil then
         if inv == 'policeevidence' then
             if not data then
@@ -1738,9 +1736,7 @@ RegisterNUICallback('exit', function(_, cb)
 	cb(1)
 end)
 
-lib.callback.register('ox_inventory:startCrafting', function(id, recipe)
-	recipe = CraftingBenches[id].items[recipe]
-
+lib.callback.register('ox_inventory:startCrafting', function(recipe)
 	return lib.progressCircle({
 		label = locale('crafting_item', recipe.metadata?.label or Items[recipe.name].label),
 		duration = recipe.duration or 3000,
@@ -1750,9 +1746,10 @@ lib.callback.register('ox_inventory:startCrafting', function(id, recipe)
 			combat = true,
 		},
 		anim = {
-			dict = 'anim@amb@clubhouse@tutorial@bkr_tut_ig3@',
-			clip = 'machinic_loop_mechandplayer',
-		}
+			dict = recipe.anim?.dict or 'anim@amb@clubhouse@tutorial@bkr_tut_ig3@',
+			clip = recipe.anim?.clip or 'machinic_loop_mechandplayer',
+		},
+		prop = recipe.prop or {}
 	})
 end)
 

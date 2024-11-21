@@ -21,7 +21,7 @@ Config.textuiPos = 'right-center' -- ox_lib textui position
 
 Config.maxPreparesPerTime = 100 -- The max prepares players can do at a time
 
-Config.useOxInventoryCraft = false -- If true it'll use the ox_inventory crafting system if false will use ox_lib context (only for ox_inventory otherwise will always use the context)
+Config.useOxInventoryCraft = true -- If true it'll use the ox_inventory crafting system if false will use ox_lib context (only for ox_inventory otherwise will always use the context)
 
 Config.toggleDutyZones = true -- If true the players duty will change on entering the restaurant zone
 

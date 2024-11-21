@@ -6,7 +6,7 @@ Config.shops = {
     {
         label = 'Ingredients Shop', -- The name that will be displayed on the shop
         enabled = true, -- If false it'll disable the shop
-        blip = { enabled = true, sprite = 52, color = 2, scale = 0.5, display = 4 }, -- Shop blip map
+        blip = { enabled = true, sprite = 52, color = 2, scale = 0.6, display = 4 }, -- Shop blip map
         ped = { coords = vec4(462.110107, -693.728210, 26.447880, 80.796547), model = 'mp_m_shopkeep_01', scenario = 'WORLD_HUMAN_CLIPBOARD' }, -- Shop ped options
         items = { -- Shop items
             { name = 'meat', price = 50, count = 100 },

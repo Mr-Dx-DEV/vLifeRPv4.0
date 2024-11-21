@@ -1067,6 +1067,72 @@ QBShared.Jobs = {
 			['3'] = { name = 'Manager', isboss = true,  payment = 125 },
 		},
 	},
+    bwsaloon = {
+		label = 'Black Wood Saloon',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Waiter', payment = 50 },
+			['1'] = { name = 'Cashier', payment = 75 },
+			['2'] = { name = 'Chef', payment = 100 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 125 },
+		},
+	},
+    gsupnatom = {
+		label = 'Up-N-Atom',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Waiter', payment = 50 },
+			['1'] = { name = 'Cashier', payment = 75 },
+			['2'] = { name = 'Chef', payment = 100 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 125 },
+		},
+	},
+    mpburgershot = {
+		label = 'Burgershot',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Waiter', payment = 50 },
+			['1'] = { name = 'Cashier', payment = 75 },
+			['2'] = { name = 'Chef', payment = 100 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 125 },
+		},
+	},
+    rfclucking = {
+		label = 'Clucking Bell',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Waiter', payment = 50 },
+			['1'] = { name = 'Cashier', payment = 75 },
+			['2'] = { name = 'Chef', payment = 100 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 125 },
+		},
+	},
+    ssburgershot = {
+		label = 'Burgershot',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Waiter', payment = 50 },
+			['1'] = { name = 'Cashier', payment = 75 },
+			['2'] = { name = 'Chef', payment = 100 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 125 },
+		},
+	},
+    vpburgershot = {
+		label = 'Burgershot',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Waiter', payment = 50 },
+			['1'] = { name = 'Cashier', payment = 75 },
+			['2'] = { name = 'Chef', payment = 100 },
+			['3'] = { name = 'Manager', isboss = true,  payment = 125 },
+		},
+	},    
 	pearls = {
 		label = 'Sea Pearls',
 		defaultDuty = true,
