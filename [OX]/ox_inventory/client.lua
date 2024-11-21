@@ -194,9 +194,9 @@ function client.openInventory(inv, data)
             return lib.notify({ id = 'cannot_perform', type = 'error', description = locale('cannot_perform') })
         end
 
-		left, right = lib.callback.await('ox_inventory:openCraftingBench', 200, data.id, data.index)
- 
-		if left and right then
+        left, right = lib.callback.await('ox_inventory:openCraftingBench', 200, data.id, data.index)
+
+        if left and right then
 			if not right?.items then return end
 		 
 			local coords, distance
@@ -1394,8 +1394,11 @@ RegisterNetEvent('ox_inventory:setPlayerInventory', function(currentDrops, inven
 			local weaponType = GetWeapontypeGroup(weaponHash)
 
 			if weaponType ~= 0 and weaponType ~= `GROUP_UNARMED` then
-				Weapon.Disarm(currentWeapon, true)
+				if not exports["pug-battleroyale"]:IsInBattleRoyale() and not exports["pug-paintball"]:IsInPaintball() then
+					Weapon.Disarm(currentWeapon, true)
+				end
 			end
+			
 		end
 	end, 200)
 
@@ -1433,13 +1436,18 @@ RegisterNetEvent('ox_inventory:setPlayerInventory', function(currentDrops, inven
 			end
 
 			if usingItem or invOpen or IsPedCuffed(playerPed) then
-				DisablePlayerFiring(playerId, true)
+				if not exports["pug-paintball"]:IsInPaintball() then
+					DisablePlayerFiring(playerId, true)
+				end
 			end
-
-			if not EnableWeaponWheel then
-				HudWeaponWheelIgnoreSelection()
-				DisableControlAction(0, 37, true)
+			
+			if not exports["pug-battleroyale"]:IsInBattleRoyale() then
+				if not EnableWeaponWheel then
+					HudWeaponWheelIgnoreSelection()
+					DisableControlAction(0, 37, true)
+				end
 			end
+			
 
 			if currentWeapon and currentWeapon.timer then
 				DisableControlAction(0, 80, true)
