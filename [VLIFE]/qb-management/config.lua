@@ -32,7 +32,7 @@ Config.BossMenus = {
         vector3(1073.45, 2717.52, 38.79),
     },
     beanmachine = {
-        vector3(127.556, -1032.909, 29.278),
+        vector3(00.00, 00.00, 00.00),
     },
 }
 
