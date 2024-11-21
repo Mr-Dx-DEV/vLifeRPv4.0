@@ -1,37 +1,200 @@
-# Renewed Weathersync
+# qb-weathersync
+Synced weather and time for QB-Core Framework :sunrise:
 
-## Description
-Renewed Weathersync is made so you do not need to worry about syncing time and weather inside your server!
+# License
+
+    QBCore Framework
+    Copyright (C) 2021 Joshua Eger
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>
+
+
+## Dependencies
+- [qb-core](https://github.com/qbcore-framework/qb-core)
 
 ## Features
-- Custom weather sequences
-- pre-render the entire weather queue
-- admin can change the weather sequence while in game
-- customizeable time scale, you can choose if u want short/long days!
-- customizeable time scale depending on time, preconfigured to make night time longer than day time
-- HUGE performance boost compared to other weather sync resources, such as qb-weathersync
-- drag and drop compatability with qb-weathersync
-- a lot of other features, feel free to test it out!
+- Syncs the weather for all players
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/Renewed-Scripts/qb-weathersync.git`
-2. Copy the `qb-weathersync` folder into your server directory.
-3. Add `start qb-weathersync` to your `server.cfg` file.
-
-## Removing compatability files
-Currently we have compatability files for qb and cd easy time, qb is automatically detected but if you have never used cd_easytime before simply remove dependencies by doing the following:
-1. Headover to your server.cfg
-2. Copy and paste `setr weather_disablecd true` into your server.cfg
-3. and that's it you now disabled cd_easytime compatability!
+### Manual
+- Download the script and put it in the `[qb]` directory.
+- Add the following code to your server.cfg/resouces.cfg
+```
+ensure qb-core
+ensure qb-weathersync
+```
 
 ## Configuration
-You can configure the resource by modifying the `weather.lua` & `time.lua` files.
+You can adjust available weather and defaults in `config.lua`
+to adjust weather patterns you need to modify nextWeatherStage() in `server/server.lua`
 
-## Usage
-Once the resource is installed and configured, it will automatically sync the weather and time, the entire weather synchronization is handled upon resource start.
 
-## Contributing
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
-## Credits
-- I took a lot of inspiration from https://github.com/JnKTechstuff/ParadoxWorldSync so a big thanks to them for their work on that resource.
+## Commands
+
+`/freezetime` - Toggle time progression
+
+`/freezeweather` - Toggle dynamic weather
+
+`/weather [type]` - Set weather
+
+`/blackout` - Toggle blackout
+
+`/morning` - Set time to 9am
+
+`/noon` - Set time to 12pm
+
+`/evening` - Set time to 6pm
+
+`/night` - Set time to 11pm
+
+`/time [hour] (minute)` - Set time to whatever you want
+
+## Exports
+
+### nextWeatherStage
+Triggers event to switch weather to next stage
+```lua
+-- LUA EXAMPLE
+local success = exports["qb-weathersync"]:nextWeatherStage();
+```
+```js
+// JAVASCRIPT EXAMPLE
+const success = global.exports["qb-weathersync"].nextWeatherStage();
+```
+
+
+### setWeather [type]
+Switch to a specified weather type from Config.AvailableWeatherTypes
+```lua
+-- LUA EXAMPLE
+local success = exports["qb-weathersync"]:setWeather("snow");
+```
+```js
+// JAVASCRIPT EXAMPLE
+const success = global.exports["qb-weathersync"].setWeather("snow");
+```
+
+
+### setTime [hour] (minute)
+Sets sun position based on time to specified
+```lua
+-- LUA EXAMPLE
+local success = exports["qb-weathersync"]:setTime(8, 10); -- 8:10 AM
+```
+```js
+// JAVASCRIPT EXAMPLE
+const success = global.exports["qb-weathersync"].setTime(15, 30); // 3:30PM
+```
+
+
+### setBlackout (true|false)
+Sets or toggles blackout state and returns the state
+```lua
+-- LUA EXAMPLE
+local newStatus = exports["qb-weathersync"]:setBlackout(); -- Toggle
+```
+```js
+// JAVASCRIPT EXAMPLE
+const newStatus = global.exports["qb-weathersync"].setBlackout(true); // Enable
+```
+
+
+### setTimeFreeze (true|false)
+Sets or toggles time freeze state and returns the state
+```lua
+-- LUA EXAMPLE
+local newStatus = exports["qb-weathersync"]:setTimeFreeze(); -- Toggle
+```
+```js
+// JAVASCRIPT EXAMPLE
+const newStatus = global.exports["qb-weathersync"].setTimeFreeze(true); // Enable
+```
+
+
+### setDynamicWeather (true|false)
+Sets or toggles dynamic weather state and returns the state
+```lua
+-- LUA EXAMPLE
+local newStatus = exports["qb-weathersync"]:setDynamicWeather(); -- Toggle
+```
+```js
+// JAVASCRIPT EXAMPLE
+const newStatus = global.exports["qb-weathersync"].setDynamicWeather(true); // Enable
+```
+
+
+### getBlackoutState
+Returns if blackout is enabled or disabled
+```lua
+-- LUA EXAMPLE
+local state = exports["qb-weathersync"]:getBlackoutState();
+```
+```js
+// JAVASCRIPT EXAMPLE
+const state = global.exports["qb-weathersync"].getBlackoutState();
+```
+
+
+### getTimeFreezeState
+Returns if time progression is enabled or disabled
+```lua
+-- LUA EXAMPLE
+local state = exports["qb-weathersync"]:getTimeFreezeState();
+```
+```js
+// JAVASCRIPT EXAMPLE
+const state = global.exports["qb-weathersync"].getTimeFreezeState();
+```
+
+
+### getWeatherState
+Returns the current weather type
+```lua
+-- LUA EXAMPLE
+local currentWeather = exports["qb-weathersync"]:getWeatherState();
+```
+```js
+// JAVASCRIPT EXAMPLE
+const currentWeather = global.exports["qb-weathersync"].getWeatherState();
+```
+
+
+### getDynamicWeather
+Returns if time progression is enabled or disabled
+```lua
+-- LUA EXAMPLE
+local state = exports["qb-weathersync"]:getDynamicWeather();
+```
+```js
+// JAVASCRIPT EXAMPLE
+const state = global.exports["qb-weathersync"].getDynamicWeather();
+```
+
+
+## Events
+
+
+`qb-weathersync:server:RequestStateSync` - Sync time and weather for everyone
+
+`qb-weathersync:server:setWeather` [type] - Set Weather type (List in Config)
+
+`qb-weathersync:server:setTime` [hour] (minute) - Set simulated time
+
+`qb-weathersync:server:toggleBlackout` (true|false) - Enable, disable or toggle blackout
+
+`qb-weathersync:server:toggleFreezeTime` (true|false) (minute) - Enable, disable or toggle time progression
+
+`qb-weathersync:server:toggleDynamicWeather` (true|false) - Enable, disable or toggle dynamic weather
+
