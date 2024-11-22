@@ -16,7 +16,7 @@ Config.itemsDatabaseColumn = 'identifier' -- stash, identifier, ...
 
 Config.imagesDirectory = 'nui://ox_inventory/web/images/%s.png'
 
-Config.progressbarPos = 'middle' -- ox_lib progress bar position
+Config.progressbarPos = 'bottom' -- ox_lib progress bar position
 Config.textuiPos = 'right-center' -- ox_lib textui position
 
 Config.maxPreparesPerTime = 100 -- The max prepares players can do at a time
