@@ -14,7 +14,7 @@ Config.MaxWager = 25000 -- maximum bet players can make
 Config.IconBlip = { -- The blip settings for if Config.UseVrHeadSet is false
     Icon = 94,
     Color = 83,
-    Size = 0.7,
+    Size = 0.5,
 }
 ----------
 Config.VrHeadSetPropMale = 176 -- whatever number the vr headset is for you in your clothing menu hat section (MALE) [clothing hat prop can be found here: https://www.gta5-mods.com/player/oculus-rift-cv1-eup]
@@ -23,31 +23,31 @@ Config.VrHeadSetPropFemale = 122 -- whatever number the vr headset is for you in
 -- [THESE ARE NOT NOT MEANT TO BE TOUCHED UNLESS YOU KNOW WHAT YOU ARE DOING]
 Config.CompatibleTargetScripts = { -- Put whatever target script you use in this table if it is not here.
     "ox_target",
-    "qb-target",
-    "qtarget",
+  --  "qb-target",
+ --   "qtarget",
 }
 Config.CompatibleInputScripts = { -- If you have multiple input scripts in your server, Put only the one you want to use in this table or else dont touch this.
     "ox_lib",
-    "qb-input",
-    "ps-ui",
+--    "qb-input",
+--    "ps-ui",
 }
 Config.CompatibleMenuScripts = { -- If you have multiple Menu scripts in your server, Put only the one you want to use in this table or else dont touch this.
     "ox_lib",
-    "qb-menu",
-    "ps-ui",
+--    "qb-menu",
+--    "ps-ui",
 }
 Config.CompatibleInventoryScripts = { -- Having a compatible inventory script is not required
-    "tgiann-inventory",
+--    "tgiann-inventory",
     "ox_inventory",
-    "qb-inventory",
-    "qs-inventory",
-    "ps-inventory",
-    "lj-inventory",
-    "codem-inventory",
+--    "qb-inventory",
+--    "qs-inventory",
+--    "ps-inventory",
+--    "lj-inventory",
+--    "codem-inventory",
 }
 Config.CompatibleSmallResourceScripts = { -- Having a compatible inventory script is not required
     "qb-smallresources",
-    "qbx_smallresources",
+--    "qbx_smallresources",
 }
 -- (DONT TOUCH ANY OF THIS SECTION)
 for _, v in pairs(Config.CompatibleTargetScripts) do
