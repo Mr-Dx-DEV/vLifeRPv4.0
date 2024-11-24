@@ -53,7 +53,7 @@ Config.Permissions = {
     ["discord:363280675014574090"] = "god", -- nwf7700
     ["discord:500372148641333249"] = "god", -- Achiles
 
-
+    ["discord:596024648639053827"] = "god", -- molom
 
     ["license:6d3b6254a50416697dcaa91878e2eb03d9112302"] = "god", -- the role god, admin or mod should be the key from Config.GodRoles which means the values that are added in square brackets.
     ["fivem:1234"] = "god",
