@@ -105,7 +105,7 @@ Config = {
 		['uncut_sapphire'] = 20,
 
 
-		['diamond_ring'] = 20,
+		--['diamond_ring'] = 20,
 		['emerald_ring'] = 20,
 		['ruby_ring'] = 20,
 		['sapphire_ring'] = 20,
@@ -168,8 +168,8 @@ Crafting = {
 		{ ["silveringot"] = { ["silver_ring"] = 4 } },
 		{ ["iron"] = { ["ironore"] = 1 } },
 		{ ["steel"] = { ["ironore"] = 1, ["carbon"] = 1 } },
-		{ ["aluminum"] = { ["can"] = 2, }, ['amount'] = 3 },
-		{ ["glass"] = { ["bottle"] = 2, }, ['amount'] = 2 },
+		--{ ["aluminum"] = { ["can"] = 2, }, ['amount'] = 3 },
+		--{ ["glass"] = { ["bottle"] = 2, }, ['amount'] = 2 },
 	},
 	GemCut = {
 		{ ["emerald"] = { ["uncut_emerald"] = 1, } },
@@ -180,12 +180,12 @@ Crafting = {
 	RingCut = {
 		{ ["gold_ring"] = { ["goldingot"] = 1 }, ['amount'] = 3 },
 		{ ["silver_ring"] = { ["silveringot"] = 1 }, ['amount'] = 3 },
-		{ ["diamond_ring"] = { ["gold_ring"] = 1, ["diamond"] = 1 }, },
+		--{ ["diamond_ring"] = { ["gold_ring"] = 1, ["diamond"] = 1 }, },
 		{ ["emerald_ring"] = { ["gold_ring"] = 1, ["emerald"] = 1 }, },
 		{ ["ruby_ring"] = { ["gold_ring"] = 1, ["ruby"] = 1 }, },
 		{ ["sapphire_ring"] = { ["gold_ring"] = 1, ["sapphire"] = 1 }, },
 
-		{ ["diamond_ring_silver"] = { ["silver_ring"] = 1, ["diamond"] = 1 }, },
+		--{ ["diamond_ring_silver"] = { ["silver_ring"] = 1, ["diamond"] = 1 }, },
 		{ ["emerald_ring_silver"] = { ["silver_ring"] = 1, ["emerald"] = 1 }, },
 		{ ["ruby_ring_silver"] = { ["silver_ring"] = 1, ["ruby"] = 1 }, },
 		{ ["sapphire_ring_silver"] = { ["silver_ring"] = 1, ["sapphire"] = 1 }, },
@@ -193,12 +193,12 @@ Crafting = {
 	NeckCut = {
 		{ ["goldchain"] = { ["goldingot"] = 1 }, ['amount'] = 3  },
 		{ ["silverchain"] = { ["silveringot"] = 1 }, ['amount'] = 3  },
-		{ ["diamond_necklace"] = { ["goldchain"] = 1, ["diamond"] = 1 }, },
+		--{ ["diamond_necklace"] = { ["goldchain"] = 1, ["diamond"] = 1 }, },
 		{ ["ruby_necklace"] = { ["goldchain"] = 1, ["ruby"] = 1 }, },
 		{ ["sapphire_necklace"] = { ["goldchain"] = 1, ["sapphire"] = 1 }, },
 		{ ["emerald_necklace"] = { ["goldchain"] = 1, ["emerald"] = 1 }, },
 
-		{ ["diamond_necklace_silver"] = { ["silverchain"] = 1, ["diamond"] = 1 }, },
+		--{ ["diamond_necklace_silver"] = { ["silverchain"] = 1, ["diamond"] = 1 }, },
 		{ ["ruby_necklace_silver"] = { ["silverchain"] = 1, ["ruby"] = 1 }, },
 		{ ["sapphire_necklace_silver"] = { ["silverchain"] = 1, ["sapphire"] = 1 }, },
 		{ ["emerald_necklace_silver"] = { ["silverchain"] = 1, ["emerald"] = 1 }, },

@@ -1,5 +1,318 @@
 return {
+	--- av_music
+	['cd'] = {
+		label = 'CD',
+		weight = 1,
+		stack = false,
+		close = true,
+		description = 'Support your local artist'
+	},
+	['discman'] = {
+		label = 'Discman',
+		weight = 1,
+		stack = false,
+		close = true,
+		description = 'Play CDs'
+	},
+	['headphones'] = {
+		label = 'BT Headphones',
+		weight = 1,
+		stack = false,
+		close = false,
+		description = 'Listen to your favorite music'
+	},
+	--- av_laptop
+	['laptop'] = {
+		label = 'Laptop',
+		weight = 1,
+		stack = false,
+		close = true,
+		description = ''
+		},
+		['decrypter'] = {
+		label = 'Decrypter',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = ''
+		},
+		['black_usb'] = {
+		label = 'Black USB',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = ''
+		},
+		['pendrive'] = {
+		label = 'Pendrive',
+		weight = 1,
+		stack = false,
+		close = false,
+		description = 'Can store personal data'
+		},
+--- av_gang
+['spray'] = {
+	label = 'Spray',
+	weight = 1,
+	stack = true,
+	close = true,
+	description = ''
+	},
+	['spray_remover'] = {
+	label = 'Spray Remover',
+	weight = 1,
+	stack = true,
+	close = true,
+	description = ''
+	},
+	
+	--- av_drug
+	
+['moonshine_still'] = {
+	label = 'Still',
+	weight = 1,
+	stack = false,
+	close = true,
+	description = ''
+	},
+	['moonshine'] = {
+	label = 'Moonshine',
+	weight = 1,
+	stack = false,
+	close = true,
+	description = ''
+	},
+	['fentanyl_table'] = {
+	label = 'Fentanyl Table',
+	weight = 1,
+	stack = false,
+	close = true,
+	description = ''
+	},
+	['heroin_table'] = {
+	label = 'Heroin Table',
+	weight = 1,
+	stack = false,
+	close = true,
+	description = ''
+	},
+	['ketamine_table'] = {
+	label = 'Ketamine Table',
+	weight = 1,
+	stack = false,
+	close = true,
+	description = ''
+	},
+	['fentanyl_batch'] = {
+	label = 'Fentanyl Batch',
+	weight = 1,
+	stack = false,
+	close = true,
+	description = ''
+	},
+	['heroin_batch'] = {
+	label = 'Heroin Batch',
+	weight = 1,
+	stack = false,
+	close = true,
+	description = ''
+	},
+	['ketamine_batch'] = {
+	label = 'Ketamine Batch',
+	weight = 1,
+	stack = false,
+	close = true,
+	description = ''
+	},
+	['meth_batch'] = {
+	label = 'Meth Batch',
+	weight = 1,
+	stack = false,
+	close = false,
+	description = ''
+	},
+	['coke_batch'] = {
+	label = 'Coke Batch',
+	weight = 1,
+	stack = false,
+	close = false,
+	description = ''
+	},
+	['fentanyl_baggy'] = {
+	label = 'Fentanyl Baggy',
+	weight = 1,
+	stack = true,
+	close = true,
+	description = ''
+	},
+	['heroin_baggy'] = {
+	label = 'Heroin Baggy',
+	weight = 1,
+	stack = true,
+	close = true,
+	description = ''
+	},
+	['ketamine_baggy'] = {
+	label = 'Ketamine Baggy',
+	weight = 1,
+	stack = true,
+	close = true,
+	description = ''
+	},
+	['meth_baggy'] = {
+	label = 'Meth Baggy',
+	weight = 1,
+	stack = true,
+	close = true,
+	description = ''
+	},
+	['coke_baggy'] = {
+	label = 'Coke Baggy',
+	weight = 1,
+	stack = true,
+	close = true,
+	description = ''
+	},
+	['lsd_stamp'] = {
+	label = 'LSD Stamp',
+	weight = 1,
+	stack = true,
+	close = true,
+	description = ''
+	},
+	['meth_key'] = {
+	label = 'Lab Key',
+	weight = 1,
+	stack = false,
+	close = true,
+	description = ''
+	},
+	['coke_key'] = {
+	label = 'Lab Key',
+	weight = 1,
+	stack = false,
+	close = true,
+	description = ''
+	},
+	['lsd_key'] = {
+	label = 'Lab Key',
+	weight = 1,
+	stack = false,
+	close = true,
+	description = ''
+	},
+	['baggies'] = {
+	label = 'Baggies',
+	weight = 1,
+	stack = true,
+	close = false,
+	description = ''
+	},
+	['meth_tray'] = {
+	label = 'Meth Tray',
+	weight = 1,
+	stack = false,
+	close = false,
+	description = ''
+	},
+	['coke_tray'] = {
+	label = 'Coke Tray',
+	weight = 1,
+	stack = false,
+	close = false,
+	description = ''
+	},
+	['lsd_sheet'] = {
+	label = 'LSD Sheet',
+	weight = 1,
+	stack = false,
+	close = false,
+	description = ''
+	},
+	['pd_decrypter'] = {
+	label = 'PD Decrypter',
+	weight = 1,
+	stack = false,
+	close = false,
+	description = ''
+	},
+--- av_blackmarket
 
+['dongle'] = {
+	label = 'USB Dongle',
+	weight = 1,
+	stack = false,
+	close = true,
+	description = ''
+	},
+	['vpn'] = {
+	label = 'VPN',
+	weight = 1,
+	stack = true,
+	close = false,
+	description = ''
+	},
+	['transponder'] = {
+	label = 'Transponder',
+	weight = 1,
+	stack = true,
+	close = true,
+	description = ''
+	},
+	['hacking_device'] = {
+	label = 'Hacking Device',
+	weight = 1,
+	stack = true,
+	close = true,
+	description = ''
+	},
+
+	---- av_camera
+	
+['gopro'] = {
+	label = 'GoPro',
+	weight = 1,
+	stack = true,
+	close = true,
+	description = 'A camera'
+	},
+	['cam_jammer'] = {
+	label = 'Cam Jammer',
+	weight = 1,
+	stack = true,
+	close = true,
+	description = 'Cam Jammer'
+	},
+	----av_boosting
+	
+['dongle'] = {
+	label = 'USB Dongle',
+	weight = 1,
+	stack = false,
+	close = true,
+	description = ''
+	},
+	['vpn'] = {
+	label = 'VPN',
+	weight = 1,
+	stack = true,
+	close = false,
+	description = ''
+	},
+	['transponder'] = {
+	label = 'Transponder',
+	weight = 1,
+	stack = true,
+	close = true,
+	description = ''
+	},
+	['hacking_device'] = {
+	label = 'Hacking Device',
+	weight = 1,
+	stack = true,
+	close = true,
+	description = ''
+	},
 	--- fuel
 	['vehicle_manual'] = {
 		label = 'Vehicle manual',
@@ -13694,7 +14007,7 @@ return {
 
 	["chop_door"] = {
 		label = "Car Door",
-		weight = 2000,
+		weight = 500,
 		stack = true,
 		close = true,
 		description = "A door from a vehicle",
@@ -14256,7 +14569,7 @@ return {
 
 	["chop_wheel"] = {
 		label = "Car Wheel",
-		weight = 1000,
+		weight = 500,
 		stack = true,
 		close = true,
 		description = "A wheel from a vehicle",
@@ -17177,7 +17490,7 @@ return {
 
 	["chop_trunk"] = {
 		label = "Car Trunk",
-		weight = 2000,
+		weight = 500,
 		stack = true,
 		close = true,
 		description = "A trunk from a vehicle",
@@ -20187,7 +20500,7 @@ return {
 	
 	["chop_hood"] = {
 		label = "Car Hood",
-		weight = 2000,
+		weight = 500,
 		stack = true,
 		close = true,
 		description = "A hood from a vehicle",
