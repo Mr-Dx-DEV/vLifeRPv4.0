@@ -181,6 +181,7 @@ end
 
 -- Get Player money
 function getMoney(src, account)
+    dbug("getMoney(src,account)", src, account)
     if not src then return false end
     if Config.Framework == "qb" then
         local Player = Core.Functions.GetPlayer(src)
@@ -247,6 +248,7 @@ end
 
 -- Remove money from player
 function removeMoney(src, account, amount)
+    dbug("removeMoney(src, account, amount)", src, account, amount)
     if not src then return false end
     if Config.Framework == "qb" then
         local Player = Core.Functions.GetPlayer(src)
@@ -346,13 +348,13 @@ function getMetadata(item, info)
     local slot = 1
 
     if item and type(item) == "table" and next(item) then
-        local itemInfo = item.info or item.metadata or {}
+        local itemInfo = item.metadata or item.info or {}
         metadata = itemInfo or {}
         slot = item.slot or 1
     end
 
     if info and type(info) == "table" and next(info) then
-        local itemInfo = info.info or info.metadata or {}
+        local itemInfo = info.metadata or info.info or {}
         metadata = itemInfo or {}
         slot = info.slot or 1
     end
@@ -843,6 +845,7 @@ end
 
 -- Returns society money or false
 function getSociety(name)
+    dbug("getSociety(name)", name)
     if not name then print('[ERROR] Function getSociety received NULL as argument') return end
     local res = MySQL.single.await('SELECT money FROM av_society WHERE job = ?', {name})
     if res and res['money'] then
@@ -853,6 +856,7 @@ function getSociety(name)
 end
 
 function addSociety(src, job, amount, name, description)
+    dbug("addSociety(src, job, amount, name, description)", src, job, amount, name, description)
     if avBusiness then
         exports['av_business']:addMoney(name, job, amount, description)
         if GetInvokingResource() ~= "av_business" then
@@ -868,6 +872,7 @@ function addSociety(src, job, amount, name, description)
 end
 
 function removeSociety(src, job, amount, name, description)
+    dbug("removeSociety(src, job, amount, name, description)", src, job, amount, name, description)
     if avBusiness then
         exports['av_business']:removeMoney(name, job, amount, description)
     end
@@ -875,6 +880,7 @@ function removeSociety(src, job, amount, name, description)
 end
 
 function newSociety(job, label) -- Triggered when getSociety returns false in av_business:
+    dbug("newSociety(job, label)", job, label)
     MySQL.insert.await('INSERT INTO av_society (job, money) VALUES (?, ?)', {job, 0})
 end
 
