@@ -12,103 +12,79 @@ Config.MenuItems = {
         icon = 'user',
         items = {
             {
-                id = 'cornerselling',
-                title = 'Corner Selling',
-                icon = 'cannabis',
-                type = 'client',
-                event = 'qb-drugs:client:cornerselling',
-                shouldClose = true
-            }, 
-             {
                 id = 'getintrunk',
                 title = 'Get In Trunk',
                 icon = 'car',
                 type = 'client',
                 event = 'qb-trunk:client:GetIn',
                 shouldClose = true
-            },  {
+            }, {
                 id = 'emotemenu',
                 title = 'Emote Menu',
                 icon = 'face-smile',
                 type = 'client',
-                event = 'emote:open:menu',
+                event = 'animations:client:EmoteMenu',
                 shouldClose = true
-            },
+            }, {
+                id = 'cornerselling',
+                title = 'Corner Selling',
+                icon = 'cannabis',
+                type = 'client',
+                event = 'qb-drugs:client:cornerselling',
+                shouldClose = true
+            },{
+                id = 'interactions',
+                title = 'Interaction',
+                icon = 'triangle-exclamation',
+                items = {
+                    {
+                        id = 'handcuff',
+                        title = 'Cuff',
+                        icon = 'user-lock',
+                        type = 'client',
+                        event = 'police:client:CuffPlayerSoft',
+                        shouldClose = true
+                    }, {
+                        id = 'playerinvehicle',
+                        title = 'Put In Vehicle',
+                        icon = 'car-side',
+                        type = 'client',
+                        event = 'police:client:PutPlayerInVehicle',
+                        shouldClose = true
+                    }, {
+                        id = 'playeroutvehicle',
+                        title = 'Take Out Of Vehicle',
+                        icon = 'car-side',
+                        type = 'client',
+                        event = 'police:client:SetPlayerOutVehicle',
+                        shouldClose = true
+                    }, {
+                        id = 'stealplayer',
+                        title = 'Rob',
+                        icon = 'mask',
+                        type = 'client',
+                        event = 'police:client:RobPlayer',
+                        shouldClose = true
+                    }, {
+                        id = 'escort',
+                        title = 'Kidnap',
+                        icon = 'user-group',
+                        type = 'client',
+                        event = 'police:client:KidnapPlayer',
+                        shouldClose = true
+                    }, {
+                        id = 'escort2',
+                        title = 'Escort',
+                        icon = 'user-group',
+                        type = 'client',
+                        event = 'police:client:EscortPlayer',
+                        shouldClose = true
+                    }
+                }
+            }
         }
     },
     [2] = {
-        id = 'interactions',
-        title = 'Interaction',
-        icon = 'triangle-exclamation',
-        items = {
-            -- {
-            --     id = 'handcuff',
-            --     title = 'Cuff',
-            --     icon = 'user-lock',
-            --     type = 'client',
-            --     event = 'police:client:CuffPlayerSoft',
-            --     shouldClose = true
-            -- }, 
-            {
-                id = 'playerinvehicle',
-                title = 'Put In Vehicle',
-                icon = 'car-side',
-                type = 'client',
-                event = 'police:client:PutPlayerInVehicle',
-                shouldClose = true
-            }, {
-                id = 'playeroutvehicle',
-                title = 'Take Out Of Vehicle',
-                icon = 'car-side',
-                type = 'client',
-                event = 'police:client:SetPlayerOutVehicle',
-                shouldClose = true
-            }, --[[ {
-                id = 'stealplayer',
-                title = 'Rob',
-                icon = 'mask',
-                type = 'client',
-                event = 'police:client:RobPlayer',
-                shouldClose = true
-            }, ]] {
-                id = 'escort',
-                title = 'Kidnap',
-                icon = 'user-group',
-                type = 'client',
-                event = 'police:client:KidnapPlayer',
-                shouldClose = true
-            }, {
-                id = 'escort2',
-                title = 'Escort',
-                icon = 'user-group',
-                type = 'client',
-                event = 'police:client:EscortPlayer',
-                shouldClose = true
-            }, {
-                id = 'escort554',
-                title = 'Hostage',
-                icon = 'child',
-                type = 'client',
-                event = 'A5:Client:TakeHostage',
-                shouldClose = true
-            },{
-                id = 'shoesteal',
-                title = 'Steal Shoe',
-                icon = 'child',
-                type = 'client',
-                event = 'tnj-stealshoes:client:TheftShoe',
-                shouldClose = true
-            },{
-                id = 'stealplayer',
-                title = 'Rob',
-                icon = 'mask',
-                type = 'client',
-                event = 'police:client:RobPlayer',
-                shouldClose = true
-            },
-        }
-    },
-    [3] = {
         id = 'general',
         title = 'General',
         icon = 'rectangle-list',
@@ -181,7 +157,7 @@ Config.MenuItems = {
                 title = 'Clothing',
                 icon = 'shirt',
                 items = {
-                    --[[ {
+                    {
                         id = 'Hair',
                         title = 'Hair',
                         icon = 'user',
@@ -209,7 +185,7 @@ Config.MenuItems = {
                         type = 'client',
                         event = 'qb-radialmenu:ToggleClothing',
                         shouldClose = true
-                    },]] {
+                    }, {
                         id = 'Shirt',
                         title = 'Shirt',
                         icon = 'shirt',
@@ -249,14 +225,14 @@ Config.MenuItems = {
                                 type = 'client',
                                 event = 'qb-radialmenu:ToggleProps',
                                 shouldClose = true
-                            }, --[[ {
+                            }, {
                                 id = 'Visor',
                                 title = 'Visor',
                                 icon = 'hat-cowboy-side',
                                 type = 'client',
                                 event = 'qb-radialmenu:ToggleProps',
                                 shouldClose = true
-                            }, ]] {
+                            }, {
                                 id = 'Mask',
                                 title = 'Mask',
                                 icon = 'masks-theater',
@@ -270,7 +246,7 @@ Config.MenuItems = {
                                 type = 'client',
                                 event = 'qb-radialmenu:ToggleClothing',
                                 shouldClose = true
-                            }, --[[ {
+                            }, {
                                 id = 'Bag',
                                 title = 'Bag',
                                 icon = 'bag-shopping',
@@ -291,7 +267,7 @@ Config.MenuItems = {
                                 type = 'client',
                                 event = 'qb-radialmenu:ToggleProps',
                                 shouldClose = true
-                            }, ]] {
+                            }, {
                                 id = 'Gloves',
                                 title = 'Gloves',
                                 icon = 'mitten',
@@ -305,6 +281,56 @@ Config.MenuItems = {
             },
         }
     },
+    [3] = {
+        id = 'interactions',
+        title = 'Interaction',
+        icon = 'triangle-exclamation',
+        items = {
+            {
+                id = 'handcuff',
+                title = 'Cuff',
+                icon = 'user-lock',
+                type = 'client',
+                event = 'police:client:CuffPlayerSoft',
+                shouldClose = true
+            }, {
+                id = 'playerinvehicle',
+                title = 'Put In Vehicle',
+                icon = 'car-side',
+                type = 'client',
+                event = 'police:client:PutPlayerInVehicle',
+                shouldClose = true
+            }, {
+                id = 'playeroutvehicle',
+                title = 'Take Out Of Vehicle',
+                icon = 'car-side',
+                type = 'client',
+                event = 'police:client:SetPlayerOutVehicle',
+                shouldClose = true
+            }, {
+                id = 'stealplayer',
+                title = 'Rob',
+                icon = 'mask',
+                type = 'client',
+                event = 'police:client:RobPlayer',
+                shouldClose = true
+            }, {
+                id = 'escort',
+                title = 'Kidnap',
+                icon = 'user-group',
+                type = 'client',
+                event = 'police:client:KidnapPlayer',
+                shouldClose = true
+            }, {
+                id = 'escort2',
+                title = 'Escort',
+                icon = 'user-group',
+                type = 'client',
+                event = 'police:client:EscortPlayer',
+                shouldClose = true
+            }
+        }
+    }
 }
 
 Config.VehicleDoors = {
@@ -474,21 +500,14 @@ Config.JobInteractions = {
             type = 'client',
             event = 'hospital:client:CheckStatus',
             shouldClose = true
-        }, {
+        },{
             id = 'revivep',
-            title = 'Revive',
+            title = 'Stress Therapy',
             icon = 'user-doctor',
             type = 'client',
             event = 'hospital:client:RevivePlayer',
             shouldClose = true
-        }, {
-            id = 'revivep2',
-            title = 'Revive Dead',
-            icon = 'user-doctor',
-            type = 'client',
-            event = 'hospital:client:RevivePlayer2',
-            shouldClose = true
-        }, {
+        },{
             id = 'treatwounds',
             title = 'Heal wounds',
             icon = 'bandage',
@@ -508,6 +527,13 @@ Config.JobInteractions = {
             icon = 'user-group',
             type = 'client',
             event = 'police:client:EscortPlayer',
+            shouldClose = true
+        },{
+            id = 'sickness',
+            title = 'Check Sickness',
+            icon = 'bandage',
+            type = 'client',
+            event = 'k_diseases:getPlayerSicknes',
             shouldClose = true
         }, {
             id = 'stretcheroptions',
@@ -583,24 +609,6 @@ Config.JobInteractions = {
             shouldClose = true
         }
     },
-    ["towing"] = {
-        {
-            id = 'towvehicle',
-            title = 'Tow vehicle',
-            icon = 'truck-pickup',
-            type = 'client',
-            event = 'qb-tow:client:TowVehicle',
-            shouldClose = true
-        },
-        {
-            id = 'impoundvehicle',
-            title = 'Depot Vehicle',
-            icon = 'truck-moving',
-            type = 'server',
-            event = 'qb-towing:server:ImpoundVehicle',
-            shouldClose = true
-        }
-    },
     ["police"] = {
         {
             id = 'emergencybutton',
@@ -624,13 +632,6 @@ Config.JobInteractions = {
             event = 'mdt:server:openMDT',
             shouldClose = true
         }, {
-            id = 'unlock',
-            title = 'Unlock Vehicle',
-            icon = 'user-lock',
-            type = 'client',
-            event = 'vehiclekeys:client:PoliceUnlock',
-            shouldClose = true
-        }, {
             id = 'resethouse',
             title = 'Reset house lock',
             icon = 'key',
@@ -644,7 +645,7 @@ Config.JobInteractions = {
             type = 'client',
             event = 'police:client:SeizeDriverLicense',
             shouldClose = true
-        }, {--
+        }, {
             id = 'policeinteraction',
             title = 'Police Actions',
             icon = 'list-check',
@@ -746,12 +747,41 @@ Config.JobInteractions = {
             event = 'qb-hotdogjob:client:ToggleSell',
             shouldClose = true
         }
-    }
+    },
+    ["casino"] = {
+        {
+            id = 'casinohotel',
+            title = 'Manage Hotel',
+            icon = 'building-user',
+            type = 'client',
+            event = 'qb-casino:client:ManageCasino',
+            shouldClose = true
+        }
+    },
 }
 
 Config.GangInteractions = {     --- Gang Specific Interactions
                                 --- Drugs are for example you may change it...
-    ["mhf"] = {
+    
+    ["syndicate"] = {
+        {
+            id = 'ganglaptop',
+            title = 'Gang Laptop',
+            icon = 'laptop',
+            type = 'client',
+            event = 'snipe-gangsystem:client:openLaptop',
+            shouldClose = true
+        },
+        {
+            id = 'stealplayer',
+            title = 'Rob',
+            icon = 'mask',
+            type = 'client',
+            event = 'police:client:RobPlayer',
+            shouldClose = true
+        }, 
+    },
+    ["vagos"] = {
         {
             id = 'ganglaptop',
             title = 'Gang Laptop',
@@ -769,7 +799,7 @@ Config.GangInteractions = {     --- Gang Specific Interactions
             shouldClose = true
         },
     },
-    ["cc"] = {
+    ["texascartel"] = {
         {
             id = 'ganglaptop',
             title = 'Gang Laptop',
@@ -787,7 +817,7 @@ Config.GangInteractions = {     --- Gang Specific Interactions
             shouldClose = true
         },
     },
-    ["bxy"] = {
+    ["redmafia"] = {
         {
             id = 'ganglaptop',
             title = 'Gang Laptop',
@@ -805,7 +835,7 @@ Config.GangInteractions = {     --- Gang Specific Interactions
             shouldClose = true
         },
     },
-    ["jd"] = {
+    ["aztecs"] = {
         {
             id = 'ganglaptop',
             title = 'Gang Laptop',
@@ -823,7 +853,7 @@ Config.GangInteractions = {     --- Gang Specific Interactions
             shouldClose = true
         },
     },
-    ["ygz"] = {
+    ["goldenwolves"] = {
         {
             id = 'ganglaptop',
             title = 'Gang Laptop',
@@ -841,7 +871,7 @@ Config.GangInteractions = {     --- Gang Specific Interactions
             shouldClose = true
         },
     },
-    ["bloodpack"] = {
+    ["nbz"] = {
         {
             id = 'ganglaptop',
             title = 'Gang Laptop',
@@ -859,7 +889,7 @@ Config.GangInteractions = {     --- Gang Specific Interactions
             shouldClose = true
         },
     },
-    ["rollin60s"] = {
+    ["blvckdragonz"] = {
         {
             id = 'ganglaptop',
             title = 'Gang Laptop',
@@ -877,7 +907,7 @@ Config.GangInteractions = {     --- Gang Specific Interactions
             shouldClose = true
         },
     },
-    ["angelsofdeath"] = {
+    ["tenjiku"] = {
         {
             id = 'ganglaptop',
             title = 'Gang Laptop',
@@ -895,7 +925,7 @@ Config.GangInteractions = {     --- Gang Specific Interactions
             shouldClose = true
         },
     },
-    ["vandalz"] = {
+    ["ddos"] = {
         {
             id = 'ganglaptop',
             title = 'Gang Laptop',
@@ -913,7 +943,7 @@ Config.GangInteractions = {     --- Gang Specific Interactions
             shouldClose = true
         },
     },
-    ["lucifersd"] = {
+    ["mandem"] = {
         {
             id = 'ganglaptop',
             title = 'Gang Laptop',
@@ -931,7 +961,7 @@ Config.GangInteractions = {     --- Gang Specific Interactions
             shouldClose = true
         },
     },
-    ["gb"] = {
+    ["lossantos"] = {
         {
             id = 'ganglaptop',
             title = 'Gang Laptop',
@@ -949,7 +979,7 @@ Config.GangInteractions = {     --- Gang Specific Interactions
             shouldClose = true
         },
     },
-    ["thequantum"] = {
+    ["unaverage"] = {
         {
             id = 'ganglaptop',
             title = 'Gang Laptop',
@@ -967,7 +997,7 @@ Config.GangInteractions = {     --- Gang Specific Interactions
             shouldClose = true
         },
     },
-    ["lacosanostra"] = {
+    ["triads"] = {
         {
             id = 'ganglaptop',
             title = 'Gang Laptop',
@@ -985,97 +1015,7 @@ Config.GangInteractions = {     --- Gang Specific Interactions
             shouldClose = true
         },
     },
-    ["pinkpanthers"] = {
-        {
-            id = 'ganglaptop',
-            title = 'Gang Laptop',
-            icon = 'laptop',
-            type = 'client',
-            event = 'snipe-gangsystem:client:openLaptop',
-            shouldClose = true
-        },
-        {
-            id = 'stealplayer',
-            title = 'Rob',
-            icon = 'mask',
-            type = 'client',
-            event = 'police:client:RobPlayer',
-            shouldClose = true
-        },
-    },
-    ["b2a"] = {
-        {
-            id = 'ganglaptop',
-            title = 'Gang Laptop',
-            icon = 'laptop',
-            type = 'client',
-            event = 'snipe-gangsystem:client:openLaptop',
-            shouldClose = true
-        },
-        {
-            id = 'stealplayer',
-            title = 'Rob',
-            icon = 'mask',
-            type = 'client',
-            event = 'police:client:RobPlayer',
-            shouldClose = true
-        },
-    },
-    ["moneygm"] = {
-        {
-            id = 'ganglaptop',
-            title = 'Gang Laptop',
-            icon = 'laptop',
-            type = 'client',
-            event = 'snipe-gangsystem:client:openLaptop',
-            shouldClose = true
-        },
-        {
-            id = 'stealplayer',
-            title = 'Rob',
-            icon = 'mask',
-            type = 'client',
-            event = 'police:client:RobPlayer',
-            shouldClose = true
-        },
-    },
-    ["glogang"] = {
-        {
-            id = 'ganglaptop',
-            title = 'Gang Laptop',
-            icon = 'laptop',
-            type = 'client',
-            event = 'snipe-gangsystem:client:openLaptop',
-            shouldClose = true
-        },
-        {
-            id = 'stealplayer',
-            title = 'Rob',
-            icon = 'mask',
-            type = 'client',
-            event = 'police:client:RobPlayer',
-            shouldClose = true
-        },
-    },
-    ["oppsnd"] = {
-        {
-            id = 'ganglaptop',
-            title = 'Gang Laptop',
-            icon = 'laptop',
-            type = 'client',
-            event = 'snipe-gangsystem:client:openLaptop',
-            shouldClose = true
-        },
-        {
-            id = 'stealplayer',
-            title = 'Rob',
-            icon = 'mask',
-            type = 'client',
-            event = 'police:client:RobPlayer',
-            shouldClose = true
-        },
-    },
-    ["hellraisersmc"] = {
+    ["ghosts"] = {
         {
             id = 'ganglaptop',
             title = 'Gang Laptop',
@@ -1123,41 +1063,41 @@ Config.TrunkClasses = {
 Config.ExtrasEnabled = true
 
 Config.Commands = {
-    -- ["top"] = {
-    --     Func = function() ToggleClothing("Top") end,
-    --     Sprite = "top",
-    --     Desc = "Take your shirt off/on",
-    --     Button = 1,
-    --     Name = "Torso"
-    -- },
-    -- ["gloves"] = {
-    --     Func = function() ToggleClothing("gloves") end,
-    --     Sprite = "gloves",
-    --     Desc = "Take your gloves off/on",
-    --     Button = 2,
-    --     Name = "Gloves"
-    -- },
-    -- ["visor"] = {
-    --     Func = function() ToggleProps("visor") end,
-    --     Sprite = "visor",
-    --     Desc = "Toggle hat variation",
-    --     Button = 3,
-    --     Name = "Visor"
-    -- },
-    -- ["bag"] = {
-    --     Func = function() ToggleClothing("Bag") end,
-    --     Sprite = "bag",
-    --     Desc = "Opens or closes your bag",
-    --     Button = 8,
-    --     Name = "Bag"
-    -- },
-    -- ["shoes"] = {
-    --     Func = function() ToggleClothing("Shoes") end,
-    --     Sprite = "shoes",
-    --     Desc = "Take your shoes off/on",
-    --     Button = 5,
-    --     Name = "Shoes"
-    -- },
+    ["top"] = {
+        Func = function() ToggleClothing("Top") end,
+        Sprite = "top",
+        Desc = "Take your shirt off/on",
+        Button = 1,
+        Name = "Torso"
+    },
+    ["gloves"] = {
+        Func = function() ToggleClothing("gloves") end,
+        Sprite = "gloves",
+        Desc = "Take your gloves off/on",
+        Button = 2,
+        Name = "Gloves"
+    },
+    ["visor"] = {
+        Func = function() ToggleProps("visor") end,
+        Sprite = "visor",
+        Desc = "Toggle hat variation",
+        Button = 3,
+        Name = "Visor"
+    },
+    ["bag"] = {
+        Func = function() ToggleClothing("Bag") end,
+        Sprite = "bag",
+        Desc = "Opens or closes your bag",
+        Button = 8,
+        Name = "Bag"
+    },
+    ["shoes"] = {
+        Func = function() ToggleClothing("Shoes") end,
+        Sprite = "shoes",
+        Desc = "Take your shoes off/on",
+        Button = 5,
+        Name = "Shoes"
+    },
     ["vest"] = {
         Func = function() ToggleClothing("Vest") end,
         Sprite = "vest",
@@ -1165,13 +1105,13 @@ Config.Commands = {
         Button = 14,
         Name = "Vest"
     },
-    -- ["hair"] = {
-    --     Func = function() ToggleClothing("hair") end,
-    --     Sprite = "hair",
-    --     Desc = "Put your hair up/down/in a bun/ponytail.",
-    --     Button = 7,
-    --     Name = "Hair"
-    -- },
+    ["hair"] = {
+        Func = function() ToggleClothing("hair") end,
+        Sprite = "hair",
+        Desc = "Put your hair up/down/in a bun/ponytail.",
+        Button = 7,
+        Name = "Hair"
+    },
     ["hat"] = {
         Func = function() ToggleProps("Hat") end,
         Sprite = "hat",
@@ -1186,35 +1126,35 @@ Config.Commands = {
         Button = 9,
         Name = "Glasses"
     },
-    -- ["ear"] = {
-    --     Func = function() ToggleProps("Ear") end,
-    --     Sprite = "ear",
-    --     Desc = "Take your ear accessory off/on",
-    --     Button = 10,
-    --     Name = "Ear"
-    -- },
-    -- ["neck"] = {
-    --     Func = function() ToggleClothing("Neck") end,
-    --     Sprite = "neck",
-    --     Desc = "Take your neck accessory off/on",
-    --     Button = 11,
-    --     Name = "Neck"
-    -- },
-    -- ["watch"] = {
-    --     Func = function() ToggleProps("Watch") end,
-    --     Sprite = "watch",
-    --     Desc = "Take your watch off/on",
-    --     Button = 12,
-    --     Name = "Watch",
-    --     Rotation = 5.0
-    -- },
-    -- ["bracelet"] = {
-    --     Func = function() ToggleProps("Bracelet") end,
-    --     Sprite = "bracelet",
-    --     Desc = "Take your bracelet off/on",
-    --     Button = 13,
-    --     Name = "Bracelet"
-    -- },
+    ["ear"] = {
+        Func = function() ToggleProps("Ear") end,
+        Sprite = "ear",
+        Desc = "Take your ear accessory off/on",
+        Button = 10,
+        Name = "Ear"
+    },
+    ["neck"] = {
+        Func = function() ToggleClothing("Neck") end,
+        Sprite = "neck",
+        Desc = "Take your neck accessory off/on",
+        Button = 11,
+        Name = "Neck"
+    },
+    ["watch"] = {
+        Func = function() ToggleProps("Watch") end,
+        Sprite = "watch",
+        Desc = "Take your watch off/on",
+        Button = 12,
+        Name = "Watch",
+        Rotation = 5.0
+    },
+    ["bracelet"] = {
+        Func = function() ToggleProps("Bracelet") end,
+        Sprite = "bracelet",
+        Desc = "Take your bracelet off/on",
+        Button = 13,
+        Name = "Bracelet"
+    },
     ["mask"] = {
         Func = function() ToggleClothing("Mask") end,
         Sprite = "mask",
@@ -1227,22 +1167,22 @@ Config.Commands = {
 local bags = {[40] = true, [41] = true, [44] = true, [45] = true}
 
 Config.ExtraCommands = {
-    -- ["pants"] = {
-    --     Func = function() ToggleClothing("Pants", true) end,
-    --     Sprite = "pants",
-    --     Desc = "Take your pants off/on",
-    --     Name = "Pants",
-    --     OffsetX = -0.04,
-    --     OffsetY = 0.0
-    -- },
-    -- ["shirt"] = {
-    --     Func = function() ToggleClothing("Shirt", true) end,
-    --     Sprite = "shirt",
-    --     Desc = "Take your shirt off/on",
-    --     Name = "shirt",
-    --     OffsetX = 0.04,
-    --     OffsetY = 0.0
-    -- },
+    ["pants"] = {
+        Func = function() ToggleClothing("Pants", true) end,
+        Sprite = "pants",
+        Desc = "Take your pants off/on",
+        Name = "Pants",
+        OffsetX = -0.04,
+        OffsetY = 0.0
+    },
+    ["shirt"] = {
+        Func = function() ToggleClothing("Shirt", true) end,
+        Sprite = "shirt",
+        Desc = "Take your shirt off/on",
+        Name = "shirt",
+        OffsetX = 0.04,
+        OffsetY = 0.0
+    },
     ["reset"] = {
         Func = function()
             if not ResetClothing(true) then

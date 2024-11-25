@@ -7,13 +7,6 @@ local blackout = Config.Blackout
 local blackoutVehicle = Config.BlackoutVehicle
 local disable = Config.Disabled
 
-RegisterNetEvent('Pug:client:ToggleWeatherSyncOff', function()
-    disable = true
-end)
-RegisterNetEvent('Pug:client:ToggleWeatherSyncOn', function()
-    disable = false
-end)
-
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     disable = false
     TriggerServerEvent('qb-weathersync:server:RequestStateSync')
