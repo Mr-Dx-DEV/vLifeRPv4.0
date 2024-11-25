@@ -63,7 +63,7 @@ Config.Locations = {
         },
     },
 	['JewelBuyer'] = { -- The Location of the jewel buyer, I left this as Vangelico, others will proabably change to pawn shops
-        Enable = true,
+        Enable = false,
         positions = {
             { name = "Jewel Buyer", coords = vec4(-629.86, -240.35, 38.16, 110.05), sprite = 527, col = 617, blipTrue = false, model = `S_M_M_HighSec_03`, scenario = "WORLD_HUMAN_CLIPBOARD", },
         },
@@ -210,7 +210,7 @@ Config.Locations = {
                 vec4(3005.94, 2773.78, 42.51, 270.0),
             },
         },
-        ["K4MB1"] = { -- K4MB1's Mineshaft in the quarry
+        --[[ ["K4MB1"] = { -- K4MB1's Mineshaft in the quarry
             Enable = true,
             Job = nil,
             Blip = {
@@ -231,7 +231,7 @@ Config.Locations = {
                 { name = "Stone Cracking", coords = vec4(2914.61, 2649.06, 43.19, 272.74), sprite = 566, col = 81, blipTrue = false, prop = `prop_vertdrill_01` }, -- Foundary
             },
             OreBuyer = {
-                { blipEnable = true, name = "Ore Buyer", coords = vec4(2917.79, 2646.26, 43.17, 6.14), sprite = 568, col = 81,model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD", },
+                { blipEnable = false, name = "Ore Buyer", coords = vec4(2917.79, 2646.26, 43.17, 6.14), sprite = 568, col = 81,model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD", },
             },
             JewelCut = {
                 { blipEnable = true, name = "Jewel Cutting", coords = vec4(2917.45, 2654.24, 43.03, 229.61), sprite = 566, col = 81, prop = `gr_prop_gr_speeddrill_01c` },
@@ -274,7 +274,7 @@ Config.Locations = {
                 vec4(2823.73, 2611.07, 38.3, 49.71),
                 vec4(2827.98, 2611.26, 34.15, 40.74),
             },
-        },
+        }, ]]
         --["NewLocation"] = {
         --    Enable = false,
         --    Job = nil,

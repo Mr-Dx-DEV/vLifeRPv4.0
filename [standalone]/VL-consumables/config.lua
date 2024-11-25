@@ -56,7 +56,7 @@ Config = {
 		--Jim-BurgerShot-Drinks
 		["bscoffee"] = { emote = "bscoffee", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(3, 6), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(55,65), }},
 		["milkshake"] = { emote = "drink", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(3, 6), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(55,65), }},
-		["bscoke"] = { emote = "bscoke", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(3, 6), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(55,65), }},
+		["bscoke"] = { emote = "bscoke", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(3, 6), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(10,20), }},
 		["unicornpiss"] = { emote = "drink", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(3, 6), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(55,65)}},
 
 		--Jim-BurgerShot-Food
@@ -86,8 +86,8 @@ Config = {
 		["rexcreampie"] = { emote = "donut", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(3, 6), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(55,65)}},
 		["rexcheesewrap"] = { emote = "sandwich", canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(3, 6), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(55,65), }},
 		["rexchickenwrap"] = {	emote = "sandwich", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(3, 6), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(55,65), }},
-		["rexbscoffee"] = { emote = "bscoffee", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(3, 6), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(55,65), }},
-		["rexmilkshake"] = { emote = "drink", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(3, 6), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(55,65), }},
+		["rexbscoffee"] = { emote = "bscoffee", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(3, 6), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(10,20), }},
+		["rexmilkshake"] = { emote = "drink", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(3, 6), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(10,20), }},
 		["rexbscoke"] = { emote = "bscoke", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(3, 6), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(55,65), }},
 		
 		["caesar_salad"] = { emote = "sandwich", canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(3, 6), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(55,65), }},

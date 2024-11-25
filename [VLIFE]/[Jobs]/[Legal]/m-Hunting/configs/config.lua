@@ -9,9 +9,9 @@ Config.ChanceCallCops = 10 -- Chance to call cops
 Config.Dispatch = 'ps-dispatch' -- "ps-dispatch" or "cd_dispatch"
 Config.CoreSkillls = false -- If you need trigger core skills or other, on s_editable.
 Config.Minigame = false -- Enable minigame when skin the animal? ( ps-ui )
-Config.Debug = true -- If true you have the command /bait to spawn the animal
+Config.Debug = false -- If true you have the command /bait to spawn the animal
 Config.Inventory = "ox" -- "qb" or "ox"
-Config.Target = "qb" -- "qb" or "ox"
+Config.Target = "ox" -- "qb" or "ox"
 Config.InvLink = "ox_inventory/web/images/" -- Your directory inventory images
 Config.CooldownBait = 1 -- | 1 Minute
 Config.DistanceDelete = 75  -- If you move more than 75m away from the animal, it automatically turns off
@@ -118,6 +118,7 @@ Language = {
 ---------------
 Config.Peds = {
 	[1] = { hash = GetHashKey("a_m_m_eastsa_01"), loc = vector3(-773.2, 5597.93, 32.61), heading = 192.02}, -- Ped to open the shop and buy the pickaxe
+	
 }
 
 -----------------

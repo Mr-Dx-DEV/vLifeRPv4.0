@@ -14,8 +14,11 @@ set sv_debugqueue true # prints debug messages to console
 set sv_displayqueue true # shows queue count in the server name '[count] server name'
 set steam_webApiKey "598BC69C0F36C236B7042EB9FC643B79"
 sv_licenseKey "cfxk_OCz2BiTiKOHmi70etZpY_1cRjwu"
-sv_hostname "^8vLife RolePlay 4.0 ^0| ^2Bangladesh"
-sets sv_projectName "^8vLife RolePlay Bangladesh"
+#sv_hostname "^8vLife RolePlay 4.0 ^0| ^2Bangladesh"
+#sets sv_projectName "^8vLife RolePlay Bangladesh"
+
+sv_hostname "^5UPCOMING....^0|| ^8vLife RolePlay ^0| ^2Bangladesh"
+sets sv_projectName "^5UPCOMING....^0|| ^8vLife RolePlay Bangladesh"
 sets sv_projectDesc "^6vLife, Serious Roleplay! Balanced Economy!"
 sets tags "Bangladesh, Roleplay, Vlife, Vlife Roleplay, Inspired, NOPI, nop, bang, bd, bangla, bangladesh, india, pakistan"
 

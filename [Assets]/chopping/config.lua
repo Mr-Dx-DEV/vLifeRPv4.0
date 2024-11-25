@@ -32,8 +32,8 @@ Config.DropOffBlipColor = 2 -- The blip icon color for when a player has to take
 ----------
 ----------
 Config.CarsNeededToEarnForDrop = 175 -- The amount of cars a garages has needed to earn overall to have a chance at getting Config.RareItem1 and Config.RareItem2 drops when they search a trunk
-Config.RareItem2 = "nos" -- Another very rare item you cab only get when searching a trunk if your garage has earned over Config.CarsNeededToEarnForDrop cars overall
-Config.RareItemChance2 = 4 -- The % of chance player gets Config.RareItem2 if there garage has earned over Config.CarsNeededToEarnForDrop amount.. (so if you change this to 50 for example the player will have a 50% chance of Config.RareItem2 every time they search a trunk)
+Config.RareItem2 = "casino_magnet" -- Another very rare item you cab only get when searching a trunk if your garage has earned over Config.CarsNeededToEarnForDrop cars overall
+Config.RareItemChance2 = 3 -- The % of chance player gets Config.RareItem2 if there garage has earned over Config.CarsNeededToEarnForDrop amount.. (so if you change this to 50 for example the player will have a 50% chance of Config.RareItem2 every time they search a trunk)
 
 Config.RareItem1 = "boostinglaptop" -- A very rare item you cab only get when searching a trunk if your garage has earned over Config.CarsNeededToEarnForDrop cars overall
 Config.RareItemChance = 1 -- The % of chance player gets Config.RareItem1 if there garage has earned over Config.CarsNeededToEarnForDrop amount. (so if you change this to 50 for example the player will have a 50% chance of Config.RareItem1 every time they search a trunk)
@@ -43,14 +43,34 @@ Config.RandomRareItem = "advancedlockpick" -- Random Rare drop a player can get 
 Config.RandomRareItemChance = 10 -- The % of chance player gets Config.RandomRareItem when searching a trunk (no requirements needed for the player to get this item unlike how Config.RareItem1 and Config.RareItem2 work)
 ----------
 ----------
+Config.RandomRareItem = "weapontrigger" -- Random Rare drop a player can get when searching a trunk with no requirements needed
+Config.RandomRareItemChance = 10 -- The % of chance player gets Config.RandomRareItem when searching a trunk (no requirements needed for the player to get this item unlike how Config.RareItem1 and Config.RareItem2 work)
+----------
+----------
+-- Config.RandomRareItem = "barrelextension" -- Random Rare drop a player can get when searching a trunk with no requirements needed
+-- Config.RandomRareItemChance = 10 -- The % of chance player gets Config.RandomRareItem when searching a trunk (no requirements needed for the player to get this item unlike how Config.RareItem1 and Config.RareItem2 work)
+----------
+----------
+-- Config.RandomRareItem = "cockingclip" -- Random Rare drop a player can get when searching a trunk with no requirements needed
+-- Config.RandomRareItemChance = 10 -- The % of chance player gets Config.RandomRareItem when searching a trunk (no requirements needed for the player to get this item unlike how Config.RareItem1 and Config.RareItem2 work)
+----------
+----------
+-- Config.RandomRareItem = "triggerguard" -- Random Rare drop a player can get when searching a trunk with no requirements needed
+-- Config.RandomRareItemChance = 10 -- The % of chance player gets Config.RandomRareItem when searching a trunk (no requirements needed for the player to get this item unlike how Config.RareItem1 and Config.RareItem2 work)
+----------
+----------
+-- Config.RandomRareItem = "handguard" -- Random Rare drop a player can get when searching a trunk with no requirements needed
+-- Config.RandomRareItemChance = 10 -- The % of chance player gets Config.RandomRareItem when searching a trunk (no requirements needed for the player to get this item unlike how Config.RareItem1 and Config.RareItem2 work)
+----------
+----------
 Config.SetVehiclesLocked = true -- Set this false if you want vehicles to be unlocked when players go to pick them up when stealing the,
-Config.PugSlingScript = true -- Make this true if you are also using my sling script here: https://pug-scripts.tebex.io/package/5202185
+Config.PugSlingScript = false -- Make this true if you are also using my sling script here: https://pug-scripts.tebex.io/package/5202185
 Config.UseProgressBar = true -- Some esx servers may not use a progress bar. (ignore this if your qbcore)
 Config.DoCutSceneWehnPurchase = true -- Toggle the cutscene that plays when a player buys a garage true or false
 Config.DoCameraEffect = true -- Create a camera effect every time you enter the garage
 ----------
 ----------
-Config.UseSharedVehicleCars = false -- (QBCore ONLY) Make this true if you want the vehicles that are randomly spawned to be picked up to be any vehicle in the shared.lua (if the shop is boat, air, or police it will reroll the car until its not one of thoese)
+Config.UseSharedVehicleCars = true -- (QBCore ONLY) Make this true if you want the vehicles that are randomly spawned to be picked up to be any vehicle in the shared.lua (if the shop is boat, air, or police it will reroll the car until its not one of thoese)
 Config.GetCopCarChanceIfLandsOnCopCar = 30 -- % chance of getting the police car if the random roll of a vehicle lands on a cop car (Ignore this if Config.UseSharedVehicleCars is false as this never gets used if Config.UseSharedVehicleCars is false)
 ----------
 ----------
@@ -66,15 +86,15 @@ Config.PayForScrappingCarMin = 550 -- Minimum amount a player can receive for fu
 Config.PayForScrappingCarMax = 700 -- Maximum amount a player can receive for fully scrapping a car (when they get in the car and hit E after removing all of the vehicles parts)
 ----------
 ----------
-Config.ChancePoliceAraCalled = 100 -- % chance that the police are called (1-100)
-Config.GaragePrice = 100000 -- price of garage (how much the owner of the garage pays to get one)
+Config.ChancePoliceAraCalled = 80 -- % chance that the police are called (1-100)
+Config.GaragePrice = 800000 -- price of garage (how much the owner of the garage pays to get one)
 Config.BegginingPlayerCap = 1 -- The starting members capacity the garage starts with (DO NOT MAKE THIS LESS THEN 1)
 Config.BegginingVehicleCap = 5 -- The vehicle cap that the garage starts out with (How many cars can be stored when you purchase the garage. players upgrade these over time)
-Config.MembersUpgradePrice = 5500 -- Cost of upgrading members capacity (multiplied by current member capacity. example is if there is 4 players on the garage it will be 4*5500 = 22000)
-Config.MaximumMembers = 5 -- How many members can be apart of one garage
-Config.KickMemberPrice = 5000 -- Cost of kicking a member (to prevent members being constantly swapped out and abused)
+Config.MembersUpgradePrice = 90000 -- Cost of upgrading members capacity (multiplied by current member capacity. example is if there is 4 players on the garage it will be 4*5500 = 22000)
+Config.MaximumMembers = 20 -- How many members can be apart of one garage
+Config.KickMemberPrice = 50000 -- Cost of kicking a member (to prevent members being constantly swapped out and abused)
 ----------
-Config.VehicleCapUpgradePrice = 290 -- This is the base cost of upgrading how many vehicles can be stored in the garage it is multiplied by the garages current vehicle cap. (Config.VehicleCapUpgradePrice * CurrentGarage.vehiclecap)
+Config.VehicleCapUpgradePrice = 50000 -- This is the base cost of upgrading how many vehicles can be stored in the garage it is multiplied by the garages current vehicle cap. (Config.VehicleCapUpgradePrice * CurrentGarage.vehiclecap)
 Config.IncreaseVehicleAmount = 3 -- Amount of car slots you can upgrade at one time
 ----------
 Config.CoolDown = 7 -- How long people must wait before starting chop breakdown of a car (in minutes)
@@ -250,200 +270,194 @@ if Config.UseSharedVehicleCars and Framework == "QBCore" then
 else
     Config.VehicleList = { -- Change these cars to your liking
         ["adder"] = {
-            tracker = false
+            tracker = true
         },
         ["blista"] = {
-            tracker = false
+            tracker = true
         },
         ["dilettante"] = {
-            tracker = false
+            tracker = true
         },
         ["emperor"] = {
-            tracker = false
+            tracker = true
         },
         ["faggio"] = {
-            tracker = false
+            tracker = true
         },
         ["intruder"] = {
-            tracker = false
+            tracker = true
         },
         ["manana"] = {
-            tracker = false
+            tracker = true
         },
         ["peyote"] = {
-            tracker = false
+            tracker = true
         },
         ["prairie"] = {
-            tracker = false
+            tracker = true
         },
         ["premier"] = {
-            tracker = false
-        },
-        ["sabre"] = {
-            tracker = false
-        },
-        ["sultan"] = {
-            tracker = false
+            tracker = true
         },
         ["surge"] = {
-            tracker = false
+            tracker = true
         },
         ["tornado"] = {
-            tracker = false
+            tracker = true
         },
         ["vigero"] = {
-            tracker = false
+            tracker = true
         },
         ["washington"] = {
-            tracker = false
+            tracker = true
         },
         ["banshee"] = {
-            tracker = false
+            tracker = true
         },
         ["bullet"] = {
-            tracker = false
+            tracker = true
         },
         ["carbonizzare"] = {
-            tracker = false
+            tracker = true
         },
         ["comet2"] = {
-            tracker = false
+            tracker = true
         },
         ["comet3"] = {
-            tracker = false
+            tracker = true
         },
         ["coquette"] = {
-            tracker = false
+            tracker = true
         },
         ["elegy"] = {
-            tracker = false
+            tracker = true
         },
         ["feltzer2"] = {
-            tracker = false
+            tracker = true
         },
         ["furoregt"] = {
-            tracker = false
+            tracker = true
         },
         ["infernus"] = {
-            tracker = false
+            tracker = true
         },
         ["jester"] = {
-            tracker = false
+            tracker = true
         },
         ["kuruma"] = {
-            tracker = false
+            tracker = true
         },
         ["massacro"] = {
-            tracker = false
+            tracker = true
         },
         ["ninef"] = {
-            tracker = false
+            tracker = true
         },
         ["ninef2"] = {
-            tracker = false
+            tracker = true
         },
         ["osiris"] = {
-            tracker = false
+            tracker = true
         },
         ["penetrator"] = {
-            tracker = false
+            tracker = true
         },
         ["rapidgt"] = {
-            tracker = false
+            tracker = true
         },
         ["rapidgt2"] = {
-            tracker = false
+            tracker = true
         },
         ["schafter2"] = {
-            tracker = false
+            tracker = true
         },
         ["sultan2"] = {
-            tracker = false
+            tracker = true
         },
         ["sultan"] = {
-            tracker = false
+            tracker = true
         },
         ["t20"] = {
-            tracker = false
+            tracker = true
         },
         ["tempesta"] = {
-            tracker = false
+            tracker = true
         },
         ["turismo2"] = {
-            tracker = false
+            tracker = true
         },
         ["tyrus"] = {
-            tracker = false
+            tracker = true
         },
         ["vacca"] = {
-            tracker = false
+            tracker = true
         },
         ["verlierer2"] = {
-            tracker = false
+            tracker = true
         },
         -- DLC Cars
         ["autarch"] = {
-            tracker = false
+            tracker = true
         },
         ["banshee2"] = {
-            tracker = false
+            tracker = true
         },
         ["cheetah2"] = {
-            tracker = false
+            tracker = true
         },
         ["cyclone"] = {
-            tracker = false
+            tracker = true
         },
         ["deveste"] = {
-            tracker = false
+            tracker = true
         },
         ["emerus"] = {
-            tracker = false
+            tracker = true
         },
         ["entity2"] = {
-            tracker = false
+            tracker = true
         },
         ["entityxf"] = {
-            tracker = false
+            tracker = true
         },
         ["fagaloa"] = {
-            tracker = false
+            tracker = true
         },
         ["flashgt"] = {
-            tracker = false
+            tracker = true
         },
         ["gauntlet5"] = {
             tracker = true
         },
         ["gp1"] = {
-            tracker = false
+            tracker = true
         },
         ["infernus2"] = {
-            tracker = false
+            tracker = true
         },
         ["italigtb"] = {
-            tracker = false
+            tracker = true
         },
         ["italigtb2"] = {
-            tracker = false
+            tracker = true
         },
         ["nero"] = {
-            tracker = false
+            tracker = true
         },
         ["nero2"] = {
-            tracker = false
+            tracker = true
         },
         ["paragon"] = {
-            tracker = false
+            tracker = true
         },
         ["paragon2"] = {
-            tracker = false
+            tracker = true
         },
         ["pariah"] = {
-            tracker = false
+            tracker = true
         },
         ["penumbra2"] = {
-            tracker = false
+            tracker = true
         },
     }
 end
@@ -659,7 +673,7 @@ Config.ArcadeGames = { -- Arcade games you can play
 
 -- Garage upgrade options 
 Config.UpgradesMenu = {
-    [0] = {
+   --[[  [0] = {
         label = 'Clothing Change', -- preivew lable 
         itemupgrade = 'clothingchange', -- upgrade identifier name (very important)
         CamPos = vector3(959.53, -3005.18, -39.55), -- Camera position for previewing this upgrade
@@ -668,8 +682,8 @@ Config.UpgradesMenu = {
         CarsCount = 25, -- how many cars in total obtained
         Carsowned = 7,-- how many cars in the garage right now
         AddUpgradeEvent = "Pug:client:AddClothesTarget", -- You need to make a new event like this if you want to make more upgrades. The event examples are all in open.lua
-    },
-    [1] = {
+    }, ]]
+    [0] = {
         label = 'Storage Locker',
         itemupgrade = 'storagelocker',
         CamPos = vector3(969.94, -2999.66, -39.20),
@@ -679,7 +693,7 @@ Config.UpgradesMenu = {
         Carsowned = 14,-- how many cars in the garage right now
         AddUpgradeEvent = "Pug:client:AddStorageTarget",
     },
-    [2] = {
+    [1] = {
         label = 'Crafting Bench',
         itemupgrade = 'craftingbench',
         CamPos = vector3(967.51, -2992.84, -39.0),
@@ -689,7 +703,7 @@ Config.UpgradesMenu = {
         Carsowned = 18,-- how many cars in the garage right now
         AddUpgradeEvent = "Pug:client:AddCraftingBenchTarget",
     },
-    [3] = {
+    [2] = {
         label = 'Welding Bench',
         itemupgrade = 'weldingbench',
         CamPos = vector3(995.72, -2989.5, -39.20),
@@ -699,7 +713,7 @@ Config.UpgradesMenu = {
         Carsowned = 22,-- how many cars in the garage right now
         AddUpgradeEvent = "Pug:client:AddWeldingBench",
     },
-    [4] = {
+    [3] = {
         label = 'Arcade Mechine',
         itemupgrade = 'arcademechine',
         CamPos = vector3(960.02, -3001.11, -39.64),
@@ -709,7 +723,7 @@ Config.UpgradesMenu = {
         Carsowned = 33,-- how many cars in the garage right now
         AddUpgradeEvent = "Pug:client:AddArcadeMechine",
     },
-    [5] = {
+    [4] = {
         label = 'Printer Machine',
         itemupgrade = 'printermachine',
         CamPos = vector3(965.29, -3003.42, -39.25),
