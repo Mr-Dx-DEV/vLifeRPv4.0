@@ -4,7 +4,7 @@ function insideHouse()
     if GetResourceState("origen_housing") == "started" then
         return exports['origen_housing']:insideHouse()
     end
-    if GetResourceState("qs-housing") == "started" then
+    if GetResourceState("qs-housings") == "started" then
         return exports['qs-housing']:getCurrentHouse()
     end
     if GetResourceState("ps-housing") == "started" then

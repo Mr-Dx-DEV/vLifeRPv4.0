@@ -582,10 +582,10 @@ Config.FreeModeDecorationTips = {
 }
 
 Config.CreateHousePolyZone = {
-    title = 'Creating an exterior.',
-    content = 'In this section, we must create the decorative and exterior area, in case the entire green area will be the house.',
-    error = 'We forgot to add a visiting area, so that players can visit the house in the case of MLO.'
-    }
+    title = 'Criação de exterior.',
+    content = 'Nesta secção, devemos criar a área decorável e exterior, caso toda a área verde será a casa.',
+    error = 'Faltou adicionar uma área de visitação, para que os jogadores possam visitar a casa no caso de MLO.'
+}
 
 Config.CreateHouseDoors = {
     title = 'Door Selection.',

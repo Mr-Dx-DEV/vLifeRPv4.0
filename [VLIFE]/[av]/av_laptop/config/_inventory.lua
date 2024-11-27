@@ -2,13 +2,13 @@ Config = Config or {}
 Config.Inventory = false -- false it will auto detect your inventory, or set manually your inventory name "qb-inventory", "ox_inventory", etc.
 Config.OldQBInventory = false -- true if you are using old qb-inventory (check the fxmanifest.lua, version should be 1.x)
 Config.InventoryPath = {
-    ['qb-inventory'] = "qb-inventory/html/images/",
-    ['lj-inventory'] = "lj-inventory/html/images/",
+   -- ['qb-inventory'] = "qb-inventory/html/images/",
+  --  ['lj-inventory'] = "lj-inventory/html/images/",
     ['ox_inventory'] = "ox_inventory/web/images/",
-    ['qs-inventory'] = "qs-inventory/html/images/",
-    ['ps-inventory'] = "ps-inventory/html/images/",
-    ['origen_inventory'] = "origen_inventory/html/images/",
-    ['codem-inventory'] = "codem-inventory/html/itemimages/",
+  --  ['qs-inventory'] = "qs-inventory/html/images/",
+  --  ['ps-inventory'] = "ps-inventory/html/images/",
+  --  ['origen_inventory'] = "origen_inventory/html/images/",
+  --  ['codem-inventory'] = "codem-inventory/html/itemimages/",
 }
 
 CreateThread(function()
