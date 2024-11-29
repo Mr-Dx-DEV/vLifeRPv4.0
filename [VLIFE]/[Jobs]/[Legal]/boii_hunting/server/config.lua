@@ -13,7 +13,7 @@ config.stores = {
         blip = { type = 'hunting', label = 'Hunting Store', category = 'boii_hunting', sprite = 141, colour = 0, scale = 0.6 },
         ped = { type = 'hunting', label = 'Shop Keeper', model = 'mp_m_exarmy_01', scenario = 'WORLD_HUMAN_CLIPBOARD', category = 'boii_hunting', networked = false, distance = 2.0 },
         locations = {
-            { id = 'paleto_forest', coords = vector4(-776.18, 5603.131, 33.741, 256.278), show_blip = true, --[[ opening_times = { open = 10, close = 18} ]] },
+            { id = 'paleto_forest', coords = vector4(-679.03, 5839.7, 17.33, 225.66), show_blip = true, --[[ opening_times = { open = 10, close = 18} ]] },
             --- Add more hunting store locations here..
         },
         items = {
