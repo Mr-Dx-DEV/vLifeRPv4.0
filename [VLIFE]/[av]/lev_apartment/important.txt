@@ -1,0 +1,2 @@
+This shell belongs to https://github.com/levdevlev
+I only edited the shell to remove some props and make it compatible with my script

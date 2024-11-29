@@ -1,4 +1,529 @@
 return {
+
+	
+		
+		['casio'] = {
+		label = 'Casio',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = ''
+		},
+		
+		
+		['high_end_tv'] = {
+		label = 'Expensive TV',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = ''
+		},
+		['low_end_tv'] = {
+		label = 'Cheap TV',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = ''
+		},
+		['high_end_art'] = {
+		label = 'Expensive Art',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = ''
+		},
+		['low_end_art'] = {
+		label = 'Cheap Art',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = ''
+		},
+		['stolen_laptop'] = {
+		label = 'Laptop',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = ''
+		},
+		['ipod'] = {
+		label = 'iPod',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = ''
+		},
+		['coffee_machine'] = {
+		label = 'Coffee Machine',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = ''
+		},
+		['toaster'] = {
+		label = 'Toaster',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = ''
+		},
+	--- cocain
+	
+
+	["water_bottle"] = {
+		label = "Bottled Water",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "water_bottle.png",
+		}
+	},
+
+	["cokeprocessingtable"] = {
+		label = "Coke Processing Table",
+		weight = 200,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "cokeprocessingtable.png",
+		}
+	},
+
+	["coke_baggy"] = {
+		label = "Bag of Cocaine",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "coke_baggy.png",
+		}
+	},
+
+	["sodiumcarbonate"] = {
+		label = "Sodium Carbonate",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "sodiumcarbonate.png",
+		}
+	},
+
+	["scales"] = {
+		label = "Scales",
+		weight = 200,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "scales.png",
+		}
+	},
+
+	["iodine"] = {
+		label = "Iodine",
+		weight = 200,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "iodine.png",
+		}
+	},
+
+	["plasticjerrycan"] = {
+		label = "Empty Plastic Jerry Can",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "plasticjerrycan.png",
+		}
+	},
+
+	["crack_baggy"] = {
+		label = "Bag of Crack",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "crack_baggy.png",
+		}
+	},
+
+	["dimethylformamide"] = {
+		label = "Dimethylformamide",
+		weight = 200,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "dimethylformamide.png",
+		}
+	},
+
+	["pure_cocaine"] = {
+		label = "Pure Cocaine",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "pure_cocaine.png",
+		}
+	},
+
+	["emptybaggies"] = {
+		label = "Empty Baggies",
+		weight = 200,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "emptybaggies.png",
+		}
+	},
+
+	["acetone"] = {
+		label = "Acetone",
+		weight = 200,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "acetone.png",
+		}
+	},
+
+	["cement"] = {
+		label = "Cement",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "cement.png",
+		}
+	},
+
+	["gasoline"] = {
+		label = "Gasoline",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "gasoline.png",
+		}
+	},
+
+	["cocaleaf"] = {
+		label = "Coca Leaf",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "cocaleaf.png",
+		}
+	},
+
+	["cokeoverdosecure"] = {
+		label = "Coke Overdose Cure",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "overdosecure.png",
+		}
+	},
+
+	["hydrochloricacid"] = {
+		label = "Hydrochloric Acid",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "hydrochloricacid.png",
+		}
+	},
+
+	["trowel"] = {
+		label = "Trowel",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "trowel.png",
+		}
+	},
+
+	["pure_crack"] = {
+		label = "Pure Crack",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "pure_crack.png",
+		}
+	},
+
+	["lighter"] = {
+		label = "Lighter",
+		weight = 0,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "lighter.png",
+		}
+	},
+	
+-- MAGIC MUSHROOMS
+
+-- REQUIRED ITEMS
+['libertycap_mushroom'] = {
+    label = 'Liberty Cap Mushroom',
+    weight = 100,
+    stack = true,
+    close = true,
+    description = '',
+    client = {
+        image = 'libertycap_mushroom.png'
+    }
+},
+['dried_libertycap_mushroom'] = {
+    label = 'Dried Liberty Cap Mushroom',
+    weight = 100,
+    stack = true,
+    close = true,
+    description = '',
+    client = {
+        image = 'dried_libertycap_mushroom.png'
+    }
+},
+['indigomilkcap_mushroom'] = {
+    label = 'Indigo Milk Cap Mushroom',
+    weight = 100,
+    stack = true,
+    close = true,
+    description = '',
+    client = {
+        image = 'indigomilkcap_mushroom.png'
+    }
+},
+['deathcap_mushroom'] = {
+    label = 'Death Cap Mushroom',
+    weight = 100,
+    stack = true,
+    close = true,
+    description = '',
+    client = {
+        image = 'deathcap_mushroom.png'
+    }
+},
+['indigo_mycota_cure'] = {
+    label = 'Indigo Mycota Cure',
+    weight = 100,
+    stack = true,
+    close = true,
+    description = '',
+    client = {
+        image = 'indigo_mycota_cure.png'
+    }
+},
+['magic_mushroom'] = {
+    label = 'Magic Mushroom',
+    weight = 100,
+    stack = true,
+    close = true,
+    description = '',
+    client = {
+        image = 'magic_mushroom.png'
+    }
+},
+['mushroom_baggy'] = {
+    label = 'Bag of Magic Mushroom',
+    weight = 100,
+    stack = true,
+    close = true,
+    description = '',
+    client = {
+        image = 'mushroom_baggy.png'
+    }
+},
+
+-- SUPPORTING ITEMS
+['dryingrack'] = {
+    label = 'Drying Rack',
+    weight = 200,
+    stack = true,
+    close = true,
+    description = '',
+    client = {
+        image = 'dryingrack.png'
+    }
+},
+
+
+
+['processingtable'] = {
+    label = 'Processing Table',
+    weight = 200,
+    stack = true,
+    close = true,
+    description = '',
+    client = {
+        image = 'processingtable.png'
+    }
+},
+
+
+
+
+
+
+
+
+            
+
+
+	--- oxy
+	
+	["burnerphone"] = {
+		label = "Oxy Burner Phone",
+		weight = 0,
+		stack = false,
+		close = true,
+		description = "A Burner Phone Used To Sell Oxy",
+		client = {
+			image = "burnerphone.png",
+		}
+	},
+
+	["suspiciouspackage"] = {
+		label = "Suspicious Package",
+		weight = 0,
+		stack = true,
+		close = true,
+		description = "A Suspicious Package",
+		client = {
+			image = "suspiciouspackage.png",
+		}
+	},
+
+	["oxy"] = {
+		label = "Prescription Oxy",
+		weight = 0,
+		stack = true,
+		close = true,
+		description = "The Label Has Been Ripped Off",
+		client = {
+			image = "oxy.png",
+		}
+	},
+
+	 --- boii_hunting
+	 ['hide_shark'] = {
+        label = 'Shark Hide',
+        weight = 1500,
+    },
+    ['hide_whale'] = {
+        label = 'Whale Hide',
+        weight = 2000,
+    },
+    ['hide_dolphin'] = {
+        label = 'Dolphin Hide',
+        weight = 1250,
+    },
+    ['hide_stingray'] = {
+        label = 'Stingray Hide',
+        weight = 850,
+    },
+    ['hide_boar'] = {
+        label = 'Boar Hide',
+        weight = 1100,
+    },
+    ['hide_coyote'] = {
+        label = 'Coyote Hide',
+        weight = 800,
+    },
+    ['hide_deer'] = {
+        label = 'Deer Hide',
+        weight = 500,
+    },
+    ['hide_mtlion'] = {
+        label = 'Mt Lion Hide',
+        weight = 1000,
+    },
+    ['hide_rabbit'] = {
+        label = 'Rabbit Hide',
+        weight = 300,
+    },
+    ['hide_cow'] = {
+        label = 'Cow Hide',
+        weight = 1300,
+    },
+    ['hide_rat'] = {
+        label = 'Rat Hide',
+        weight = 300,
+    },
+    ['meat_shark'] = {
+        label = 'Shark Meat',
+        weight = 900,
+    },
+    ['meat_whale'] = {
+        label = 'Whale Meat',
+        weight = 1200,
+    },
+    ['meat_dolphin'] = {
+        label = 'Dolphin Meat',
+        weight = 750,
+    },
+    ['meat_stingray'] = {
+        label = 'Stingray Meat',
+        weight = 450,
+    },
+    ['meat_boar'] = {
+        label = 'Boar Meat',
+        weight = 600,
+    },
+    ['meat_coyote'] = {
+        label = 'Coyote Meat',
+        weight = 500,
+    },
+    ['meat_deer'] = {
+        label = 'Deer Meat',
+        weight = 300,
+    },
+    ['meat_mtlion'] = {
+        label = 'Mt Lion Meat',
+        weight = 650,
+    },
+    ['meat_rabbit'] = {
+        label = 'Rabbit Meat',
+        weight = 200,
+    },
+    ['meat_cow'] = {
+        label = 'Cow Meat',
+        weight = 800,
+    },
+    ['meat_rat'] = {
+        label = 'Rat Meat',
+        weight = 100,
+    },
+	
 	--- av_music
 	['cd'] = {
 		label = 'CD',
