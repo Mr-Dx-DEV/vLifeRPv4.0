@@ -172,9 +172,18 @@ Config.WXTC = { min = 20, max = 60} -- pricings per item
 --- travelling merchant
 
 Config.Travellingmerchant = { ------------ these are the random locations the merchant can spawn on script start. whatever you want for the merchant is in Config.Items right below
-    vector4(-119.66, -977.43, 304.25, 88.21),
-	vector4(-1522.93, 1476.01, 111.45, 41.25),
-	vector4(-3278.98, 973.38, 5.35, 101.53),
+    -- vector4(-119.66, -977.43, 304.25, 88.21),
+	-- vector4(-1522.93, 1476.01, 111.45, 41.25),
+	-- vector4(-3278.98, 973.38, 5.35, 101.53),
+    vector4(2318.683, 2553.725, 47.691, 221.049),
+
+    vector4(1520.717, -2114.209, 76.867, 273.213),
+
+    vector4(180.132, 2793.323, 45.655, 280.566),
+
+    vector4(198.025, -2201.89, 6.985, 358.665),
+
+    vector4(-1300.626, -776.287, 19.469, 126.039),
 }
 
 --------------------------------------- oxy runs
