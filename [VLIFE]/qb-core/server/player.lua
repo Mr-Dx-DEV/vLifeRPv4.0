@@ -77,15 +77,42 @@ function QBCore.Player.GetOfflinePlayerByLicense(license)
     return nil
 end
 
+--[[ local function applyDefaults(playerData, defaults)
+    for key, value in pairs(defaults) do
+        if type(value) == 'function' then
+            playerData[key] = playerData[key] or value()
+        elseif type(value) == 'table' then
+            playerData[key] = playerData[key] or {}
+            applyDefaults(playerData[key], value)
+        else
+            playerData[key] = playerData[key] or value
+        end
+    end
+end ]]
 local function applyDefaults(playerData, defaults)
     for key, value in pairs(defaults) do
-        playerData[key] = type(value) == 'function' and
-            (key == "money" and playerData[key] or value()) or
-            type(value) == 'table' and applyDefaults(playerData[key] or {}, value) or
-            playerData[key] or value
+        if type(value) == 'function' then
+            if key == "money" then
+                local moneyTypes = value()
+                if not playerData[key] then
+                    playerData[key] = moneyTypes
+                else
+                    for account, balance in pairs(moneyTypes) do
+                        playerData[key][account] = playerData[key][account] or balance
+                    end
+                end
+            else
+                playerData[key] = playerData[key] or value()
+            end
+        elseif type(value) == 'table' then
+            playerData[key] = playerData[key] or {}
+            applyDefaults(playerData[key], value)
+        else
+            playerData[key] = playerData[key] or value
+        end
     end
-    return playerData
 end
+
 
 function QBCore.Player.CheckPlayerData(source, PlayerData)
     PlayerData = PlayerData or {}
