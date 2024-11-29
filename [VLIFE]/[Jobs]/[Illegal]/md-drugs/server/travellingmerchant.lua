@@ -56,7 +56,7 @@ local stores = {
 lib.callback.register('md-drugs:server:menu', function(source, data)
     local src = source
     if data == 'travellingMerchant' then 
-        return {table = stores.travel, des = '$',  id = 'travellingMerchant', title = 'travelling Merchant'}
+        return {table = stores.travel, des = '$',  id = 'travellingMerchant', title = 'Merchant'}
     elseif data == 'dealermenu' then
         local table 
         if Config.StupidassNewQbItemName then  table = stores.ProductsStupidNameRewrite else table = stores.Products end
