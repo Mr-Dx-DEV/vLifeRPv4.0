@@ -16,7 +16,7 @@ Config.Shells = { -- Default shells1
             {x = -1.01, y = 1.05, z = 0.93, heading = -93.52, label = "Search", icon = "fa-solid fa-magnifying-glass", items = 1},
         },
     },
-    ['Apartment'] = { -- This is the key index
+    --[[ ['Apartment'] = { -- This is the key index
         label = "Lev Apartment", -- Label to display in creator menu
         shell = `lev_apartment_shell`, -- Shell object name
         z = 25.0, -- How far down should be spawned
@@ -33,8 +33,8 @@ Config.Shells = { -- Default shells1
             {x = -1.0, y = 0.01, z = 0.85, heading = -92.00, label = "Search", icon = "fa-solid fa-magnifying-glass", items = 1},
             {x = 4.02, y = 3.20, z = 0.85, heading = -14.50, label = "Search", icon = "fa-solid fa-magnifying-glass", items = 1},
         },
-    },
-    ['Luxury1'] = { -- This is the key index
+    }, ]]
+    --[[ ['Luxury1'] = { -- This is the key index
         label = "Luxury 1", -- Label to display in creator menu
         shell = `luxury_housing3_k4mb1`, -- Shell object name
         z = 25.0, -- How far down should be spawned
@@ -58,8 +58,8 @@ Config.Shells = { -- Default shells1
             {x = -2.67, y = 5.05, z = 1.05, heading = -3.74, label = "Search", icon = "fa-solid fa-magnifying-glass", items = 1},
             {x = 5.32, y = 3.05, z = 1.46, heading = -270.00, label = "Search", icon = "fa-solid fa-magnifying-glass", items = 1},
         },
-    },
-    ['Luxury2'] = { -- This is the key index
+    }, ]]
+   --[[  ['Luxury2'] = { -- This is the key index
         label = "Luxury 2", -- Label to display in creator menu
         shell = `luxury_housing4_k4mb1`, -- Shell object name
         z = 25.0, -- How far down should be spawned
@@ -83,8 +83,8 @@ Config.Shells = { -- Default shells1
             {x = -2.67, y = 5.05, z = 1.05, heading = -3.74, label = "Search", icon = "fa-solid fa-magnifying-glass", items = 1},
             {x = 5.32, y = 3.05, z = 1.46, heading = -270.00, label = "Search", icon = "fa-solid fa-magnifying-glass", items = 1},
         },
-    },
-    ['LowEnd'] = { -- This is the key index
+    }, ]]
+    --[[ ['LowEnd'] = { -- This is the key index
         label = "LowEnd", -- Label to display in creator menu
         shell = `kambi_furnishedhouse1`, -- Shell object name
         z = 25.0, -- How far down should be spawned
@@ -101,7 +101,7 @@ Config.Shells = { -- Default shells1
             {x = -4.03, y = 3.78, z = 1.66, heading = -87.45, label = "Search", icon = "fa-solid fa-magnifying-glass", items = 1},
             {x = 4.39, y = -1.60, z = 1.36, heading = -270.00, label = "Search", icon = "fa-solid fa-magnifying-glass", items = 1},
         },
-    },
+    }, ]]
     ['MidApt'] = { -- This is the key index
         label = "Mid Apt", -- Label to display in creator menu
         shell = `furnitured_midapart`, -- Shell object name
@@ -125,7 +125,7 @@ Config.Shells = { -- Default shells1
             {x = -4.23, y = -1.0, z = 1.14, heading = -180.00, label = "Search", icon = "fa-solid fa-magnifying-glass", items = 1},
         },
     },
-    ['LowApt'] = { -- This is the key index
+    --[[ ['LowApt'] = { -- This is the key index
         label = "Low Apartment", -- Label to display in creator menu
         shell = `furnitured_lowapart`, -- Shell object name
         z = 25.0, -- How far down should be spawned
@@ -144,5 +144,5 @@ Config.Shells = { -- Default shells1
             {x = -3.31, y = -1.55, z = 2.10, heading = -179.23, label = "Search", icon = "fa-solid fa-magnifying-glass", items = 1},
             {x = 1.23, y = -2.14, z = 2.05, heading = -2.50, label = "Search", icon = "fa-solid fa-magnifying-glass", items = 1},
         },
-    },
+    }, ]]
 }

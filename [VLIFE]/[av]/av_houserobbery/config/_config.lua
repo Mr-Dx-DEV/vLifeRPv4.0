@@ -31,7 +31,7 @@ Config.Lucky = { -- This items aren't spawned all time, they are lucky based
     ['jewelry'] = 50, -- % of lucky (from a 100%) to get jewels spawned in house
     ['illegal'] = 30, -- % of lucky (from a 100%) to get an illegal item spawned in house
     ['money'] = 30, -- % of lucky (from a 100%) to get a pile of cash spawned in house
-    ['misc'] = 70,
+    ['item'] = 70,
 }
 Config.Blip = {
     sprite = 40,
@@ -65,16 +65,16 @@ Config.Rewards = { -- Player will receive a random item from the table, this rew
     ['safe'] = {
         {type = "item", itemName = "rolex", min = 10, max = 20},
         {type = "item", itemName = "necklace", min = 10, max = 20},
-        {type = "item", itemName = "diamond_ring", min = 10, max = 20},
+        -- {type = "item", itemName = "diamond_ring", min = 10, max = 20},
 
-        {type = "item", itemName = "goldchain", min = 1, max = 1},
+        -- {type = "item", itemName = "goldchain", min = 1, max = 1},
         {type = "item", itemName = "gold_bracelet", min = 1, max = 1},
         {type = "item", itemName = "gold_watch", min = 1, max = 1},
     },
     ['jewelry'] = {
         {type = "item", itemName = "rolex", min = 5, max = 10},
         {type = "item", itemName = "necklace", min = 5, max = 10},
-        {type = "item", itemName = "diamond_ring", min = 5, max = 10},
+        -- {type = "item", itemName = "diamond_ring", min = 5, max = 10},
 
         {type = "item", itemName = "earings", min = 1, max = 1},
     },
@@ -87,26 +87,26 @@ Config.Rewards = { -- Player will receive a random item from the table, this rew
     ['money'] = {
         {type = "money", accountName = "cash", min = 5, max = 20}, -- 'cash' for qb-core / 'black_money' for ESX
     },
-    ['misc'] = {
-        {type = "item", itemName = "condom", min = 1, max = 1},
-        {type = "item", itemName = "romantic_book", min = 1, max = 1},
-        {type = "item", itemName = "blacktape", min = 1, max = 5},
-        {type = "item", itemName = "rope", min = 1, max = 5},
-        {type = "item", itemName = "remote", min = 1, max = 5},
+    ['item'] = {
+      --  {type = "item", itemName = "condom", min = 1, max = 1},
+      --  {type = "item", itemName = "romantic_book", min = 1, max = 1},
+        {type = "item", itemName = "blacktape", min = 1, max = 20},
+        {type = "item", itemName = "rope", min = 1, max = 35},
+        {type = "item", itemName = "remote", min = 1, max = 35},
         {type = "item", itemName = "glassbottle", min = 1, max = 1},
-        {type = "item", itemName = "notepad", min = 1, max = 1},
-        {type = "item", itemName = "pencil", min = 1, max = 1},
-        {type = "item", itemName = "bong", min = 1, max = 1},
-        {type = "item", itemName = "emptycan", min = 1, max = 1},
-        {type = "item", itemName = "cardboard", min = 1, max = 1},
-        {type = "item", itemName = "emptypapercup", min = 1, max = 1},
+      --  {type = "item", itemName = "notepad", min = 1, max = 1},
+     --   {type = "item", itemName = "pencil", min = 1, max = 1},
+      --  {type = "item", itemName = "bong", min = 1, max = 1},
+     --   {type = "item", itemName = "emptycan", min = 1, max = 1},
+      --  {type = "item", itemName = "cardboard", min = 1, max = 1},
+     --   {type = "item", itemName = "emptypapercup", min = 1, max = 1},
         {type = "item", itemName = "phone", min = 1, max = 1},
-        {type = "item", itemName = "spring", min = 1, max = 5},
-        {type = "item", itemName = "pcb", min = 1, max = 5},
-        {type = "item", itemName = "copper_wires", min = 1, max = 1},
-        {type = "item", itemName = "condom_used", min = 1, max = 1},
-        {type = "item", itemName = "cloth", min = 1, max = 1},
-        {type = "item", itemName = "laptop_green", min = 1, max = 1},
+        {type = "item", itemName = "spring", min = 1, max = 30},
+        {type = "item", itemName = "pcb", min = 1, max = 35},
+    --    {type = "item", itemName = "copper_wires", min = 1, max = 1},
+     --   {type = "item", itemName = "condom_used", min = 1, max = 1},
+     --   {type = "item", itemName = "cloth", min = 1, max = 1},
+    --    {type = "item", itemName = "laptop_green", min = 1, max = 1},
     },
 }
 

@@ -41,7 +41,13 @@ Config = {
 	},
 
 	WashPool = {	-- Rewards from washing stone
-		"goldore",
+		"iron",
+		--"iron",
+		"copper",
+		--"copper",
+		--"steel",
+		"steel",
+		"steel",
 		"uncut_ruby",
 		"uncut_emerald",
 		"uncut_diamond",

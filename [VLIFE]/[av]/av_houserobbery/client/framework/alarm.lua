@@ -11,7 +11,7 @@ function AlarmHack()
     exports['ps-ui']:Scrambler(function(success)
         hacked = success
         solved = true
-    end, "alphanumeric", Config.AlarmTime, 0) -- Type (alphabet, numeric, alphanumeric, greek, braille, runes), Time (Seconds), Mirrored (0: Normal, 1: Normal + Mirrored 2: Mirrored only )
+    end, "greek", Config.AlarmTime, 0) -- Type (alphabet, numeric, alphanumeric, greek, braille, runes), Time (Seconds), Mirrored (0: Normal, 1: Normal + Mirrored 2: Mirrored only )
     while not solved do Wait(30) end
     ClearPedTasks(ped)
     return hacked

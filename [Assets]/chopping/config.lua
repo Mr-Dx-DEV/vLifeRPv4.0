@@ -619,9 +619,10 @@ Config.PrinterOptions = {
     [0] = {
         Item = 'security_card_01', -- What you get from the printer
         Reqired = { -- Items required to print that item
-            ["iron"] = 25, -- Item needed and amount needed ( you can add as many items as you like)
-            ["metalscrap"] = 15, -- Item needed and amount needed ( you can add as many items as you like)
-            ["rubber"] = 18, -- Item needed and amount needed ( you can add as many items as you like)
+            ["metal"] = 35, -- Item needed and amount needed ( you can add as many items as you like)
+            ["aluminum"] = 30, -- Item needed and amount needed ( you can add as many items as you like)
+            ["spring"] = 30, -- Item needed and amount needed ( you can add as many items as you like)
+            ["rubber"] = 55, -- Item needed and amount needed ( you can add as many items as you like)
         },
         price = 500, -- cost of printing
     },

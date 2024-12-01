@@ -6,7 +6,7 @@ Config.splitReward = false          -- This option work's only when useModernUI 
 Config.UseBuiltInNotifications = true   -- Set to false if you want to use ur framework notification style. Otherwise, the built in modern notifications will be used.=
 Config.letBossSplitReward = false                    -- If it's true, then boss can manage whole party rewards percent in menu. If you'll set it to false, then everybody will get same amount.
 Config.multiplyRewardWhileWorkingInGroup = false     -- If it's false, then reward will stay by default. For example $1000 for completing whole job. If you'll set it to true, then the payout will depend on how many players is there in the group. For example, if for full job there's $1000, then if player will work in 4 member group, the reward will be $4000. (baseReward * partyCount)
-Config.Price = 250           -- Price per one bag inside trashmaster. 100 is maximum so full trash = 200$ / partyCount
+Config.Price = 100           -- Price per one bag inside trashmaster. 100 is maximum so full trash = 200$ / partyCount
 
 Config.UseTarget = true                 -- Change it to true if you want to use a target system. All setings about the target system are under target.lua file.
 Config.RequiredJob = "none"             -- Set to "none" if you dont want using jobs. If you are using target, you have to set "job" parameter inside every export in target.lua
@@ -29,29 +29,29 @@ Config.ProgressBarAlign = "bottom-right"            -- Align of the progressbar
 -- ^ Options: top-left, top-center, top-right, bottom-left, bottom-center, bottom-right
 
 Config.RewardItemsToGive = {
-    {
+    --[[ {
          item_name = "rubber",
          chance = 10,
          amountPerBag = 1,
-    },
+    }, ]]
     {
         item_name = "plastic",
-        chance = 10,
+        chance = 40,
         amountPerBag = 1,
     },
     {
         item_name = "glass",
-        chance = 10,
+        chance = 35,
         amountPerBag = 1,
     },
-    {
+    --[[ {
         item_name = "lithium",
         chance = 8,
         amountPerBag = 2,
-    },
+    }, ]]
     {
         item_name = "gunpowder",
-        chance = 6,
+        chance = 30,
         amountPerBag = 1,
     },
 }
