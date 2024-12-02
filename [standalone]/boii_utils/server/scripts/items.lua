@@ -27,6 +27,9 @@ local function register(item_id, use_function)
     usable_items[item_id] = use_function
 end
 
+exports('items_register', register)
+utils.items.register = register
+
 --- @section Events
 
 --- Event to handle item use.
@@ -40,6 +43,3 @@ RegisterServerEvent('boii_utils:sv:use_item', function(item_id)
         print("Item with ID " .. item_id .. " is not registered as usable.")
     end
 end)
-
-exports('items_register', register)
-utils.items.register = register

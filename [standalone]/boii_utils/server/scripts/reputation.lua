@@ -34,6 +34,9 @@ local function insert_new_reputation(_src, reputation_name, reputation_data)
     MySQL.insert(query, params)
 end
 
+exports('reputation_insert_new', insert_new_reputation)
+utils.reputation.insert_new = insert_new_reputation
+
 --- @section Local functions
 
 --- Function to get reputation data for a specific reputation.
@@ -62,7 +65,7 @@ local function get_reputation(_src, reputation_name)
 end
 
 exports('reputation_get', get_reputation)
-utils.reputation.get_reputation = get_reputation
+utils.reputation.get = get_reputation
 
 --- Function to get all player reputation.
 -- @param _src The source/player identifier.

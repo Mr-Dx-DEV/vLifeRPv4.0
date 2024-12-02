@@ -190,3 +190,4 @@ AddEventHandler('boii_utils:cl:update_synced_data', function(table_name, key, va
         utils.debug.err('Received data for non-existent table ' .. table_name .. '.')
     end
 end)
+

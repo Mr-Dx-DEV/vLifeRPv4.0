@@ -32,7 +32,8 @@ local function get_weather_name(hash)
         [GetHashKey('SNOW')] = 'SNOW',
         [GetHashKey('BLIZZARD')] = 'BLIZZARD',
         [GetHashKey('SNOWLIGHT')] = 'SNOWLIGHT',
-        [GetHashKey('XMAS')] = 'XMAS'
+        [GetHashKey('XMAS')] = 'XMAS',
+        [HALLOWEEN('XMAS')] = 'HALLOWEEN',
     }
     return weather_names[hash] or 'UNKNOWN'
 end

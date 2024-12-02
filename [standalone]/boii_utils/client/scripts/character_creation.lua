@@ -69,15 +69,14 @@ local CLOTHING_ITEMS = {
 --- @section Variables
 
 --- Current sex of the player. Used to determine specific appearance settings.
---- This can be 'male' or 'female' and affects how certain appearance data is applied.
-local current_sex = 'male'
+--- This can be 'm' or 'f' and affects how certain appearance data is applied.
+local current_sex = 'm'
 
 --- Model identifier for the preview ped.
-local preview_ped = (current_sex == 'male') and 'mp_m_freemode_01' or 'mp_f_freemode_01'
+local preview_ped = (current_sex == 'm') and 'mp_m_freemode_01' or 'mp_f_freemode_01'
 
 --- Camera object for viewing the ped.
 local cam = nil
-
 
 --- @section Internal helper functions
 
@@ -96,11 +95,11 @@ end
 
 --- Function to get clothing and prop values for UI inputs.
 --- @function get_clothing_and_prop_values
---- @param sex string: The sex of the current ped model ('male' or 'female').
+--- @param sex string: The sex of the current ped model ('m' or 'f').
 --- @return table: A table with the maximum values for each clothing and prop item.
 local function get_clothing_and_prop_values(sex)
-    if not sex == 'male' or not sex == 'female' then  
-        debug_log('err', "Function: get_clothing_and_prop_values failed | Reason: Invalid parameters for sex. - Use 'male' or 'female' only.") 
+    if not sex == 'm' or not sex == 'f' then  
+        debug_log('err', "Function: get_clothing_and_prop_values failed | Reason: Invalid parameters for sex. - Use 'm' or 'f' only.") 
         return
     end
     local data = utils.shared.style[sex]
@@ -119,7 +118,7 @@ utils.character_creation.get_clothing_and_prop_values = get_clothing_and_prop_va
 
 --- Function to set ped hair, makeup, genetics, and clothing based on the latest data.
 --- @function set_ped_appearance
---- @param player PlayerPedId(): The player's ped instance.
+--- @param player PlayerPedId(): The players ped instance.
 --- @param data table: The data object containing appearance settings for genetics, hair, makeup, tattoos, and clothing.
 local function set_ped_appearance(player, data)
     if not player or not data then 
@@ -164,7 +163,7 @@ local function set_ped_appearance(player, data)
     if data.tattoos then
         for zone, tattoo_info in pairs(data.tattoos) do
             if tattoo_info and tattoo_info.name and tattoo_info.name ~= 'none' then
-                local tattoo_hash = data.sex == 'male' and GetHashKey(tattoo_info.hash_male) or GetHashKey(tattoo_info.hash_female)
+                local tattoo_hash = data.sex == 'm' and GetHashKey(tattoo_info.hash_m) or GetHashKey(tattoo_info.hash_f)
                 if tattoo_hash and tattoo_info.collection then
                     SetPedDecoration(player, GetHashKey(tattoo_info.collection), tattoo_hash)
                 else
@@ -188,14 +187,11 @@ utils.character_creation.set_ped_appearance = set_ped_appearance
 --- @param index string: The specific index within the data type being updated.
 --- @param data table: The new values to be set.
 local function update_ped_data(sex, category, id, value)
-    if not sex or not category or not id or not value then 
-        debug_log('err', 'Function: update_ped_data failed | Reason: Missing one or more required parameters. - sex, category, id, or value.') 
-        return 
-    end
+    if not sex or not category or not id or not value then  debug_log('err', 'Function: update_ped_data failed | Reason: Missing one or more required parameters. - sex, category, id, or value.')  return end
     if id == 'resemblance' or id == 'skin' then
         value = value / 100
     end
-    if type(utils.shared.style[sex][category][id]) == 'table' then
+    if type(utils.shared.style[sex][category][id]) == 'table' then -- 198
         for k, _ in pairs(utils.shared.style[sex][category][id]) do
             utils.shared.style[sex][category][id][k] = value[k]
         end
@@ -203,8 +199,8 @@ local function update_ped_data(sex, category, id, value)
         utils.shared.style[sex][category][id] = value
     end
     current_sex = sex
-    local player_ped = PlayerPedId()
-    set_ped_appearance(player_ped, utils.shared.style[sex])
+    preview_ped = (sex == 'm') and 'mp_m_freemode_01' or 'mp_f_freemode_01'
+    set_ped_appearance(PlayerPedId(), utils.shared.style[sex])
 end
 
 exports('character_creation_update_ped_data', update_ped_data)
@@ -212,19 +208,18 @@ utils.character_creation.update_ped_data = update_ped_data
 
 --- Function to change the player's ped model based on the selected sex.
 --- @function change_player_ped
---- @param sex string: The sex of the ped model to switch to ('male' or 'female').
+--- @param sex string: The sex of the ped model to switch to ('m' or 'f').
 local function change_player_ped(sex)
     if not sex then
         debug_log('err', 'Function: change_player_ped failed. | Reason: Player sex was not provided.')
         return
     end
     current_sex = sex
+    preview_ped = (sex == 'm') and 'mp_m_freemode_01' or 'mp_f_freemode_01'
     local model = GetHashKey(preview_ped)
     utils.requests.model(model)
-    local player_id = PlayerId()
-    local player_ped = PlayerPedId()
-    SetPlayerModel(player_id, model)
-    set_ped_appearance(player_ped, utils.shared.style[sex])
+    SetPlayerModel(PlayerId(), model)
+    set_ped_appearance(PlayerPedId(), utils.shared.style[sex])
 end
 
 exports('character_creation_change_player_ped', change_player_ped)
@@ -284,10 +279,10 @@ local function load_character_model(data)
     local player_ped = PlayerPedId()
     SetPlayerModel(player_id, model)
     SetPedComponentVariation(player_ped, 0, 0, 0, 1)
-    utils.shared.style.genetics = data.style.genetics
-    utils.shared.style.barber = data.style.barber
-    utils.shared.style.clothing = data.style.clothing
-    utils.shared.style.tattoos = data.style.tattoos
+    utils.shared.style[current_sex].genetics = data.style.genetics
+    utils.shared.style[current_sex].barber = data.style.barber
+    utils.shared.style[current_sex].clothing = data.style.clothing
+    utils.shared.style[current_sex].tattoos = data.style.tattoos
     set_ped_appearance(player_ped, utils.shared.style[current_sex])
 end
 

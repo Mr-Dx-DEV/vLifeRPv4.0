@@ -207,7 +207,7 @@ AddEventHandler('playerJoining', on_player_joining)
 
 --- Handles the process when a player disconnects from the server.
 --- Removes the player from the connected users tables.
---- @param reason The reason for the player's disconnection.
+--- @param reason The reason for the players disconnection.
 local function on_player_drop(reason)
     local _src = source
     connected_users[_src] = nil

@@ -31,9 +31,9 @@ config.debug = false
 --- @field notify: Specifies the active notification system. Options: 'boii_ui', 'qb-core', 'es_extended', 'ox_lib', 'okokNotify', 'custom'.
 --- @field progressbar: Specifies the active progressbar system. Options: 'boii_ui', 'custom'.
 config.ui = {
-    drawtext = 'qb-core',
-    notify = 'qb-core',
-    progressbar = 'qb-core'
+    drawtext = 'ox_lib',
+    notify = 'ox_lib',
+    progressbar = 'ox_lib'
 }
 
 --- @section Script settings
@@ -147,7 +147,18 @@ config.skills = {
         first_level_xp = 1000,
         growth_factor = 1.5,
         max_level = 20
-    }
+    },
+
+    lockpicking = { -- Used by: boii_robberies
+        id = 'lockpicking',
+        category = 'criminal',
+        label = 'Lockpicking',
+        level = 1,
+        start_xp = 0,
+        first_level_xp = 1000,
+        growth_factor = 1.5,
+        max_level = 20
+    },
 }
 
 --- Licences settings

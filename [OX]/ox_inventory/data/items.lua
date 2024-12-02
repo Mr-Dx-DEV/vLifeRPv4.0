@@ -1,5 +1,16 @@
 return {
 
+	    --- boii_fishing
+		['fishing_boilie'] = {
+			label = 'Boilie',
+			weight = 1,
+		},
+		['fishing_worms'] = {
+			label = 'Worms',
+			weight = 1,
+		},
+		
+
 	-- Add items into ox_inventory/data/items.lua
 ['blue_metaldetector'] = {
 	label = 'Beginner\'s Beacon',
@@ -20628,7 +20639,7 @@ return {
 	},
 
 	["oxy-box"] = {
-		label = "Drug Package",
+		label = "OXY BOX",
 		weight = 15000,
 		stack = false,
 		close = true,

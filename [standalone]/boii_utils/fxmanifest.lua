@@ -13,7 +13,7 @@ fx_version 'cerulean'
 games { 'gta5', 'rdr3' }
 
 name 'boii_utils'
-version '1.8.6'
+version '1.8.7'
 description 'BOII | Development - Developer Utility Library'
 author 'boiidevelopment'
 repository 'https://github.com/boiidevelopment/boii_utils'
@@ -42,6 +42,7 @@ server_scripts {
     'server/scripts/connections.lua',
     'server/scripts/buckets.lua',
     'server/scripts/callbacks.lua',
+    'server/scripts/items.lua',
     'server/scripts/bridges/notifications.lua',
     'server/scripts/bridges/frameworks.lua',
     'server/scripts/commands.lua',
@@ -50,7 +51,6 @@ server_scripts {
     'server/scripts/database.lua',
     'server/scripts/date_time.lua',
     'server/scripts/groups.lua',
-    'server/scripts/items.lua',
     'server/scripts/licences.lua',
     'server/scripts/networking.lua',
     'server/scripts/reputation.lua',
@@ -94,3 +94,5 @@ escrow_ignore {
     'client/**',
     'server/**'
 }
+
+dependency '/assetpacks'

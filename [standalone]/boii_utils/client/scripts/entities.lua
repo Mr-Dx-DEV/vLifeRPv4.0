@@ -233,10 +233,10 @@ utils.entities.get_closest_player = get_closest_player
 --- @function get_closest_vehicle
 --- @param coords vector3: Center coordinates to search from.
 --- @param max_distance number: Maximum distance to search within.
---- @param player_vehicle boolean: Whether to include the player's vehicle in the search.
+--- @param player_vehicle boolean: Whether to include the players vehicle in the search.
 --- @return vehicle: The closest vehicle within the max distance.
 --- @return vector3: Coordinates of the closest vehicle.
---- @usage local closest_vehicle, closest_coords = utils.entities.get_closest_vehicle({x = 0, y = 0, z = 0}, 10.0, true|false)
+--- @usage local closest_vehicle, closest_coords = utils.entities.get_closest_vehicle({x = 0, y = 0, z = 0}, 10.0, true)
 local function get_closest_vehicle(coords, max_distance, player_vehicle)
     local vehicles = GetGamePool('CVehicle')
     local closest_vehicle, closest_coords
@@ -295,7 +295,6 @@ local function get_target_ped(player_ped, fov, distance)
     if entity and IsEntityAPed(entity) and not IsPedAPlayer(entity) then
         return entity, GetEntityCoords(entity)
     end
-    
     local player_coords = GetEntityCoords(player_ped)
     local target_ped, target_coords = get_closest_ped(player_coords, 5.0)
     return target_ped, target_coords

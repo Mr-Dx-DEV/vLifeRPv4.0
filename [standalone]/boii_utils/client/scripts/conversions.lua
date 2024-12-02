@@ -37,8 +37,6 @@ CreateThread(function()
     end
 
     if FRAMEWORK == 'qb-core' then
-    
-        --- Thread to run qb conversions when LocalPlayer.state.isLoggedIn
         CreateThread(function()
             while true do
                 if LocalPlayer.state.isLoggedIn then
@@ -48,7 +46,6 @@ CreateThread(function()
                 Wait(0)
             end
         end)
-    
     end
 
     return

@@ -100,6 +100,32 @@ end
 exports('maths_random_between', random_between)
 utils.maths.random_between = random_between
 
+--- Applies a random reduction to a value within the given range.
+--- @param min number: The minimum value for the random reduction.
+--- @param max number: The maximum value for the random reduction.
+--- @param current number: The current value.
+--- @return number: The new value after reduction.
+--- @usage random_subtract(3, 10, 100) -- Removes random value from 3 - 10, from 100.
+local function random_subtract(min, max, current)
+    return math.max(0, current - math.random(min, max))
+end
+
+exports('maths_random_subtract', random_subtract)
+utils.maths.random_subtract = random_subtract
+
+--- Applies a random addition to a value within the given range.
+--- @param min number: The minimum value for the random addition.
+--- @param max number: The maximum value for the random addition.
+--- @param current number: The current value.
+--- @return number: The new value after addition.
+--- @usage random_addition(3, 10, 100) -- Adds random value from 3 - 10, from 100.
+local function random_addition(min, max, current)
+    return math.max(0, current + math.random(min, max))
+end
+
+exports('maths_random_addition', random_addition)
+utils.maths.random_addition = random_addition
+
 --- Calculates the factorial of a number.
 --- @function factorial
 --- @param n The number to calculate the factorial of.

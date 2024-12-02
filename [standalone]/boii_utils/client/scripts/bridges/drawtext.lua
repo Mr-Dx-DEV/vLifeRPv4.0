@@ -30,11 +30,7 @@ end)
 --- @function show_drawtext
 --- @param options table: The drawtext ui options (header, message, icon).
 local function show_drawtext(options)
-    print('drawtext options: ' .. json.encode(options))
-    if not options or not options.message then
-        print('Invalid drawtext data provided')
-        return
-    end
+    if not options or not options.message then debug_log('err', 'Invalid drawtext data provided') return end
 
     if DRAWTEXT == 'boii_ui' then
         exports.boii_ui:show_drawtext(options.header, options.message, options.icon)
