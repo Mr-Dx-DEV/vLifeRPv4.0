@@ -15,6 +15,17 @@ CreateThread(function()
     end
 end)
 
+AddEventHandler("QBCore:Server:PlayerLoaded", function(Player)
+    init(Player.PlayerData.source)
+end)
+
+RegisterServerEvent("esx:onPlayerJoined")
+AddEventHandler("esx:onPlayerJoined", function(Player)
+    local src = Player
+    if not src then src = source end
+    init(src)
+end)
+
 function getPlayerByIdentifier(identifier)
     if Config.Framework == "QBCore" then
         local Player = QBCore.Functions.GetPlayerByCitizenId(identifier)

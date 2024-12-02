@@ -37,26 +37,7 @@ function SpawnObjects(list,entry,debug,firstSpawn)
                 FreezeEntityPosition(temp_object,true)
                 SetEntityHeading(temp_object, heading)
                 v['object'] = temp_object
-                if Config.TargetSystem and interactive then
-                    exports[Config.TargetSystem]:AddTargetEntity(v['object'], {
-                        options = {
-                            {
-                                type = "client",
-                                event = "av_houserobbery:interact",
-                                icon = v['icon'],
-                                label = v['label'],
-                                extraData = v,
-                                interactionType = "object"
-                            }
-                        },
-                        distance = 2.5,
-                    })
-                    interactives[#interactives+1] = {
-                        entity = v['object'],
-                        label = v['label'] 
-                    }
-                end
-                if not Config.TargetSystem and interactive then
+                if interactive then
                     points[#points+1] = lib.points.new({
                         coords = vector3(x,y,z),
                         distance = 1.5,

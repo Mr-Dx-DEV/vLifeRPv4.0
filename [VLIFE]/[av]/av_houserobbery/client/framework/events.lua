@@ -1,10 +1,16 @@
 busy = false
 
+RegisterCommand("exithouse", function()
+    if insideHouse then
+        ExitHouse()
+    end
+end)
+
 RegisterNetEvent('av_houserobbery:interact', function(data)
     if Config.Debug then
         print("av_houserobbery:interact triggered")
     end
-    if not data['interactionType']['type'] == "exit" and busy then
+    if data['interactionType']['type'] ~= "exit" and busy then
         if Config.Debug then
             print("Zone is not exit and we are busy, exit event...")
         end
@@ -34,13 +40,19 @@ RegisterNetEvent('av_houserobbery:interact', function(data)
         end
     end
     if type == "enter" then
-        EnterShell(extraData,false)
+        CreateThread(function()
+            EnterShell(extraData,false)
+        end)
     end
     if type == "object" then
-        ObjectsFunction(extraData)
+        CreateThread(function()
+            ObjectsFunction(extraData)
+        end)
     end
     if type == "zone" then
-        ZonesFunction(extraData)
+        CreateThread(function()
+            ZonesFunction(extraData)
+        end)
     end
     Wait(500)
     busy = false
@@ -55,9 +67,9 @@ RegisterNetEvent('av_houserobbery:knock', function()
     TaskPlayAnim(ped, "timetable@jimmy@doorknock@", 'knockdoor_idle', 2.0, 2.0, 3000, 1, 0, true, true, true)
     FreezeEntityPosition(ped,false)
     Wait(2000)
+    busy = false
     if IsCop() then
         TriggerEvent('av_houserobbery:notification', "error", Lang['isCop'])
-        busy = false
         return
     end
     local options = {
@@ -85,8 +97,6 @@ RegisterNetEvent('av_houserobbery:knock', function()
         options = options
     })
     lib.showContext('house_robbery')
-    Wait(1000)
-    busy = false
 end)
 
 RegisterNetEvent('av_houserobbery:openInventory', function()
@@ -106,8 +116,6 @@ RegisterNetEvent('av_houserobbery:openInventory', function()
 end)
 
 RegisterNetEvent('av_houserobbery:sellInventory', function()
-    if busy then return end
-    busy = true
     if lib.progressBar({
         duration = math.random(5000,10000), -- prevent any type of dupe glitches
         label = Lang['selling'],
@@ -118,9 +126,5 @@ RegisterNetEvent('av_houserobbery:sellInventory', function()
         }
     }) then 
         TriggerServerEvent('av_houserobbery:sellItems')
-        busy = false
-    else
-        busy = false
     end
-    busy = false
 end)
