@@ -56,9 +56,9 @@ Config.SellItems = true -- Only available if you use ox_inventory (other invento
 -- Items you can find when searching
 Config.ZoneRewards = {
     -- itemName, min/max amount of items it can drop at once
-    {itemName = "phone", min = 1, max = 2},
-    {itemName = "rolex", min = 1, max = 2},
-    {itemName = "casio", min = 1, max = 2},
+    {itemName = "phone", min = 1, max = 1},
+    {itemName = "rolex", min = 1, max = 1},
+    {itemName = "casio", min = 1, max = 1},
 }
 
 Config.Rewards = { -- Player will receive a random item from the table, this rewards corresponds to Config.Lucky
