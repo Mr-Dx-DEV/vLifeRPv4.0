@@ -808,6 +808,8 @@ local Vehicles = {
     { model = 'hurbyv', name = 'hurbyv', brand = 'hurbyv', price = 50000, category = 'EDM', shop = 'edm'},
     { model = 'GODzESKYVWB', name = 'GODzESKYVWB', brand = 'GODzESKYVWB', price = 50000, category = 'EDM', shop = 'edm'},
     { model = 'lwhuracan', name = 'lwhuracan', brand = 'lwhuracan', price = 50000, category = 'EDM', shop = 'edm'},
+    { model = 'artura22wb', name = 'artura22wb', brand = 'artura22wb', price = 50000, category = 'EDM', shop = 'edm'},
+    
     
     { model = 'lambobarbie', name = 'lambo', brand = 'Gift By RBN', price = 50000, category = 'EDM', shop = 'edm'},
     { model = 'porschebarbie', name = 'porsche', brand = 'Gift By RBN', price = 50000, category = 'EDM', shop = 'edm'},

@@ -138,7 +138,7 @@ Config.Shops = {
         -- The ped model used for the shopkeeper
         ped = 'a_m_o_genstreet_01',
         -- The location this shop exists at
-        coords = vec4(-1216.68, -1498.96, 4.00, 119.07),
+        coords = vec4(-1222.6, -1491.97, 3.3116, 126.54),
         -- The account used at this shop ('cash' or 'bank')
         -- The money the player receives when selling items
         -- And the money used when purchasing shovel (if enabled)
