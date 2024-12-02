@@ -134,11 +134,11 @@ Config.Shops = {
     },
     sellShop = {
         -- You can disable this shop by setting to false
-        enabled = false,
+        enabled = true,
         -- The ped model used for the shopkeeper
         ped = 'a_m_o_genstreet_01',
         -- The location this shop exists at
-        coords = vec4(412.6790, 314.3495, 102.0208, 207.4230),
+        coords = vec4(-1216.68, -1498.96, 4.00, 119.07),
         -- The account used at this shop ('cash' or 'bank')
         -- The money the player receives when selling items
         -- And the money used when purchasing shovel (if enabled)
@@ -163,7 +163,7 @@ Config.Shops = {
             ['md_rustyball'] = 15,
             ['md_rustyironball'] = 15,
             ['md_rustyjunk'] = 15,
-            ['md_rustynails'] = 70,
+            ['md_rustynails'] = 15,
             ['md_rustypliers'] = 20,
             ['md_rustyring'] = 20,
             ['md_rustyscissors'] = 20,
@@ -197,7 +197,7 @@ Config.Shops = {
             ['md_presidentialwatch'] = 5000
         },
         blip = {
-            enabled = false,
+            enabled = true,
             sprite = 207,
             color = 2,
             scale = 0.8,
