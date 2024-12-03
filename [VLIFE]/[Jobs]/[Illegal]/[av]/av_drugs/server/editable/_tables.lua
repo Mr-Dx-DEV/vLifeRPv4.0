@@ -81,6 +81,30 @@ Config.Tables = { -- items used to place tables for cooking
             offset = {x = 0.0, y = 0.0, z = 0.5},
         }
     },
+    ['weed_table'] = { -- item name and key index that needs to match with config/tables.lua > Config.Tables
+        drug = "weed", -- Drug linked to this table, should exist in server/editable/_drugs.lua too
+        model = `v_ret_ml_tablea`, -- model to spawn
+        slots = 5, -- stash slots
+        weight = 5000, -- stash weight
+        ingredients = { -- needed ingredients for cooking (['itemName'] = amount needed)
+            ['cannabis'] = 2, -- needs 4x water
+            ['empty_weed_bag'] = 1, -- needs 4x burger
+            ['water_bottle'] = 1,
+            
+            
+        },
+        products = { -- finished product, make sure it fits the stash weight and slots
+            {name = "weed_bag", min = 1, max = 1}, -- it will give item moonshine a min of 3 and max 5
+        },
+        cookingXP = {min = 3, max = 5}, -- XP received for every successful cook / every 100XP is 1 level
+        cookingTime = 30, -- in minutes, time for completing a cook
+        cooldownTime = 60, -- in minutes, after every cook the table enters in cooldown
+        particles = { -- particles used for object when is cooking, smoke by default or false (particles = false)
+            dict = "core",
+            asset = "ent_amb_smoke_scrap",
+            offset = {x = 0.0, y = 0.0, z = 0.5},
+        }
+    },
     ['ketamine_table'] = { -- item name and key index that needs to match with config/tables.lua > Config.Tables
         drug = "ketamine", -- Drug linked to this table, should exist in server/editable/_drugs.lua too
         model = `v_ret_ml_tablec`, -- model to spawn

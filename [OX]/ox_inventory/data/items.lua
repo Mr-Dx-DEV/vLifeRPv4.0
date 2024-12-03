@@ -3063,6 +3063,13 @@ return {
 	close = true,
 	description = ''
 	},
+	['weed_table'] = {
+		label = 'Weed Table',
+		weight = 1,
+		stack = false,
+		close = true,
+		description = ''
+	},
 	['ketamine_table'] = {
 	label = 'Ketamine Table',
 	weight = 1,
@@ -3083,6 +3090,13 @@ return {
 	stack = false,
 	close = true,
 	description = ''
+	},
+	['weed_batch'] = {
+		label = 'Weed Batch',
+		weight = 1,
+		stack = false,
+		close = true,
+		description = ''
 	},
 	['ketamine_batch'] = {
 	label = 'Ketamine Batch',

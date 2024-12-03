@@ -1,6 +1,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-local hiddenprocess = vector3(5211.87, -5128.55, 6.21) -- Server-side process location
+--local hiddenprocess = vector3(5211.87, -5128.55, 6.21) -- Server-side process location
+local hiddenprocess = vector3(00.00, 00.00, 00.00) -- Server-side process location
 local hiddenstart = vector3(4493.53, -4526.08, 4.43)   -- Server-side start location
 
 -- Discord webhook function to log events

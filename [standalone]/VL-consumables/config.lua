@@ -43,6 +43,8 @@ Config = {
 
 		["ifaks"] = { 			emote = "coffee", 		time = math.random(5000, 6000), stress = math.random(8, 10), heal = 0, armor = 0, type = "drug", stats = { effect = "heal", amount = 6, widepupils = false, canOD = false } },
 		["joint"] = { 			emote = "smoke3",	time = math.random(5000, 6000), stress = math.random(8, 10), heal = 0, armor = 0, type = "drug", stats = { screen = "weed",  widepupils = false, canOD = false } },
+		["weed_ak47_joint"] = { 			emote = "smoke3",	time = math.random(5000, 6000), stress = math.random(10, 25), heal = 0, armor = 0, type = "drug", stats = { screen = "weed",  widepupils = false, canOD = false } },
+		
 --		["bandage"] = { 		emote = "oxy", 		time = math.random(5000, 6000), stress = 0, heal = 12, armor = 0, type = "drug", stats = { effect = "heal", amount = 3, widepupils = false, canOD = false } }, },
 		 --Testing effects & armor with small functionality to drugs - This may be another one left to default scripts
 		

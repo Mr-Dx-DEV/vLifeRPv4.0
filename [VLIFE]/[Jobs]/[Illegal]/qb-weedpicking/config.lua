@@ -20,6 +20,6 @@ Config.GiveBlack = false -- give black money? if disabled it'll give regular cas
 
 Config.CircleZones = {
 	WeedField = {coords = vector3(306.931, 4304.629, 46.558), name = 'blip_weedfield', color = 25, sprite = 496, radius = 100.0},
-	WeedProcessing = {coords = vector3(4925.94, -5244.01, 2.52), name = 'blip_weedprocessing', color = 25, sprite = 496, radius = 100.0},
+	WeedProcessing = {coords = vector3(00.00, 00.00, 00.00), name = 'blip_weedprocessing', color = 25, sprite = 496, radius = 100.0},
 	DrugDealer = {coords = vector3(0.0, 0.0, 0.0), name = 'blip_drugdealer', color = 6, sprite = 378, radius = 25.0},
 }
