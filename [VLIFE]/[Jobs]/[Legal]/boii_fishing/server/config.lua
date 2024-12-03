@@ -36,7 +36,7 @@ config.stores = {
         blip = { type = 'fishing', label = 'Fishing Store', category = 'boii_fishing', sprite = 762, colour = 0, scale = 0.6 },
         ped = { type = 'fishing', label = 'Fishing Store', model = 'a_m_y_sunbathe_01', scenario = 'WORLD_HUMAN_CLIPBOARD', category = 'boii_fishing', networked = false, distance = 2.0 },
         locations = {
-            { id = 'tonga_valley', coords = vector4(-1507.36, 1504.46, 115.29, 241.33), show_blip = true, opening_times = { open = 10, close = 18} --[[remove opening_times section to disable time locks]]},
+            { id = 'tonga_valley', coords = vector4(-1507.36, 1504.46, 115.29, 241.33), show_blip = true--[[ , opening_times = { open = 19, close = 20} ]] --[[remove opening_times section to disable time locks]]},
             -- Add more fishing store locations here..
         },
         items = {
@@ -53,7 +53,7 @@ config.stores = {
         blip = { type = 'fish', label = 'Fish Buyer', category = 'boii_fishing', sprite = 762, colour = 0, scale = 0.6 },
         ped = { type = 'fish', label = 'Fish Buyer', model = 'a_m_y_sunbathe_01', scenario = 'WORLD_HUMAN_CLIPBOARD', category = 'boii_fishing', networked = false, distance = 2.0 },
         locations = {
-            { id = 'pearls', coords = vector4(-1842.09, -1199.5, 14.3, 234.43), show_blip = true, opening_times = { open = 10, close = 18} --[[remove opening_times section to disable time locks]]},
+            { id = 'pearls', coords = vector4(-1842.09, -1199.5, 14.3, 234.43), show_blip = true--[[ , opening_times = { open = 10, close = 18} ]] --[[remove opening_times section to disable time locks]]},
             -- Add more fishing store locations here..
         },
         items = {
