@@ -20,19 +20,58 @@ local isSelling = {} -- used to prevent any lua menu usage
 Config = Config or {}
 
 Config.Sells = {
-    ['fentanyl_baggy'] = { -- item name, drug used for sell
-        drug = "fentanyl", -- drug linked to this item
-        label = "Fentanyl", -- used for Target
+    ['weed_bag'] = { -- item name, drug used for sell
+        drug = "weed", -- drug linked to this item
+        label = "Weed Bag", -- used for Target
         icon = "fa-solid fa-flask", -- Used for target
         minCops = 0, -- Min cops online to sell this specific drug
         zones = { -- Zones where player can sell this type of drug, use 'ALL' to allow to sell anywhere
             ['ALL'] = true,
         },
-        basePrice = 25, -- base price per bag, price get higher based on drug purity
-        maxPrice = 100, -- max price per bag, even when price get higher based on purity it won't be higher than this
-        maxBags = 5, -- max bags the NPC will buy from player
+        basePrice = 300, -- base price per bag, price get higher based on drug purity
+        maxPrice = 500, -- max price per bag, even when price get higher based on purity it won't be higher than this
+        maxBags = 2, -- max bags the NPC will buy from player
     },
-    ['ketamine_baggy'] = { -- item name, drug used for sell
+    ['weed_ak47_joint'] = { -- item name, drug used for sell
+        drug = "Weed", -- drug linked to this item
+        label = "Weed ak47 joint", -- used for Target
+        icon = "fa-solid fa-flask", -- Used for target
+        minCops = 0, -- Min cops online to sell this specific drug
+        zones = { -- Zones where player can sell this type of drug, use 'ALL' to allow to sell anywhere
+            ['ALL'] = true,
+        },
+        basePrice = 500, -- base price per bag, price get higher based on drug purity
+        maxPrice = 800, -- max price per bag, even when price get higher based on purity it won't be higher than this
+        maxBags = 2, -- max bags the NPC will buy from player
+    },
+
+    ['coke_baggy'] = { -- item name, drug used for sell
+        drug = "coke", -- drug linked to this item
+        label = "Coke Bag", -- used for Target
+        icon = "fa-solid fa-flask", -- Used for target
+        minCops = 0, -- Min cops online to sell this specific drug
+        zones = { -- Zones where player can sell this type of drug, use 'ALL' to allow to sell anywhere
+            ['ALL'] = true,
+        },
+        basePrice = 500, -- base price per bag, price get higher based on drug purity
+        maxPrice = 800, -- max price per bag, even when price get higher based on purity it won't be higher than this
+        maxBags = 2, -- max bags the NPC will buy from player
+    },
+    ['coke_raw'] = { -- item name, drug used for sell
+        drug = "coke", -- drug linked to this item
+        label = "Raw Coke", -- used for Target
+        icon = "fa-solid fa-flask", -- Used for target
+        minCops = 0, -- Min cops online to sell this specific drug
+        zones = { -- Zones where player can sell this type of drug, use 'ALL' to allow to sell anywhere
+            ['ALL'] = true,
+        },
+        basePrice = 800, -- base price per bag, price get higher based on drug purity
+        maxPrice = 1200, -- max price per bag, even when price get higher based on purity it won't be higher than this
+        maxBags = 2, -- max bags the NPC will buy from player
+    },
+
+   
+    --[[ ['ketamine_baggy'] = { -- item name, drug used for sell
         drug = "ketamine", -- drug linked to this item
         label = "Ketamine", -- used for Target
         icon = "fa-solid fa-flask", -- Used for target
@@ -109,7 +148,7 @@ Config.Sells = {
         basePrice = 35, -- base price per bag, price get higher based on drug purity
         maxPrice = 230, -- max price per bag, even when price get higher based on purity it won't be higher than this
         maxBags = 5, -- max bags the NPC will buy from player
-    },
+    }, ]]
 }
 
 lib.callback.register('av_drugs:sell', function(source, drug, zone)

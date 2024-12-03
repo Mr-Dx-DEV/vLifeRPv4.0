@@ -13,7 +13,7 @@ lib.callback.register('av_drugs:getMarket', function(source) -- used to fetch av
 end)
 
 Config.Market = {
-    ['baggies'] = {-- item name
+    --[[ ['baggies'] = {-- item name
         label = "Baggies",
         price = 1,
         account = 'cosmo',
@@ -69,10 +69,10 @@ Config.Market = {
         setMetadata = function(source, identifier) -- adds metadata for item or return false
             return false
         end,
-    },
+    }, ]]
     ['weed_table'] = {-- item name
         label = "Weed Table",
-        price = 1000,
+        price = 3000,
         account = 'cosmo',
         accountLabel = "Cosmo",
         image = false, -- just in case u want to use a different image (URL) from the one in the inventory, if false it will use itemname.png from inventory images
@@ -86,7 +86,7 @@ Config.Market = {
     },
     ['cokeprocessingtable'] = {-- item name
         label = "Coke Table",
-        price = 1000,
+        price = 3500,
         account = 'cosmo',
         accountLabel = "Cosmo",
         image = false, -- just in case u want to use a different image (URL) from the one in the inventory, if false it will use itemname.png from inventory images
@@ -98,7 +98,7 @@ Config.Market = {
             return false
         end,
     },
-    ['ketamine_table'] = {-- item name
+    --[[ ['ketamine_table'] = {-- item name
         label = "Ketamine Table",
         price = 1000,
         account = 'cosmo',
@@ -168,7 +168,7 @@ Config.Market = {
         setMetadata = function(source, identifier)
             return {owner = identifier, labType = "lsdlab", description = "Sets the entrance for your LSD Lab"}
         end,
-    },
+    }, ]]
 }
 
 -- Use this function to retrieve how many labs exists for the same type

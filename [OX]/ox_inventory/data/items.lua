@@ -2528,6 +2528,8 @@ return {
 		weight = 200,
 		stack = true,
 		close = true,
+		degrade = 4320, -- 3 days
+		decay = true,
 		description = "",
 		client = {
 			image = "cokeprocessingtable.png",
@@ -3068,6 +3070,8 @@ return {
 		weight = 1,
 		stack = false,
 		close = true,
+		degrade = 4320, -- 3 days
+		decay = true,
 		description = ''
 	},
 	['ketamine_table'] = {
