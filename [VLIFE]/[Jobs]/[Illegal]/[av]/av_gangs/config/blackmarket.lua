@@ -25,46 +25,6 @@ Config.Categories = {
 
 Config.Products = {
     ['labs'] = { -- key index must match a category name
-        --[[ ['k4mb1_acid2_shell'] = { -- I use shell model as key index to access data faster when needed
-            type = "drugs", -- lab type, needs to match a value from Config.Upgrades
-            label = "Acid Lab", -- Shown in Laptop
-            shell = "k4mb1_acid2_shell", -- shell model as string (don't use ` ` hash)
-            description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem est earum itaque dolor a aut labore natus nemo ipsa totam?",
-            price = 25000,
-            level = 1, -- required gang level to buy this lab
-            photo = "https://r2.fivemanage.com/QmVAYSlqeAlD4IxVbdvu5/acid.jpg",
-            ingredients = "drug_package", -- needed ingredient for the lab to work
-            product = "weed_brick", -- item cooked by the lab
-            upgrades = {
-                ['stash'] = {
-                    value = 'stash',
-                    label = "Stash Size",
-                    prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
-                    },
-                },
-                ['production'] = {
-                    value = 'production',
-                    label = "Production",
-                    prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
-                    },
-                },
-                ['security'] = {
-                    value = 'security',
-                    label = "Security",
-                    prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
-                    }
-                },
-            }
-        }, ]]
         ['k4weed_shell'] = { -- I use shell model as key index to access data faster when needed
             type = "drugs",
             label = "Weed Lab",
@@ -105,46 +65,6 @@ Config.Products = {
                 },
             }
         },
-        --[[ ['k4meth_shell'] = {
-            type = "drugs",
-            label = "Meth Lab",
-            shell = 'k4meth_shell',
-            description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem est earum itaque dolor a aut labore natus nemo ipsa totam?",
-            price = 25000,
-            level = 2,
-            photo = "https://dunb17ur4ymx4.cloudfront.net/wysiwyg/1027823/2776d84ac66023cb1f1366b246f5bb45078c73da.jpg",
-            ingredients = "drug_package", -- needed ingredient for the lab to work
-            product = "weed_brick", -- item cooked by the lab
-            upgrades = {
-                ['stash'] = {
-                    value = 'stash',
-                    label = "Stash Size",
-                    prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
-                    }
-                },
-                ['production'] = {
-                    value = 'production',
-                    label = "Production",
-                    prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
-                    }
-                },
-                ['security'] = {
-                    value = 'security',
-                    label = "Security",
-                    prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
-                    }
-                },
-            }
-        }, ]]
         ['k4coke_shell'] = {
             type = "drugs",
             label = "Coke Lab",
@@ -185,46 +105,6 @@ Config.Products = {
                 },
             }
         },
-        --[[ ['k4mb1_laundry_shell'] = {
-            type = "laundromat",
-            label = "Laundromat",
-            shell = 'k4mb1_laundry_shell',
-            description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem est earum itaque dolor a aut labore natus nemo ipsa totam?",
-            price = 25000,
-            level = 3,
-            photo = "https://r2.fivemanage.com/QmVAYSlqeAlD4IxVbdvu5/laundromat.png",
-            ingredients = "markedbills", -- needed ingredient for the lab to work
-            product = "money", -- item cooked by the lab
-            upgrades = {
-                ['stash'] = {
-                    value = 'stash',
-                    label = "Stash Size",
-                    prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
-                    }
-                },
-                ['production'] = {
-                    value = 'production',
-                    label = "Production",
-                    prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
-                    }
-                },
-                ['security'] = {
-                    value = 'security',
-                    label = "Security",
-                    prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
-                    }
-                },
-            }
-        }, ]]
     },
     ['warehouse'] = { -- key index must match a category name
         ['container2_shell'] = { -- I use shell model as key index to access data faster when needed
