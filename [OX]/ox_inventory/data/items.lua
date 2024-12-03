@@ -1,4 +1,20 @@
 return {
+	
+['hacking_device'] = {
+	label = 'Hacking Device',
+	weight = 1,
+	stack = true,
+	close = true,
+	description = ''
+	},
+	['drug_package'] = {
+	label = 'Illegal Package',
+	weight = 1,
+	stack = false,
+	close = false,
+	description = 'Marked for police seizure'
+	},
+	
 
 	    --- boii_fishing
 		['fishing_boilie'] = {
