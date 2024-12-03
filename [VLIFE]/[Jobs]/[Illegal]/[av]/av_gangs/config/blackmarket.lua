@@ -25,12 +25,12 @@ Config.Categories = {
 
 Config.Products = {
     ['labs'] = { -- key index must match a category name
-        ['k4mb1_acid2_shell'] = { -- I use shell model as key index to access data faster when needed
+        --[[ ['k4mb1_acid2_shell'] = { -- I use shell model as key index to access data faster when needed
             type = "drugs", -- lab type, needs to match a value from Config.Upgrades
             label = "Acid Lab", -- Shown in Laptop
             shell = "k4mb1_acid2_shell", -- shell model as string (don't use ` ` hash)
             description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem est earum itaque dolor a aut labore natus nemo ipsa totam?",
-            price = 25000,
+            price = 2500000000,
             level = 1, -- required gang level to buy this lab
             photo = "https://r2.fivemanage.com/QmVAYSlqeAlD4IxVbdvu5/acid.jpg",
             ingredients = "drug_package", -- needed ingredient for the lab to work
@@ -40,77 +40,77 @@ Config.Products = {
                     value = 'stash',
                     label = "Stash Size",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     },
                 },
                 ['production'] = {
                     value = 'production',
                     label = "Production",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     },
                 },
                 ['security'] = {
                     value = 'security',
                     label = "Security",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
             }
-        },
+        }, ]]
         ['k4weed_shell'] = { -- I use shell model as key index to access data faster when needed
             type = "drugs",
             label = "Weed Lab",
             shell = 'k4weed_shell',
             description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem est earum itaque dolor a aut labore natus nemo ipsa totam?",
-            price = 25000,
+            price = 200000,
             level = 1,
             photo = "https://dunb17ur4ymx4.cloudfront.net/wysiwyg/1027823/a3e2807967ae87239c24c7d1686384bd80c4b37b.jpg",
-            ingredients = "drug_package", -- needed ingredient for the lab to work
-            product = "weed_brick", -- item cooked by the lab
+            ingredients = "weed_bag", -- needed ingredient for the lab to work
+            product = "weed_ak47_joint", -- item cooked by the lab
             upgrades = {
                 ['stash'] = {
                     value = 'stash',
                     label = "Stash Size",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
                 ['production'] = {
                     value = 'production',
                     label = "Production",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
                 ['security'] = {
                     value = 'security',
                     label = "Security",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
             }
         },
-        ['k4meth_shell'] = {
+        --[[ ['k4meth_shell'] = {
             type = "drugs",
             label = "Meth Lab",
             shell = 'k4meth_shell',
             description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem est earum itaque dolor a aut labore natus nemo ipsa totam?",
-            price = 25000,
+            price = 250000000,
             level = 2,
             photo = "https://dunb17ur4ymx4.cloudfront.net/wysiwyg/1027823/2776d84ac66023cb1f1366b246f5bb45078c73da.jpg",
             ingredients = "drug_package", -- needed ingredient for the lab to work
@@ -120,67 +120,67 @@ Config.Products = {
                     value = 'stash',
                     label = "Stash Size",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
                 ['production'] = {
                     value = 'production',
                     label = "Production",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
                 ['security'] = {
                     value = 'security',
                     label = "Security",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
             }
-        },
+        }, ]]
         ['k4coke_shell'] = {
             type = "drugs",
             label = "Coke Lab",
             shell = 'k4coke_shell',
             description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem est earum itaque dolor a aut labore natus nemo ipsa totam?",
-            price = 25000,
-            level = 3,
+            price = 250000,
+            level = 2,
             photo = "https://dunb17ur4ymx4.cloudfront.net/wysiwyg/1027823/81867d88cc5c076fe39676fcb1e836de30301912.jpg",
-            ingredients = "drug_package", -- needed ingredient for the lab to work
-            product = "weed_brick", -- item cooked by the lab
+            ingredients = "coke_baggy", -- needed ingredient for the lab to work
+            product = "coke_raw", -- item cooked by the lab
             upgrades = {
                 ['stash'] = {
                     value = 'stash',
                     label = "Stash Size",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
                 ['production'] = {
                     value = 'production',
                     label = "Production",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
                 ['security'] = {
                     value = 'security',
                     label = "Security",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
             }
@@ -190,7 +190,7 @@ Config.Products = {
             label = "Laundromat",
             shell = 'k4mb1_laundry_shell',
             description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem est earum itaque dolor a aut labore natus nemo ipsa totam?",
-            price = 25000,
+            price = 250dsddsd00,
             level = 3,
             photo = "https://r2.fivemanage.com/QmVAYSlqeAlD4IxVbdvu5/laundromat.png",
             ingredients = "markedbills", -- needed ingredient for the lab to work
@@ -200,27 +200,27 @@ Config.Products = {
                     value = 'stash',
                     label = "Stash Size",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
                 ['production'] = {
                     value = 'production',
                     label = "Production",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
                 ['security'] = {
                     value = 'security',
                     label = "Security",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
             }
@@ -231,7 +231,7 @@ Config.Products = {
             label = "Container",
             shell = 'container2_shell',
             description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem est earum itaque dolor a aut labore natus nemo ipsa totam?",
-            price = 25000,
+            price = 100000,
             level = 1,
             photo = "https://dunb17ur4ymx4.cloudfront.net/wysiwyg/1027823/156c04ac052c92914eaad5de5c0af6b190e3be2f.jpg",
             inventory = {
@@ -243,9 +243,9 @@ Config.Products = {
                     value = 'security',
                     label = "Security",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
             }
@@ -254,7 +254,7 @@ Config.Products = {
             label = "Small Warehouse",
             shell = 'stashhouse3_shell',
             description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem est earum itaque dolor a aut labore natus nemo ipsa totam?",
-            price = 25000,
+            price = 150000,
             level = 2,
             photo = "https://dunb17ur4ymx4.cloudfront.net/wysiwyg/1027823/667f243c847f4dc45672ecfc760c6c09c9f647f6.jpg",
             inventory = {
@@ -266,9 +266,9 @@ Config.Products = {
                     value = 'security',
                     label = "Security",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
             }
@@ -277,7 +277,7 @@ Config.Products = {
             label = "Big Warehouse",
             shell = 'stashhouse1_shell',
             description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem est earum itaque dolor a aut labore natus nemo ipsa totam?",
-            price = 25000,
+            price = 200000,
             level = 3,
             photo = "https://dunb17ur4ymx4.cloudfront.net/wysiwyg/1027823/4799957bdce82616dec7ad77b9987d10bb11157d.jpg",
             inventory = {
@@ -289,9 +289,9 @@ Config.Products = {
                     value = 'security',
                     label = "Security",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
             }
@@ -302,7 +302,7 @@ Config.Products = {
             label = "Office 1",
             shell = 'k4mb1_furnishedoffice1_shell',
             description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem est earum itaque dolor a aut labore natus nemo ipsa totam?",
-            price = 25000,
+            price = 100000,
             level = 1,
             photo = "https://dunb17ur4ymx4.cloudfront.net/wysiwyg/1027823/3c65f6fddb48aba7b2a2356d465ee7ba30aa819e.jpg",
             inventory = {
@@ -314,9 +314,9 @@ Config.Products = {
                     value = 'security',
                     label = "Security",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
             }
@@ -325,7 +325,7 @@ Config.Products = {
             label = "Office 2",
             shell = 'k4mb1_furnishedoffice2_shell',
             description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem est earum itaque dolor a aut labore natus nemo ipsa totam?",
-            price = 25000,
+            price = 200000,
             level = 1,
             photo = "https://dunb17ur4ymx4.cloudfront.net/wysiwyg/1027823/0d983bf42c2d454b2a7b06264a923ca790c04bb8.jpg",
             inventory = {
@@ -337,9 +337,9 @@ Config.Products = {
                     value = 'security',
                     label = "Security",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
             }
@@ -348,7 +348,7 @@ Config.Products = {
             label = "Office 3",
             shell = 'k4mb1_furnishedoffice4_shell',
             description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem est earum itaque dolor a aut labore natus nemo ipsa totam?",
-            price = 25000,
+            price = 300000,
             level = 2,
             photo = "https://dunb17ur4ymx4.cloudfront.net/wysiwyg/1027823/255068e8e47468f60725f7cc17749b6c3b8b1499.jpg",
             inventory = {
@@ -360,9 +360,9 @@ Config.Products = {
                     value = 'security',
                     label = "Security",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
             }
@@ -371,7 +371,7 @@ Config.Products = {
             label = "Office 4",
             shell = 'k4mb1_furnishedoffice5_shell',
             description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem est earum itaque dolor a aut labore natus nemo ipsa totam?",
-            price = 25000,
+            price = 400000,
             level = 3,
             photo = "https://dunb17ur4ymx4.cloudfront.net/wysiwyg/1027823/982586ea46febfd68fa59ab66df266b346c1f537.jpg",
             inventory = {
@@ -383,9 +383,9 @@ Config.Products = {
                     value = 'security',
                     label = "Security",
                     prices = {
-                        [1] = {level = 1, price = 2000},
-                        [2] = {level = 2, price = 5000},
-                        [3] = {level = 3, price = 10000},
+                        [1] = {level = 1, price = 50000},
+                        [2] = {level = 2, price = 100000},
+                        [3] = {level = 3, price = 150000},
                     }
                 },
             }
