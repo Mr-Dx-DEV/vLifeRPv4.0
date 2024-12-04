@@ -22,52 +22,49 @@ local function IsVehicleOut(plate, vehicles)
     return false
 end
 
-lib.RegisterCallback("phone:garage:findCar", function(source, cb, plate)
-    local phoneNumber = GetEquippedPhoneNumber(source)
-
+---@param plate string
+BaseCallback("garage:findCar", function(source, phoneNumber, plate)
     local out, vehicle = IsVehicleOut(plate)
+
     if out and vehicle then
-        return cb(GetEntityCoords(vehicle))
+        return GetEntityCoords(vehicle)
     end
 
-    if phoneNumber then
-        SendNotification(phoneNumber, {
-            source = source,
-            app = "Garage",
-            title = L("BACKEND.GARAGE.VALET"),
-            content = L("BACKEND.GARAGE.COULDNT_FIND"),
-        })
-    end
+    SendNotification(phoneNumber, {
+        source = source,
+        app = "Garage",
+        title = L("BACKEND.GARAGE.VALET"),
+        content = L("BACKEND.GARAGE.COULDNT_FIND"),
+    })
 
-    cb(false)
+    return false
 end)
 
-lib.RegisterCallback("phone:garage:getVehicles", function(source, cb)
+BaseCallback("garage:getVehicles", function(source, phoneNumber)
     local vehicles = GetPlayerVehicles(source)
-
     local allVehicles = #vehicles > 0 and GetAllVehicles() or {}
+
     for i = 1, #vehicles do
         if IsVehicleOut(vehicles[i].plate, allVehicles) then
             vehicles[i].location = "out"
         end
     end
 
-    cb(vehicles)
+    return vehicles
 end)
 
-lib.RegisterCallback("phone:garage:valetVehicle", function(source, cb, plate, coords, heading)
-    local phoneNumber = GetEquippedPhoneNumber(source)
-    if not phoneNumber then
-        return cb()
-    end
-
+---@param plate string
+---@param coords vector3
+---@param heading number
+BaseCallback("garage:valetVehicle", function(source, phoneNumber, plate, coords, heading)
     if IsVehicleOut(plate) then
         SendNotification(phoneNumber, {
             app = "Garage",
             title = L("BACKEND.GARAGE.VALET"),
             content = L("BACKEND.GARAGE.ALREADY_OUT"),
         })
-        return cb()
+
+        return
     end
 
     if Config.Valet.Price and GetBalance(source) < Config.Valet.Price then
@@ -76,12 +73,14 @@ lib.RegisterCallback("phone:garage:valetVehicle", function(source, cb, plate, co
             title = L("BACKEND.GARAGE.VALET"),
             content = L("BACKEND.GARAGE.NO_MONEY"),
         })
-        return cb()
+
+        return
     end
 
     local vehicleData = GetVehicle(source, plate)
+
     if not vehicleData then
-        return cb()
+        return
     end
 
     if Config.Valet.Price and not RemoveMoney(source, Config.Valet.Price) then
@@ -90,7 +89,8 @@ lib.RegisterCallback("phone:garage:valetVehicle", function(source, cb, plate, co
             title = L("BACKEND.GARAGE.VALET"),
             content = L("BACKEND.GARAGE.NO_MONEY"),
         })
-        return cb()
+
+        return
     end
 
     SendNotification(phoneNumber, {
@@ -99,29 +99,34 @@ lib.RegisterCallback("phone:garage:valetVehicle", function(source, cb, plate, co
         content = L("BACKEND.GARAGE.ON_WAY"),
     })
 
-    if Config.ServerSideSpawn then
-        local vehicle = CreateServerVehicle(vehicleData.model, coords, heading)
-        if not vehicle then
-            AddMoney(source, Config.Valet.Price)
-            debugprint("Failed to create vehicle")
-            return cb()
-        end
-
-        vehicleData.vehNetId = NetworkGetNetworkIdFromEntity(vehicle)
-
-        if Config.Valet.Drive then
-            ---@diagnostic disable-next-line: param-type-mismatch
-            local ped = CreateServerPed(Config.Valet.Model, coords + vector3(0.0, 1.0, 1.0), heading)
-            if not ped then
-                AddMoney(source, Config.Valet.Price)
-                DeleteEntity(vehicle)
-                debugprint("Failed to create ped")
-                return cb()
-            end
-
-            vehicleData.pedNetId = NetworkGetNetworkIdFromEntity(ped)
-        end
+    if not Config.ServerSideSpawn then
+        return vehicleData
     end
 
-    cb(vehicleData)
+    local vehicle = CreateServerVehicle(vehicleData.model, coords, heading)
+
+    if not vehicle then
+        AddMoney(source, Config.Valet.Price)
+        debugprint("Failed to create vehicle")
+
+        return
+    end
+
+    vehicleData.vehNetId = NetworkGetNetworkIdFromEntity(vehicle)
+
+    if Config.Valet.Drive then
+        ---@diagnostic disable-next-line: param-type-mismatch
+        local ped = CreateServerPed(Config.Valet.Model, coords + vector3(0.0, 1.0, 1.0), heading)
+
+        if not ped then
+            AddMoney(source, Config.Valet.Price)
+            DeleteEntity(vehicle)
+            debugprint("Failed to create ped")
+            return
+        end
+
+        vehicleData.pedNetId = NetworkGetNetworkIdFromEntity(ped)
+    end
+
+    return vehicleData
 end)

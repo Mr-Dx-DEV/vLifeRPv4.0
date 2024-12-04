@@ -2,17 +2,21 @@ fx_version "cerulean"
 game "gta5"
 lua54 "yes"
 
-version "2.1.2"
+version "2.1.7"
 
 shared_script {
     "config/*.lua",
     "shared/**/*.lua"
 }
 
-client_script "client/**/*.lua"
+client_script {
+    "lib/client/**.lua",
+    "client/**.lua"
+}
 
 server_scripts {
     "@oxmysql/lib/MySQL.lua",
+    "lib/server/**.lua",
     "server/**/*.lua",
 }
 
@@ -24,10 +28,7 @@ files {
 
 ui_page "ui/dist/index.html"
 
-dependencies {
-    "loaf_lib",
-    "oxmysql"
-}
+dependency "oxmysql"
 
 escrow_ignore {
     "config/**/*",
@@ -50,6 +51,8 @@ escrow_ignore {
     "types.lua",
 
     "client/apps/default/weather.lua",
+
+    "lib/**/*",
 }
 
 dependency '/assetpacks'

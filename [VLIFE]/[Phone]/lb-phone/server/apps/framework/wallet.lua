@@ -75,7 +75,15 @@ BaseCallback("wallet:getTransactions", function(source, phoneNumber, page, recen
 end)
 
 BaseCallback("wallet:doesNumberExist", function(source, phoneNumber, number)
-    return GetSourceFromNumber(number) ~= false
+    local sourceFromNumber = GetSourceFromNumber(number)
+
+    if sourceFromNumber then
+        return true
+    end
+
+    if Config.TransferOffline then
+        return MySQL.scalar.await("SELECT 1 FROM phone_phones WHERE phone_number = ?", { number }) == 1
+    end
 end, false)
 
 ---@param data { amount: number, phoneNumber: string }
@@ -111,7 +119,15 @@ BaseCallback("wallet:sendPayment", function(source, phoneNumber, data)
     end
 
     local sendToSource = GetSourceFromNumber(data.phoneNumber)
-    local added = AddMoney(sendToSource, amount)
+    local added
+
+    if sendToSource then
+        added = AddMoney(sendToSource, amount)
+    elseif Config.TransferOffline then
+        local sendToIdentifier = MySQL.scalar.await("SELECT owner_id FROM phone_phones WHERE phone_number = ?", { data.phoneNumber })
+
+        added = AddMoneyOffline and AddMoneyOffline(sendToIdentifier, amount)
+    end
 
     if not added then
         return { success = false, reason = "FAILED_ADD" }
@@ -121,20 +137,16 @@ BaseCallback("wallet:sendPayment", function(source, phoneNumber, data)
     SendMessage(phoneNumber, data.phoneNumber, "<!SENT-PAYMENT-" .. amount .. "!>")
 
     GetContact(data.phoneNumber, phoneNumber, function(contact)
-        contact = contact?[1]
-
         if contact then
-            AddTransaction(phoneNumber, -amount, contact.name, contact.profile_image)
+            AddTransaction(phoneNumber, -amount, contact.name, contact.avatar)
         else
             AddTransaction(phoneNumber, -amount, data.phoneNumber)
         end
     end)
 
     GetContact(phoneNumber, data.phoneNumber, function(contact)
-        contact = contact?[1]
-
         if contact then
-            AddTransaction(data.phoneNumber, amount, contact.name, contact.profile_image)
+            AddTransaction(data.phoneNumber, amount, contact.name, contact.avatar)
         else
             AddTransaction(data.phoneNumber, amount, phoneNumber)
         end

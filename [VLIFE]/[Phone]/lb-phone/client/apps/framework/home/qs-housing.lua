@@ -2,64 +2,45 @@ if Config.HouseScript ~= "qs-housing" then
     return
 end
 
-local waitKeysPromise, waitKeysHouse
+local function QuasarHousingCallback(event, cb, ...)
+    if QB then
+        QB.Functions.TriggerCallback(event, cb, ...)
+    elseif ESX then
+        ESX.TriggerServerCallback(event, cb, ...)
+    end
+end
 
 RegisterNUICallback("Home", function(data, cb)
     local action, houseData = data.action, data.houseData
+    debugprint("Home:" .. (action or ""))
 
     if action == "getHomes" then
-        lib.TriggerCallback("phone:home:getOwnedHouses", cb)
+        TriggerCallback("home:getOwnedHouses", cb)
     elseif action == "removeKeyholder" then
-        -- if waitKeysPromise then
-        --     return cb(false)
-        -- end
+        QuasarHousingCallback("housing:takeKey", function(success)
+            if not success then
+                return cb(false)
+            end
 
-        -- waitKeysHouse = houseData.uniqueId
-        -- waitKeysPromise = promise.new()
-
-        -- TriggerServerEvent("housing:server:removeHouseKey", houseData.uniqueId, {
-        --     firstname = "?",
-        --     lastname = "?",
-        --     identifier = data.identifier
-        -- })
-
-        -- Citizen.Await(waitKeysPromise)
-
-        -- lib.TriggerCallback("phone:home:getKeyholders", cb, houseData.uniqueId)
-
-        lib.TriggerCallback("phone:home:removeKeyholder", cb, houseData.uniqueId, data.identifier)
+            TriggerCallback("home:getKeyHolders", cb, houseData.house)
+        end, houseData.house, {
+            firstname = "",
+            lastname = "",
+            citizenid = data.identifier
+        })
     elseif action == "addKeyholder" then
-        -- if waitKeysPromise then
-        --     return cb(false)
-        -- end
+        QuasarHousingCallback("housing:giveKey", function(success)
+            if not success then
+                return cb(false)
+            end
 
-        -- waitKeysHouse = houseData.uniqueId
-        -- waitKeysPromise = promise.new()
-
-        -- TriggerServerEvent("housing:server:giveHouseKey", data.source, houseData.uniqueId)
-
-        -- Citizen.Await(waitKeysPromise)
-
-        -- lib.TriggerCallback("phone:home:getKeyholders", cb, houseData.uniqueId)
-
-        -- lib.TriggerCallback("phone:home:addKeyholder", cb, houseData.uniqueId, data.source)
-
-        lib.TriggerCallback("phone:home:addKeyholder", cb, houseData.uniqueId, data.identifier)
+            TriggerCallback("home:getKeyHolders", cb, houseData.house)
+        end, tonumber(data.source), houseData.house)
     elseif action == "setWaypoint" then
-        cb("ok")
-
-        local coords = (houseData.coords and json.decode(houseData.coords) or {})?.enter
-        if not coords then
-            return
+        if houseData.coords then
+            SetNewWaypoint(houseData.coords.x, houseData.coords.y)
         end
 
-        SetNewWaypoint(coords.x, coords.y)
-    end
-end)
-
-RegisterNetEvent("housing:client:updateKeyData", function(house)
-    if waitKeysHouse == house and waitKeysPromise then
-        waitKeysPromise:resolve()
-        waitKeysPromise = nil
+        cb(true)
     end
 end)

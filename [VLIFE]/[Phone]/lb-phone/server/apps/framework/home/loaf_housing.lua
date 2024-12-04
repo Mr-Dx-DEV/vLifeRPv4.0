@@ -3,7 +3,7 @@ CreateThread(function()
         return
     end
 
-    lib.RegisterCallback("phone:home:toggleLocked", function(source, cb, id, uniqueId)
+    RegisterLegacyCallback("home:toggleLocked", function(source, cb, id, uniqueId)
         local keyName = ("housing_key_%i_%s"):format(id, uniqueId)
         local hasKey = exports.loaf_keysystem:HasKey(source, keyName)
         if not hasKey then

@@ -9,12 +9,13 @@ Config.DatabaseChecker.AutoFix = true
 Config.Framework = "auto"
 --[[
     Supported frameworks:
-        * auto: auto-detect framework (ONLY WORKS WITH THE ONES LISTED BELOW)
-        * esx: es_extended, https://github.com/esx-framework/esx-legacy
-        * qb: qb-core, https://github.com/qbcore-framework/qb-core
-        * ox: ox_core, https://github.com/overextended/ox_core
+        * auto: auto-detect framework
+        * esx: es_extended - https://github.com/esx-framework/esx-legacy
+        * qb: qb-core - https://github.com/qbcore-framework/qb-core
+        * qbox: qbx_core - https://github.com/Qbox-project/qbx_core
+        * ox: ox_core - https://github.com/overextended/ox_core
         * vrp2: vrp 2.0 (ONLY THE OFFICIAL vRP 2.0, NOT CUSTOM VERSIONS)
-        * standalone: no framework, note that framework specific apps will not work unless you implement the functions
+        * standalone: no framework. note that framework specific apps will not work unless you implement the functions
 ]]
 Config.CustomFramework = false -- if set to true and you use standalone, you will be able to use framework specific apps
 Config.QBMailEvent = true -- if you want this script to listen for qb email events, enable this.
@@ -58,7 +59,7 @@ Config.WhitelistApps = {
 }
 
 Config.BlacklistApps = {
-     ["DarkChat"] = {"police", "ambulance"}
+    -- ["DarkChat"] = {"police"}
 }
 
 Config.ChangePassword = {
@@ -80,7 +81,7 @@ Config.DeleteAccount = {
 
 Config.Companies = {}
 Config.Companies.Enabled = true -- allow players to call companies?
-Config.Companies.MessageOffline = false -- if true, players can message companies even if no one in the company is online
+Config.Companies.MessageOffline = true -- if true, players can message companies even if no one in the company is online
 Config.Companies.DefaultCallsDisabled = false -- should receiving company calls be disabled by default?
 Config.Companies.AllowAnonymous = false -- allow players to call companies with "hide caller id" enabled?
 Config.Companies.SeeEmployees = "everyone" -- who should be able to see employees? they will see name, online status & phone number. options are: "everyone", "employees" or "none"
@@ -130,8 +131,8 @@ Config.Companies.Services = {
         location = {
             name = "Urban Mechanic",
             coords = {
-                x = 105.51,
-                y = -1771.11
+                x = -336.6,
+                y = -134.3
             }
         }
     },
@@ -147,21 +148,6 @@ Config.Companies.Services = {
             coords = {
                 x = 1056.35,
                 y = 2715.04
-            }
-        }
-    },
-    {
-        job = "taxi",
-        name = "Taxi",
-        icon = "https://cdn-icons-png.flaticon.com/128/433/433449.png",
-        canCall = true, -- if true, players can call the company
-        canMessage = true, -- if true, players can message the company
-        bossRanks = {"boss", "driver"}, -- ranks that can manage the company
-        location = {
-            name = "Taxi HQ",
-            coords = {
-                x =984.2,
-                y = -219.0
             }
         }
     },
@@ -192,6 +178,21 @@ Config.Companies.Services = {
             coords = {
                 x =-1186.11,
                 y = -885.86
+            }
+        }
+    },
+    {
+        job = "taxi",
+        name = "Taxi",
+        icon = "https://cdn-icons-png.flaticon.com/128/433/433449.png",
+        canCall = true, -- if true, players can call the company
+        canMessage = true, -- if true, players can message the company
+        bossRanks = {"boss", "driver"}, -- ranks that can manage the company
+        location = {
+            name = "Taxi HQ",
+            coords = {
+                x =984.2,
+                y = -219.0
             }
         }
     },
@@ -237,7 +238,7 @@ Config.HouseScript = "qs-housing" --[[
 --[[ VOICE OPTIONS ]] --
 Config.Voice = {}
 Config.Voice.CallEffects = true -- enable call effects while on speaker mode? (NOTE: This may create sound-issues if you have too many submixes registered in your server)
-Config.Voice.System = "auto"
+Config.Voice.System = "pma"
 --[[
     Supported voice systems:
         * pma: pma-voice - HIGHLY RECOMMENDED
@@ -383,6 +384,7 @@ Config.Battery.DischargeWhenInactive = true -- Should the phone remove battery w
 
 Config.CurrencyFormat = "$%s" -- ($100) Choose the formatting of the currency. %s will be replaced with the amount.
 Config.MaxTransferAmount = 1000000 -- The maximum amount of money that can be transferred at once via wallet / messages.
+Config.TransferOffline = false -- Allow players to transfer money to offline players via the wallet app?
 
 Config.TransferLimits = {}
 Config.TransferLimits.Daily = false -- The maximum amount of money that can be transferred in a day. Set to false for unlimited.
@@ -390,6 +392,7 @@ Config.TransferLimits.Weekly = false -- The maximum amount of money that can be 
 
 Config.EnableMessagePay = true -- Allow players to pay other players via messages?
 Config.EnableVoiceMessages = true -- Allow players to send voice messages?
+Config.EnableGIFs = true
 
 Config.CityName = "vLife RP" -- The name that's being used in the weather app etc.
 Config.RealTime = true -- if true, the time will use real life time depending on where the user lives, if false, the time will be the ingame time.
@@ -608,6 +611,21 @@ Config.KeyBinds = {
         Bind = "RIGHT",
         Description = "Change mode"
     },
+    RollLeft = {
+        Command = "cameraRollLeft",
+        Bind = "Z",
+        Description = "Roll camera to the left"
+    },
+    RollRight = {
+        Command = "cameraRollRight",
+        Bind = "C",
+        Description = "Roll camera to the right"
+    },
+    FreezeCamera = {
+        Command = "cameraFreeze",
+        Bind = "X",
+        Description = "Freeze camera"
+    },
 
     AnswerCall = {
         Command = "answerCall",
@@ -630,6 +648,7 @@ Config.KeepInput = true -- keep input when nui is focused (meaning you can walk 
 --[[ PHOTO / VIDEO OPTIONS ]] --
 Config.Camera = {}
 Config.Camera.Enabled = true -- use a custom camera that allows you to walk around while taking photos?
+Config.Camera.Roll = true -- allow rolling the camera to the left & right?
 Config.Camera.AllowRunning = true
 Config.Camera.MaxFOV = 60.0 -- higher = zoomed out
 Config.Camera.MinFOV = 10.0 -- lower = zoomed in
@@ -644,6 +663,17 @@ Config.Camera.Vehicle.MaxLookUp = 50.0
 Config.Camera.Vehicle.MaxLookDown = -30.0
 Config.Camera.Vehicle.MaxLeftRight = 120.0
 Config.Camera.Vehicle.MinLeftRight = -120.0
+
+Config.Camera.Selfie = {}
+Config.Camera.Selfie.Offset = vector3(0.05, 0.55, 0.6)
+Config.Camera.Selfie.Rotation = vector3(10.0, 0.0, -180.0)
+Config.Camera.Selfie.MaxFov = 90.0
+Config.Camera.Selfie.MinFov = 50.0
+
+Config.Camera.Freeze = {}
+Config.Camera.Freeze.Enabled = false -- allow players to freeze the camera when taking photos? (this will make it so they can take photos in 3rd person)
+Config.Camera.Freeze.MaxDistance = 10.0 -- max distance the camera can be from the player when frozen
+Config.Camera.Freeze.MaxTime = 60 -- max time the camera can be frozen for (in seconds)
 
 -- Set your api keys in lb-phone/server/apiKeys.lua
 Config.UploadMethod = {}

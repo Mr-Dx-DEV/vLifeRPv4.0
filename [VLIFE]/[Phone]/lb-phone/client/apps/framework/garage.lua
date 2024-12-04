@@ -11,6 +11,7 @@ local function FindCarLocation(minDist)
     local nth = 0
 
     local success, position, heading
+
     repeat
         nth += 1
         success, position, heading = GetNthClosestVehicleNodeWithHeading(plyCoords.x, plyCoords.y, plyCoords.z, nth, 0, 0, 0)
@@ -22,41 +23,48 @@ end
 local function BringCar(data, cb)
     local minDist = Config.Valet.Drive and math.random(75, 150) or 0
     local location, heading = FindCarLocation(minDist)
+
     if not location then
-        debugprint("No location found")
+        debugprint("BringCar: No location found")
         return cb(false)
     end
 
     if IsPedInAnyVehicle(PlayerPedId(), false) then
-        debugprint("Player is in a vehicle")
+        debugprint("BringCar: Player is in a vehicle")
         return cb(false)
     end
 
     local plate = data.plate
-    local vehicleData = lib.TriggerCallbackSync("phone:garage:valetVehicle", plate, location, heading)
+    local vehicleData = AwaitCallback("garage:valetVehicle", plate, location, heading)
+
     if not vehicleData then
+        debugprint("BringCar: No vehicle data found")
         return cb(false)
     end
 
     local vehicle, ped
+
     if Config.ServerSideSpawn then
         local vehNetId, pedNetId = vehicleData.vehNetId, vehicleData.pedNetId
+
         if not vehNetId or (Config.Valet.Drive and not pedNetId) then
-            debugprint("Server did not create vehicle/ped (no vehNetId/pedNetId)")
+            debugprint("BringCar: Server did not create vehicle/ped (no vehNetId/pedNetId)")
             return cb(false)
         end
 
         vehicle = WaitForNetworkId(vehNetId)
+
         if Config.Valet.Drive then
             ped = WaitForNetworkId(pedNetId)
         end
 
-        Wait(1000) -- magic wait that fixes issue with ped not being in vehicle?
+        Wait(1000) -- wait for the driver to enter the vehicle
 
         if vehicle and TakeControlOfEntity(vehicle) then
             if ped and TakeControlOfEntity(ped) then
                 TaskWarpPedIntoVehicle(ped, vehicle, -1)
             end
+
             ApplyVehicleMods(vehicle, vehicleData)
         end
     else
@@ -64,11 +72,13 @@ local function BringCar(data, cb)
 
         if vehicle and Config.Valet.Drive then
             local model = LoadModel(Config.Valet.Model)
+
             ped = CreatePedInsideVehicle(vehicle, 4, model, -1, true, false)
         end
     end
 
     if not vehicle or not DoesEntityExist(vehicle) or not ped or not DoesEntityExist(ped) then
+        debugprint("BringCar: vehicle/ped does not exist")
         return cb(false)
     end
 
@@ -86,7 +96,6 @@ local function BringCar(data, cb)
 
     cb(true)
 
-
     if not Config.Valet.Drive then
         return
     end
@@ -103,6 +112,7 @@ local function BringCar(data, cb)
 
     -- create blip for the vehicle
     local blip = AddBlipForEntity(vehicle)
+
     SetBlipSprite(blip, 225)
     SetBlipColour(blip, 5)
 
@@ -121,49 +131,59 @@ local function BringCar(data, cb)
     TaskLeaveVehicle(ped, vehicle, 0)
     TaskWanderStandard(ped, 10.0, 10)
     SetEntityAsNoLongerNeeded(ped)
+
+    Wait(1000)
+
+    SetVehicleDoorsLocked(vehicle, 0)
 end
 
 ---Function to find a car
 ---@param plate string
 ---@return vector3 | false
-local function findCar(plate)
+local function FindCar(plate)
     local vehicles = GetGamePool("CVehicle")
+
     for i = 1, #vehicles do
         local vehicle = vehicles[i]
+
         if DoesEntityExist(vehicle) and GetVehicleNumberPlateText(vehicle):gsub("%s+", "") == plate:gsub("%s+", "") then
             return GetEntityCoords(vehicle)
         end
     end
 
-    return lib.TriggerCallbackSync("phone:garage:findCar", plate)
+    return AwaitCallback("garage:findCar", plate)
 end
 
 function GetVehicleLabel(model)
     local vehicleLabel = GetDisplayNameFromVehicleModel(model):lower()
 
     if not vehicleLabel or vehicleLabel == "null" or vehicleLabel == "carnotfound" then
-        vehicleLabel = "Unknown"
-    else
-        local text = GetLabelText(vehicleLabel)
-        if text and text:lower() ~= "null" then
-            vehicleLabel = text
-        end
+        return "Unknown"
     end
+
+    local text = GetLabelText(vehicleLabel)
+
+    if text and text:lower() ~= "null" then
+        vehicleLabel = text
+    end
+
     return vehicleLabel
 end
 
 RegisterNUICallback("Garage", function(data, cb)
     local action = data.action
+    debugprint("Garage:" .. (action or ""))
 
     if action == "getVehicles" then
-        lib.TriggerCallback("phone:garage:getVehicles", function(cars)
-            for i = 1, #cars do
-                cars[i].model = GetVehicleLabel(cars[i].model)
-                --If you're implementing your own lock system, you can use this to set the locked state
-                -- cars[i].locked = true
-            end
-            cb(cars)
-        end)
+        local cars = AwaitCallback("garage:getVehicles")
+
+        for i = 1, #cars do
+            cars[i].model = GetVehicleLabel(cars[i].model)
+            --If you're implementing your own lock system, you can use this to set the locked state
+            -- cars[i].locked = true
+        end
+
+        cb(cars)
     elseif action == "valet" then
         if not Config.Valet.Enabled then
             return
@@ -171,17 +191,20 @@ RegisterNUICallback("Garage", function(data, cb)
 
         BringCar(data, cb)
     elseif action == "setWaypoint" then
-        local coords = findCar(data.plate)
+        local coords = FindCar(data.plate)
+
         if coords then
+            SetNewWaypoint(coords.x, coords.y)
             TriggerEvent("phone:sendNotification", {
                 app = "Garage",
                 title = L("BACKEND.GARAGE.VALET"),
                 content = L("BACKEND.GARAGE.MARKED"),
             })
-            SetNewWaypoint(coords.x, coords.y)
         else
             debugprint("not found")
         end
+
+        cb("ok")
     elseif action == "toggleLocked" then
         --IMPLEMENT YOUR LOCK SYSTEM HERE, don't forget to callback with the new locked state
         -- cb(true)

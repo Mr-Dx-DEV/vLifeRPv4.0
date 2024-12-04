@@ -78,6 +78,7 @@ local weathers = {
 
 RegisterNUICallback("Weather", function(data, cb)
     local action = data.action
+    debugprint("Weather:" .. (action or ""))
 
     if action == "getData" then
         local currentWeather, nextWeather, nextWeatherPercent = GetWeatherTypeTransition()

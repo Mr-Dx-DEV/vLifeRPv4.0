@@ -12,6 +12,18 @@ function GetIdentifier(source)
     return QB.Functions.GetPlayer(source)?.PlayerData.citizenid
 end
 
+local function HasItem(source, itemName)
+    if GetResourceState("ox_inventory") == "started" then
+        return (exports.ox_inventory:Search(source, "count", itemName) or 0) > 0
+    elseif GetResourceState("qs-inventory") == "started" then
+        return (exports["qs-inventory"]:GetItemTotalAmount(source, itemName) or 0) > 0
+    end
+
+    local qPlayer = QB.Functions.GetPlayer(source)
+
+    return (qPlayer.Functions.GetItemByName(itemName)?.amount or 0) > 0
+end
+
 ---Check if a player has a phone with a specific number
 ---@param source any
 ---@param number string
@@ -31,24 +43,35 @@ function HasPhoneItem(source, number)
         return (exports["qs-inventory"]:GetItemTotalAmount(source, Config.Item.Name) or 0) > 0
     end
 
-    local qPlayer = QB.Functions.GetPlayer(source)
-    local hasPhone = (qPlayer.Functions.GetItemByName(Config.Item.Name)?.amount or 0) > 0
+    local hasItem
 
-    if not hasPhone then
+    if Config.Item.Name then
+        hasItem = HasItem(source, Config.Item.Name)
+    elseif Config.Item.Names then
+        for i = 1, #Config.Item.Names do
+            if HasItem(source, Config.Item.Names[i].name) then
+                hasItem = true
+                break
+            end
+        end
+    end
+
+    if not hasItem then
         return false
     end
 
-    return MySQL.Sync.fetchScalar("SELECT 1 FROM phone_phones WHERE id=@id AND phone_number=@number", {
-        ["@id"] = GetIdentifier(source),
-        ["@number"] = number
-    }) ~= nil
+    if not number then
+        return true
+    end
+
+    return MySQL.scalar.await("SELECT 1 FROM phone_phones WHERE id=? AND phone_number=?", { GetIdentifier(source), number }) ~= nil
 end
 
 ---Register an item as usable
 ---@param item string
 ---@param cb function
 function CreateUsableItem(item, cb)
-	QB.Functions.CreateUseableItem(item, cb)
+    QB.Functions.CreateUseableItem(item, cb)
 end
 
 ---Get a player's character name
@@ -102,7 +125,7 @@ end
 ---Add money to a player's bank account
 ---@param source any
 ---@param amount integer
----@return boolean # Success
+---@return boolean
 function AddMoney(source, amount)
     local qPlayer = QB.Functions.GetPlayer(source)
     if not qPlayer or amount < 0 then
@@ -113,10 +136,23 @@ function AddMoney(source, amount)
     return true
 end
 
+---@param identifier string
+---@param amount number
+---@return boolean
+function AddMoneyOffline(identifier, amount)
+    if amount <= 0 then
+        return false
+    end
+
+    amount = math.floor(amount + 0.5)
+
+    return MySQL.update.await("UPDATE players SET money = JSON_SET(money, '$.bank', JSON_EXTRACT(money, '$.bank') + ?) WHERE citizenid = ?", { amount, identifier }) > 0
+end
+
 ---Remove money from a player's bank account
 ---@param source any
 ---@param amount integer
----@return boolean # Success
+---@return boolean
 function RemoveMoney(source, amount)
     if amount < 0 or GetBalance(source) < amount then
         return false
@@ -500,7 +536,7 @@ AddEventHandler("playerDropped", function()
     unloadJob(src)
 end)
 
-lib.RegisterCallback("phone:services:getPlayerData", function(_, cb, player)
+RegisterLegacyCallback("services:getPlayerData", function(_, cb, player)
     local first, last = GetCharacterName(player)
 
     cb({
@@ -521,17 +557,17 @@ local function getSocietyMoney(job)
     return exports["qb-banking"]:GetAccountBalance(job)
 end
 
-lib.RegisterCallback("phone:services:getAccount", function(source, cb)
+RegisterLegacyCallback("services:getAccount", function(source, cb)
     local job = GetJob(source)
 
     cb(getSocietyMoney(job))
 end)
 
-lib.RegisterCallback("phone:services:addMoney", function(source, cb, amount)
+RegisterLegacyCallback("services:addMoney", function(source, cb, amount)
     local job = GetJob(source)
 
     if amount < 0 or GetBalance(source) < amount then
-        return false
+        return cb(false)
     end
 
     local success, _ = pcall(function()
@@ -545,7 +581,7 @@ lib.RegisterCallback("phone:services:addMoney", function(source, cb, amount)
     cb(getSocietyMoney(job))
 end)
 
-lib.RegisterCallback("phone:services:removeMoney", function(source, cb, amount)
+RegisterLegacyCallback("services:removeMoney", function(source, cb, amount)
     local job = GetJob(source)
 
     if amount < 0 or getSocietyMoney(job) < amount then
@@ -625,7 +661,7 @@ if Config.QBMailEvent then
 end
 
 if Config.Crypto.QBit then
-    lib.RegisterCallback("phone:crypto:getOtherQBitWallet", function(source, cb, otherNumber)
+    RegisterLegacyCallback("crypto:getOtherQBitWallet", function(source, cb, otherNumber)
         local otherSrc = GetSourceFromNumber(otherNumber)
         if not otherSrc then
             return cb(false)

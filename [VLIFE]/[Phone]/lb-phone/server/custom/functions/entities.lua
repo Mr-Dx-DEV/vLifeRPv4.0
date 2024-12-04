@@ -2,13 +2,22 @@ if not Config.ServerSideSpawn then
     return
 end
 
-local phoneModel = Config.PhoneModel or `prop_amb_phone`
+local allowedModels = {
+    [`prop_amp_phone`] = true,
+    [Config.PhoneModel] = true,
+}
 
----Wait for an entity to exist
+if Config.Item.Names then
+    for i = 1, #Config.Item.Names do
+        allowedModels[Config.Item.Names[i].model] = true
+    end
+end
+
 ---@param entity number
 ---@return boolean exists
-local function waitForEntity(entity)
+local function WaitForEntity(entity)
     local timer = GetGameTimer() + 5000
+
     while not DoesEntityExist(entity) and timer > GetGameTimer() do
         Wait(0)
     end
@@ -16,15 +25,15 @@ local function waitForEntity(entity)
     return DoesEntityExist(entity)
 end
 
----Creates a phone object and attaches it to the player
 ---@param source any
+---@param model number
 ---@return number? phoneEntity
-function CreatePhoneObject(source)
+function CreatePhoneObject(source, model)
     local playerPed = GetPlayerPed(source)
     local coords = GetEntityCoords(playerPed)
-    local phone = CreateObjectNoOffset(phoneModel, coords.x, coords.y, coords.z, true, true, false)
+    local phone = CreateObjectNoOffset(model, coords.x, coords.y, coords.z, true, true, false)
 
-    if not waitForEntity(phone) then
+    if not WaitForEntity(phone) then
         return
     end
 
@@ -34,9 +43,15 @@ function CreatePhoneObject(source)
     return phone
 end
 
-lib.RegisterCallback("phone:createPhoneObject", function(source, cb)
-    debugprint("Creating phone object for player "..source)
-    local phone = CreatePhoneObject(source)
+RegisterLegacyCallback("createPhoneObject", function(source, cb, model)
+    if not allowedModels[model] then
+        infoprint("warning", ("%s | %i tried to create a phone object with a model (%s) that's not allowed"):format(GetPlayerName(source), source, tostring(model)))
+        cb(false)
+        return
+    end
+
+    debugprint("Creating phone object for", source)
+    local phone = CreatePhoneObject(source, model)
 
     if phone then
         cb(NetworkGetNetworkIdFromEntity(phone))
@@ -46,10 +61,12 @@ lib.RegisterCallback("phone:createPhoneObject", function(source, cb)
 end)
 
 RegisterNetEvent("phone:failedControl", function(netId)
+    local src = source
     local entity = NetworkGetEntityFromNetworkId(netId)
+    local entityModel = entity and GetEntityModel(entity)
 
-    if GetEntityModel(entity) == phoneModel then
-        debugprint("Failed to take control of phone object, deleting")
+    if entityModel and allowedModels[entityModel] then
+        debugprint(src .. " failed to take control of phone object, deleting it.")
         DeleteEntity(entity)
     end
 end)
@@ -62,7 +79,7 @@ function CreateServerVehicle(model, coords, heading)
     heading = heading or 0
     local vehicle = CreateVehicle(model, coords.x, coords.y, coords.z, heading, true, true)
 
-    if not waitForEntity(vehicle) then
+    if not WaitForEntity(vehicle) then
         return
     end
 
@@ -81,7 +98,7 @@ function CreateServerPed(model, coords, heading)
 
     local ped = CreatePed(4, model, coords.x, coords.y, coords.z, heading, true, true)
 
-    if not waitForEntity(ped) then
+    if not WaitForEntity(ped) then
         return
     end
 

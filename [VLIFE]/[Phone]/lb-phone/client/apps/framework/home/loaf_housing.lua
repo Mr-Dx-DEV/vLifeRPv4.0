@@ -4,6 +4,7 @@ end
 
 RegisterNUICallback("Home", function(data, cb)
     local action = data.action
+    debugprint("Home:" .. (action or ""))
 
     if action == "getHomes" then
         local ownedHouses = exports.loaf_housing:GetOwnedHouses()
@@ -15,7 +16,7 @@ RegisterNUICallback("Home", function(data, cb)
                     label = v.label .. " (" .. v.uniqueId .. ")",
                     id = v.id,
                     uniqueId = v.uniqueId,
-                    locked = lib.TriggerCallbackSync("loaf_housing:get_locked", v.id, v.uniqueId),
+                    locked = AwaitCallback("loaf_housing:get_locked", v.id, v.uniqueId),
                     keyholders = v.keyHolders
                 }
             end
@@ -31,7 +32,7 @@ RegisterNUICallback("Home", function(data, cb)
             end)
         end
     elseif action == "toggleLocked" then
-        lib.TriggerCallback("phone:home:toggleLocked", function(locked)
+        TriggerCallback("home:toggleLocked", function(locked)
             cb(locked)
         end, data.id, data.uniqueId)
     elseif action == "setWaypoint" then

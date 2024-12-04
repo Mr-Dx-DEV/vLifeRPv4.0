@@ -1,6 +1,10 @@
 local loadedDicts = {}
 local phoneModel = Config.PhoneModel or `prop_amb_phone`
 local currentAction, phone
+local disableAnimation = false
+local rotation = Config.PhoneRotation or vector3(0.0, 0.0, 180.0)
+local offset = Config.PhoneOffset or vector3(0.0, -0.005, 0.0)
+local textureVariation
 
 CreateThread(function()
     while not loaded do
@@ -149,11 +153,14 @@ local function CreatePhone()
 
     local playerPed = PlayerPedId()
     local coords = GetEntityCoords(playerPed, false)
-    local rotation = Config.PhoneRotation or vector3(0.0, 0.0, 180.0)
-    local offset = Config.PhoneOffset or vector3(0.0, -0.005, 0.0)
 
     if Config.ServerSideSpawn then
-        local netId = lib.TriggerCallbackSync("phone:createPhoneObject")
+        if not IsModelValid(phoneModel) then
+            debugprint("phoneModel is not valid")
+            return
+        end
+
+        local netId = AwaitCallback("createPhoneObject", phoneModel)
 
         if not netId then
             debugprint("Failed to create phone object")
@@ -184,6 +191,10 @@ local function CreatePhone()
         LoadModel(phoneModel)
 
         phone = CreateObject(phoneModel, coords.x, coords.y, coords.z, true, true, true)
+    end
+
+    if textureVariation then
+        SetObjectTextureVariation(phone, textureVariation)
     end
 
     SetEntityCollision(phone, false, false)
@@ -278,6 +289,36 @@ function GetPhoneObject()
     return phone
 end
 
+function TogglePhoneAnimation(enabled, action)
+    disableAnimation = enabled == false
+
+    if enabled then
+        SetPhoneAction(action or "default")
+    else
+        PlayCloseAnim()
+    end
+end
+
+---@param variation number
+function SetPhoneVariation(variation)
+    local itemData = Config.Item.Names[variation]
+
+    if not itemData then
+        return
+    end
+
+    phoneModel = itemData.model or phoneModel
+    offset = itemData.offset or Config.PhoneOffset or offset
+    rotation = itemData.rotation or Config.PhoneRotation or rotation
+    textureVariation = itemData.textureVariation
+
+    SetResourceKvpInt("phone_variation", variation)
+
+    if itemData.frameColor then
+        SendReactMessage("setFrameColor", itemData.frameColor)
+    end
+end
+
 AddEventHandler("onResourceStop", function(resource)
     if resource == GetCurrentResourceName() then
         DeletePhone()
@@ -287,7 +328,7 @@ end)
 while true do
     local playerPed = PlayerPedId()
 
-    if (phoneOpen or (IsInCall() and not InExportCall)) and not (cameraOpen and not IsWalkingCamEnabled()) and currentAction then
+    if (phoneOpen or (IsInCall() and not InExportCall)) and not (cameraOpen and not IsWalkingCamEnabled()) and currentAction and not disableAnimation then
         local inCar = IsPedInAnyVehicle(playerPed, true)
         local animData = phoneAnimations[currentAction][inCar and "inCar" or "onFoot"]
 

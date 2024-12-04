@@ -226,7 +226,8 @@
                 "BUTTON_CANCEL": "Cancel",
                 "BUTTON_DELETE": "Delete",
                 "ALARMS": "Alarms",
-                "NEW_ALARM": "New Alarm"
+                "NEW_ALARM": "New Alarm",
+                "EDIT_ALARM": "Edit Alarm"
             },
             "STOPWATCH": {
                 "TITLE": "Stopwatch",
@@ -396,6 +397,7 @@
             "REMOVE_FROM_ALBUM": "Remove from Album",
             "ADD_TO_ALBUM": "Add to Album",
             "ADD_TO_FAVOURITES": "Add to Favourites",
+            "REMOVE_FROM_FAVOURITES": "Remove from Favourites",
             "VIDEOS": "Videos",
             "SELFIES": "Selfies",
             "SCREENSHOTS": "Screenshots",
@@ -1681,8 +1683,10 @@
             "TAKE_PHOTO": "Press {key} to take a photo",
             "FLIP_CAMERA": "Press {key} to flip the camera",
             "TOGGLE_FLASH": "Press {key} to toggle the flash",
-            "TOGGLE_CURSOR": "Press {key} to toggle the cursor and look around",
-            "CHANGE_MODE": "Press {key} {key2} to change the camera mode"
+            "TOGGLE_CURSOR": "Press {key} to toggle the cursor",
+            "CHANGE_MODE": "Press {key} {key2} to change the mode",
+            "ROLL": "Press {key} {key2} to roll the camera",
+            "FREEZE": "Press {key} to freeze/unfreeze the camera"
         },
         "SERVICES": {
             "NEW_MESSAGE": "New Message",

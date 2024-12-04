@@ -39,7 +39,7 @@ RegisterNetEvent("QBCore:Player:SetPlayerData", function(newData)
 
     Wait(500)
 
-    if not HasPhoneItem() then
+    if currentPhone and not HasPhoneItem() then
         OnDeath()
     end
 end)
@@ -56,6 +56,16 @@ RegisterNetEvent("QBCore:Client:OnMoneyChange", function(moneyType)
     SendReactMessage("wallet:setBalance", math.floor(PlayerData.money.bank))
 end)
 
+local phoneVariation
+
+local function HasItem(itemName)
+    if GetResourceState("ox_inventory") == "started" then
+        return (exports.ox_inventory:Search("count", itemName) or 0) > 0
+    end
+
+    return QB.Functions.HasItem(itemName)
+end
+
 ---Check if a player has a phone
 ---@return boolean
 function HasPhoneItem(number)
@@ -67,12 +77,46 @@ function HasPhoneItem(number)
         return HasPhoneNumber(number)
     end
 
-    if GetResourceState("ox_inventory") == "started" then
-        return (exports.ox_inventory:Search("count", Config.Item.Name) or 0) > 0
+    if Config.Item.Name then
+        return HasItem(Config.Item.Name)
     end
 
-    return QB.Functions.HasItem(Config.Item.Name)
+    if not phoneVariation then
+        local storedVariation = GetResourceKvpInt("phone_variation")
+
+        if storedVariation and Config.Item.Names[storedVariation] and HasItem(Config.Item.Names[storedVariation].name) then
+            phoneVariation = storedVariation
+            SetPhoneVariation(storedVariation)
+            return true
+        end
+    end
+
+    if phoneVariation and HasItem(Config.Item.Names[phoneVariation].name) then
+        return true
+    end
+
+    for i = 1, #Config.Item.Names do
+        local item = Config.Item.Names[i]
+
+        if HasItem(item.name) then
+            phoneVariation = i
+            SetPhoneVariation(i)
+            return true
+        end
+    end
+
+    return false
 end
+
+RegisterNetEvent("phone:usedPhoneVariation", function(variation)
+    if not variation or not Config.Item.Names[variation] then
+        return
+    end
+
+    phoneVariation = variation
+    SetPhoneVariation(variation)
+    ToggleOpen(true)
+end)
 
 ---Check if the player has a job
 ---@param jobs table
@@ -125,7 +169,7 @@ function CreateFrameworkVehicle(vehicleData, coords)
 end
 
 -- Company / services app
-function GetCompanyData(cb)
+function GetCompanyData()
     local jobData = {
         job = PlayerJob.name,
         jobLabel = PlayerJob.label,
@@ -133,109 +177,115 @@ function GetCompanyData(cb)
         duty = PlayerJob.onduty
     }
 
-    if jobData.isBoss then
-        if GetResourceState("qb-management") ~= "started" then
-            local moneyPromise = promise.new()
+    if not jobData.isBoss then
+        return jobData
+    end
 
-            QB.Functions.TriggerCallback("qb-bossmenu:server:GetAccount", function(money)
-                moneyPromise:resolve(money)
-            end, jobData.job)
-
-            jobData.balance = Citizen.Await(moneyPromise)
-        else
-            jobData.balance = lib.TriggerCallbackSync("phone:services:getAccount")
-        end
-
-        local employeesPromise = promise.new()
-
-        QB.Functions.TriggerCallback("qb-bossmenu:server:GetEmployees", function(employees)
-            for i = 1, #employees do
-                local employee = employees[i]
-
-                employees[i] = {
-                    name = employee.name,
-                    id = employee.empSource,
-
-                    gradeLabel = employee.grade.name,
-                    grade = employee.grade.level,
-
-                    canInteract = not employee.isboss
-                }
-            end
-
-            employeesPromise:resolve(employees)
+    if GetResourceState("qb-management") ~= "started" then
+        QB.Functions.TriggerCallback("qb-bossmenu:server:GetAccount", function(money)
+            jobData.balance = money
         end, jobData.job)
+    else
+        jobData.balance = AwaitCallback("services:getAccount")
+    end
 
-        jobData.employees = Citizen.Await(employeesPromise)
-        jobData.grades = {}
+    QB.Functions.TriggerCallback("qb-bossmenu:server:GetEmployees", function(employees)
+        for i = 1, #employees do
+            local employee = employees[i]
 
-        for k, v in pairs(QB.Shared.Jobs[jobData.job].grades) do
-            jobData.grades[#jobData.grades + 1] = {
-                label = v.name,
-                grade = tonumber(k)
+            employees[i] = {
+                name = employee.name,
+                id = employee.empSource,
+
+                gradeLabel = employee.grade.name,
+                grade = employee.grade.level,
+
+                canInteract = not employee.isboss
             }
         end
 
-        table.sort(jobData.grades, function(a, b)
-            return a.grade < b.grade
-        end)
+        jobData.employees = employees
+    end, jobData.job)
+
+    local timeout = GetGameTimer() + 2000
+
+    while not jobData.balance or not jobData.employees do
+        Wait(0)
+
+        if GetGameTimer() > timeout then
+            infoprint("error", "Failed to get company data (timed out after 2s)")
+            print("balance: " .. tostring(jobData.balance))
+            print("employees: " .. tostring(jobData.employees))
+
+            jobData.employees = jobData.employees or {}
+            jobData.balance = jobData.balance or 0
+            break
+        end
     end
 
-    cb(jobData)
+    jobData.grades = {}
+
+    for k, v in pairs(QB.Shared.Jobs[jobData.job].grades) do
+        jobData.grades[#jobData.grades + 1] = {
+            label = v.name,
+            grade = tonumber(k)
+        }
+    end
+
+    table.sort(jobData.grades, function(a, b)
+        return a.grade < b.grade
+    end)
+
+    return jobData
 end
 
 function DepositMoney(amount, cb)
     if GetResourceState("qb-management") == "started" then
-        lib.TriggerCallback("phone:services:addMoney", cb, amount)
-        return
+        return AwaitCallback("services:addMoney", amount)
     end
 
     TriggerServerEvent("qb-bossmenu:server:depositMoney", amount)
+    Wait(500) -- Wait for the server to update the balance
 
-    SetTimeout(500, function()
-        QB.Functions.TriggerCallback("qb-bossmenu:server:GetAccount", cb, PlayerJob.name)
-    end)
+    QB.Functions.TriggerCallback("qb-bossmenu:server:GetAccount", cb, PlayerJob.name)
 end
 
 function WithdrawMoney(amount, cb)
     if GetResourceState("qb-management") == "started" then
-        lib.TriggerCallback("phone:services:removeMoney", cb, amount)
-        return
+        return AwaitCallback("services:removeMoney", amount)
     end
 
     TriggerServerEvent("qb-bossmenu:server:withdrawMoney", amount)
+    Wait(500) -- Wait for the server to update the balance
 
-    SetTimeout(500, function()
-        QB.Functions.TriggerCallback("qb-bossmenu:server:GetAccount", cb, PlayerJob.name)
-    end)
+    QB.Functions.TriggerCallback("qb-bossmenu:server:GetAccount", cb, PlayerJob.name)
 end
 
-function HireEmployee(source, cb)
+function HireEmployee(source)
     TriggerServerEvent("qb-bossmenu:server:HireEmployee", source)
-    lib.TriggerCallback("phone:services:getPlayerData", function(playerData)
-        cb({
-            name = playerData.name,
-            id = playerData.id
-        })
-    end, source)
+
+    return AwaitCallback("services:getPlayerData", source)
 end
 
-function FireEmployee(source, cb)
+function FireEmployee(source)
     TriggerServerEvent("qb-bossmenu:server:FireEmployee", source)
-    cb(PlayerJob.isboss)
+
+    return PlayerJob.isboss or false
 end
 
-function SetGrade(identifier, newGrade, cb)
+function SetGrade(identifier, newGrade)
     local maxGrade = 0
+
     for grade, _ in pairs(QB.Shared.Jobs[PlayerJob.name].grades) do
         grade = tonumber(grade)
+
         if grade and grade > maxGrade then
             maxGrade = grade
         end
     end
 
     if newGrade > maxGrade then
-        return cb(false)
+        return false
     end
 
     TriggerServerEvent("qb-bossmenu:server:GradeUpdate", {
@@ -243,7 +293,8 @@ function SetGrade(identifier, newGrade, cb)
         grade = newGrade,
         gradename = QB.Shared.Jobs[PlayerJob.name].grades[tostring(newGrade)].name
     })
-    cb(true)
+
+    return true
 end
 
 function ToggleDuty()
@@ -298,7 +349,7 @@ if Config.Crypto.QBit then
     end
 
     function TransferQBit(amount, toNumber)
-        local otherWallet = lib.TriggerCallbackSync("phone:crypto:getOtherQBitWallet", toNumber)
+        local otherWallet = AwaitCallback("crypto:getOtherQBitWallet", toNumber)
         if not otherWallet then
             return { success = false }
         end

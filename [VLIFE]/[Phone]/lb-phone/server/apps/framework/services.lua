@@ -2,7 +2,7 @@
 local lastRefresh = 0
 local refreshInterval = 60 -- refresh at most once every 60 seconds
 
-lib.RegisterCallback("phone:services:getOnline", function(_, cb)
+RegisterLegacyCallback("services:getOnline", function(_, cb)
     if (lastRefresh + refreshInterval) < os.time() and RefreshCompanies then
         RefreshCompanies()
         lastRefresh = os.time()
@@ -128,7 +128,7 @@ end)
 ---@param page? number
 BaseCallback("services:getRecentMessages", function(source, phoneNumber, page)
     return MySQL.query.await([[
-        SELECT id, phone_number, company, company, last_message, `timestamp`
+        SELECT id, phone_number, company, last_message, `timestamp`
         FROM phone_services_channels
         WHERE phone_number = ? OR company = ?
         ORDER BY `timestamp` DESC
@@ -167,13 +167,13 @@ end, false)
 
 ---@param company string
 ---@return { firstname: string, lastname: string, grade: string, number?: string, online: boolean }[] employees
-BaseCallback("services:getEmployees", function(source,eNumber, company)
+BaseCallback("services:getEmployees", function(source, phoneNumber, company)
     if not Config.Companies.SeeEmployees or Config.Companies.SeeEmployees == "none" or not allowedCompanies[company] or not GetAllEmployees then
-        return {}
+        return false
     end
 
     if Config.Companies.SeeEmployees == "employees" and GetJob(source) ~= company then
-        return {}
+        return false
     end
 
     ---@type { firstname: string, lastname: string, grade: string, number?: string, online: boolean }[]
