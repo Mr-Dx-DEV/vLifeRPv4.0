@@ -3,7 +3,7 @@
 -- READ THE DOCS BEFORE USING THIS SCRIPT: https://docs.av-scripts.com/
 
 Config = {}
-Config.Debug = true
+Config.Debug = false
 Config.DebugCommand = "debug"          -- Used to enable debug mode in the specified resource (only available for av_laptop resources)
 Config.Target = "ox_target"            -- Your target script "ox_target", "qb-target", "qtarget"
 Config.AdminLevel = "admin"            -- Min admin level needed to use debug command

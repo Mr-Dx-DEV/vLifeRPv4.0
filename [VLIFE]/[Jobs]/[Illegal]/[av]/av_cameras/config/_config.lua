@@ -3,7 +3,7 @@
 -- DISCORD CONFIG IS INSIDE SERVER/FRAMEWORK/_DISCORD.LUA
 -- READ THE DOCS BEFORE USING THIS SCRIPT: https://docs.av-scripts.com/
 Config = {}
-Config.Debug = true
+Config.Debug = false
 Config.HostingService = 'fivemerr' -- "fivemanage" or "fivemerr" // add your token in server/editable/token.lua
 Config.VehicleThumbnail = "https://r2.fivemanage.com/QmVAYSlqeAlD4IxVbdvu5/QsUBHkb.jpeg" -- Used as thumbnail for vehicles in Camera App
 Config.App = {

@@ -2,7 +2,7 @@
 -- Add your webhook for logs in server/editable/_webhook.lua
 
 Config = {}
-Config.Debug = true
+Config.Debug = false
 Config.AdminLevel = "admin" -- Level needed to delete ads
 Config.App = {
     name = "marketplace",

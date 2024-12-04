@@ -3,8 +3,8 @@ Config = Config or {}
 Config.MinLevelForRaid = 1 -- Min level needed to raid another gang
 Config.LockOnRestart = false -- true = it will lock all open properties on sv restart
 Config.MinMembersOnline = 1 -- min gang members online so other ppl can raid their property
-Config.PoliceNeedsItem = "phone" -- Item name or false if police can raid without using an item
-Config.GangsNeedItem = "phone" -- Item name or false if gangs can raid without using an item
+Config.PoliceNeedsItem = "police_stormram" -- Item name or false if police can raid without using an item
+Config.GangsNeedItem = "hacking_device" -- Item name or false if gangs can raid without using an item
 Config.RemoveItemOnUse = true -- true/false remove the raid item on use
 Config.Police = { -- supports multiple jobs and grades, only this jobs/grades can raid properties (client/editable/raid.lua)
     ['police'] = { -- job name
