@@ -8,32 +8,61 @@ function gangDoor(identifier, type, gang, isOpen, isExit)
             args = {}
         }
     else
-        options[#options+1] = {
-            title = Lang['enter_property'],
-            event = 'av_gangs:enter',
-            args = {
-                identifier = identifier, type = type, gang = gang
+        if Config.PropertyInZone then
+            if (PlayerGang and PlayerGang.name == currentZone) then
+                options[#options+1] = {
+                    title = Lang['enter_property'],
+                    event = 'av_gangs:enter',
+                    args = {
+                        identifier = identifier, type = type, gang = gang
+                    }
+                }
+            end
+        else
+            options[#options+1] = {
+                title = Lang['enter_property'],
+                event = 'av_gangs:enter',
+                args = {
+                    identifier = identifier, type = type, gang = gang
+                }
             }
-        }
+        end
     end
     local description = Lang['locked']
     if isOpen then
         description = Lang['unlocked']
     end
-    options[#options+1] = {
-        title = Lang['door_state'],
-        event = 'av_gangs:toggleDoor',
-        description = description,
-        args = {
-            identifier = identifier, type = type, gang = gang, isExit = isExit
+    if Config.PropertyInZone then
+        if (PlayerGang and PlayerGang.name == currentZone) then
+            options[#options+1] = {
+                title = Lang['door_state'],
+                event = 'av_gangs:toggleDoor',
+                description = description,
+                args = {
+                    identifier = identifier, type = type, gang = gang, isExit = isExit
+                }
+            }
+        end
+    else
+        options[#options+1] = {
+            title = Lang['door_state'],
+            event = 'av_gangs:toggleDoor',
+            description = description,
+            args = {
+                identifier = identifier, type = type, gang = gang, isExit = isExit
+            }
         }
-    }
-    lib.registerContext({
-        id = 'gang_door',
-        title = Lang['door_options'],
-        options = options
-    })
-    lib.showContext('gang_door')
+    end
+    if options and next(options) then
+        lib.registerContext({
+            id = 'gang_door',
+            title = Lang['door_options'],
+            options = options
+        })
+        lib.showContext('gang_door')
+    else
+        TriggerEvent("av_laptop:notification", Lang['app_title'], Lang['property_not_in_zone'], 'error')
+    end
 end
 
 RegisterNetEvent('av_gangs:enter', function(data)

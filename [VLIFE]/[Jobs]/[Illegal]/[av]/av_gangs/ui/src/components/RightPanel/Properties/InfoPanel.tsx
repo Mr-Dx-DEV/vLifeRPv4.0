@@ -8,15 +8,6 @@ export const InfoPanel = ({ lang }: any) => {
       <Text className={classes.text} ta="center" fz="lg" fw={500}>
         {panel.header}
       </Text>
-      <Text className={classes.text} fz="md" fw={500}>{`Status:`}</Text>
-      <Text className={classes.text} fz="sm" c="dimmed" ml="xs" mt="xs">
-        <strong>{panel.working}</strong>
-        {panel.working2}
-      </Text>
-      <Text className={classes.text} fz="sm" c="dimmed" ml="xs" mt={4}>
-        <strong>{panel.stopped}</strong>
-        {panel.stopped2}
-      </Text>
       <Text className={classes.text} fz="md" fw={500} mt="sm">
         {panel.upgrades}
       </Text>

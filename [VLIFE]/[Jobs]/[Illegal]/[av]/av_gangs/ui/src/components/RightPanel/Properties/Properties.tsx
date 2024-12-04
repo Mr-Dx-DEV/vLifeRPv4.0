@@ -133,13 +133,11 @@ const Properties = () => {
                   <Text fz="lg" fw={500}>
                     {property.label}
                   </Text>
-                  <Badge
-                    size="sm"
-                    variant="light"
-                    color={property.working ? `teal` : `red`}
-                  >
-                    {property.working ? `Working` : `Stopped`}
-                  </Badge>
+                  {property.working && (
+                    <Badge size="sm" variant="light" color={"cyan"}>
+                      {property.working}
+                    </Badge>
+                  )}
                 </Group>
                 <Text mt="md" className={classes.label} c="dimmed">
                   Upgrades

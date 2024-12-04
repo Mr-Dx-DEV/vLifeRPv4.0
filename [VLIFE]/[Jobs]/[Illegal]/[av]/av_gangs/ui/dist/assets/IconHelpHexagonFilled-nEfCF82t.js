@@ -1,4 +1,4 @@
-import{y as l}from"./index-DWxocKBz.js";/**
+import{y as l}from"./index-Dt-PZSuM.js";/**
  * @license @tabler/icons-react v3.7.0 - MIT
  *
  * This source code is licensed under the MIT license.

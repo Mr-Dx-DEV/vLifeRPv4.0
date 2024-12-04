@@ -89,11 +89,6 @@
     "nextCook": "Next Cook",
     "upgrades": "Upgrades",
     "panel": {
-      "header": "Properties Info",
-      "working": "[Working]: ",
-      "working2": "The lab is working correctly.",
-      "stopped": "[Stopped]: ",
-      "stopped2": "The lab needs attention, verify there's enough ingredients and available stash space.",
       "upgrades": "Upgrades",
       "stash": "[Stash]: ",
       "stash2": "Increases the available stash slots and weight for your property.",

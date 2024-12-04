@@ -76,4 +76,10 @@ Lang = {
     ['exit'] = "Exit",
     ['confirm'] = "Confirm",
     ['set_door'] = "Set Door Location",
+    ['property_not_in_zone'] = "Seems like you don't control this zone anymore...",
+    ['lab_idle'] = "Idle",
+    ['lab_cooking'] = "Cooking",
+    ['lab_cooldown'] = "In Cooldown",
+    ['lab_full'] = "Stash Full",
+    ['lab_ingredients'] = "No Ingredients",
 }
