@@ -210,6 +210,20 @@ RegisterNetEvent('qb-smallpenis:server:AddParachute', function()
 end)
 
 
+RegisterNetEvent('consumables:server:resetArmor', function()
+    local Player = QBCore.Functions.GetPlayer(source)
+    if not Player then return end
+    exports['qb-inventory']:AddItem(source, 'heavyarmor', 1, false, false, 'consumables:server:resetArmor')
+end)
+
+RegisterNetEvent('consumables:server:useHeavyArmor', function()
+    local Player = QBCore.Functions.GetPlayer(source)
+    if not Player then return end
+    if not exports['qb-inventory']:RemoveItem(source, 'heavyarmor', 1, false, 'consumables:server:useHeavyArmor') then return end
+    TriggerClientEvent('qb-inventory:client:ItemBox', source, QBCore.Shared.Items['heavyarmor'], 'remove')
+    TriggerClientEvent('hospital:server:SetArmor', source, 100)
+    SetPedArmour(GetPlayerPed(source), 100)
+end)
 
 ----------- / Lockpicking
 

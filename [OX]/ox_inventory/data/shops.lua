@@ -210,7 +210,7 @@ return {
 			{ name = 'weapon_flashlight', price = 50, metadata = { registered = true, serial = 'POL' }, grade = 0 },
 			{ name = 'police_stormram', price = 50, metadata = { registered = true, serial = 'POL' }, grade = 0 },
 			{ name = 'armor', price = 50,  grade = 0 },
-			{ name = 'armorplate', price = 5,  grade = 0 },
+			{ name = 'heavyarmor', price = 5,  grade = 0 },
 			{ name = 'advancedrepairkit', price = 50, grade = 0 },
 			{ name = 'radio', price = 500, grade = 0 },
 			{ name = 'bandage', price = 30, grade = 0 },

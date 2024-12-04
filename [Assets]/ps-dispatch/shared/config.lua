@@ -16,12 +16,12 @@ Config.Jobs = { -- Job Types or names that can access the dispatch menu. If you 
 
 Config.DefaultAlertsDelay = 5 -- Delay between each default alert, prevent spamming
 Config.DefaultAlerts = {
-    Speeding = true,
+    Speeding = false,
     Shooting = true,
     Autotheft = true,
     Melee = true,
     PlayerDowned = true,
-    Explosion = true
+    Explosion = false
 }
 
 Config.MinOffset = 1

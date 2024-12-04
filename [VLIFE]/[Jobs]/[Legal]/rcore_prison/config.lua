@@ -178,11 +178,11 @@ Config = {
     },
 
     Commands = {
-        Jail = 'jail', -- This is the command for jailing player
+        Jail = 'pjail', -- This is the command for jailing player
         Unjail = 'unjail', -- This is the command for unjailing player
         Startcs = 'Startcs', -- This is the command for starting the community service
         Removecs = 'Removecs', -- This is the command for removing the community service
-        JailCP = 'jailcp', -- This is command for opening jail dashboard
+        JailCP = 'jail', -- This is command for opening jail dashboard
         StopAlarm = 'stopalarm', -- This is the command for stopping the alarm
         Solitary = 'solitary', -- This is the command for sending player to solitary cell(s)
         RemoveSolitary = 'rsolitary', -- This is the command for removing player from solitary cell(s)

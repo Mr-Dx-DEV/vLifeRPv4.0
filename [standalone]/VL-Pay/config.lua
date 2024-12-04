@@ -21,7 +21,7 @@ Config = {
 								-- "fd" 			- currently default supported
 								-- "okok"			- make sure to add societies to Config.Societies in okokBanking, This is for the latest QBCore updates
 
-	ApGov = false, -- Toggle support for AP-Goverment Tax
+	ApGov = true, -- Toggle support for AP-Goverment Tax
 
 	List = false, -- "true" to use nearby player list feature in the cash registers, "false" for manual id entry
 	PaymentRadius = 15, -- This is how far the playerlist will check for nearby players (based on the person charging)

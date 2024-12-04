@@ -514,7 +514,7 @@ Config.GangGarageLocations = { -- IMPORTANT - Every garage name must be unique
 
 -- Impound
 Config.ImpoundCommand = "impound"
-Config.ImpoundFeesSocietyFund = { 'lspd', 'bcso', 'sahp', 'lsso', 'safw', 'sadoc', 'usms', 'fbi', 'dhs', 'ss', 'police', 'ambulance' } -- Job name of society fund to pay impound fees into (optional)
+Config.ImpoundFeesSocietyFund = { 'lspd', 'bcso', 'sahp', 'lsso', 'safw', 'sadoc', 'usms', 'fbi', 'dhs', 'ss', 'police' } -- Job name of society fund to pay impound fees into (optional)
 Config.ImpoundShowBlips = true
 Config.ImpoundUniqueBlips = false
 Config.ImpoundTimeOptions = {0, 1, 4, 12, 24, 72, 168} -- in hours
@@ -524,7 +524,7 @@ Config.ImpoundLocations = { -- IMPORTANT - Every impound name must be unique
     spawn = vector4(408.44, -1630.88, 29.29, 136.88),
     distance = 15,
     type = "car",
-    job = { 'lspd', 'bcso', 'sahp', 'lsso', 'safw', 'sadoc', 'usms', 'fbi', 'dhs', 'ss', 'police', 'ambulance' },
+    job = { 'lspd', 'bcso', 'sahp', 'lsso', 'safw', 'sadoc', 'usms', 'fbi', 'dhs', 'ss', 'police' },
     hideBlip = false,
     blip = {
       id = 68,
@@ -554,7 +554,7 @@ Config.ImpoundLocations = { -- IMPORTANT - Every impound name must be unique
     spawn = vector4(-1666.75, -3148.88, 13.99, 348.51),
     distance = 15,
     type = "air",
-    job = { 'lspd', 'bcso', 'sahp', 'lsso', 'safw', 'sadoc', 'usms', 'fbi', 'dhs', 'ss', 'police', 'ambulance' },
+    job = { 'lspd', 'bcso', 'sahp', 'lsso', 'safw', 'sadoc', 'usms', 'fbi', 'dhs', 'ss', 'police' },
     hideBlip = false,
     blip = {
       id = 359,

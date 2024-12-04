@@ -20,7 +20,7 @@ CreateThread(function()
     end
 end)
 
-QBCore.Commands.Add("billpol", Loc[Config.Lan].command["charge"], {}, false, function(source) TriggerClientEvent("jim-payments:client:PolCharge", source) end)
+QBCore.Commands.Add("fine", Loc[Config.Lan].command["charge"], {}, false, function(source) TriggerClientEvent("jim-payments:client:PolCharge", source) end)
 --QBCore.Commands.Add("billems", Loc[Config.Lan].command["charge"], {}, false, function(source) TriggerClientEvent("jim-payments:client:EmsCharge", source) end)
 
 RegisterServerEvent('jim-payments:Tickets:Give', function(data, biller, gang)

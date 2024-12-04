@@ -15,7 +15,7 @@ Config.ItemNames = {
     spray = "spray", -- Used to apply graffiti
     remover = "spray_remover" -- Used to remove graffiti
 }
-Config.Prices = { ['spray'] = 1000, ['remover'] = 20000 }
+Config.Prices = { ['spray'] = 50000, ['remover'] = 100000 }
 Config.ItemCooldown = { -- Cooldown in hours, gangs can buy this item every X hours
     [Config.ItemNames['spray']] = 7,
     [Config.ItemNames['remover']] = 7,
