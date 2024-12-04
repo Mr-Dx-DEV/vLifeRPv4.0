@@ -62,6 +62,7 @@ Config.ZoneRewards = {
       {itemName = "glassbottle", min = 1, max = 1},
       {itemName = "spring", min = 1, max = 8},
       {itemName = "pcb", min = 1, max = 8},
+      {itemName = "laptop_blue", min = 1, max = 1},
 }
 
 Config.Rewards = { -- Player will receive a random item from the table, this rewards corresponds to Config.Lucky
@@ -72,6 +73,7 @@ Config.Rewards = { -- Player will receive a random item from the table, this rew
       {type = "item", itemName = "remote", min = 1, max = 8},
       {type = "item", itemName = "glassbottle", min = 1, max = 1},
       {type = "item", itemName = "spring", min = 1, max = 8},
+      {type = "item", itemName = "laptop_blue", min = 1, max = 1},
       {type = "item", itemName = "pcb", min = 1, max = 8},
     },
     ['jewelry'] = {
@@ -93,6 +95,7 @@ Config.Rewards = { -- Player will receive a random item from the table, this rew
       {type = "item", itemName = "blacktape", min = 1, max = 8},
       {type = "item", itemName = "rope", min = 1, max = 8},
       {type = "item", itemName = "remote", min = 1, max = 8},
+      {type = "item", itemName = "laptop_blue", min = 1, max = 1},
       {type = "item", itemName = "glassbottle", min = 1, max = 1},
       
       {type = "item", itemName = "spring", min = 1, max = 8},
