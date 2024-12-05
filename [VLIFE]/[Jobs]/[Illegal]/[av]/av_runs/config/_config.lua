@@ -22,7 +22,7 @@ Config.DefaultVehicles = {`burrito2`, `burrito3`, `youga`, `youga2`} -- Vehicles
 
 Config.Drugs = {
     ['weed_bag'] = { -- item name
-        minCops = 2, -- min cops online to start mission
+        minCops = 0, -- min cops online to start mission
         vehicle = {`schafter5`, `cognoscenti2`, `xls2`, `kuruma2`}, -- Vehicle used for runs, it will pick one random model from table
         moneyAccount = "cash", -- The account name to receive the reward
         cooldown = 30, -- In minutes, time before other players can do the mission again / this value CAN'T be lower than timeLimit
@@ -41,7 +41,7 @@ Config.Drugs = {
         end
     },
     ['weed_ak47_joint'] = { -- item name
-        minCops = 2, -- min cops online to start mission
+        minCops = 0, -- min cops online to start mission
         vehicle = {`schafter5`, `cognoscenti2`, `xls2`, `kuruma2`}, -- Vehicle used for runs, it will pick one random model from table
         moneyAccount = "cash", -- The account name to receive the reward
         cooldown = 30, -- In minutes, time before other players can do the mission again / this value CAN'T be lower than timeLimit
@@ -61,7 +61,7 @@ Config.Drugs = {
     },
 
     ['coke_baggy'] = { -- item name
-        minCops = 2, -- min cops online to start mission
+        minCops = 0, -- min cops online to start mission
         vehicle = {`schafter5`, `cognoscenti2`, `xls2`, `kuruma2`}, -- Vehicle used for runs, it will pick one random model from table
         moneyAccount = "cash", -- The account name to receive the reward
         cooldown = 30, -- In minutes, time before other players can do the mission again / this value CAN'T be lower than timeLimit
@@ -81,7 +81,7 @@ Config.Drugs = {
     },
 
     ['coke_raw'] = { -- item name
-        minCops = 2, -- min cops online to start mission
+        minCops = 0, -- min cops online to start mission
         vehicle = {`schafter5`, `cognoscenti2`, `xls2`, `kuruma2`}, -- Vehicle used for runs, it will pick one random model from table
         moneyAccount = "cash", -- The account name to receive the reward
         cooldown = 30, -- In minutes, time before other players can do the mission again / this value CAN'T be lower than timeLimit

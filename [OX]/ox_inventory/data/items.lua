@@ -1,4 +1,41 @@
 return {
+
+	["redchip"] = {
+        ["name"] = "redchip",
+        ["label"] = "Red Decryption Key",
+        ["weight"] = 100,
+        ["type"] = "item",
+        ["image"] = "redchip.png",
+        ["unique"] = true,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,   
+        ["description"] = "A key that is Red."
+    },
+    ["greenchip"] = {
+        ["name"] = "greenchip",
+        ["label"] = "Green Decryption Key",
+        ["weight"] = 100,
+        ["type"] = "item",
+        ["image"] = "greenchip.png",
+        ["unique"] = true,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,   
+        ["description"] = "A key that is Green."
+    },
+    ["bluechip"] = {
+        ["name"] = "bluechip",
+        ["label"] = "Blue Decryption Key",
+        ["weight"] = 100,
+        ["type"] = "item",
+        ["image"] = "bluechip.png",
+        ["unique"] = true,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,   
+        ["description"] = "A key that is Blue."
+    },
 	
 ['hacking_device'] = {
 	label = 'Hacking Device',

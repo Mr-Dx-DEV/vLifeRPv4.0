@@ -72,7 +72,7 @@ Config.Market = {
     }, ]]
     ['weed_table'] = {-- item name
         label = "Weed Table",
-        price = 3000,
+        price = 1000,
         account = 'cosmo',
         accountLabel = "Cosmo",
         image = false, -- just in case u want to use a different image (URL) from the one in the inventory, if false it will use itemname.png from inventory images
@@ -86,7 +86,7 @@ Config.Market = {
     },
     ['cokeprocessingtable'] = {-- item name
         label = "Coke Table",
-        price = 3500,
+        price = 1000,
         account = 'cosmo',
         accountLabel = "Cosmo",
         image = false, -- just in case u want to use a different image (URL) from the one in the inventory, if false it will use itemname.png from inventory images

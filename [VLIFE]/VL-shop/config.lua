@@ -1577,6 +1577,14 @@ AC = {
                     ["image"] = "advancedlockpick.png",
                     ["itemname"] = "advancedlockpick",
                 },
+                [12] = {
+                    ["name"] = "Laptop",
+                    ["price"] = 8000,
+                    ["amount"] = 100,
+                    ["type"] = "item",
+                    ["image"] = "laptop.png",
+                    ["itemname"] = "laptop",
+                },
                 
                 --[[ [9] = {
                     ["name"] = "Sodium Bi Carbonate",

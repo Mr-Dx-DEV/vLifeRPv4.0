@@ -20,23 +20,8 @@ Config.InventoryType    = "ox_inventory"
 Config.TargetType       = "ox_target"
 
 Config.CraftableItems_1 = {
-    --[[ [1] = {
-        name = "electronickit",
-        label = "Electronic Kit",
-        propModel = "prop_prototype_minibomb",
-        count = 1,
-        duration = 300000,
-        image = "items/electronickit.png",
-        ingredients = {
-            pcb = 5,
-            copperwire = 5,
-            plastic = 10,
-            steel = 5,
-            blacktape = 10,
-        },
-        price = 1000,
-    },
-    [2] = {
+    
+    --[[ [2] = {
         name = "ignition_bomb",
         label = "Ignition Explosive",
         propModel = "prop_prototype_minibomb",
@@ -138,6 +123,22 @@ Config.CraftableItems_1 = {
         price = 1000,
     }, ]]
     [1] = {
+        name = "electronickit",
+        label = "Electronic Kit",
+        propModel = "electronickit",
+        count = 1,
+        duration = 300000,
+        image = "items/electronickit.png",
+        ingredients = {
+            pcb = 1,
+            copperwire = 5,
+            plastic = 10,
+            steel = 5,
+            blacktape = 10,
+        },
+        price = 1000,
+    },
+    [2] = {
         name = "contracts_tablet",
         label = "Contract Tablet",
         propModel = "xm_prop_x17_tablet_01",
@@ -152,7 +153,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [2] = {
+    [3] = {
         name = "at_flashlight",
         label = "Flashlight",
         propModel = "w_at_pi_flsh",
@@ -169,7 +170,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [3] = {
+    [4] = {
         name = "at_grip",
         label = "SMG Grip",
         propModel = "w_at_ar_afgrip",
@@ -186,7 +187,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [4] = {
+    [5] = {
         name = "at_scope_medium",
         label = "Medium Scope",
         propModel = "w_at_scope_medium",
@@ -204,7 +205,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [5] = {
+    [6] = {
         name = "at_suppressor_light",
         label = "Light Suppressor",
         propModel = "w_at_pi_supp",
@@ -222,7 +223,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [6] = {
+    [7] = {
         name = "at_clip_extended_pistol",
         label = "Extended Pistol Clip",
         propModel = "w_pi_pistolmag1",
@@ -239,7 +240,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [7] = {
+    [8] = {
         name = "at_clip_extended_smg",
         label = "Extended SMG Clip",
         propModel = "w_sb_smgmag1",
@@ -257,7 +258,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [8] = {
+    [9] = {
         name = "at_clip_extended_rifle",
         label = "Extended Rifle Clip",
         propModel = "w_ar_riflemag1",
@@ -273,7 +274,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [9] = {
+    [10] = {
         name = "at_clip_drum_rifle",
         label = "Drum Rifle Clip",
         propModel = "w_ar_assaultrifle_mag2",
@@ -289,7 +290,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [10] = {
+    [11] = {
         name = "at_clip_drum_pistol",
         label = "Drum Pistol Clip",
         propModel = "w_ar_carbinerifle_mag2",
@@ -306,7 +307,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [11] = {
+    [12] = {
         name = "at_clip_clear",
         label = "Clear Clip",
         propModel = "w_ar_carbinerifle_mag1",
@@ -323,7 +324,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [12] = {
+    [13] = {
         name = "at_clip_100_pistol",
         label = "100 Round Pistol Clip",
         propModel = "w_ar_bullpuprifle_mag2",
@@ -340,7 +341,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [13] = {
+    [14] = {
         name = "at_clip_drum_pistol",
         label = "50 Round Drum",
         propModel = "w_ar_carbinerifle_mag2",
@@ -358,7 +359,7 @@ Config.CraftableItems_1 = {
         price = 1000,
     },
 
-    [14] = {
+    [15] = {
         name = "WEAPON_BAR15",
         label = "AR-15",
         propModel = "w_ar_kyrosbar15",
@@ -379,7 +380,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [15] = {
+    [16] = {
         name = "WEAPON_LBTARP",
         label = "LB TAN ARP",
         propModel = "w_ar_kyroslbtarp",
@@ -400,7 +401,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [16] = {
+    [17] = {
         name = "WEAPON_M500",
         label = "MOSSBERG 500",
         propModel = "w_sg_kyrosm500",
@@ -421,7 +422,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [17] = {
+    [18] = {
         name = "WEAPON_T1911",
         label = "TAN 1911",
         propModel = "w_pi_kyrostan1911",
@@ -441,7 +442,7 @@ Config.CraftableItems_1 = {
         },
         price = 1000,
     },
-    [18] = {
+    [19] = {
         name = "WEAPON_TEC9S",
         label = "TEC 9 W STRAP",
         propModel = "w_sb_kyrostec9s",
