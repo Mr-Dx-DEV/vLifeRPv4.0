@@ -79,12 +79,20 @@ bedoflex.RandomItems = true -- If you set true checks CrateItems random values
 bedoflex.CrateItems = { -- Items included in the airdrop crate
 
 
-{ItemName = "WEAPON_BLUEGLOCKS", ItemCount = 1, random = {a = 50, b = 100}},   -- comom
-{ItemName = "WEAPON_GLOCKBEAMS", ItemCount = 1, random = {a = 50, b = 100}},
-{ItemName = "WEAPON_BLACKARP", ItemCount = 1, random = {a = 50, b = 100} },
+-- {ItemName = "WEAPON_BLUEGLOCKS", ItemCount = 1, random = {a = 50, b = 100}},   -- comom
+-- {ItemName = "WEAPON_GLOCKBEAMS", ItemCount = 1, random = {a = 50, b = 100}},
+-- {ItemName = "WEAPON_BLACKARP", ItemCount = 1, random = {a = 50, b = 100} },
+{ItemName = "redchip", ItemCount = 1, random = {a = 30, b = 60}},
+{ItemName = "greenchip", ItemCount = 1, random = {a = 30, b = 60}},
+{ItemName = "bluechip", ItemCount = 1, random = {a = 30, b = 60}},
 
-{ItemName = "WEAPON_DMK18", ItemCount = 1, random = {a = 80, b = 100}},      --  rare
-{ItemName = "WEAPON_REDARP", ItemCount = 1, random = {a = 80, b = 100}},    -- rare
+{ItemName = "pistol_ammo", ItemCount = 80, random = {a = 40, b = 80}},
+{ItemName = "armor", ItemCount = 5, random = {a = 42, b = 82}},
+{ItemName = "WEAPON_DMK18", ItemCount = 1, random = {a = 20, b = 40}},
+
+
+{ItemName = "WEAPON_DMK18", ItemCount = 1, random = {a = 20, b = 40}},      --  rare
+{ItemName = "WEAPON_REDARP", ItemCount = 1, random = {a = 20, b = 40}},    -- rare
 
 
 
