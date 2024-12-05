@@ -2,7 +2,10 @@ Config = Config or {}
 Config.Webhook = "YOUR_WEBHOOK"
 Config.NPC = {
     -- ['drug_name'] = {model hash, started (don't change it)}
-    ["meth_batch"] = {model = `a_m_m_genfat_02`, started = false},
+    ["weed_bag"] = {model = `a_m_m_genfat_02`, started = false},
+    ["weed_ak47_joint"] = {model = `a_m_m_genfat_02`, started = false},
+    ["coke_baggy"] = {model = `a_m_m_genfat_02`, started = false},
+    ["coke_raw"] = {model = `a_m_m_genfat_02`, started = false},
 }
 
 Config.Locations = { -- The script will pick one random location from this list for every drug npc
