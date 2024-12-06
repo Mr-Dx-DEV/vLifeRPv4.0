@@ -1538,12 +1538,12 @@ AC = {
                     ["itemname"] = "binoculars",
                 },
                 [7] = {
-                    ["name"] = "Contract Tablet",
-                    ["price"] = 20000,
+                    ["name"] = "Laptop",
+                    ["price"] = 40000,
                     ["amount"] = 100,
                     ["type"] = "item",
-                    ["image"] = "contracts_tablet.png",
-                    ["itemname"] = "contracts_tablet",
+                    ["image"] = "laptop.png",
+                    ["itemname"] = "laptop",
                 },
                 [8] = {
                     ["name"] = "Crowbar",
@@ -1577,14 +1577,7 @@ AC = {
                     ["image"] = "advancedlockpick.png",
                     ["itemname"] = "advancedlockpick",
                 },
-                [12] = {
-                    ["name"] = "Laptop",
-                    ["price"] = 8000,
-                    ["amount"] = 100,
-                    ["type"] = "item",
-                    ["image"] = "laptop.png",
-                    ["itemname"] = "laptop",
-                },
+                
                 
                 --[[ [9] = {
                     ["name"] = "Sodium Bi Carbonate",
