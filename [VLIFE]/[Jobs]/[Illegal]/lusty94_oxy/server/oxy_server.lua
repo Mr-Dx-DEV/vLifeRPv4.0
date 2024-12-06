@@ -34,23 +34,8 @@ end
 function activePoliceCounter()
     local amount = 0
     local players = QBCore.Functions.GetQBPlayers()
-    local leoJobs = {
-        police = true,
-        sheriff = true,
-        fbi = true,
-        lspd = true,
-        bcso = true,
-        sahp = true,
-        lsso = true,
-        safw = true,
-        sadoc = true,
-        usms = true,
-        dhs = true,
-        ss = true
-    }
-
     for _, Player in pairs(players) do
-        if leoJobs[Player.PlayerData.job.name] and Player.PlayerData.job.onduty then
+        if Player.PlayerData.job.name == "police" or Player.PlayerData.job.name == "bcso" or Player.PlayerData.job.name == "leo" and Player.PlayerData.job.onduty then
             amount = amount + 1
         end
     end
