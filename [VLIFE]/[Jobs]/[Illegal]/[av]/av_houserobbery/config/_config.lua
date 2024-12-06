@@ -22,7 +22,7 @@ Config.PoliceJobName = { -- Police job names, the ones that will receive an aler
 }
 Config.MinCops = 0 -- Min cops online to start the job
 Config.StartingDoor = vector3(1510.4838, 6326.0747, 24.6071) -- Coords for the door where mission starts
-Config.Cooldown = 30 -- Player cooldown (in minutes), to prevent the same person from farming all houses 24/7
+Config.Cooldown = 1 -- Player cooldown (in minutes), to prevent the same person from farming all houses 24/7
 Config.RemoveHouseTime = 60 -- Player have X minutes to rob the house before it gets removed
 Config.LockpickItem = "lockpick" -- Item name used to break into houses, or set to false if you don't want to use an item for this
 Config.AlarmTime = 20 -- In seconds, max time you have to disable house alarm before calling cops
