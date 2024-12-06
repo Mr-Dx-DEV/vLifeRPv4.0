@@ -5,20 +5,17 @@ endpoint_add_udp "0.0.0.0:30120"
 
 
 
-set mysql_connection_string "mysql://root:vLife4latest@localhost:3306/vlife"
+#set mysql_connection_string "mysql://root:vLife4latest@localhost:3306/vlife"
+set mysql_connection_string "mysql://root@localhost/vlife?charset=utf8mb4"
 
-#set mysql_connection_string "mysql://root:vLife2024sQl@204.10.193.104:3306/vlife"
 set mysql_slow_query_warning 150
 
 set sv_debugqueue true # prints debug messages to console
 set sv_displayqueue true # shows queue count in the server name '[count] server name'
 set steam_webApiKey "598BC69C0F36C236B7042EB9FC643B79"
 sv_licenseKey "cfxk_OCz2BiTiKOHmi70etZpY_1cRjwu"
-#sv_hostname "^8vLife RolePlay 4.0 ^0| ^2Bangladesh"
-#sets sv_projectName "^8vLife RolePlay Bangladesh"
-
-sv_hostname "^8vLife RolePlay ^0| ^2Bangladesh ^0|| Coming with New Update"
-sets sv_projectName "^8vLife RolePlay Bangladesh ^0|| Coming with New Update"
+sv_hostname "^8vLife RolePlay 4.0 ^0| ^2Bangladesh"
+sets sv_projectName "^8vLife RolePlay Bangladesh"
 sets sv_projectDesc "^6vLife, Serious Roleplay! Balanced Economy!"
 sets tags "Bangladesh, Roleplay, Vlife, Vlife Roleplay, Inspired, NOPI, nop, bang, bd, bangla, bangladesh, india, pakistan"
 
