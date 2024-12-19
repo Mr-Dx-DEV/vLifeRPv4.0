@@ -623,7 +623,7 @@ local Vehicles = {
     { model = 'microlight',    name = 'Ultralight',                    brand = 'Unknown',         price = 4500000,   category = 'planes',         type = 'plane',      shop = 'air' },
     { model = 'tula',          name = 'Tula',                          brand = 'Mammoth',         price = 4500000,   category = 'planes',         type = 'plane',      shop = 'none' },
     { model = 'rogue',         name = 'Rogue',                         brand = 'Western Company', price = 4500000,   category = 'planes',         type = 'plane',      shop = 'none' },
-    { model = 'starling',      name = 'LF-22 Starling',                brand = 'Unknown',         price = 4500000,   category = 'planes',         type = 'plane',      shop = 'none' },
+  --  { model = 'starling',      name = 'LF-22 Starling',                brand = 'Unknown',         price = 4500000,   category = 'planes',         type = 'plane',      shop = 'none' },
     { model = 'alphaz1',       name = 'Alpha-Z1',                      brand = 'Buckingham',      price = 4500000,   category = 'planes',         type = 'plane',      shop = 'none' },
     { model = 'nimbus',        name = 'Nimbus',                        brand = 'Buckingham',      price = 4500000,   category = 'planes',         type = 'plane',      shop = 'air' },
     { model = 'luxor2',        name = 'Luxor Deluxe',                  brand = 'Buckingham',      price = 4500000,   category = 'planes',         type = 'plane',      shop = 'air' },
